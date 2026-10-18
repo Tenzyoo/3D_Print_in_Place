@@ -1,0 +1,1 @@
+I will run a Python script using `trimesh` and `scipy` to measure the exact 3D clearances between adjacent parts in the neutral posture and across rotation angles `[-35°, +35°]`, as well as axial retention along the Z-axis.

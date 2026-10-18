@@ -1,0 +1,33 @@
+# Written by the Harbor dsh adapter.
+[
+  {
+    "id": "agent-default-model",
+    "config": {
+      "provider": "deepseek-official",
+      "model": "deepseek-flash"
+    }
+  },
+  {
+    "id": "session-persistence-jsonl",
+    "config": {
+      "root": "/logs/agent/dsh-home/sessions",
+      "compression": "none"
+    }
+  },
+  {
+    "id": "llm-deepseek",
+    "config": {
+      "reasoningEffort": "high"
+    }
+  },
+  {
+    "id": "tool-web",
+    "disabled": true
+  },
+  {
+    "id": "session-log-deepseek",
+    "config": {
+      "enabled": false
+    }
+  }
+]

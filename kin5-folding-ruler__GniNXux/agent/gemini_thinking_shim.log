@@ -1,0 +1,205 @@
+shim listening on 127.0.0.1:18081 -> https://api.supergpt.dev (thinkingLevel HIGH)
+10:47:37 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=2635 secs=10.3
+10:48:04 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=3629 secs=37.4
+10:49:11 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=2412 secs=66.9
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 60692)
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/http/client.py", line 584, in _get_chunk_left
+    chunk_left = self._read_next_chunk_size()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 551, in _read_next_chunk_size
+    return int(line, 16)
+           ^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 16: b''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/logs/agent/gemini_thinking_shim.py", line 61, in do_POST
+    self._forward()
+  File "/logs/agent/gemini_thinking_shim.py", line 93, in _forward
+    while chunk := resp.read1(65536):
+                   ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 680, in read1
+    return self._read1_chunked(n)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 721, in _read1_chunked
+    chunk_left = self._get_chunk_left()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 586, in _get_chunk_left
+    raise IncompleteRead(b'')
+http.client.IncompleteRead: IncompleteRead(0 bytes read)
+----------------------------------------
+11:01:38 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=158633 secs=264.0
+11:03:47 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=52369 secs=129.7
+11:04:22 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=15826 secs=33.3
+11:06:22 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=54311 secs=118.7
+11:06:48 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=8285 secs=23.0
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 58098)
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/http/client.py", line 584, in _get_chunk_left
+    chunk_left = self._read_next_chunk_size()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 551, in _read_next_chunk_size
+    return int(line, 16)
+           ^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 16: b''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/logs/agent/gemini_thinking_shim.py", line 61, in do_POST
+    self._forward()
+  File "/logs/agent/gemini_thinking_shim.py", line 93, in _forward
+    while chunk := resp.read1(65536):
+                   ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 680, in read1
+    return self._read1_chunked(n)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 721, in _read1_chunked
+    chunk_left = self._get_chunk_left()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 586, in _get_chunk_left
+    raise IncompleteRead(b'')
+http.client.IncompleteRead: IncompleteRead(0 bytes read)
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 58954)
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/http/client.py", line 584, in _get_chunk_left
+    chunk_left = self._read_next_chunk_size()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 551, in _read_next_chunk_size
+    return int(line, 16)
+           ^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 16: b''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/logs/agent/gemini_thinking_shim.py", line 61, in do_POST
+    self._forward()
+  File "/logs/agent/gemini_thinking_shim.py", line 93, in _forward
+    while chunk := resp.read1(65536):
+                   ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 680, in read1
+    return self._read1_chunked(n)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 721, in _read1_chunked
+    chunk_left = self._get_chunk_left()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 586, in _get_chunk_left
+    raise IncompleteRead(b'')
+http.client.IncompleteRead: IncompleteRead(0 bytes read)
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 51662)
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/http/client.py", line 584, in _get_chunk_left
+    chunk_left = self._read_next_chunk_size()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 551, in _read_next_chunk_size
+    return int(line, 16)
+           ^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 16: b''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/logs/agent/gemini_thinking_shim.py", line 61, in do_POST
+    self._forward()
+  File "/logs/agent/gemini_thinking_shim.py", line 93, in _forward
+    while chunk := resp.read1(65536):
+                   ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 680, in read1
+    return self._read1_chunked(n)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 721, in _read1_chunked
+    chunk_left = self._get_chunk_left()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 586, in _get_chunk_left
+    raise IncompleteRead(b'')
+http.client.IncompleteRead: IncompleteRead(0 bytes read)
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 38198)
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/http/client.py", line 584, in _get_chunk_left
+    chunk_left = self._read_next_chunk_size()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 551, in _read_next_chunk_size
+    return int(line, 16)
+           ^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 16: b''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/logs/agent/gemini_thinking_shim.py", line 61, in do_POST
+    self._forward()
+  File "/logs/agent/gemini_thinking_shim.py", line 93, in _forward
+    while chunk := resp.read1(65536):
+                   ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 680, in read1
+    return self._read1_chunked(n)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 721, in _read1_chunked
+    chunk_left = self._get_chunk_left()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 586, in _get_chunk_left
+    raise IncompleteRead(b'')
+http.client.IncompleteRead: IncompleteRead(0 bytes read)
+----------------------------------------
+11:18:02 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=520 bytes=7348 secs=53.3

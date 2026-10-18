@@ -1,0 +1,11 @@
+G-code: /tmp/snake_nosup.gcode
+bed shift removed: [53.22, 128.0]
+bridge extrusions within 12 mm of a joint axis: 716
+bridge extrusions total: 796 at z=[11.2, 13.2]; not fully over the same part's material below: 0
+support extrusions: 0
+layers: 72, extrusion types: ['Bridge infill', 'External perimeter', 'Internal infill', 'Perimeter', 'Solid infill', 'Top solid infill']
+joint 1: min gap between extruded paths = 0.457 mm (layer z=11.8); first layer gap = 0.480 mm
+joint 2: min gap between extruded paths = 0.449 mm (layer z=11.8); first layer gap = 0.483 mm
+joint 3: min gap between extruded paths = 0.453 mm (layer z=11.8); first layer gap = 0.483 mm
+joint 4: min gap between extruded paths = 0.453 mm (layer z=11.8); first layer gap = 0.483 mm
+joint 5: min gap between extruded paths = 0.454 mm (layer z=11.8); first layer gap = 0.477 mm

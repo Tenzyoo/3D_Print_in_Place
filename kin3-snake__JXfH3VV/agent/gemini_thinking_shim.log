@@ -1,0 +1,36 @@
+shim listening on 127.0.0.1:18081 -> https://api.supergpt.dev (thinkingLevel HIGH)
+09:56:13 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=2909 secs=9.9
+09:56:15 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=2871 secs=11.5
+09:56:23 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=1209 secs=10.1
+09:56:31 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=2650 secs=7.6
+09:56:43 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=5087 secs=11.5
+10:02:21 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=186034 secs=338.7
+10:04:24 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=46775 secs=122.9
+10:04:35 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=1428 secs=10.5
+10:05:33 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=2343 secs=16.5
+10:06:00 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=3032 secs=12.3
+10:06:48 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=10152 secs=48.0
+10:07:29 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=14511 secs=41.4
+10:07:43 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=3348 secs=11.3
+10:08:12 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=9316 secs=22.6
+10:08:30 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=1281 secs=18.2
+10:09:58 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=7899 secs=38.6
+10:10:26 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=4564 secs=21.7
+10:11:06 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=11657 secs=38.6
+10:11:50 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=9201 secs=44.6
+10:12:00 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=1222 secs=9.4
+10:13:20 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=8323 secs=29.9
+10:13:41 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=6443 secs=19.4
+10:13:48 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=1287 secs=6.3
+10:15:11 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=8270 secs=34.5
+10:15:56 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=3937 secs=38.6
+10:16:09 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=2611 secs=11.3
+10:16:12 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent?alt=sse thinking=budget--1->level-HIGH upstream-error=RemoteDisconnected('Remote end closed connection without response')
+10:16:23 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=2266 secs=10.8
+10:17:23 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=4539 secs=38.3
+10:17:39 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=3494 secs=14.7
+10:19:02 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=26474 secs=82.2
+10:19:17 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=3733 secs=14.3
+10:19:29 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=1653 secs=12.1
+10:21:44 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=1235 secs=74.8
+10:22:37 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=520 bytes=7348 secs=53.2

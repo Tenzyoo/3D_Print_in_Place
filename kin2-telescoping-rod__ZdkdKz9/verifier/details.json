@@ -1,0 +1,20 @@
+{
+ "task": "kin2-telescoping-rod",
+ "files": [
+  "README.md",
+  "checks/gcode_check.py",
+  "checks/gcode_check_autosupport.log",
+  "checks/gcode_check_nosupport.log",
+  "checks/geom_check.log",
+  "checks/geom_check.py",
+  "checks/geom_result.json",
+  "joints.json",
+  "model.scad",
+  "model.stl",
+  "parts/parts_1.stl",
+  "parts/parts_2.stl",
+  "parts/parts_3.stl",
+  "parts/parts_4.stl",
+  "section.png"
+ ]
+}

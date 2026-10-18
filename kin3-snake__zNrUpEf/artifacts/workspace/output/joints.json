@@ -1,0 +1,21 @@
+{
+  "units": "mm",
+  "neutral_pose": "All links aligned along +X; Z is vertical; yaw is about Z.",
+  "parts": [
+    {"id": 1, "file": "parts/parts_1.stl", "name": "Head", "origin_x": 0},
+    {"id": 2, "file": "parts/parts_2.stl", "name": "Body 1", "origin_x": 22},
+    {"id": 3, "file": "parts/parts_3.stl", "name": "Body 2", "origin_x": 44},
+    {"id": 4, "file": "parts/parts_4.stl", "name": "Body 3", "origin_x": 66},
+    {"id": 5, "file": "parts/parts_5.stl", "name": "Body 4", "origin_x": 88},
+    {"id": 6, "file": "parts/parts_6.stl", "name": "Body 5 / tail", "origin_x": 110}
+  ],
+  "joints": [
+    {"id": 1, "part_a": 1, "part_b": 2, "axis": [0,0,1], "center": [22,0,1.55], "range_deg": [-25,25]},
+    {"id": 2, "part_a": 2, "part_b": 3, "axis": [0,0,1], "center": [44,0,1.55], "range_deg": [-25,25]},
+    {"id": 3, "part_a": 3, "part_b": 4, "axis": [0,0,1], "center": [66,0,1.55], "range_deg": [-25,25]},
+    {"id": 4, "part_a": 4, "part_b": 5, "axis": [0,0,1], "center": [88,0,1.55], "range_deg": [-25,25]},
+    {"id": 5, "part_a": 5, "part_b": 6, "axis": [0,0,1], "center": [110,0,1.55], "range_deg": [-25,25]}
+  ],
+  "joint_geometry": {"pin_shaft_radius": 1.5, "pin_head_radius": 3.0, "socket_inner_radius": 3.5, "designed_radial_clearance_mm": 0.5, "pin_head_top_z": 2.1, "retainer_bottom_z": 2.6, "designed_axial_clearance_mm": 0.5, "socket_throat_angle_deg": 40},
+  "verification_note": "Joint centers and ±25-degree intended sweep are design targets; verify swept envelopes in a CAD kinematic checker before use."
+}

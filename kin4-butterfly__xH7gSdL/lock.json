@@ -1,0 +1,71 @@
+{
+    "schema_version": 2,
+    "task": {
+        "name": "kin4-butterfly",
+        "type": "local",
+        "digest": "sha256:c84ae9e1879d27519ca0a5c5c8f89f9aa92791a05a364b3b689c651b426c91a6",
+        "source": "tasks",
+        "path": "kin_tasks/tasks/kin4-butterfly"
+    },
+    "install_only": false,
+    "timeout_multiplier": 1.0,
+    "agent": {
+        "import_path": "dsh_agent:DeepSeekHarness",
+        "model_name": "openai/gpt-6.1-sol",
+        "skills": [],
+        "override_timeout_sec": 86400.0,
+        "resume_trajectory": false,
+        "extra_allowed_hosts": [
+            "api.supergpt.dev"
+        ],
+        "kwargs": {
+            "version": "0.2.0-rc.2",
+            "reasoning_effort": "high",
+            "route_api": "openai-responses",
+            "route_models": [
+                {
+                    "id": "gpt-6.1-sol",
+                    "name": "gpt-6.1-sol",
+                    "contextWindow": 272000,
+                    "input": [
+                        "text",
+                        "image"
+                    ],
+                    "reasoningEfforts": {
+                        "off": "none",
+                        "low": "low",
+                        "medium": "medium",
+                        "high": "high",
+                        "xhigh": "xhigh",
+                        "max": "max"
+                    }
+                }
+            ],
+            "lift_instructions": true,
+            "stream_idle_timeout_ms": 1800000,
+            "request_timeout_ms": 3600000
+        },
+        "env": {
+            "OPENAI_API_KEY": "${GPT_API_KEY}",
+            "OPENAI_BASE_URL": "${GPT_BASE_URL}"
+        },
+        "mcp_servers": []
+    },
+    "bridge_inputs": {},
+    "skills": [],
+    "environment": {
+        "type": "docker",
+        "force_build": false,
+        "delete": true,
+        "stream": false,
+        "cpu_enforcement_policy": "auto",
+        "memory_enforcement_policy": "auto",
+        "extra_docker_compose": [],
+        "kwargs": {},
+        "extra_allowed_hosts": []
+    },
+    "verifier": {
+        "disable": false,
+        "environment_mode": "shared"
+    }
+}

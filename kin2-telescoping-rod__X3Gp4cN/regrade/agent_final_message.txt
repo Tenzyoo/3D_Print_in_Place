@@ -1,0 +1,39 @@
+已完成设计、导出、几何验证与切片检查，文件位于 `/app/output/`。
+
+## 主要结果
+
+- **4 级同轴圆管**：T1 最外层，T4 最内层。
+- **收缩尺寸**：`24.8 × 24.8 × 110 mm`，满足长度 ≤120 mm、外径 ≤25 mm。
+- **完全伸展长度**：`320 mm`，满足 ≥300 mm。
+- **一体化打印**：四根管以收缩状态同轴打印，无销轴、螺丝等后期零件。
+- **防脱结构**：每根内管下端有 4 个整体径向键，在下一层外管的盲键槽中滑动；完全伸展时键顶顶住键槽顶面。
+- **行程**：J1=80 mm，J2=70 mm，J3=70 mm；每级完全伸展仍保留 30 mm 管身搭接。
+- **间隙**：圆柱滑动面、键侧向和径向间隙均为 0.50 mm；STL 截面实测 `0.497953–0.499797 mm`，符合 0.4–0.6 mm。
+- **防脱验证**：每关节额外拉出 0.25 mm 时均检测到实体截面重叠，说明限位确实挡住，不能继续分离。
+
+## 切片检查
+
+使用 PrusaSlicer 2.7.2、PLA、0.4 mm 喷嘴、0.2 mm 层高、无支撑配置：
+
+- `manifold = yes`
+- `number_of_parts = 4`
+- 550 层
+- G-code 中 **0 处支撑材料路径**
+- 键槽顶部由短桥接完成，活动间隙内不使用支撑
+- 预计打印时间约 6 h 14 min，材料约 41.7 g
+
+切片器提示了通用的 `Low bed adhesion` 警告，这是四个高细独立同心岛的附着力提醒。建议清洁 PEI 板并薄涂胶水；不要使用会填入管间间隙的自动整体 brim/raft。
+
+## 交付文件
+
+- `/app/output/model.scad`
+- `/app/output/model.stl`
+- `/app/output/parts/parts_1.stl` ～ `parts_4.stl`
+- `/app/output/joints.json`
+- `/app/output/PRINT_AND_INSPECTION.md`
+- `/app/output/validation_report.json`
+- `/app/output/section_check.png`
+- `/app/output/extended_preview.png`
+- `/app/output/validate_model.py`
+
+本环境没有实体 3D 打印机，因此完成的是实际 STL 几何检查与 PrusaSlicer 切片检查，未进行实体打印。

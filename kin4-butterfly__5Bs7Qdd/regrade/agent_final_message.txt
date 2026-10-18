@@ -1,0 +1,18 @@
+已完成并写入 `/app/output/`：
+
+- [model.scad](/app/output/model.scad)
+- [model.stl](/app/output/model.stl)
+- [joints.json](/app/output/joints.json)
+- [PRINTING.md](/app/output/PRINTING.md)
+- [parts_1.stl](/app/output/parts/parts_1.stl)
+- [parts_2.stl](/app/output/parts/parts_2.stl)
+- [parts_3.stl](/app/output/parts/parts_3.stl)
+
+验证结果：
+
+- 中立姿态尺寸：84.65 × 85.00 × 5.45 mm
+- 组合 STL：3 个封闭 manifold 零件
+- 关节轴平行 Z 轴，运动范围均为 -30° 至 +30°
+- 单侧径向间隙：0.50 mm
+- 多角度组合扫描无几何干涉
+- PLA、0.4 mm 喷嘴、0.2 mm 层高、无支撑切片成功，27 层，退出码 0

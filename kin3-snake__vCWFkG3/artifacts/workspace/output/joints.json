@@ -1,0 +1,337 @@
+{
+  "units": "mm",
+  "coordinate_system": "same as model.stl; Z up = print direction, bed at z=0",
+  "pose": "neutral, straight (all joint angles 0)",
+  "kinematic_tree": "serial chain rooted at the head (part 1); rotating joint k moves parts k+1..6 rigidly",
+  "rotation_sign": "right-hand rule about +Z (positive = child swings counter-clockwise seen from above)",
+  "parts": [
+    {
+      "id": 1,
+      "name": "head",
+      "file": "parts/parts_1.stl",
+      "role": "head"
+    },
+    {
+      "id": 2,
+      "name": "body_1",
+      "file": "parts/parts_2.stl",
+      "role": "body segment 1"
+    },
+    {
+      "id": 3,
+      "name": "body_2",
+      "file": "parts/parts_3.stl",
+      "role": "body segment 2"
+    },
+    {
+      "id": 4,
+      "name": "body_3",
+      "file": "parts/parts_4.stl",
+      "role": "body segment 3"
+    },
+    {
+      "id": 5,
+      "name": "body_4",
+      "file": "parts/parts_5.stl",
+      "role": "body segment 4"
+    },
+    {
+      "id": 6,
+      "name": "body_5",
+      "file": "parts/parts_6.stl",
+      "role": "body segment 5 (tail tip)"
+    }
+  ],
+  "joints": [
+    {
+      "id": 1,
+      "name": "joint_1",
+      "type": "revolute",
+      "parent_part": 1,
+      "child_part": 2,
+      "parent_file": "parts/parts_1.stl",
+      "child_file": "parts/parts_2.stl",
+      "parent_feature": "C-shaped socket ring with profiled bore",
+      "child_feature": "vertical pin with 60deg double-cone retention collar + neck",
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "origin": [
+        121.6,
+        0.0,
+        0.0
+      ],
+      "axis_line": {
+        "point": [
+          121.6,
+          0.0,
+          0.0
+        ],
+        "direction": [
+          0,
+          0,
+          1
+        ],
+        "z_range": [
+          0.0,
+          12
+        ]
+      },
+      "neutral_angle_deg": 0.0,
+      "range_deg": [
+        -30.0,
+        30.0
+      ],
+      "hard_stop_deg_measured": [
+        -37.1,
+        37.1
+      ],
+      "moving_parts_when_rotated": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "radial_clearance_mm": 0.5,
+      "pin_radius_mm": 5.5,
+      "bore_radius_mm": 6.0,
+      "collar_radius_mm": 6.7,
+      "collar_bore_radius_mm": 7.2,
+      "axial_play_mm": 0.866,
+      "axial_retention": "pin collar (double cone) captured inside the matching bore groove; socket wraps >180deg around the pin"
+    },
+    {
+      "id": 2,
+      "name": "joint_2",
+      "type": "revolute",
+      "parent_part": 2,
+      "child_part": 3,
+      "parent_file": "parts/parts_2.stl",
+      "child_file": "parts/parts_3.stl",
+      "parent_feature": "C-shaped socket ring with profiled bore",
+      "child_feature": "vertical pin with 60deg double-cone retention collar + neck",
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "origin": [
+        99.6,
+        0.0,
+        0.0
+      ],
+      "axis_line": {
+        "point": [
+          99.6,
+          0.0,
+          0.0
+        ],
+        "direction": [
+          0,
+          0,
+          1
+        ],
+        "z_range": [
+          0.0,
+          12
+        ]
+      },
+      "neutral_angle_deg": 0.0,
+      "range_deg": [
+        -30.0,
+        30.0
+      ],
+      "hard_stop_deg_measured": [
+        -37.1,
+        37.1
+      ],
+      "moving_parts_when_rotated": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "radial_clearance_mm": 0.5,
+      "pin_radius_mm": 5.5,
+      "bore_radius_mm": 6.0,
+      "collar_radius_mm": 6.7,
+      "collar_bore_radius_mm": 7.2,
+      "axial_play_mm": 0.866,
+      "axial_retention": "pin collar (double cone) captured inside the matching bore groove; socket wraps >180deg around the pin"
+    },
+    {
+      "id": 3,
+      "name": "joint_3",
+      "type": "revolute",
+      "parent_part": 3,
+      "child_part": 4,
+      "parent_file": "parts/parts_3.stl",
+      "child_file": "parts/parts_4.stl",
+      "parent_feature": "C-shaped socket ring with profiled bore",
+      "child_feature": "vertical pin with 60deg double-cone retention collar + neck",
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "origin": [
+        77.6,
+        0.0,
+        0.0
+      ],
+      "axis_line": {
+        "point": [
+          77.6,
+          0.0,
+          0.0
+        ],
+        "direction": [
+          0,
+          0,
+          1
+        ],
+        "z_range": [
+          0.0,
+          12
+        ]
+      },
+      "neutral_angle_deg": 0.0,
+      "range_deg": [
+        -30.0,
+        30.0
+      ],
+      "hard_stop_deg_measured": [
+        -37.1,
+        37.1
+      ],
+      "moving_parts_when_rotated": [
+        4,
+        5,
+        6
+      ],
+      "radial_clearance_mm": 0.5,
+      "pin_radius_mm": 5.5,
+      "bore_radius_mm": 6.0,
+      "collar_radius_mm": 6.7,
+      "collar_bore_radius_mm": 7.2,
+      "axial_play_mm": 0.866,
+      "axial_retention": "pin collar (double cone) captured inside the matching bore groove; socket wraps >180deg around the pin"
+    },
+    {
+      "id": 4,
+      "name": "joint_4",
+      "type": "revolute",
+      "parent_part": 4,
+      "child_part": 5,
+      "parent_file": "parts/parts_4.stl",
+      "child_file": "parts/parts_5.stl",
+      "parent_feature": "C-shaped socket ring with profiled bore",
+      "child_feature": "vertical pin with 60deg double-cone retention collar + neck",
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "origin": [
+        55.6,
+        0.0,
+        0.0
+      ],
+      "axis_line": {
+        "point": [
+          55.6,
+          0.0,
+          0.0
+        ],
+        "direction": [
+          0,
+          0,
+          1
+        ],
+        "z_range": [
+          0.0,
+          12
+        ]
+      },
+      "neutral_angle_deg": 0.0,
+      "range_deg": [
+        -30.0,
+        30.0
+      ],
+      "hard_stop_deg_measured": [
+        -37.1,
+        37.1
+      ],
+      "moving_parts_when_rotated": [
+        5,
+        6
+      ],
+      "radial_clearance_mm": 0.5,
+      "pin_radius_mm": 5.5,
+      "bore_radius_mm": 6.0,
+      "collar_radius_mm": 6.7,
+      "collar_bore_radius_mm": 7.2,
+      "axial_play_mm": 0.866,
+      "axial_retention": "pin collar (double cone) captured inside the matching bore groove; socket wraps >180deg around the pin"
+    },
+    {
+      "id": 5,
+      "name": "joint_5",
+      "type": "revolute",
+      "parent_part": 5,
+      "child_part": 6,
+      "parent_file": "parts/parts_5.stl",
+      "child_file": "parts/parts_6.stl",
+      "parent_feature": "C-shaped socket ring with profiled bore",
+      "child_feature": "vertical pin with 60deg double-cone retention collar + neck",
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "origin": [
+        33.6,
+        0.0,
+        0.0
+      ],
+      "axis_line": {
+        "point": [
+          33.6,
+          0.0,
+          0.0
+        ],
+        "direction": [
+          0,
+          0,
+          1
+        ],
+        "z_range": [
+          0.0,
+          12
+        ]
+      },
+      "neutral_angle_deg": 0.0,
+      "range_deg": [
+        -30.0,
+        30.0
+      ],
+      "hard_stop_deg_measured": [
+        -37.1,
+        37.1
+      ],
+      "moving_parts_when_rotated": [
+        6
+      ],
+      "radial_clearance_mm": 0.5,
+      "pin_radius_mm": 5.5,
+      "bore_radius_mm": 6.0,
+      "collar_radius_mm": 6.7,
+      "collar_bore_radius_mm": 7.2,
+      "axial_play_mm": 0.866,
+      "axial_retention": "pin collar (double cone) captured inside the matching bore groove; socket wraps >180deg around the pin"
+    }
+  ]
+}

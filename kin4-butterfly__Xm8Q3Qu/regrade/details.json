@@ -1,0 +1,587 @@
+{
+ "task": "kin4-butterfly",
+ "evaluator": "kin-eval 1.0",
+ "notes": [],
+ "config_sha256": "b98b7ff5405652d3f07356501a39766984c6db10d5c4cf1135a5274ce9611ed3",
+ "model_file": {
+  "file": "model.stl",
+  "bytes": 4412633,
+  "errors": [],
+  "triangles": 24322,
+  "extents": [
+   94.789,
+   98.788,
+   10.981
+  ],
+  "bounds": [
+   [
+    -40.989,
+    -49.394,
+    0.0
+   ],
+   [
+    53.8,
+    49.394,
+    10.981
+   ]
+  ]
+ },
+ "geometry_source": "model.stl",
+ "bodies_info": {
+  "shells": 3,
+  "open_shells": 0,
+  "cavities": 0,
+  "valid": true
+ },
+ "bodies": [
+  {
+   "idx": 0,
+   "volume_mm3": 4637.1,
+   "bounds": [
+    [
+     -40.989,
+     -17.4,
+     0.0
+    ],
+    [
+     53.8,
+     17.4,
+     10.981
+    ]
+   ],
+   "centroid": [
+    8.83,
+    0.0,
+    3.566
+   ]
+  },
+  {
+   "idx": 1,
+   "volume_mm3": 3527.93,
+   "bounds": [
+    [
+     -18.655,
+     8.473,
+     0.0
+    ],
+    [
+     40.934,
+     49.394,
+     7.0
+    ]
+   ],
+   "centroid": [
+    12.766,
+    30.315,
+    1.656
+   ]
+  },
+  {
+   "idx": 2,
+   "volume_mm3": 3527.93,
+   "bounds": [
+    [
+     -18.655,
+     -49.394,
+     0.0
+    ],
+    [
+     40.934,
+     -8.473,
+     7.0
+    ]
+   ],
+   "centroid": [
+    12.766,
+    -30.315,
+    1.656
+   ]
+  }
+ ],
+ "topology": {
+  "kind": "star",
+  "fit": true,
+  "order": [
+   0,
+   1,
+   2
+  ],
+  "edges": {
+   "0-1": 2.07,
+   "0-2": 2.07
+  }
+ },
+ "joints_detected": [
+  {
+   "id": "J_left",
+   "parent": 0,
+   "child": 1,
+   "clusters": [
+    {
+     "cx": 11.999997805215179,
+     "cy": 12.49999954465768,
+     "z0": 0.0137,
+     "z1": 6.9148,
+     "extent_mm": 7.001,
+     "total_length_mm": 7.001,
+     "tilt_deg": 0.0,
+     "features": [
+      {
+       "z0": 0.0137,
+       "z1": 6.9148,
+       "length_mm": 7.001,
+       "n": 38,
+       "pin_side": 0,
+       "gap_med": 0.4997,
+       "gap_fit": 0.4997,
+       "gap_min": 0.4995,
+       "gap_max": 0.5,
+       "r_pin": 4.1966,
+       "r_hole": 4.6963,
+       "ecc_max": 0.0,
+       "round_frac": 1.0,
+       "coverage_deg": 246.0,
+       "cx": 11.999997805215179,
+       "cy": 12.49999954465768
+      }
+     ]
+    }
+   ],
+   "axis_source": "pin-hole",
+   "center": [
+    12.0,
+    12.5,
+    3.4642
+   ],
+   "engagement_mm": 7.001,
+   "tilt_deg": 0.0,
+   "main": {
+    "z0": 0.0137,
+    "z1": 6.9148,
+    "length_mm": 7.001,
+    "n": 38,
+    "pin_side": 0,
+    "gap_med": 0.4997,
+    "gap_fit": 0.4997,
+    "gap_min": 0.4995,
+    "gap_max": 0.5,
+    "r_pin": 4.1966,
+    "r_hole": 4.6963,
+    "ecc_max": 0.0,
+    "round_frac": 1.0,
+    "coverage_deg": 246.0,
+    "cx": 11.999997805215179,
+    "cy": 12.49999954465768
+   },
+   "bearing": {
+    "z0": 0.0137,
+    "z1": 6.9148,
+    "length_mm": 7.001,
+    "n": 38,
+    "pin_side": 0,
+    "gap_med": 0.4997,
+    "gap_fit": 0.4997,
+    "gap_min": 0.4995,
+    "gap_max": 0.5,
+    "r_pin": 4.1966,
+    "r_hole": 4.6963,
+    "ecc_max": 0.0,
+    "round_frac": 1.0,
+    "coverage_deg": 246.0,
+    "cx": 11.999997805215179,
+    "cy": 12.49999954465768
+   },
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "id": "J_right",
+   "parent": 0,
+   "child": 2,
+   "clusters": [
+    {
+     "cx": 11.999997798132982,
+     "cy": -12.499999423066312,
+     "z0": 0.0137,
+     "z1": 6.9148,
+     "extent_mm": 7.001,
+     "total_length_mm": 7.001,
+     "tilt_deg": 0.0,
+     "features": [
+      {
+       "z0": 0.0137,
+       "z1": 6.9148,
+       "length_mm": 7.001,
+       "n": 31,
+       "pin_side": 0,
+       "gap_med": 0.4997,
+       "gap_fit": 0.4997,
+       "gap_min": 0.4995,
+       "gap_max": 0.5,
+       "r_pin": 4.3502,
+       "r_hole": 4.8499,
+       "ecc_max": 0.0,
+       "round_frac": 1.0,
+       "coverage_deg": 246.0,
+       "cx": 11.999997798132982,
+       "cy": -12.499999423066312
+      }
+     ]
+    }
+   ],
+   "axis_source": "pin-hole",
+   "center": [
+    12.0,
+    -12.5,
+    3.4642
+   ],
+   "engagement_mm": 7.001,
+   "tilt_deg": 0.0,
+   "main": {
+    "z0": 0.0137,
+    "z1": 6.9148,
+    "length_mm": 7.001,
+    "n": 31,
+    "pin_side": 0,
+    "gap_med": 0.4997,
+    "gap_fit": 0.4997,
+    "gap_min": 0.4995,
+    "gap_max": 0.5,
+    "r_pin": 4.3502,
+    "r_hole": 4.8499,
+    "ecc_max": 0.0,
+    "round_frac": 1.0,
+    "coverage_deg": 246.0,
+    "cx": 11.999997798132982,
+    "cy": -12.499999423066312
+   },
+   "bearing": {
+    "z0": 0.0137,
+    "z1": 6.9148,
+    "length_mm": 7.001,
+    "n": 31,
+    "pin_side": 0,
+    "gap_med": 0.4997,
+    "gap_fit": 0.4997,
+    "gap_min": 0.4995,
+    "gap_max": 0.5,
+    "r_pin": 4.3502,
+    "r_hole": 4.8499,
+    "ecc_max": 0.0,
+    "round_frac": 1.0,
+    "coverage_deg": 246.0,
+    "cx": 11.999997798132982,
+    "cy": -12.499999423066312
+   },
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ]
+  }
+ ],
+ "core": {
+  "C1_separation": {
+   "n_bodies": 3,
+   "n_expected": 3,
+   "mesh_valid": true,
+   "open_shells": 0,
+   "fused_pairs": [],
+   "pairs": {
+    "0-1": {
+     "gap_mm": 0.3828,
+     "overlap_mm3": 0.0,
+     "fused": false
+    },
+    "0-2": {
+     "gap_mm": 0.3828,
+     "overlap_mm3": 0.0,
+     "fused": false
+    }
+   },
+   "pass": true
+  },
+  "C2_clearance": {
+   "window_mm": [
+    0.4,
+    0.6
+   ],
+   "joints": [
+    {
+     "id": "J_left",
+     "axis_source": "pin-hole",
+     "pair_min_gap_mm": 0.3828,
+     "radial_gap_mm": 0.4997,
+     "radial_gap_fit_mm": 0.4997,
+     "radial_gap_min_mm": 0.4995,
+     "radial_gap_max_mm": 0.5,
+     "pin_radius_mm": 4.1966,
+     "hole_radius_mm": 4.6963,
+     "fit_length_mm": 7.001,
+     "eccentricity_mm": 0.0,
+     "bearing_gap_mm": 0.4997,
+     "bearing_length_mm": 7.001,
+     "n_features": 1,
+     "socket_coverage_deg": 246.0,
+     "in_window": true,
+     "bearing_in_window": true,
+     "others_nonzero": true,
+     "min_distance_in_window": true,
+     "pass": true
+    },
+    {
+     "id": "J_right",
+     "axis_source": "pin-hole",
+     "pair_min_gap_mm": 0.3828,
+     "radial_gap_mm": 0.4997,
+     "radial_gap_fit_mm": 0.4997,
+     "radial_gap_min_mm": 0.4995,
+     "radial_gap_max_mm": 0.5,
+     "pin_radius_mm": 4.3502,
+     "hole_radius_mm": 4.8499,
+     "fit_length_mm": 7.001,
+     "eccentricity_mm": 0.0,
+     "bearing_gap_mm": 0.4997,
+     "bearing_length_mm": 7.001,
+     "n_features": 1,
+     "socket_coverage_deg": 246.0,
+     "in_window": true,
+     "bearing_in_window": true,
+     "others_nonzero": true,
+     "min_distance_in_window": true,
+     "pass": true
+    }
+   ],
+   "pairs_below_other_gap_min": [],
+   "joints_found": 2,
+   "joints_expected": 2,
+   "joint_pass_frac": 1.0,
+   "pass": true,
+   "alt_bearing_reading_pass": true,
+   "alt_min_distance_reading_pass": true
+  },
+  "C3_motion": {
+   "joints": [
+    {
+     "id": "J_left",
+     "required_deg": [
+      -30,
+      30
+     ],
+     "free_plus_deg": 35.568,
+     "free_minus_deg": 40.239,
+     "moving_radius_mm": 45.35,
+     "step_deg": 0.632,
+     "axis_source": "pin-hole",
+     "pass": true,
+     "margin_deg": 5.568
+    },
+    {
+     "id": "J_right",
+     "required_deg": [
+      -30,
+      30
+     ],
+     "free_plus_deg": 40.239,
+     "free_minus_deg": 35.568,
+     "moving_radius_mm": 45.35,
+     "step_deg": 0.632,
+     "axis_source": "pin-hole",
+     "pass": true,
+     "margin_deg": 5.568
+    }
+   ],
+   "joint_pass_frac": 1.0,
+   "combined": {
+    "n_poses": 49,
+    "n_colliding_poses": 0,
+    "colliding_poses": [],
+    "n_paths": 4,
+    "n_path_poses": 124,
+    "colliding_paths": [],
+    "pass": true
+   },
+   "single_sweeps_pass": true,
+   "pass": true
+  },
+  "C4_retention": {
+   "joints": [
+    {
+     "id": "J_left",
+     "engagement_mm": 7.001,
+     "limit_mm": 7.001,
+     "block_+axis_mm": 0.5965,
+     "blocked_+axis": true,
+     "block_-axis_mm": 0.5967,
+     "blocked_-axis": true,
+     "radial_block_mm": [
+      1.1394,
+      0.502,
+      0.502,
+      0.502
+     ],
+     "pass": true
+    },
+    {
+     "id": "J_right",
+     "engagement_mm": 7.001,
+     "limit_mm": 7.001,
+     "block_+axis_mm": 0.5965,
+     "blocked_+axis": true,
+     "block_-axis_mm": 0.5967,
+     "blocked_-axis": true,
+     "radial_block_mm": [
+      0.502,
+      1.1394,
+      0.502,
+      0.502
+     ],
+     "pass": true
+    }
+   ],
+   "joint_pass_frac": 1.0,
+   "pass": true
+  }
+ },
+ "aux": {
+  "joints_json": {
+   "n_joints": 2,
+   "axes": [
+    [
+     0.0,
+     0.0,
+     1.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "positions": [
+    [
+     12.0,
+     12.5,
+     0.0
+    ],
+    [
+     12.0,
+     -12.5,
+     0.0
+    ]
+   ],
+   "ranges": [
+    "[-30.0, 30.0]",
+    "[-30.0, 30.0]"
+   ]
+  },
+  "deliverables": {
+   "model_scad": true,
+   "model_stl": true,
+   "n_part_files": 3,
+   "part_files_ok": true,
+   "joints_json": true,
+   "joints_json_valid": true,
+   "doc_mentions_orientation": true,
+   "doc_mentions_slicing": true
+  },
+  "bbox": {
+   "extents_mm": [
+    94.789,
+    98.788,
+    10.981
+   ],
+   "max_mm": [
+    120.0,
+    100.0,
+    30.0
+   ],
+   "rule": "xyz",
+   "ok_sorted": true,
+   "ok_xyz": true,
+   "ok": true,
+   "margin_mm": 1.212
+  },
+  "parts_match_model": {
+   "ok": true,
+   "matched": [
+    {
+     "file": "parts_1.stl",
+     "body": 0,
+     "centroid_shift_mm": 0.0,
+     "volume_rel_diff": 0.0,
+     "file_bodies": 1
+    },
+    {
+     "file": "parts_2.stl",
+     "body": 1,
+     "centroid_shift_mm": 0.0,
+     "volume_rel_diff": 0.0,
+     "file_bodies": 1
+    },
+    {
+     "file": "parts_3.stl",
+     "body": 2,
+     "centroid_shift_mm": 0.0,
+     "volume_rel_diff": 0.0,
+     "file_bodies": 1
+    }
+   ]
+  },
+  "joints_json_check": {
+   "n_declared": 2,
+   "n_expected": 2,
+   "axis_angle_to_required_deg_max": 0.0,
+   "declared_axis_offset_mm_max": 0.0
+  },
+  "printability": {
+   "floating_bodies": [],
+   "overhang_over_other_part_mm2": 0.0,
+   "on_bed_z": 0.0
+  },
+  "slicing": {
+   "nosupport": {
+    "ok": true,
+    "secs": 3.6,
+    "warnings": [],
+    "support_sections": 0,
+    "layers": null
+   },
+   "autosupport": {
+    "ok": true,
+    "secs": 3.7,
+    "warnings": [],
+    "support_sections": 0,
+    "layers": null
+   }
+  },
+  "scad_regen": {
+   "rc": 0,
+   "log_tail": [
+    "   Halffacets:  27390",
+    "   Facets:      13695",
+    "   Volumes:         4"
+   ],
+   "secs": 42.7,
+   "volume_rel_diff": 0.0,
+   "bounds_shift_mm": 0.0,
+   "regenerates_model": true
+  }
+ },
+ "summary": {
+  "C1_separation": true,
+  "C2_clearance": true,
+  "C3_motion": true,
+  "C4_retention": true,
+  "n_pass": 4,
+  "joint_fracs": {
+   "C2_clearance": 1.0,
+   "C3_motion": 1.0,
+   "C4_retention": 1.0
+  }
+ },
+ "secs": 58.5
+}

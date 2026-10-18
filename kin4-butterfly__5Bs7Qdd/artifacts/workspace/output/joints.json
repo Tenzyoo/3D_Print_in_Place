@@ -1,0 +1,53 @@
+{
+  "units": "mm",
+  "assembly": {
+    "fixed_body": "parts_1.stl",
+    "moving_parts": ["parts_2.stl", "parts_3.stl"],
+    "neutral_pose": {
+      "left_angle_deg": 0,
+      "right_angle_deg": 0
+    },
+    "motion_check": {
+      "sampled_range_deg": [-30, -25, -20, -15, -10, -5, 0, 5, 10, 15, 20, 25, 30],
+      "simultaneous_collision_check": "passed"
+    }
+  },
+  "joints": [
+    {
+      "id": "left_wing_revolute",
+      "parent": "parts_1.stl",
+      "child": "parts_2.stl",
+      "axis_origin": [8.0, 11.5, 0.0],
+      "axis_direction": [0.0, 0.0, 1.0],
+      "angle_range_deg": [-30, 30],
+      "neutral_angle_deg": 0,
+      "shaft_radius": 2.0,
+      "hole_radius": 2.5,
+      "one_sided_radial_clearance": 0.5,
+      "axial_retention": {
+        "bottom_stop": "fixed torso collar, radius 2.8 mm, z=0..0.8",
+        "top_stop": "fixed torso cap, radius 3.35 mm, z=5.15..5.45",
+        "wing_top_z": 3.4,
+        "top_axial_gap": 0.8
+      }
+    },
+    {
+      "id": "right_wing_revolute",
+      "parent": "parts_1.stl",
+      "child": "parts_3.stl",
+      "axis_origin": [8.0, -11.5, 0.0],
+      "axis_direction": [0.0, 0.0, 1.0],
+      "angle_range_deg": [-30, 30],
+      "neutral_angle_deg": 0,
+      "shaft_radius": 2.0,
+      "hole_radius": 2.5,
+      "one_sided_radial_clearance": 0.5,
+      "axial_retention": {
+        "bottom_stop": "fixed torso collar, radius 2.8 mm, z=0..0.8",
+        "top_stop": "fixed torso cap, radius 3.35 mm, z=5.15..5.45",
+        "wing_top_z": 3.4,
+        "top_axial_gap": 0.8
+      }
+    }
+  ]
+}

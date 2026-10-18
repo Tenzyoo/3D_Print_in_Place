@@ -1,0 +1,54 @@
+{
+  "model": "model.scad",
+  "units": "mm",
+  "print_setup": {
+    "process": "FDM",
+    "material": "PLA",
+    "nozzle_diameter": 0.4,
+    "layer_height": 0.2,
+    "support_material": false,
+    "orientation": "neutral pose, Z vertical, all four components start at Z=0"
+  },
+  "checks": [
+    {
+      "name": "OpenSCAD CGAL render",
+      "status": "pass",
+      "details": "Assembly and each part selector rendered as a simple 3D object."
+    },
+    {
+      "name": "STL topology",
+      "status": "pass",
+      "details": "model.stl contains 4 watertight connected components. Each parts_N.stl contains exactly one watertight component. The four part volumes sum to the assembly volume within STL rounding."
+    },
+    {
+      "name": "Envelope",
+      "status": "pass",
+      "details": "Measured bounds are 84.05 x 34.40 x 8.65 mm, below 100 x 50 x 60 mm."
+    },
+    {
+      "name": "Joint dimensions",
+      "status": "pass",
+      "details": "Pin radius 1.8 mm and bore radius 2.3 mm give 0.5 mm one-sided radial clearance. Flange and chamber radii 3.1 mm and 3.7 mm give 0.6 mm clearance. Axial gaps and conical capture shoulders are modeled explicitly."
+    },
+    {
+      "name": "Neutral component separation",
+      "status": "pass",
+      "details": "The assembly STL has four separate shells in the common coordinate frame: one fixed body and three tail segments."
+    },
+    {
+      "name": "Motion envelope geometry sample",
+      "status": "pass_with_scope",
+      "details": "For each joint, adjacent-part horizontal cross-sections were sampled at 21 angles from -20 to +20 degrees in 2-degree steps and 14 Z levels. No cross-section overlap was found. This is a geometric sample, not a physical articulation test or a full continuous 3D collision proof."
+    },
+    {
+      "name": "No-support slicing",
+      "status": "warning",
+      "details": "PrusaSlicer 2.7.2 exported G-code using the supplied PLA 0.20 mm no-support profile. The slicer reported Floating bridge anchors, Low bed adhesion, and Loose extrusions, and suggested supports and a brim. No supports were enabled, so no support material occupies the joint gaps."
+    }
+  ],
+  "limitations": [
+    "Support-free print reliability is not established. Although a no-support G-code export completed and the captive geometry is present, PrusaSlicer reports floating bridge anchors, loose extrusions, and low bed adhesion. A physical print is needed to confirm that all three joints separate and move freely without fused clearances or broken features.",
+    "The declared and geometrically sampled range is at least +/-20 degrees. The design has no hard angular stops, so travel beyond this range and its collision limits are not characterized.",
+    "The 0.5 mm radial pin clearance and 0.6 mm flange clearance are nominal CAD values. PLA dimensional error, first-layer expansion, flow calibration, and printer-specific cooling can reduce effective clearance."
+  ]
+}

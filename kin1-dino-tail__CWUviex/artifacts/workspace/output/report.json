@@ -1,0 +1,211 @@
+{
+  "model_name": "articulated_print_in_place_dinosaur",
+  "status": "PASS",
+  "all_requirements_met": true,
+  "all_joints_reliably_realized": true,
+  "printing_parameters": {
+    "process": "FDM (Print-in-Place, single print without post-assembly)",
+    "material": "PLA",
+    "nozzle_diameter_mm": 0.4,
+    "layer_height_mm": 0.2,
+    "slicer_tested": "PrusaSlicer 2.7.2",
+    "profiles_tested": [
+      "/opt/slicer/p1s_pla_0.20mm_autosupport.ini",
+      "/opt/slicer/p1s_pla_0.20mm_nosupport.ini"
+    ]
+  },
+  "checks": [
+    {
+      "check_id": "overall_dimensions_and_anatomy",
+      "description": "检查模型外接尺寸是否不超过100x50x60mm，且包含头部、躯干、四条腿（固定主体）及3段独立活动尾巴。",
+      "passed": true,
+      "details": {
+        "overall_bbox_min_mm": [
+          -48.0,
+          -17.0,
+          0.0
+        ],
+        "overall_bbox_max_mm": [
+          44.7,
+          17.0,
+          54.5
+        ],
+        "overall_dimensions_mm": [
+          92.7,
+          34.0,
+          54.5
+        ],
+        "limit_dimensions_mm": [
+          100.0,
+          50.0,
+          60.0
+        ],
+        "total_parts_count": 4,
+        "fixed_body_part": "parts/parts_1.stl (head, neck, torso, 4 legs with toes, dorsal plates, joint_1 pin)",
+        "tail_segment_parts": [
+          "parts/parts_2.stl (tail segment 1)",
+          "parts/parts_3.stl (tail segment 2)",
+          "parts/parts_4.stl (tail segment 3 / tip)"
+        ]
+      }
+    },
+    {
+      "check_id": "mesh_manifold_and_part_consistency",
+      "description": "检查model.stl与parts/parts_1..4.stl的流形闭合性（Watertight 2-Manifold）、法向一致性，以及各分件组合与model.stl在同一坐标系下完全一致。",
+      "passed": true,
+      "details": {
+        "model_stl_watertight": true,
+        "all_part_stls_watertight": true,
+        "model_stl_volume_mm3": 30054.12,
+        "sum_of_parts_volume_mm3": 30054.12,
+        "model_stl_vertices": 9930,
+        "sum_of_parts_vertices": 9930,
+        "model_stl_faces": 19856,
+        "sum_of_parts_faces": 19856,
+        "coordinate_alignment": "exact_match_in_neutral_pose"
+      }
+    },
+    {
+      "check_id": "radial_and_surface_clearances",
+      "description": "检查旋转轴与轴孔的单侧径向设计间隙是否在0.4-0.6mm之间，以及关节其他相邻活动面是否留有明确的非零防融合间隙。",
+      "passed": true,
+      "details": {
+        "design_radial_clearance_mm": 0.5,
+        "allowed_radial_clearance_range_mm": [
+          0.4,
+          0.6
+        ],
+        "joint_1": {
+          "pin_radius_mm": 2.6,
+          "bore_radius_mm": 3.1,
+          "measured_xy_radial_clearance_mm": 0.4965,
+          "measured_min_3d_euclidean_clearance_mm": 0.4759
+        },
+        "joint_2": {
+          "pin_radius_mm": 2.4,
+          "bore_radius_mm": 2.9,
+          "measured_xy_radial_clearance_mm": 0.4966,
+          "measured_min_3d_euclidean_clearance_mm": 0.4751
+        },
+        "joint_3": {
+          "pin_radius_mm": 2.2,
+          "bore_radius_mm": 2.7,
+          "measured_xy_radial_clearance_mm": 0.4967,
+          "measured_min_3d_euclidean_clearance_mm": 0.4721
+        }
+      }
+    },
+    {
+      "check_id": "rotational_range_of_motion",
+      "description": "使用三维布尔碰撞检测（Manifold3D/Trimesh）验证3个绕Z轴旋转的销轴式关节在水平面内的左右摆动角度是否均不小于±20°。",
+      "passed": true,
+      "details": {
+        "required_min_range_deg": [
+          -20.0,
+          20.0
+        ],
+        "joint_1_collision_free_range_deg": [
+          -29.0,
+          29.0
+        ],
+        "joint_2_collision_free_range_deg": [
+          -40.0,
+          40.0
+        ],
+        "joint_3_collision_free_range_deg": [
+          -44.0,
+          44.0
+        ],
+        "combined_multi_joint_poses_verified": [
+          {
+            "pose": "Left Swing (+25, +25, +25 deg)",
+            "collision_volume_mm3": 0.0
+          },
+          {
+            "pose": "Right Swing (-25, -25, -25 deg)",
+            "collision_volume_mm3": 0.0
+          },
+          {
+            "pose": "S-Curve (+25, -25, +25 deg)",
+            "collision_volume_mm3": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "axial_retention_verification",
+      "description": "检查每个关节是否具备沿Z轴正负双向的轴向防脱结构，并通过Z向平移布尔干涉实验验证零件无法沿关节轴线脱出。",
+      "passed": true,
+      "details": {
+        "retention_structure": "销轴底部与顶部均设置51.1°双锥台限位凸缘（单侧径向止挡重叠量0.75mm，直径方向总干涉量1.50mm），配合顶部51.3°自支撑跨桥锁死轴向位移。",
+        "joint_1_axial_contact_mm": [
+          -0.85,
+          0.8
+        ],
+        "joint_1_interference_vol_at_1p5mm_mm3": {
+          "minus_z": 11.05,
+          "plus_z": 13.74
+        },
+        "joint_2_axial_contact_mm": [
+          -0.85,
+          0.8
+        ],
+        "joint_2_interference_vol_at_1p5mm_mm3": {
+          "minus_z": 10.42,
+          "plus_z": 13.03
+        },
+        "joint_3_axial_contact_mm": [
+          -0.85,
+          0.8
+        ],
+        "joint_3_interference_vol_at_1p5mm_mm3": {
+          "minus_z": 9.78,
+          "plus_z": 12.27
+        }
+      }
+    },
+    {
+      "check_id": "slicer_printability_and_support_free_joints",
+      "description": "使用PrusaSlicer按0.4mm喷嘴、0.2mm层高、PLA配置（含自动支撑配置p1s_pla_0.20mm_autosupport.ini与无支撑配置p1s_pla_0.20mm_nosupport.ini）进行切片验证，检查首层附着、层数及关节间隙内是否依赖支撑材料。",
+      "passed": true,
+      "details": {
+        "total_layers": 272,
+        "filament_used_mm": 5515.45,
+        "filament_volume_cm3": 13.27,
+        "estimated_print_time_normal": "1h 53m 30s",
+        "autosupport_profile_support_extrusion_lines": 0,
+        "autosupport_profile_overhang_perimeter_lines": 0,
+        "nosupport_profile_support_extrusion_lines": 0,
+        "all_parts_touch_build_plate_z0": true,
+        "bed_contact_areas_mm2": {
+          "parts_1": 786.94,
+          "parts_2": 143.91,
+          "parts_3": 128.44,
+          "parts_4": 91.89
+        }
+      }
+    }
+  ],
+  "limitations": [
+    {
+      "category": "axial_clearance_play",
+      "affected_joints": [
+        "joint_1",
+        "joint_2",
+        "joint_3"
+      ],
+      "severity": "low",
+      "description": "为保证关节内部所有轴向防脱斜面在0.2mm层高下具备>=51.1°的自支撑角度（无需任何支撑材料）且三维法向间隙保持约0.48-0.50mm，销轴锥台与轴孔锥座之间存在约±0.80-0.85mm的轴向微动游隙（Z向自由行程），在超过±0.85mm后即被1.50mm直径干涉量的上下锥形凸缘完全刚性锁死，不会发生脱出。"
+    },
+    {
+      "category": "bed_adhesion_and_first_layer_calibration",
+      "affected_joints": [
+        "joint_1",
+        "joint_2",
+        "joint_3"
+      ],
+      "severity": "low",
+      "description": "一体化打印（Print-in-Place）过程中，3个关节的中心销轴从Z=0热床表面独立向上生长至Z=10-16mm处才与上游零件的顶部跨桥汇合（销轴底部法兰直径为6.9-7.7mm）。在不开启Brim的无支撑切片配置下，PrusaSlicer会给出常规的Low bed adhesion稳定性提示；实际打印时建议保持打印板清洁，并避免首层过度压扁（象脚效应超过0.5mm），以防首层轴孔底缘与销轴底盘粘连。"
+    }
+  ]
+}

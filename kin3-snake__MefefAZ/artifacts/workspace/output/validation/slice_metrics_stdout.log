@@ -1,0 +1,42 @@
+{
+  "gcode": "model.gcode",
+  "slicer": "PrusaSlicer 2.7.2",
+  "profile": "/opt/slicer/p1s_pla_0.20mm_nosupport.ini",
+  "nozzle_diameter_mm": 0.4,
+  "layer_height_mm": 0.2,
+  "perimeters": 2,
+  "fill_density": "15%",
+  "support_material": 0,
+  "brim_width_mm": 0.0,
+  "layer_count": 54,
+  "max_z_mm": 10.8,
+  "support_toolpath_markers": 0,
+  "brim_toolpath_markers": 0,
+  "skirt_toolpath_markers": 0,
+  "estimated_print_time": "1h 18m 39s",
+  "estimated_first_layer_time": "3m 29s",
+  "filament_used_mm": 4268.58,
+  "filament_used_cm3": 10.27,
+  "model_info": {
+    "file": "model.stl",
+    "size_mm": [
+      158.0,
+      20.0,
+      10.8
+    ],
+    "min_mm": [
+      0.0,
+      -10.0,
+      0.0
+    ],
+    "max_mm": [
+      158.0,
+      10.0,
+      10.8
+    ],
+    "manifold": "yes",
+    "number_of_parts": 6,
+    "facets": 11286,
+    "volume_mm3": 19562.121094
+  }
+}

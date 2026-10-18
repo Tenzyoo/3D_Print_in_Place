@@ -1,0 +1,14 @@
+{
+ "task": "kin5-folding-ruler",
+ "files": [
+  "README.md",
+  "collision_check.json",
+  "joints.json",
+  "model.scad",
+  "model.stl",
+  "parts/parts_1.stl",
+  "parts/parts_2.stl",
+  "parts/parts_3.stl",
+  "validate_motion.py"
+ ]
+}

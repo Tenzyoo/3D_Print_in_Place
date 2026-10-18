@@ -1,0 +1,1 @@
+I will check the slicer configuration README in `/opt/slicer/` and verify the installed versions of OpenSCAD and PrusaSlicer.

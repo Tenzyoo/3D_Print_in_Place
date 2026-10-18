@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "units": "mm",
+  "source": "model.scad",
+  "neutral_pose": {
+    "description": "Tail centerlines are collinear on +X; Z is vertical and all four parts are bed-side-down.",
+    "part_indices": {"fixed_body": 1, "tail_segment_1": 2, "tail_segment_2": 3, "tail_segment_3": 4}
+  },
+  "fixed_body": {
+    "part_index": 1,
+    "role": "fixed body containing head, torso, neck, and four non-articulated legs",
+    "recognition_geometry": {
+      "head_ellipsoid_center": [-16.2, 0.0, 17.0],
+      "snout_ellipsoid_center": [-21.7, 0.0, 16.2],
+      "torso_hull_centers": [[-4.0, 0.0, 11.0], [11.0, 0.0, 11.0]],
+      "leg_foot_centers": [[-9.7, -7.0, 0.0], [-9.7, 7.0, 0.0], [9.5, -7.0, 0.0], [9.5, 7.0, 0.0]],
+      "body_receiver_center": [24.0, 0.0, 0.0],
+      "body_receiver_outer_radius": 3.5,
+      "body_receiver_bore_radius": 2.2,
+      "body_receiver_z_range": [3.8, 6.1]
+    }
+  },
+  "tail_segments": [
+    {"part_index": 2, "segment": 1, "pivot_center": [24.0, 0.0, 0.0], "centerline": [[24.0, 0.0], [34.0, 0.0]], "tip_radius": 0.95, "carries_receiver_at": [38.0, 0.0, 0.0]},
+    {"part_index": 3, "segment": 2, "pivot_center": [38.0, 0.0, 0.0], "centerline": [[38.0, 0.0], [48.0, 0.0]], "tip_radius": 0.95, "carries_receiver_at": [52.0, 0.0, 0.0]},
+    {"part_index": 4, "segment": 3, "pivot_center": [52.0, 0.0, 0.0], "centerline": [[52.0, 0.0], [62.0, 0.0]], "tip_radius": 0.95, "carries_receiver_at": null}
+  ],
+  "joint_design": {
+    "axis_convention": "right-handed Z axis; positive rotation is counter-clockwise in XY viewed from +Z",
+    "shaft_radius": 1.7,
+    "bore_radius": 2.2,
+    "nominal_single_side_radial_clearance": 0.5,
+    "receiver_outer_radius": 3.5,
+    "receiver_z_range": [3.8, 6.1],
+    "tail_base_top_z": 3.2,
+    "nominal_axial_air_gap_at_receiver_bottom": 0.6,
+    "keeper": {"type": "integral lower stop, conical shoulder, and top disk", "lower_stop_z_range": [0.0, 0.8], "shoulder_z_range": [6.0, 6.6], "top_disk_z_range": [6.6, 7.4], "radius": 2.7},
+    "anti_drop": "Each downstream tail pin has integral enlarged lower and upper keepers. The upstream annular receiver is larger than the shaft but smaller than both keepers, so the pin cannot pass axially in either direction. No separate pin, screw, or insert is used."
+  },
+  "joints": [
+    {"id": "J1", "upstream_part": 1, "downstream_part": 2, "axis": [0, 0, 1], "position": [24.0, 0.0, 0.0], "motion_range_deg": [-20.0, 20.0], "downstream_geometry": {"shaft_center": [24.0, 0.0], "shaft_r": 1.7, "keeper_r": 2.7}, "upstream_geometry": {"receiver_center": [24.0, 0.0], "bore_r": 2.2, "outer_r": 3.5}},
+    {"id": "J2", "upstream_part": 2, "downstream_part": 3, "axis": [0, 0, 1], "position": [38.0, 0.0, 0.0], "motion_range_deg": [-20.0, 20.0], "downstream_geometry": {"shaft_center": [38.0, 0.0], "shaft_r": 1.7, "keeper_r": 2.7}, "upstream_geometry": {"receiver_center": [38.0, 0.0], "bore_r": 2.2, "outer_r": 3.5}},
+    {"id": "J3", "upstream_part": 3, "downstream_part": 4, "axis": [0, 0, 1], "position": [52.0, 0.0, 0.0], "motion_range_deg": [-20.0, 20.0], "downstream_geometry": {"shaft_center": [52.0, 0.0], "shaft_r": 1.7, "keeper_r": 2.7}, "upstream_geometry": {"receiver_center": [52.0, 0.0], "bore_r": 2.2, "outer_r": 3.5}}
+  ]
+}

@@ -1,0 +1,39 @@
+{
+    "task": {
+        "path": "kin_tasks/tasks/kin4-butterfly",
+        "source": "tasks"
+    },
+    "trial_name": "kin4-butterfly__5Bs7Qdd",
+    "trials_dir": "jobs/kin",
+    "agent": {
+        "name": "codex",
+        "model_name": "gpt-6.1-sol",
+        "override_timeout_sec": 86400.0,
+        "extra_allowed_hosts": [
+            "api.supergpt.dev"
+        ],
+        "kwargs": {
+            "version": "0.163.0",
+            "reasoning_effort": "high",
+            "web_search": "disabled"
+        },
+        "env": {
+            "OPENAI_API_KEY": "${GPT_API_KEY}",
+            "OPENAI_BASE_URL": "${GPT_BASE_URL}"
+        }
+    },
+    "artifacts": [
+        {
+            "source": "/app",
+            "destination": "workspace",
+            "exclude": [
+                "__pycache__",
+                "*.pyc",
+                ".cache",
+                "node_modules",
+                ".venv"
+            ]
+        }
+    ],
+    "job_id": "282e061e-538f-40ef-a7a9-9143afe4c1f3"
+}

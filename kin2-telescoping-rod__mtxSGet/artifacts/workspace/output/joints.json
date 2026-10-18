@@ -1,0 +1,204 @@
+{
+  "model": "model.stl",
+  "unit": "mm",
+  "num_stages": 4,
+  "motion_axis": [0, 0, 1],
+  "retracted_length": 116.0,
+  "max_outer_diameter": 24.0,
+  "total_stroke": 210.0,
+  "extended_length": 326.0,
+  "radial_clearance": 0.5,
+  "parts": [
+    {
+      "id": 1,
+      "name": "parts_1",
+      "file": "parts/parts_1.stl",
+      "role": "outermost_base_tube",
+      "outer_radius_mm": 12.0,
+      "bore_radius_mm": 10.5,
+      "collar_radius_mm": 9.5,
+      "length_mm": 116.0,
+      "z_range_retracted_mm": [0.0, 116.0],
+      "z_range_extended_mm": [0.0, 116.0],
+      "cumulative_stroke_mm": 0.0
+    },
+    {
+      "id": 2,
+      "name": "parts_2",
+      "file": "parts/parts_2.stl",
+      "role": "stage_2_tube",
+      "piston_outer_radius_mm": 10.0,
+      "shaft_outer_radius_mm": 9.0,
+      "bore_radius_mm": 7.8,
+      "collar_radius_mm": 6.8,
+      "length_mm": 116.0,
+      "z_range_retracted_mm": [0.0, 116.0],
+      "z_range_extended_mm": [70.0, 186.0],
+      "cumulative_stroke_mm": 70.0
+    },
+    {
+      "id": 3,
+      "name": "parts_3",
+      "file": "parts/parts_3.stl",
+      "role": "stage_3_tube",
+      "piston_outer_radius_mm": 7.3,
+      "shaft_outer_radius_mm": 6.3,
+      "bore_radius_mm": 5.1,
+      "collar_radius_mm": 4.1,
+      "length_mm": 116.0,
+      "z_range_retracted_mm": [0.0, 116.0],
+      "z_range_extended_mm": [140.0, 256.0],
+      "cumulative_stroke_mm": 140.0
+    },
+    {
+      "id": 4,
+      "name": "parts_4",
+      "file": "parts/parts_4.stl",
+      "role": "innermost_tube",
+      "piston_outer_radius_mm": 4.6,
+      "shaft_outer_radius_mm": 3.6,
+      "bore_radius_mm": 2.2,
+      "length_mm": 116.0,
+      "z_range_retracted_mm": [0.0, 116.0],
+      "z_range_extended_mm": [210.0, 326.0],
+      "cumulative_stroke_mm": 210.0
+    }
+  ],
+  "joints": [
+    {
+      "id": "joint_1_2",
+      "name": "stage_1_to_stage_2",
+      "type": "prismatic",
+      "parent": "parts_1.stl",
+      "child": "parts_2.stl",
+      "parent_part": "parts/parts_1.stl",
+      "child_part": "parts/parts_2.stl",
+      "parent_id": 1,
+      "child_id": 2,
+      "axis": [0, 0, 1],
+      "origin": [0, 0, 0],
+      "stroke": 70.0,
+      "min_limit": 0.0,
+      "max_limit": 70.0,
+      "limits": {
+        "min": 0.0,
+        "max": 70.0,
+        "unit": "mm"
+      },
+      "radial_clearance_mm": 0.5,
+      "overlap_at_full_extension_mm": 46.0,
+      "limit_relation": {
+        "type": "conical_shoulder_stop_45deg",
+        "description": "2号管底部外扩活塞斜肩(R=10.0->9.0mm, Z=22.5->23.5mm)与1号管顶部内缩领口斜肩(R=10.5->9.5mm, Z=92.05->93.05mm)在伸展70.0mm处啮合止挡防脱；底部(Z=3.0->4.2mm)设45度防下脱限位座。",
+        "extension_stop": {
+          "outer_collar_inner_radius_mm": 9.5,
+          "inner_piston_outer_radius_mm": 10.0,
+          "radial_interference_overlap_mm": 0.5,
+          "outer_shoulder_z_mm": [92.05, 93.05],
+          "inner_shoulder_z_retracted_mm": [22.5, 23.5],
+          "inner_shoulder_z_extended_mm": [92.5, 93.5],
+          "contact_stroke_mm": 70.05
+        },
+        "retraction_stop": {
+          "outer_bottom_lip_inner_radius_mm": 9.5,
+          "inner_piston_outer_radius_mm": 10.0,
+          "radial_interference_overlap_mm": 0.5,
+          "outer_seat_z_mm": [3.0, 4.0],
+          "inner_cone_z_retracted_mm": [3.2, 4.2],
+          "print_state_normal_clearance_mm": 0.495,
+          "print_state_axial_clearance_mm": 0.7
+        }
+      }
+    },
+    {
+      "id": "joint_2_3",
+      "name": "stage_2_to_stage_3",
+      "type": "prismatic",
+      "parent": "parts_2.stl",
+      "child": "parts_3.stl",
+      "parent_part": "parts/parts_2.stl",
+      "child_part": "parts/parts_3.stl",
+      "parent_id": 2,
+      "child_id": 3,
+      "axis": [0, 0, 1],
+      "origin": [0, 0, 0],
+      "stroke": 70.0,
+      "min_limit": 0.0,
+      "max_limit": 70.0,
+      "limits": {
+        "min": 0.0,
+        "max": 70.0,
+        "unit": "mm"
+      },
+      "radial_clearance_mm": 0.5,
+      "overlap_at_full_extension_mm": 46.0,
+      "limit_relation": {
+        "type": "conical_shoulder_stop_45deg",
+        "description": "3号管底部外扩活塞斜肩(R=7.3->6.3mm, Z=22.5->23.5mm)与2号管顶部内缩领口斜肩(R=7.8->6.8mm, Z=92.05->93.05mm)在相对伸展70.0mm处啮合止挡防脱；底部(Z=3.0->4.2mm)设45度防下脱限位座。",
+        "extension_stop": {
+          "outer_collar_inner_radius_mm": 6.8,
+          "inner_piston_outer_radius_mm": 7.3,
+          "radial_interference_overlap_mm": 0.5,
+          "outer_shoulder_z_mm": [92.05, 93.05],
+          "inner_shoulder_z_retracted_mm": [22.5, 23.5],
+          "inner_shoulder_z_extended_mm": [92.5, 93.5],
+          "contact_stroke_mm": 70.05
+        },
+        "retraction_stop": {
+          "outer_bottom_lip_inner_radius_mm": 6.8,
+          "inner_piston_outer_radius_mm": 7.3,
+          "radial_interference_overlap_mm": 0.5,
+          "outer_seat_z_mm": [3.0, 4.0],
+          "inner_cone_z_retracted_mm": [3.2, 4.2],
+          "print_state_normal_clearance_mm": 0.495,
+          "print_state_axial_clearance_mm": 0.7
+        }
+      }
+    },
+    {
+      "id": "joint_3_4",
+      "name": "stage_3_to_stage_4",
+      "type": "prismatic",
+      "parent": "parts_3.stl",
+      "child": "parts_4.stl",
+      "parent_part": "parts/parts_3.stl",
+      "child_part": "parts/parts_4.stl",
+      "parent_id": 3,
+      "child_id": 4,
+      "axis": [0, 0, 1],
+      "origin": [0, 0, 0],
+      "stroke": 70.0,
+      "min_limit": 0.0,
+      "max_limit": 70.0,
+      "limits": {
+        "min": 0.0,
+        "max": 70.0,
+        "unit": "mm"
+      },
+      "radial_clearance_mm": 0.5,
+      "overlap_at_full_extension_mm": 46.0,
+      "limit_relation": {
+        "type": "conical_shoulder_stop_45deg",
+        "description": "4号管底部外扩活塞斜肩(R=4.6->3.6mm, Z=22.5->23.5mm)与3号管顶部内缩领口斜肩(R=5.1->4.1mm, Z=92.05->93.05mm)在相对伸展70.0mm处啮合止挡防脱；底部(Z=3.0->4.2mm)设45度防下脱限位座。",
+        "extension_stop": {
+          "outer_collar_inner_radius_mm": 4.1,
+          "inner_piston_outer_radius_mm": 4.6,
+          "radial_interference_overlap_mm": 0.5,
+          "outer_shoulder_z_mm": [92.05, 93.05],
+          "inner_shoulder_z_retracted_mm": [22.5, 23.5],
+          "inner_shoulder_z_extended_mm": [92.5, 93.5],
+          "contact_stroke_mm": 70.05
+        },
+        "retraction_stop": {
+          "outer_bottom_lip_inner_radius_mm": 4.1,
+          "inner_piston_outer_radius_mm": 4.6,
+          "radial_interference_overlap_mm": 0.5,
+          "outer_seat_z_mm": [3.0, 4.0],
+          "inner_cone_z_retracted_mm": [3.2, 4.2],
+          "print_state_normal_clearance_mm": 0.495,
+          "print_state_axial_clearance_mm": 0.7
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,234 @@
+{
+  "schema_version": "1.0",
+  "model": "print-in-place three-section folding ruler",
+  "units": "mm",
+  "print_pose": "fully extended 0 deg; this is the pose of model.stl and all parts/*.stl",
+  "coordinate_system": {
+    "type": "right-handed Cartesian",
+    "x": "+X runs from part 1 toward part 3 along the ruler length",
+    "y": "+Y runs across the ruler width",
+    "z": "+Z is the thickness direction and the build direction",
+    "origin": "left end of part 1 at (0,0,0) in the 0 deg pose"
+  },
+  "parts": [
+    {
+      "part": 1,
+      "name": "left outer leaf",
+      "file": "parts/parts_1.stl",
+      "body_size_mm": [
+        40.0,
+        12.0,
+        5.0
+      ],
+      "body_bbox_mm": [
+        [
+          -40.0,
+          -6.0,
+          0.0
+        ],
+        [
+          0.0,
+          6.0,
+          5.0
+        ]
+      ],
+      "joint_features": {
+        "joint_1": "integral pin with bottom and top retaining knuckles"
+      }
+    },
+    {
+      "part": 2,
+      "name": "middle leaf",
+      "file": "parts/parts_2.stl",
+      "body_size_mm": [
+        40.0,
+        12.0,
+        5.0
+      ],
+      "body_bbox_mm": [
+        [
+          0.5,
+          -6.0,
+          0.0
+        ],
+        [
+          40.5,
+          6.0,
+          5.0
+        ]
+      ],
+      "joint_features": {
+        "joint_1": "captured rotating ring / stepped bore",
+        "joint_2": "integral pin with bottom and top retaining knuckles"
+      }
+    },
+    {
+      "part": 3,
+      "name": "right outer leaf",
+      "file": "parts/parts_3.stl",
+      "body_size_mm": [
+        40.0,
+        12.0,
+        5.0
+      ],
+      "body_bbox_mm": [
+        [
+          41.0,
+          -6.0,
+          0.0
+        ],
+        [
+          81.0,
+          6.0,
+          5.0
+        ]
+      ],
+      "joint_features": {
+        "joint_2": "captured rotating ring / stepped bore"
+      }
+    }
+  ],
+  "joints": [
+    {
+      "joint": 1,
+      "name": "J1",
+      "type": "revolute_pin",
+      "connects": {
+        "parent_part": 1,
+        "child_part": 2
+      },
+      "axis": {
+        "origin_mm": [
+          0.0,
+          6.3,
+          0.0
+        ],
+        "direction": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "note": "axis line is parallel to Z and passes through the 0 deg origin; origin is on the top edge plane of part 1, 0.3 mm outside the 12 mm body width"
+      },
+      "position_mm": [
+        0.0,
+        6.3,
+        0.0
+      ],
+      "motion_range_deg": {
+        "min": 0.0,
+        "max": 180.0
+      },
+      "signed_rotation_range_deg": {
+        "min": 0.0,
+        "max": 180.0
+      },
+      "zero_deg": "straight: part 1 and part 2 are collinear; part 2 extends toward +X",
+      "one_eighty_deg": "folded back: part 2 lies above part 1 (+Y side) with a 0.6 mm body-to-body gap",
+      "positive_rotation": "counter-clockwise (right-hand rule) about +Z, viewed from +Z",
+      "fold_sign": 1,
+      "folding_direction": "CCW about +Z; part 2 moves toward +Y during folding",
+      "independently_movable": true,
+      "clearance": {
+        "pin_to_bore_radial_mm": 0.5,
+        "axial_running_gap_mm": 0.4,
+        "knuckle_to_counterbore_radial_mm": 0.6,
+        "ring_to_body_relief_radial_mm": 0.4
+      },
+      "axial_retention": "part 1 has two integral retaining knuckles (r = 3.0 mm) at the bottom and top of a continuous pin (r = 1.2 mm). The part 2 stepped bore has a 1.7 mm radius bearing section trapped between them, so part 2 cannot escape along Z."
+    },
+    {
+      "joint": 2,
+      "name": "J2",
+      "type": "revolute_pin",
+      "connects": {
+        "parent_part": 2,
+        "child_part": 3
+      },
+      "axis": {
+        "origin_mm": [
+          40.5,
+          -6.3,
+          0.0
+        ],
+        "direction": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "note": "origin is given in the 0 deg pose; this axis is rigidly attached to part 2 and moves with it when joint 1 rotates. It lies on the bottom edge plane of part 2, 0.3 mm outside the 12 mm body width"
+      },
+      "position_mm": [
+        40.5,
+        -6.3,
+        0.0
+      ],
+      "motion_range_deg": {
+        "min": 0.0,
+        "max": 180.0
+      },
+      "signed_rotation_range_deg": {
+        "min": -180.0,
+        "max": 0.0
+      },
+      "zero_deg": "straight: part 2 and part 3 are collinear; part 3 extends toward +X",
+      "one_eighty_deg": "folded back: part 3 lies below part 2 (-Y side in the local 0 deg frame) with a 0.6 mm body-to-body gap",
+      "positive_rotation": "counter-clockwise (right-hand rule) about +Z, viewed from +Z",
+      "fold_sign": -1,
+      "folding_direction": "CW about +Z (negative signed angle); part 3 moves toward -Y during folding",
+      "independently_movable": true,
+      "clearance": {
+        "pin_to_bore_radial_mm": 0.5,
+        "axial_running_gap_mm": 0.4,
+        "knuckle_to_counterbore_radial_mm": 0.6,
+        "ring_to_body_relief_radial_mm": 0.4
+      },
+      "axial_retention": "part 2 has two integral retaining knuckles (r = 3.0 mm) at the bottom and top of a continuous pin (r = 1.2 mm). The part 3 stepped bore has a 1.7 mm radius bearing section trapped between them, so part 3 cannot escape along Z."
+    }
+  ],
+  "kinematics": {
+    "description": "Serial 3-link chain. Angles a1 and a2 are non-negative magnitudes in [0,180]. Use the declared fold_sign to obtain the signed rotation about +Z.",
+    "column_vector_convention": true,
+    "transforms": [
+      "part_1: T1 = identity",
+      "part_2: T2 = Rz(+fold_sign_1 * a1, origin_joint_1)",
+      "part_3: T3 = Rz(+fold_sign_1 * a1, origin_joint_1) * Rz(+fold_sign_2 * a2, origin_joint_2)"
+    ],
+    "matrix_order": "p' = T * p; the rightmost rotation is applied first and the joint-2 origin is its 0 deg world position",
+    "validation_angles": {
+      "joint_1_deg": [
+        0,
+        180
+      ],
+      "joint_2_deg": [
+        0,
+        180
+      ]
+    }
+  },
+  "verification": {
+    "degrees_of_freedom": 2,
+    "moving_parts": 3,
+    "minimum_static_clearance_mm": 0.3997,
+    "minimum_static_clearance_note": "measured at 0 deg between the rotating ring and the body relief; body-to-body end gaps are 0.5 mm and knuckle-to-counterbore radial clearance is 0.6 mm",
+    "collision_grid": {
+      "step_deg": 2.0,
+      "poses": 8281,
+      "max_overlap_volume_mm3": 0.0,
+      "result": "no interference for any sampled pair of joint angles"
+    },
+    "support_required_in_joint_clearance": false,
+    "axial_retention_test": {
+      "description": "part 2 translated along Z at the 0 deg pose; overlap proves the retaining knuckles block escape",
+      "design_axial_gap_mm": 0.4,
+      "translation_plus_0p5mm_overlap_mm3": {
+        "part1_part2": 1.629,
+        "part2_part3": 0.931
+      },
+      "translation_minus_0p5mm_overlap_mm3": {
+        "part1_part2": 0.931,
+        "part2_part3": 1.629
+      }
+    }
+  }
+}

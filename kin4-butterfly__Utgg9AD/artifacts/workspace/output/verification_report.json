@@ -1,0 +1,158 @@
+{
+ "parts": {
+  "parts_1": {
+   "watertight": true,
+   "winding_consistent": true,
+   "volume_mm3": 8404.1,
+   "components": 1,
+   "bbox_min": [
+    -48.33,
+    -18.5,
+    0.0
+   ],
+   "bbox_max": [
+    51.9,
+    18.5,
+    14.79
+   ]
+  },
+  "parts_2": {
+   "watertight": true,
+   "winding_consistent": true,
+   "volume_mm3": 4876.2,
+   "components": 1,
+   "bbox_min": [
+    -54.09,
+    4.0,
+    0.0
+   ],
+   "bbox_max": [
+    43.81,
+    49.3,
+    5.0
+   ]
+  },
+  "parts_3": {
+   "watertight": true,
+   "winding_consistent": true,
+   "volume_mm3": 4876.2,
+   "components": 1,
+   "bbox_min": [
+    -54.09,
+    -49.3,
+    0.0
+   ],
+   "bbox_max": [
+    43.81,
+    -4.0,
+    5.0
+   ]
+  }
+ },
+ "neutral_bbox_mm": [
+  105.99,
+  98.6,
+  14.79
+ ],
+ "neutral_bbox_ok": true,
+ "model_stl_volume_vs_parts": [
+  18156.6,
+  18156.6
+ ],
+ "pin_hole_clearance": {
+  "left_wing_joint": {
+   "pin_radius_min_max": [
+    2.499,
+    2.5
+   ],
+   "hole_radius_min_max": [
+    2.999,
+    3.0
+   ],
+   "radial_clearance_min": 0.499,
+   "radial_clearance_max": 0.501
+  },
+  "right_wing_joint": {
+   "pin_radius_min_max": [
+    2.499,
+    2.5
+   ],
+   "hole_radius_min_max": [
+    2.999,
+    3.0
+   ],
+   "radial_clearance_min": 0.499,
+   "radial_clearance_max": 0.501
+  }
+ },
+ "motion_cases": 85,
+ "motion_max_intersection_mm3": 0.0,
+ "motion_min_gap_mm": 0.498,
+ "motion_ok": true,
+ "neutral_pairs": {
+  "left": 0,
+  "right": 0,
+  "body_left": {
+   "intersection_mm3": 0.0,
+   "min_gap_mm": 0.499
+  },
+  "body_right": {
+   "intersection_mm3": 0.0,
+   "min_gap_mm": 0.499
+  },
+  "left_right": {
+   "intersection_mm3": 0.0,
+   "min_gap_mm": 3.0
+  }
+ },
+ "rotation_first_contact": {
+  "left_wing_joint": {
+   "positive_first_contact_deg": 42,
+   "negative_first_contact_deg": -35
+  },
+  "right_wing_joint": {
+   "positive_first_contact_deg": 35,
+   "negative_first_contact_deg": -42
+  }
+ },
+ "min_gap_outside_joint_zone_mm": {
+  "left_wing_joint": {
+   "-30": 4.16,
+   "-15": 5.0,
+   "0": 5.0,
+   "15": 5.0,
+   "30": 5.0
+  },
+  "right_wing_joint": {
+   "-30": 5.0,
+   "-15": 5.0,
+   "0": 5.0,
+   "15": 5.0,
+   "30": 4.16
+  }
+ },
+ "axial_retention": {
+  "left_wing_joint": {
+   "up_travel_until_contact_mm": 0.85,
+   "down_travel_until_contact_mm": 0.75
+  },
+  "right_wing_joint": {
+   "up_travel_until_contact_mm": 0.85,
+   "down_travel_until_contact_mm": 0.75
+  }
+ },
+ "overhangs_gt45deg": {
+  "parts_1": {
+   "overhang_area_total_mm2": 0.0,
+   "overhang_area_in_joint_zone_mm2": 0.0
+  },
+  "parts_2": {
+   "overhang_area_total_mm2": 0.0,
+   "overhang_area_in_joint_zone_mm2": 0.0
+  },
+  "parts_3": {
+   "overhang_area_total_mm2": 0.0,
+   "overhang_area_in_joint_zone_mm2": 0.0
+  }
+ }
+}

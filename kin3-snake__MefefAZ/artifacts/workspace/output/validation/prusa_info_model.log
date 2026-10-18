@@ -1,0 +1,14 @@
+[model.stl]
+size_x = 158.000000
+size_y = 20.000000
+size_z = 10.800000
+min_x = 0.000000
+min_y = -10.000000
+min_z = 0.000000
+max_x = 158.000000
+max_y = 10.000000
+max_z = 10.800000
+number_of_facets = 11286
+manifold = yes
+number_of_parts =  6
+volume = 19562.121094

@@ -1,0 +1,13 @@
+{
+ "task": "kin5-folding-ruler",
+ "files": [
+  "joints.json",
+  "model.gcode",
+  "model.scad",
+  "model.stl",
+  "parts/parts_1.stl",
+  "parts/parts_2.stl",
+  "parts/parts_3.stl",
+  "print_notes.md"
+ ]
+}

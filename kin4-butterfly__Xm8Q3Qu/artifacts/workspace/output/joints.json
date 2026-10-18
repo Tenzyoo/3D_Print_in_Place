@@ -1,0 +1,119 @@
+{
+  "units": "mm",
+  "angle_units": "deg",
+  "frame": "Shared by model.stl and parts/*.stl. X = body axis (head toward +X), Y = wing span (left wing +Y, right wing -Y), Z = up, z = 0 is the print bed.",
+  "pose": "neutral (all joint angles 0)",
+  "parts": [
+    {
+      "index": 1,
+      "name": "body",
+      "file": "parts/parts_1.stl",
+      "role": "fixed",
+      "description": "head, eyes, antennae, thorax, segmented abdomen, plus the 2 pins with their webs"
+    },
+    {
+      "index": 2,
+      "name": "left_wing",
+      "file": "parts/parts_2.stl",
+      "role": "moving",
+      "description": "left fore + hind wing (+Y side) with C-ring bore"
+    },
+    {
+      "index": 3,
+      "name": "right_wing",
+      "file": "parts/parts_3.stl",
+      "role": "moving",
+      "description": "right fore + hind wing (-Y side) with C-ring bore, mirror of the left wing"
+    }
+  ],
+  "joints": [
+    {
+      "name": "left_wing_hinge",
+      "type": "revolute",
+      "parent": "body",
+      "child": "left_wing",
+      "origin": [
+        12.0,
+        12.5,
+        0.0
+      ],
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angle_convention": "right-hand rotation of the child about axis through origin, 0 = neutral pose as exported",
+      "neutral_deg": 0.0,
+      "range_deg": [
+        -30.0,
+        30.0
+      ],
+      "independent": true,
+      "pin": {
+        "shaft_radius": 3.5,
+        "bore_radius": 4.0,
+        "radial_clearance": 0.5,
+        "height_z": [
+          0.0,
+          7.0
+        ],
+        "retention_cones": {
+          "angle_from_horizontal_deg": 50,
+          "bottom_flare_radius": 4.7,
+          "head_radius": 4.9,
+          "radial_gap": 0.5,
+          "vertical_gap": 0.6
+        }
+      },
+      "axial_retention": "pin has a 50-deg bottom flare (blocks -Z) and a 50-deg countersunk head (blocks +Z); the bore is the pin profile shifted 0.5 mm outward, so axial play is only 0.6 mm; the C-ring wraps 246 deg so the pin cannot leave sideways",
+      "mechanical_stop_deg": [
+        -40.0,
+        36.0
+      ]
+    },
+    {
+      "name": "right_wing_hinge",
+      "type": "revolute",
+      "parent": "body",
+      "child": "right_wing",
+      "origin": [
+        12.0,
+        -12.5,
+        0.0
+      ],
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angle_convention": "right-hand rotation of the child about axis through origin, 0 = neutral pose as exported",
+      "neutral_deg": 0.0,
+      "range_deg": [
+        -30.0,
+        30.0
+      ],
+      "independent": true,
+      "pin": {
+        "shaft_radius": 3.5,
+        "bore_radius": 4.0,
+        "radial_clearance": 0.5,
+        "height_z": [
+          0.0,
+          7.0
+        ],
+        "retention_cones": {
+          "angle_from_horizontal_deg": 50,
+          "bottom_flare_radius": 4.7,
+          "head_radius": 4.9,
+          "radial_gap": 0.5,
+          "vertical_gap": 0.6
+        }
+      },
+      "axial_retention": "pin has a 50-deg bottom flare (blocks -Z) and a 50-deg countersunk head (blocks +Z); the bore is the pin profile shifted 0.5 mm outward, so axial play is only 0.6 mm; the C-ring wraps 246 deg so the pin cannot leave sideways",
+      "mechanical_stop_deg": [
+        -36.0,
+        40.0
+      ]
+    }
+  ]
+}

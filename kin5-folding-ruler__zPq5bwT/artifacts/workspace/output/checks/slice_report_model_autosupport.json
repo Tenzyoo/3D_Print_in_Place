@@ -1,0 +1,100 @@
+{
+ "layers": 25,
+ "A_section_min_gap_between_parts_mm": {
+  "gap": 0.4998,
+  "where": [
+   1.9,
+   "parts_1",
+   "parts_2"
+  ]
+ },
+ "A_overhang_beyond_45deg_per_part": {
+  "parts_1": {
+   "max_unsupported_area_mm2": 0.0,
+   "at_z": null
+  },
+  "parts_2": {
+   "max_unsupported_area_mm2": 0.0,
+   "at_z": null
+  },
+  "parts_3": {
+   "max_unsupported_area_mm2": 0.0,
+   "at_z": null
+  }
+ },
+ "B_gcode": {
+  "file": "model_autosupport.gcode",
+  "layers": 25,
+  "extrusion_types": [
+   "Bridge infill",
+   "External perimeter",
+   "Internal infill",
+   "Perimeter",
+   "Solid infill",
+   "Top solid infill"
+  ],
+  "support_segments": 0,
+  "extrusions_into_other_part": 0,
+  "foreign_examples": [],
+  "min_printed_gap_between_parts_mm": {
+   "gap": 0.4286,
+   "where": [
+    3.0,
+    "parts_2",
+    "parts_3"
+   ]
+  },
+  "bridge_infill_segments": 773,
+  "bridge_infill_not_over_own_part": 8,
+  "bridge_not_over_own_part_details": [
+   {
+    "z": 3.8,
+    "part": "parts_1",
+    "unsupported_area_mm2": 0.0946,
+    "dist_to_other_part_below_mm": 2.581
+   },
+   {
+    "z": 3.8,
+    "part": "parts_1",
+    "unsupported_area_mm2": 0.1118,
+    "dist_to_other_part_below_mm": 1.957
+   },
+   {
+    "z": 3.8,
+    "part": "parts_1",
+    "unsupported_area_mm2": 0.1185,
+    "dist_to_other_part_below_mm": 1.406
+   },
+   {
+    "z": 3.8,
+    "part": "parts_1",
+    "unsupported_area_mm2": 0.0841,
+    "dist_to_other_part_below_mm": 1.17
+   },
+   {
+    "z": 3.8,
+    "part": "parts_2",
+    "unsupported_area_mm2": 0.0946,
+    "dist_to_other_part_below_mm": 2.581
+   },
+   {
+    "z": 3.8,
+    "part": "parts_2",
+    "unsupported_area_mm2": 0.1118,
+    "dist_to_other_part_below_mm": 1.957
+   },
+   {
+    "z": 3.8,
+    "part": "parts_2",
+    "unsupported_area_mm2": 0.1185,
+    "dist_to_other_part_below_mm": 1.406
+   },
+   {
+    "z": 3.8,
+    "part": "parts_2",
+    "unsupported_area_mm2": 0.0841,
+    "dist_to_other_part_below_mm": 1.17
+   }
+  ]
+ }
+}

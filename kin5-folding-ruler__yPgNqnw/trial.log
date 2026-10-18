@@ -1,0 +1,9 @@
+Skipping image OS validation for hb__d559e3f779bd1b98cc062411a2c7b1b4: docker inspect returned 1
+dsh is already available at the requested version
+Running command: mkdir -p "$DSH_HOME" /logs/agent
+Command outputs captured
+Running command: chown agent /logs/agent/dsh-bench.patch.yml && chmod 600 /logs/agent/dsh-bench.patch.yml
+Command outputs captured
+Running command: if [ -s ~/.nvm/nvm.sh ]; then . ~/.nvm/nvm.sh; fi; printf "%s" "$HARBOR_DSH_INSTRUCTION_D31BDF38432549289F4C6487D0472D34" | dsh --profile headless --patch /logs/agent/dsh-bench.patch.yml --json - 2>/logs/agent/dsh.stderr.txt | tee /logs/agent/dsh.jsonl
+Command outputs captured
+Collecting main service artifacts

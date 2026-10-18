@@ -1,0 +1,13 @@
+model bbox [  0.  -13.1   0. ] [94.99 13.1  55.99] size [94.99 26.2  55.99]
+body watertight True vol 21268.7 bodies 1 bbox [[39.0, -13.1, 0.0], [94.99, 13.1, 55.99]]
+   overhang<45 area 0.00 mm2
+   local-min vertices above bed: 0 []
+tail_1 watertight True vol 2122.3 bodies 1 bbox [[24.0, -8.4, 0.0], [51.5, 8.4, 11.67]]
+   overhang<45 area 0.00 mm2
+   local-min vertices above bed: 0 []
+tail_2 watertight True vol 2027.9 bodies 1 bbox [[9.0, -8.14, 0.0], [36.5, 8.14, 11.19]]
+   overhang<45 area 0.00 mm2
+   local-min vertices above bed: 0 []
+tail_3 watertight True vol 1091.7 bodies 1 bbox [[0.0, -7.02, 0.0], [21.5, 7.02, 8.59]]
+   overhang<45 area 0.00 mm2
+   local-min vertices above bed: 0 []

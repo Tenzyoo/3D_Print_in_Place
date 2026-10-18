@@ -1,0 +1,56 @@
+== 1. Parts ==
+part 1 head     watertight=True winding_ok=True shells=1 manifold_status=NoError vol=  5565.9 mm3 bbox=[[115.32, -12.48, 0.0], [149.58, 12.48, 14.48]]
+part 2 body_1   watertight=True winding_ok=True shells=1 manifold_status=NoError vol=  4053.1 mm3 bbox=[[93.32, -9.6, 0.0], [128.3, 9.6, 12.0]]
+part 3 body_2   watertight=True winding_ok=True shells=1 manifold_status=NoError vol=  4053.1 mm3 bbox=[[71.32, -9.6, 0.0], [106.3, 9.6, 12.0]]
+part 4 body_3   watertight=True winding_ok=True shells=1 manifold_status=NoError vol=  4053.1 mm3 bbox=[[49.32, -9.6, 0.0], [84.3, 9.6, 12.0]]
+part 5 body_4   watertight=True winding_ok=True shells=1 manifold_status=NoError vol=  4053.1 mm3 bbox=[[27.32, -9.6, 0.0], [62.3, 9.6, 12.0]]
+part 6 body_5   watertight=True winding_ok=True shells=1 manifold_status=NoError vol=  3703.8 mm3 bbox=[[0.0, -8.4, 0.0], [40.3, 8.4, 12.0]]
+model.stl: watertight=True shells=6 vol=25482.2 (sum parts 25482.2)
+overall extents X×Y×Z = 149.58 × 24.97 × 14.48 mm (limit 160×50×40) -> OK
+model.stl and parts share coordinate frame: True
+
+== 2. Neutral pose: pairwise interference / minimum gap ==
+parts 1-2: overlap=0.0000 mm3  min_gap=0.432 mm
+parts 2-3: overlap=0.0000 mm3  min_gap=0.432 mm
+parts 3-4: overlap=0.0000 mm3  min_gap=0.433 mm
+parts 4-5: overlap=0.0000 mm3  min_gap=0.433 mm
+parts 5-6: overlap=0.0000 mm3  min_gap=0.433 mm
+
+== 3. Radial clearance pin/bore measured on horizontal sections ==
+joint 1: z= 1.0: pin r=5.500 bore r=5.998 clr=0.498  z= 3.5: pin r=6.135 bore r=6.633 clr=0.497  z= 8.5: pin r=6.135 bore r=6.633 clr=0.497  z=11.0: pin r=5.500 bore r=5.998 clr=0.497
+         min/max radial clearance over sections = 0.497 / 0.498 mm
+joint 2: z= 1.0: pin r=5.500 bore r=5.998 clr=0.498  z= 3.5: pin r=6.135 bore r=6.633 clr=0.497  z= 8.5: pin r=6.135 bore r=6.633 clr=0.497  z=11.0: pin r=5.500 bore r=5.998 clr=0.497
+         min/max radial clearance over sections = 0.497 / 0.498 mm
+joint 3: z= 1.0: pin r=5.500 bore r=5.998 clr=0.498  z= 3.5: pin r=6.135 bore r=6.633 clr=0.498  z= 8.5: pin r=6.135 bore r=6.633 clr=0.498  z=11.0: pin r=5.500 bore r=5.998 clr=0.498
+         min/max radial clearance over sections = 0.498 / 0.499 mm
+joint 4: z= 1.0: pin r=5.500 bore r=5.998 clr=0.498  z= 3.5: pin r=6.135 bore r=6.633 clr=0.498  z= 8.5: pin r=6.135 bore r=6.633 clr=0.498  z=11.0: pin r=5.500 bore r=5.998 clr=0.498
+         min/max radial clearance over sections = 0.498 / 0.499 mm
+joint 5: z= 1.0: pin r=5.500 bore r=5.998 clr=0.498  z= 3.5: pin r=6.135 bore r=6.633 clr=0.498  z= 8.5: pin r=6.135 bore r=6.633 clr=0.498  z=11.0: pin r=5.500 bore r=5.998 clr=0.498
+         min/max radial clearance over sections = 0.498 / 0.499 mm
+
+== 4. Joint rotation sweep (child subtree rotated, rest fixed) ==
+joint 1: range -30..+30 deg collision-free; min gap in range 0.431 mm (at -10 deg); first contact at +37.1 / -37.1 deg
+joint 2: range -30..+30 deg collision-free; min gap in range 0.431 mm (at -21 deg); first contact at +37.1 / -37.1 deg
+joint 3: range -30..+30 deg collision-free; min gap in range 0.431 mm (at -7 deg); first contact at +37.1 / -37.1 deg
+joint 4: range -30..+30 deg collision-free; min gap in range 0.431 mm (at -7 deg); first contact at +37.1 / -37.1 deg
+joint 5: range -30..+30 deg collision-free; min gap in range 0.431 mm (at -7 deg); first contact at +37.1 / -37.1 deg
+
+== 5. Combined poses (all 5 joints at once) ==
+all +30         : interferences=none  min gap between any parts=0.431 mm
+all -30         : interferences=none  min gap between any parts=0.431 mm
+alternating ±30 : interferences=none  min gap between any parts=0.431 mm
+
+== 6. Retention: rigid translation of the child subtree until contact ==
+joint 1: +Z: contact after 0.88 mm (overlap 19.3 mm3 at +1 mm more); -Z: contact after 0.88 mm (overlap 19.3 mm3 at +1 mm more); -X(pull): contact after 0.96 mm (overlap 5.9 mm3 at +1 mm more); +Y: contact after 0.52 mm (overlap 105.3 mm3 at +1 mm more)
+joint 2: +Z: contact after 0.88 mm (overlap 19.3 mm3 at +1 mm more); -Z: contact after 0.88 mm (overlap 19.3 mm3 at +1 mm more); -X(pull): contact after 0.96 mm (overlap 5.9 mm3 at +1 mm more); +Y: contact after 0.52 mm (overlap 105.3 mm3 at +1 mm more)
+joint 3: +Z: contact after 0.88 mm (overlap 19.3 mm3 at +1 mm more); -Z: contact after 0.88 mm (overlap 19.3 mm3 at +1 mm more); -X(pull): contact after 0.96 mm (overlap 5.9 mm3 at +1 mm more); +Y: contact after 0.52 mm (overlap 105.3 mm3 at +1 mm more)
+joint 4: +Z: contact after 0.88 mm (overlap 19.3 mm3 at +1 mm more); -Z: contact after 0.88 mm (overlap 19.3 mm3 at +1 mm more); -X(pull): contact after 0.96 mm (overlap 5.9 mm3 at +1 mm more); +Y: contact after 0.52 mm (overlap 105.3 mm3 at +1 mm more)
+joint 5: +Z: contact after 0.88 mm (overlap 19.3 mm3 at +1 mm more); -Z: contact after 0.88 mm (overlap 19.3 mm3 at +1 mm more); -X(pull): contact after 0.96 mm (overlap 5.9 mm3 at +1 mm more); +Y: contact after 0.52 mm (overlap 105.1 mm3 at +1 mm more)
+
+== 7. Overhang analysis (print direction +Z, bed z=0) ==
+part 1: downward faces above bed: area    69.4 mm2, max angle from vertical 56.6 deg; faces steeper than 45deg: 0.00 mm2
+part 2: downward faces above bed: area   151.3 mm2, max angle from vertical 30.0 deg; faces steeper than 45deg: 0.00 mm2
+part 3: downward faces above bed: area   150.6 mm2, max angle from vertical 30.0 deg; faces steeper than 45deg: 0.00 mm2
+part 4: downward faces above bed: area   150.6 mm2, max angle from vertical 30.0 deg; faces steeper than 45deg: 0.00 mm2
+part 5: downward faces above bed: area   150.6 mm2, max angle from vertical 30.0 deg; faces steeper than 45deg: 0.00 mm2
+part 6: downward faces above bed: area    82.2 mm2, max angle from vertical 30.0 deg; faces steeper than 45deg: 0.00 mm2

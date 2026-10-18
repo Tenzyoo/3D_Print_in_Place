@@ -1,0 +1,9 @@
+已完成模型及验证，文件位于 `/app/output/`：
+
+- [参数化 OpenSCAD 源码](</app/output/model.scad>)、[收缩状态总装 STL](</app/output/model.stl>)、[关节行程与限位数据](</app/output/joints.json>)
+- [零件 1](</app/output/parts/parts_1.stl>)、[零件 2](</app/output/parts/parts_2.stl>)、[零件 3](</app/output/parts/parts_3.stl>)、[零件 4](</app/output/parts/parts_4.stl>)
+- [打印方向与检查记录](</app/output/PRINT_AND_CHECKS.md>)
+
+模型收缩长度为 100 mm，最大外径实测约 24.85 mm；每级行程 70 mm，完全伸展长度为 310 mm。管间径向间隙为 0.5 mm，滑块与导槽也留有非零间隙；限位采用错角导槽和 T 形滑块。
+
+OpenSCAD 和 PrusaSlicer 检查确认总装包含 4 个闭合、manifold 的部件，分件两两无几何交集；无支撑切片完成，共 500 层、无支撑路径。切片器同时提示床面附着偏弱及松散挤出风险，详见检查记录。

@@ -1,0 +1,45 @@
+PASS part1 watertight single body {'volume_mm3': np.float64(10994.5), 'bodies': 1, 'bbox': [[-12.4, -12.4, 0.0], [12.4, 12.4, 110.0]]}
+PASS part2 watertight single body {'volume_mm3': np.float64(9287.0), 'bodies': 1, 'bbox': [[-10.7, -10.7, 0.0], [10.7, 10.7, 113.0]]}
+PASS part3 watertight single body {'volume_mm3': np.float64(6242.1), 'bodies': 1, 'bbox': [[-7.7, -7.7, 0.0], [7.7, 7.7, 116.0]]}
+PASS part4 watertight single body {'volume_mm3': np.float64(3954.0), 'bodies': 1, 'bbox': [[-4.7, -4.7, 0.0], [4.7, 4.7, 119.0]]}
+PASS model.stl = parts combined (volume, bbox, 4 bodies) {'model_volume': np.float64(30477.54), 'parts_volume': np.float64(30477.54)}
+PASS collapsed length <= 120 mm {'length': np.float64(119.0)}
+PASS max outer diameter <= 25 mm {'od': np.float64(24.8)}
+PASS all tubes coaxial (axis x=y=0) {'centers': [[0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0]]}
+PASS print state: no overlap part1/part2 {'overlap_mm3': 0.0}
+PASS print state: no overlap part1/part3 {'overlap_mm3': 0.0}
+PASS print state: no overlap part1/part4 {'overlap_mm3': 0.0}
+PASS print state: no overlap part2/part3 {'overlap_mm3': 0.0}
+PASS print state: no overlap part2/part4 {'overlap_mm3': 0.0}
+PASS print state: no overlap part3/part4 {'overlap_mm3': 0.0}
+PASS stage 1: min 3D clearance part1<->part2 > 0.4 mm (non-fusing) {'min_clearance_mm': 0.4998}
+PASS stage 1: sliding radial clearance in 0.4..0.6 mm {'radial_gaps_mm': {'bottom lip vs inner wall': np.float64(0.497), 'counterbore vs collar': np.float64(0.4989), 'top lip vs inner wall': np.float64(0.497)}}
+PASS stage 2: min 3D clearance part2<->part3 > 0.4 mm (non-fusing) {'min_clearance_mm': 0.4998}
+PASS stage 2: sliding radial clearance in 0.4..0.6 mm {'radial_gaps_mm': {'bottom lip vs inner wall': np.float64(0.4979), 'counterbore vs collar': np.float64(0.4993), 'top lip vs inner wall': np.float64(0.4979)}}
+PASS stage 3: min 3D clearance part3<->part4 > 0.4 mm (non-fusing) {'min_clearance_mm': 0.4998}
+PASS stage 3: sliding radial clearance in 0.4..0.6 mm {'radial_gaps_mm': {'bottom lip vs inner wall': np.float64(0.4988), 'counterbore vs collar': np.float64(0.4995), 'top lip vs inner wall': np.float64(0.4988)}}
+PASS joint J1_tube1_tube2: free slide over [-0.85, 84.55] mm {'samples': 61, 'max_overlap_mm3': 0.0}
+PASS joint J1_tube1_tube2: extension stop at +84.55 mm blocks separation {'overlap_at_stop_plus_0p3': 15.5261, 'overlap_at_stop_plus_5': 258.765}
+PASS joint J1_tube1_tube2: collapse stop at -0.85 mm {'overlap_at_stop_minus_0p3': 15.5264}
+PASS joint J2_tube2_tube3: free slide over [-0.85, 87.55] mm {'samples': 61, 'max_overlap_mm3': 0.0}
+PASS joint J2_tube2_tube3: extension stop at +87.55 mm blocks separation {'overlap_at_stop_plus_0p3': 11.0038, 'overlap_at_stop_plus_5': 183.396}
+PASS joint J2_tube2_tube3: collapse stop at -0.85 mm {'overlap_at_stop_minus_0p3': 11.0041}
+PASS joint J3_tube3_tube4: free slide over [-0.85, 90.55] mm {'samples': 61, 'max_overlap_mm3': 0.0}
+PASS joint J3_tube3_tube4: extension stop at +90.55 mm blocks separation {'overlap_at_stop_plus_0p3': 6.4817, 'overlap_at_stop_plus_5': 108.028}
+PASS joint J3_tube3_tube4: collapse stop at -0.85 mm {'overlap_at_stop_minus_0p3': 6.4819}
+PASS fully extended length >= 300 mm, no collisions {'extended_length_mm': 381.59, 'max_overlap_mm3': 0.0}
+PASS part1: no overhang beyond 45deg (except bed face) {'bad_faces': 0, 'min_downward_face_angle_from_horizontal_deg': 45.0}
+PASS part2: no overhang beyond 45deg (except bed face) {'bad_faces': 0, 'min_downward_face_angle_from_horizontal_deg': 45.01}
+PASS part3: no overhang beyond 45deg (except bed face) {'bad_faces': 0, 'min_downward_face_angle_from_horizontal_deg': 45.01}
+PASS part4: no overhang beyond 45deg (except bed face) {'bad_faces': 0, 'min_downward_face_angle_from_horizontal_deg': 45.01}
+PASS PrusaSlicer slice (no-support profile) succeeds {'log_tail': ['88 => Generating skirt and brim', '90 => Exporting G-code to /tmp/rod_nosupport.gcode', 'Slicing result exported to /tmp/rod_nosupport.gcode']}
+PASS auto-support profile generates no support material (design is self-supporting) {'support_blocks': 0}
+PASS G-code layer count / height {'layers': 595, 'top_z': 119.0}
+PASS G-code stage 1: open gap between extrusions on every layer {'min_gap_same_layer_mm': np.float64(0.47), 'at_z': 1.2, 'min_gap_vs_layer_below_mm': np.float64(0.47), 'at_z_cross': 1.2}
+PASS G-code stage 1: no stacking of one tube on the other's layer below {'min_gap_vs_layer_below_mm': np.float64(0.47)}
+PASS G-code stage 2: open gap between extrusions on every layer {'min_gap_same_layer_mm': np.float64(0.477), 'at_z': 104.0, 'min_gap_vs_layer_below_mm': np.float64(0.477), 'at_z_cross': 104.0}
+PASS G-code stage 2: no stacking of one tube on the other's layer below {'min_gap_vs_layer_below_mm': np.float64(0.477)}
+PASS G-code stage 3: open gap between extrusions on every layer {'min_gap_same_layer_mm': np.float64(0.474), 'at_z': 1.8, 'min_gap_vs_layer_below_mm': np.float64(0.468), 'at_z_cross': 2.0}
+PASS G-code stage 3: no stacking of one tube on the other's layer below {'min_gap_vs_layer_below_mm': np.float64(0.468)}
+{'time': '4h 53m 10s', 'filament_g': None} {'J1_tube1_tube2': np.float64(25.45), 'J2_tube2_tube3': np.float64(25.45), 'J3_tube3_tube4': np.float64(25.45)}
+ALL PASS

@@ -1,0 +1,182 @@
+{
+  "model": "print-in-place sauropod dinosaur, 1 fixed body + 3 tail segments, 3 Z-axis pin joints",
+  "envelope_mm": {
+    "size_xyz": [
+      94.99,
+      26.2,
+      55.99
+    ],
+    "limit_xyz": [
+      100,
+      50,
+      60
+    ],
+    "ok": true,
+    "note": "neutral (as printed) pose; checked also with the tail swung: all joints at +30 deg gives Y extent 49.6 mm, still < 50"
+  },
+  "print_settings_assumed": {
+    "material": "PLA",
+    "nozzle_mm": 0.4,
+    "layer_mm": 0.2,
+    "orientation": "as modelled, legs and whole tail flat on the bed, no rotation",
+    "recommended_profile": "/opt/slicer/p1s_pla_0.20mm_nosupport.ini (supports OFF)"
+  },
+  "joint_design": {
+    "type": "vertical pin (part of parent) through a knuckle ring (part of child); pin is a single body of revolution grown from the bed and fused into the parent at its mushroom cap",
+    "radial_clearance_mm": 0.5,
+    "other_moving_surfaces": "the child cavity is the exact 2D offset (r=0.5 mm) of the pin profile, so bead/groove, countersink/cap and cap rim all have a 0.5 mm normal gap (0.71 mm vertical on 45 deg flanks); socket wall to knuckle 0.5 mm; arm-to-socket faces 5.5 mm at neutral",
+    "self_supporting": "every surface inside the joint gaps is vertical or a 45 deg cone; both parts start on the bed, so no support is needed in or under any joint gap"
+  },
+  "checks": [
+    {
+      "name": "mesh validity",
+      "method": "trimesh + prusa-slicer --info",
+      "result": "all 4 parts watertight/manifold, 1 shell each; model.stl volume equals sum of parts (26510.6 mm3), 4 shells"
+    },
+    {
+      "name": "envelope",
+      "method": "bounding box of model.stl",
+      "result": "[94.99, 26.2, 55.99] mm <= 100 x 50 x 60"
+    },
+    {
+      "name": "overhang analysis",
+      "method": "faces with downward normal flatter than 45 deg (above bed) and isolated local-minimum vertices",
+      "result": "none in any part (0.00 mm2), no floating islands"
+    },
+    {
+      "name": "neutral clearance",
+      "method": "vertex-to-surface distance between adjacent parts",
+      "result": {
+        "body-tail_1": 0.499,
+        "tail_1-tail_2": 0.499,
+        "tail_2-tail_3": 0.499
+      }
+    },
+    {
+      "name": "neutral interference",
+      "method": "manifold3d boolean intersection of all part pairs",
+      "result": "zero volume"
+    },
+    {
+      "name": "single joint sweep",
+      "method": "rotate child subtree about each joint axis in 1 deg steps until first boolean intersection; clearance measured at +-20/+-30 deg",
+      "result": {
+        "J1": {
+          "first_contact_deg": {
+            "+": 41.0,
+            "-": 41.0
+          },
+          "min_distance_at": {
+            "-30": 0.499,
+            "-20": 0.496,
+            "20": 0.496,
+            "30": 0.499
+          }
+        },
+        "J2": {
+          "first_contact_deg": {
+            "+": 39.0,
+            "-": 39.0
+          },
+          "min_distance_at": {
+            "-30": 0.499,
+            "-20": 0.496,
+            "20": 0.496,
+            "30": 0.499
+          }
+        },
+        "J3": {
+          "first_contact_deg": {
+            "+": 41.0,
+            "-": 41.0
+          },
+          "min_distance_at": {
+            "-30": 0.499,
+            "-20": 0.497,
+            "20": 0.497,
+            "30": 0.499
+          }
+        }
+      }
+    },
+    {
+      "name": "combined poses",
+      "method": "all 27 combinations of (-30, 0, +30) deg on J1..J3, pairwise intersection of all 4 parts",
+      "result": "max intersection 0.0 mm3, colliding poses: 0"
+    },
+    {
+      "name": "axial / radial retention",
+      "method": "translate each child continuously (0.05 mm steps) relative to its parent along +-Z, +-X, +-Y until first contact",
+      "result": {
+        "J1": {
+          "+z": 0.75,
+          "-z": 0.75,
+          "+x": 0.55,
+          "-x": 0.55,
+          "+y": 0.55,
+          "-y": 0.55
+        },
+        "J2": {
+          "+z": 0.75,
+          "-z": 0.75,
+          "+x": 0.55,
+          "-x": 0.55,
+          "+y": 0.55,
+          "-y": 0.55
+        },
+        "J3": {
+          "+z": 0.75,
+          "-z": 0.75,
+          "+x": 0.55,
+          "-x": 0.55,
+          "+y": 0.55,
+          "-y": 0.55
+        }
+      },
+      "interpretation": "child is captured: it can move only by the clearance (0.75 mm along Z = 0.5*sqrt2 on 45 deg flanks, 0.55 mm radially) before pin bead/cap block it; separation would need the 0.7 mm bead overlap to be forced past the lip"
+    },
+    {
+      "name": "slicing (no supports)",
+      "method": "prusa-slicer 2.7 with p1s_pla_0.20mm_nosupport.ini",
+      "result": "slices without error, 280 layers, ~12.3 cm3 filament, ~1h48m"
+    },
+    {
+      "name": "slicing (auto supports)",
+      "method": "prusa-slicer with p1s_pla_0.20mm_autosupport.ini",
+      "result": "support generated only under the body belly arches (model X 59-76 mm, Z<=16.4 mm), >=13 mm from the nearest joint axis and outside every joint gap; nothing in/near the tail joints"
+    },
+    {
+      "name": "G-code fusion check",
+      "method": "per layer: extrusion tracks buffered to 0.45 mm width, matched to mesh sections of each part; flag any track region touching two parts in-layer, or one part printed on top of another part in the previous layer",
+      "result": {
+        "nosupport": {
+          "layers": 280,
+          "in_layer_fused": 0,
+          "stacked": 0,
+          "min_gap_between_tracks_mm": {
+            "1-2": 0.383,
+            "1-3": 4.911,
+            "1-4": 19.912,
+            "2-3": 0.384,
+            "2-4": 4.912,
+            "3-4": 0.386
+          }
+        },
+        "autosupport": {
+          "in_layer_fused": 0,
+          "stacked": 0
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "All 3 joints are real, separately meshed rotating parts; no joint is faked. Motion/retention was verified geometrically and on sliced G-code only, not by a physical print.",
+    "Rotation is limited by the arm-to-socket hard stop at about +-39..41 deg; the declared working range is +-30 deg (requirement +-20 deg).",
+    "Axial retention relies on a 0.7 mm radial bead overlap; a strong pull could snap the knuckle off the bead (PLA). Not a load-bearing joint.",
+    "The 0.5 mm gaps assume a calibrated printer; strong elephant-foot on the first layer could tack the knuckle rings, pins and socket walls (all start on the bed) - enable elephant-foot compensation or break the joints loose gently after printing.",
+    "The tail lies flat on the bed (required so every joint starts on the bed and needs no support); it cannot be raised/lowered, only swung in the XY plane.",
+    "PrusaSlicer auto-support flags the pointed-arch apex under the belly (two 45 deg cones meeting); the model is designed for the no-support profile, where that apex prints as a self-supporting gothic arch. If supports are enabled anyway they stay under the belly, away from the joints.",
+    "The 100x50x60 mm limit is checked for the neutral, as-printed pose (94.99 x 26.2 x 55.99 mm). Swung to all +30 deg the width is 49.6 mm; beyond about +-30 deg on all joints together it would exceed 50 mm in Y.",
+    "Mesh-based clearance numbers are vertex-to-surface approximations (faceting $fn=96 on joint surfaces)."
+  ]
+}

@@ -1,0 +1,45 @@
+已完成交付，所有文件位于 `/app/output/`：
+
+```text
+/app/output/model.scad
+/app/output/model.stl
+/app/output/joints.json
+/app/output/PRINT_CHECK.md
+/app/output/parts/parts_1.stl
+/app/output/parts/parts_2.stl
+/app/output/parts/parts_3.stl
+```
+
+主要设计参数：
+
+- 3 个独立刚体尺段。
+- 每个主体：40 × 12 × 5 mm。
+- 2 个绕 Z 轴旋转的销轴式关节。
+- 关节角度：0° 为完全展开，180° 为向回折叠。
+- 销半径：1.6 mm。
+- 孔半径：2.1 mm。
+- 单侧径向间隙：0.5 mm。
+- 轴向防脱：下挡肩 + 上方锥形挡肩。
+- 轴向活动间隙：约 0.3 mm。
+- `model.stl` 是 0° 完全展开状态。
+- `parts/*.stl` 与总装模型使用相同坐标系和姿态。
+
+已完成检查：
+
+- OpenSCAD 成功生成全部 STL。
+- PrusaSlicer `--info` 检查结果：
+  - `model.stl`：132 × 15.6 × 17.2 mm，3 个独立实体，`manifold = yes`。
+  - 三个独立零件均为 `manifold = yes`，且每个文件仅含 1 个实体。
+- 生成并测试了 0°、90°、180° 的关节姿态，包括两个关节同时运动的组合。
+- `joints.json` 可被 JSON 解析，声明了两个关节的连接关系、轴线、角度范围和折叠方向。
+- 使用 PLA、0.4 mm 喷嘴、0.2 mm 层高配置实际执行了 PrusaSlicer 切片。
+
+特别说明：
+
+为避免 12 mm 宽尺段在 XY 平面内折叠时互相穿透，三个尺段主体采用了 z=0、6、12 mm 的分层布局，相邻主体之间保留 1 mm 的高度间隙。因此三节在 XY 投影上完全展开成连续直线，折叠时通过 Z 向分层避免几何干涉。
+
+由于该分层结构包含抬高的尺段，无支撑切片会报告悬空警告；自动支撑切片可以成功生成 G-code。实际打印时应在切片器中使用支撑阻挡器，确保支撑只位于主体下方和外侧连接器区域，不进入销孔、挡肩和环形活动间隙。详细打印方向、检查结果和切片注意事项见：
+
+```text
+/app/output/PRINT_CHECK.md
+```

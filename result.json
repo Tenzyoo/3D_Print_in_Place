@@ -1,0 +1,262 @@
+{
+    "id": "282e061e-538f-40ef-a7a9-9143afe4c1f3",
+    "started_at": "2026-10-18T17:10:23.112693",
+    "updated_at": "2026-10-18T19:19:48.196759",
+    "finished_at": "2026-10-18T19:19:48.196759",
+    "n_total_trials": 35,
+    "stats": {
+        "n_completed_trials": 35,
+        "n_errored_trials": 8,
+        "n_running_trials": 0,
+        "n_pending_trials": 0,
+        "n_cancelled_trials": 0,
+        "n_retries": 5,
+        "evals": {
+            "dsh__deepseek-flash__tasks": {
+                "n_trials": 5,
+                "n_errors": 0,
+                "metrics": [
+                    {
+                        "pass": 0.0,
+                        "reward": 0.0
+                    }
+                ],
+                "pass_at_k": {},
+                "reward_stats": {
+                    "reward": {
+                        "0": [
+                            "kin1-dino-tail__xfCUxLG",
+                            "kin2-telescoping-rod__X3Gp4cN",
+                            "kin3-snake__MefefAZ",
+                            "kin4-butterfly__oWV2LbT",
+                            "kin5-folding-ruler__V8cGzeV"
+                        ]
+                    },
+                    "pass": {
+                        "0": [
+                            "kin1-dino-tail__xfCUxLG",
+                            "kin2-telescoping-rod__X3Gp4cN",
+                            "kin3-snake__MefefAZ",
+                            "kin4-butterfly__oWV2LbT",
+                            "kin5-folding-ruler__V8cGzeV"
+                        ]
+                    }
+                },
+                "exception_stats": {}
+            },
+            "claude-code__claude-opus-5-5__tasks": {
+                "n_trials": 5,
+                "n_errors": 0,
+                "metrics": [
+                    {
+                        "pass": 0.0,
+                        "reward": 0.0
+                    }
+                ],
+                "pass_at_k": {},
+                "reward_stats": {
+                    "reward": {
+                        "0": [
+                            "kin1-dino-tail__D5NP7Bo",
+                            "kin2-telescoping-rod__ZdkdKz9",
+                            "kin3-snake__vCWFkG3",
+                            "kin4-butterfly__Xm8Q3Qu",
+                            "kin5-folding-ruler__zPq5bwT"
+                        ]
+                    },
+                    "pass": {
+                        "0": [
+                            "kin1-dino-tail__D5NP7Bo",
+                            "kin2-telescoping-rod__ZdkdKz9",
+                            "kin3-snake__vCWFkG3",
+                            "kin4-butterfly__Xm8Q3Qu",
+                            "kin5-folding-ruler__zPq5bwT"
+                        ]
+                    }
+                },
+                "exception_stats": {}
+            },
+            "codex__gpt-6.1-sol__tasks": {
+                "n_trials": 5,
+                "n_errors": 0,
+                "metrics": [
+                    {
+                        "pass": 0.0,
+                        "reward": 0.0
+                    }
+                ],
+                "pass_at_k": {},
+                "reward_stats": {
+                    "reward": {
+                        "0": [
+                            "kin1-dino-tail__k9qPpno",
+                            "kin2-telescoping-rod__RpQG8Uh",
+                            "kin3-snake__Wo8EULy",
+                            "kin4-butterfly__5Bs7Qdd",
+                            "kin5-folding-ruler__CyoDRRC"
+                        ]
+                    },
+                    "pass": {
+                        "0": [
+                            "kin1-dino-tail__k9qPpno",
+                            "kin2-telescoping-rod__RpQG8Uh",
+                            "kin3-snake__Wo8EULy",
+                            "kin4-butterfly__5Bs7Qdd",
+                            "kin5-folding-ruler__CyoDRRC"
+                        ]
+                    }
+                },
+                "exception_stats": {}
+            },
+            "gemini-cli__gemini-4-argon-high__tasks": {
+                "n_trials": 5,
+                "n_errors": 4,
+                "metrics": [
+                    {
+                        "pass": 0.0,
+                        "reward": 0.0
+                    }
+                ],
+                "pass_at_k": {},
+                "reward_stats": {
+                    "reward": {
+                        "0": [
+                            "kin1-dino-tail__MGRvcYz",
+                            "kin2-telescoping-rod__wqTauSA",
+                            "kin3-snake__qWPvutE",
+                            "kin4-butterfly__FUF4nmq",
+                            "kin5-folding-ruler__iKjwTa6"
+                        ]
+                    },
+                    "pass": {
+                        "0": [
+                            "kin1-dino-tail__MGRvcYz",
+                            "kin2-telescoping-rod__wqTauSA",
+                            "kin3-snake__qWPvutE",
+                            "kin4-butterfly__FUF4nmq",
+                            "kin5-folding-ruler__iKjwTa6"
+                        ]
+                    }
+                },
+                "exception_stats": {
+                    "NonZeroAgentExitCodeError": [
+                        "kin2-telescoping-rod__wqTauSA",
+                        "kin3-snake__qWPvutE",
+                        "kin4-butterfly__FUF4nmq",
+                        "kin5-folding-ruler__iKjwTa6"
+                    ]
+                }
+            },
+            "dsh__claude-opus-5-5__tasks": {
+                "n_trials": 5,
+                "n_errors": 1,
+                "metrics": [
+                    {
+                        "pass": 0.0,
+                        "reward": 0.0
+                    }
+                ],
+                "pass_at_k": {},
+                "reward_stats": {
+                    "reward": {
+                        "0": [
+                            "kin1-dino-tail__Fmgw63H",
+                            "kin2-telescoping-rod__ib6VAX8",
+                            "kin3-snake__fGjp8uK",
+                            "kin4-butterfly__Utgg9AD",
+                            "kin5-folding-ruler__yPgNqnw"
+                        ]
+                    },
+                    "pass": {
+                        "0": [
+                            "kin1-dino-tail__Fmgw63H",
+                            "kin2-telescoping-rod__ib6VAX8",
+                            "kin3-snake__fGjp8uK",
+                            "kin4-butterfly__Utgg9AD",
+                            "kin5-folding-ruler__yPgNqnw"
+                        ]
+                    }
+                },
+                "exception_stats": {
+                    "NonZeroAgentExitCodeError": [
+                        "kin1-dino-tail__Fmgw63H"
+                    ]
+                }
+            },
+            "dsh__gpt-6.1-sol__tasks": {
+                "n_trials": 5,
+                "n_errors": 0,
+                "metrics": [
+                    {
+                        "pass": 0.0,
+                        "reward": 0.0
+                    }
+                ],
+                "pass_at_k": {},
+                "reward_stats": {
+                    "reward": {
+                        "0": [
+                            "kin1-dino-tail__b4SPQRt",
+                            "kin2-telescoping-rod__dSDARSE",
+                            "kin3-snake__zNrUpEf",
+                            "kin4-butterfly__xH7gSdL",
+                            "kin5-folding-ruler__gcvLA9V"
+                        ]
+                    },
+                    "pass": {
+                        "0": [
+                            "kin1-dino-tail__b4SPQRt",
+                            "kin2-telescoping-rod__dSDARSE",
+                            "kin3-snake__zNrUpEf",
+                            "kin4-butterfly__xH7gSdL",
+                            "kin5-folding-ruler__gcvLA9V"
+                        ]
+                    }
+                },
+                "exception_stats": {}
+            },
+            "dsh__gemini-4-argon-high__tasks": {
+                "n_trials": 5,
+                "n_errors": 3,
+                "metrics": [
+                    {
+                        "pass": 0.0,
+                        "reward": 0.0
+                    }
+                ],
+                "pass_at_k": {},
+                "reward_stats": {
+                    "reward": {
+                        "0": [
+                            "kin1-dino-tail__CWUviex",
+                            "kin2-telescoping-rod__mtxSGet",
+                            "kin3-snake__JXfH3VV",
+                            "kin4-butterfly__LsZjdJv",
+                            "kin5-folding-ruler__GniNXux"
+                        ]
+                    },
+                    "pass": {
+                        "0": [
+                            "kin1-dino-tail__CWUviex",
+                            "kin2-telescoping-rod__mtxSGet",
+                            "kin3-snake__JXfH3VV",
+                            "kin4-butterfly__LsZjdJv",
+                            "kin5-folding-ruler__GniNXux"
+                        ]
+                    }
+                },
+                "exception_stats": {
+                    "NonZeroAgentExitCodeError": [
+                        "kin3-snake__JXfH3VV",
+                        "kin4-butterfly__LsZjdJv",
+                        "kin5-folding-ruler__GniNXux"
+                    ]
+                }
+            }
+        },
+        "n_input_tokens": 108828482,
+        "n_cache_tokens": 100761421,
+        "n_output_tokens": 2302006,
+        "cost_usd": 19.542663
+    }
+}

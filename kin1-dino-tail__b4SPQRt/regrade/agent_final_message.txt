@@ -1,0 +1,34 @@
+已完成，所有交付文件已写入 `/app/output/`：
+
+- `/app/output/model.scad`
+- `/app/output/model.stl`
+- `/app/output/joints.json`
+- `/app/output/report.json`
+- `/app/output/parts/parts_1.stl`：固定主体
+- `/app/output/parts/parts_2.stl`：尾巴第1段
+- `/app/output/parts/parts_3.stl`：尾巴第2段
+- `/app/output/parts/parts_4.stl`：尾巴第3段
+
+主要设计参数：
+
+- 中立姿态整体尺寸：约 `88.64 × 20.96 × 23.19 mm`
+- 固定主体包含头部、躯干和四条固定腿
+- 尾巴包含3个独立活动段
+- 共3个绕Z轴旋转的销轴式关节
+- 每个关节运动范围按 `-20°～+20°` 建模验证
+- 轴与轴孔单侧径向间隙：`0.50 mm`
+- 关节其他活动面设置了非零间隙
+- 每个销轴具有一体化上、下防脱结构
+- 不需要后期安装销轴、螺丝或其他零件
+- 所有零件采用同一坐标系和中立姿态
+
+已完成的检查：
+
+- OpenSCAD 硬警告模式编译通过
+- 组合 STL 为4个独立、封闭、可切片组件
+- 各独立 STL 均为单个封闭实体
+- 尺寸满足 `100×50×60 mm` 限制
+- PrusaSlicer 检查显示组合模型 manifold，4个零件
+- 使用无支撑配置切片成功，关节间隙中没有支撑特征
+
+限制已记录在 `report.json` 中：尚未进行实际PLA打印和手工掰动测试；自动支撑配置会在恐龙其他区域产生支撑和稳定性警告，但关节间隙本身不依赖支撑。

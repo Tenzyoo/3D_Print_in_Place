@@ -1,0 +1,9 @@
+{
+  "gcode": "/app/output/model.gcode",
+  "layers_checked_z_le_10": 50,
+  "expected_parts": 6,
+  "island_counts_observed": [
+    6
+  ],
+  "all_layers_have_6_islands": true
+}

@@ -1,0 +1,53 @@
+FINAL GEOMETRY / MOTION / SLICE CHECKS
+======================================
+
+model.stl
+  bounds min : [-38.500, -49.300, 0.000] mm
+  bounds max : [ 41.100,  49.300, 6.200] mm
+  extents    : [ 79.600,  98.600, 6.200] mm
+  volume     : 11280.918 mm^3
+  watertight : yes
+  winding    : consistent
+  rigid bodies (connected components) : 3
+
+parts/parts_1.stl (torso)
+  bounds : [-38.500, -17.700, 0.000] .. [41.100, 17.700, 6.200]
+  volume : 2775.854 mm^3
+  watertight : yes
+
+parts/parts_2.stl (left wing, +Y)
+  bounds : [-29.000, 10.881, 0.000] .. [31.000, 49.300, 3.200]
+  volume : 4252.532 mm^3
+  watertight : yes
+
+parts/parts_3.stl (right wing, -Y)
+  bounds : [-29.000, -49.300, 0.000] .. [31.000, -10.881, 3.200]
+  volume : 4252.532 mm^3
+  watertight : yes
+
+sum of part volumes : 11280.918 mm^3 (equals model volume)
+
+JOINT MOTION CHECK
+  method: trimesh 5.1.1 + manifold3d boolean intersection
+  angles: -30, -20, -10, 0, +10, +20, +30 deg for each wing
+  coarse grid: all 7 x 7 = 49 left/right angle combinations
+  fine sweep : each wing 1 deg steps vs torso over -30..30;
+               both wings 5 deg grid = 13 x 13 = 169 combinations
+  intersections (wing-torso and wing-wing): 0
+  minimum planar wing-torso clearance at +/-30 deg: 0.4997 mm
+  minimum wing-wing clearance over checked combinations: 16.85 mm
+  independent motion: yes, each wing is a separate rigid body with no linkage
+
+SLICE CHECK
+  slicer   : PrusaSlicer 2.7.2
+  profile  : /opt/slicer/p1s_pla_0.20mm_nosupport.ini
+  material : PLA
+  nozzle   : 0.4 mm
+  layer    : 0.2 mm
+  layers   : 31
+  supports : 0 support toolpaths
+  stability warning : none
+  manifold : yes
+  parts    : 3
+  gcode    : model_nosupport.gcode
+

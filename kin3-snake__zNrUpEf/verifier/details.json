@@ -1,0 +1,15 @@
+{
+ "task": "kin3-snake",
+ "files": [
+  "PRINT_NOTES.md",
+  "joints.json",
+  "model.scad",
+  "model.stl",
+  "parts/parts_1.stl",
+  "parts/parts_2.stl",
+  "parts/parts_3.stl",
+  "parts/parts_4.stl",
+  "parts/parts_5.stl",
+  "parts/parts_6.stl"
+ ]
+}

@@ -1,0 +1,1960 @@
+{
+    "schema_version": 3,
+    "created_at": "2026-10-18T09:10:23.165939Z",
+    "harbor": {
+        "version": "0.24.0",
+        "is_editable": false
+    },
+    "n_concurrent_trials": 7,
+    "retry": {
+        "max_retries": 2,
+        "include_exceptions": [
+            "UnknownApiError",
+            "ApiInternalServerError",
+            "AgentSetupTimeoutError",
+            "EnvironmentStartTimeoutError",
+            "HealthcheckError",
+            "ApiConnectionClosedError",
+            "ApiRateLimitError",
+            "ApiResponseStalledError",
+            "ApiOverloadedError",
+            "NetworkConnectionError"
+        ],
+        "exclude_exceptions": [
+            "AgentAuthenticationError",
+            "VerifierOutputParseError",
+            "ApiUsageLimitError",
+            "VerifierTimeoutError",
+            "AgentSafetyRefusalError",
+            "AgentTimeoutError",
+            "RewardFileNotFoundError",
+            "RewardFileEmptyError",
+            "ModelNotFoundError"
+        ],
+        "wait_multiplier": 1.0,
+        "min_wait_sec": 30.0,
+        "max_wait_sec": 300.0
+    },
+    "trials": [
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "kin1-dino-tail",
+                "type": "local",
+                "digest": "sha256:c3a63acaea59200da5bc1782bf2eaf82f855c863ba373b60ce326167eaee2845",
+                "source": "tasks",
+                "path": "kin_tasks/tasks/kin1-dino-tail"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "import_path": "dsh_agent:DeepSeekHarness",
+                "model_name": "deepseek/deepseek-flash",
+                "skills": [],
+                "override_timeout_sec": 86400.0,
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [
+                    "api.deepseek.com"
+                ],
+                "kwargs": {
+                    "version": "0.2.0-rc.2",
+                    "reasoning_effort": "high"
+                },
+                "env": {
+                    "DEEPSEEK_API_KEY": "${DEEPSEEK_API_KEY}"
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "stream": false,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "kin1-dino-tail",
+                "type": "local",
+                "digest": "sha256:c3a63acaea59200da5bc1782bf2eaf82f855c863ba373b60ce326167eaee2845",
+                "source": "tasks",
+                "path": "kin_tasks/tasks/kin1-dino-tail"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "name": "claude-code",
+                "model_name": "claude-opus-5-5",
+                "skills": [],
+                "override_timeout_sec": 86400.0,
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [
+                    "api.supergpt.dev"
+                ],
+                "kwargs": {
+                    "version": "2.1.302",
+                    "reasoning_effort": "high",
+                    "disable_web_search": true
+                },
+                "env": {
+                    "ANTHROPIC_BASE_URL": "${CLAUDE_BASE_URL}",
+                    "ANTHROPIC_AUTH_TOKEN": "${CLAUDE_API_KEY}"
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "stream": false,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "kin1-dino-tail",
+                "type": "local",
+                "digest": "sha256:c3a63acaea59200da5bc1782bf2eaf82f855c863ba373b60ce326167eaee2845",
+                "source": "tasks",
+                "path": "kin_tasks/tasks/kin1-dino-tail"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "name": "codex",
+                "model_name": "gpt-6.1-sol",
+                "skills": [],
+                "override_timeout_sec": 86400.0,
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [
+                    "api.supergpt.dev"
+                ],
+                "kwargs": {
+                    "version": "0.163.0",
+                    "reasoning_effort": "high",
+                    "web_search": "disabled"
+                },
+                "env": {
+                    "OPENAI_API_KEY": "${GPT_API_KEY}",
+                    "OPENAI_BASE_URL": "${GPT_BASE_URL}"
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "stream": false,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "kin1-dino-tail",
+                "type": "local",
+                "digest": "sha256:c3a63acaea59200da5bc1782bf2eaf82f855c863ba373b60ce326167eaee2845",
+                "source": "tasks",
+                "path": "kin_tasks/tasks/kin1-dino-tail"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "import_path": "gemini_agent:PinnedGeminiCli",
+                "model_name": "google/gemini-4-argon-high",
+                "skills": [],
+                "override_timeout_sec": 86400.0,
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [
+                    "api.supergpt.dev"
+                ],
+                "kwargs": {
+                    "version": "0.64.0",
+                    "reasoning_effort": "high",
+                    "disable_web_search": true
+                },
+                "env": {
+                    "GEMINI_API_KEY": "${GEMINI_API_KEY}",
+                    "GOOGLE_GEMINI_BASE_URL": "${GEMINI_BASE_URL}"
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "stream": false,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "kin1-dino-tail",
+                "type": "local",
+                "digest": "sha256:c3a63acaea59200da5bc1782bf2eaf82f855c863ba373b60ce326167eaee2845",
+                "source": "tasks",
+                "path": "kin_tasks/tasks/kin1-dino-tail"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "import_path": "dsh_agent:DeepSeekHarness",
+                "model_name": "anthropic/claude-opus-5-5",
+                "skills": [],
+                "override_timeout_sec": 86400.0,
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [
+                    "api.supergpt.dev"
+                ],
+                "kwargs": {
+                    "version": "0.2.0-rc.2",
+                    "reasoning_effort": "high",
+                    "stream_idle_timeout_ms": 1800000,
+                    "request_timeout_ms": 3600000
+                },
+                "env": {
+                    "ANTHROPIC_API_KEY": "${CLAUDE_API_KEY}",
+                    "ANTHROPIC_BASE_URL": "${CLAUDE_BASE_URL}"
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "stream": false,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "kin1-dino-tail",
+                "type": "local",
+                "digest": "sha256:c3a63acaea59200da5bc1782bf2eaf82f855c863ba373b60ce326167eaee2845",
+                "source": "tasks",
+                "path": "kin_tasks/tasks/kin1-dino-tail"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "import_path": "dsh_agent:DeepSeekHarness",
+                "model_name": "openai/gpt-6.1-sol",
+                "skills": [],
+                "override_timeout_sec": 86400.0,
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [
+                    "api.supergpt.dev"
+                ],
+                "kwargs": {
+                    "version": "0.2.0-rc.2",
+                    "reasoning_effort": "high",
+                    "route_api": "openai-responses",
+                    "route_models": [
+                        {
+                            "id": "gpt-6.1-sol",
+                            "name": "gpt-6.1-sol",
+                            "contextWindow": 272000,
+                            "input": [
+                                "text",
+                                "image"
+                            ],
+                            "reasoningEfforts": {
+                                "off": "none",
+                                "low": "low",
+                                "medium": "medium",
+                                "high": "high",
+                                "xhigh": "xhigh",
+                                "max": "max"
+                            }
+                        }
+                    ],
+                    "lift_instructions": true,
+                    "stream_idle_timeout_ms": 1800000,
+                    "request_timeout_ms": 3600000
+                },
+                "env": {
+                    "OPENAI_API_KEY": "${GPT_API_KEY}",
+                    "OPENAI_BASE_URL": "${GPT_BASE_URL}"
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "stream": false,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "kin1-dino-tail",
+                "type": "local",
+                "digest": "sha256:c3a63acaea59200da5bc1782bf2eaf82f855c863ba373b60ce326167eaee2845",
+                "source": "tasks",
+                "path": "kin_tasks/tasks/kin1-dino-tail"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "import_path": "dsh_agent:DeepSeekHarness",
+                "model_name": "google/gemini-4-argon-high",
+                "skills": [],
+                "override_timeout_sec": 86400.0,
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [
+                    "api.supergpt.dev"
+                ],
+                "kwargs": {
+                    "version": "0.2.0-rc.2",
+                    "reasoning_effort": "high",
+                    "route_models": [
+                        {
+                            "id": "gemini-4-argon-high",
+                            "name": "gemini-4-argon-high",
+                            "contextWindow": 1048576,
+                            "maxTokens": 65536,
+                            "input": [
+                                "text",
+                                "image"
+                            ],
+                            "reasoningEfforts": {
+                                "minimal": "minimal",
+                                "low": "low",
+                                "medium": "medium",
+                                "high": "high"
+                            }
+                        }
+                    ],
+                    "gemini_thinking_level": "HIGH",
+                    "stream_idle_timeout_ms": 1800000,
+                    "request_timeout_ms": 3600000
+                },
+                "env": {
+                    "GEMINI_API_KEY": "${GEMINI_API_KEY}",
+                    "GOOGLE_BASE_URL": "${GEMINI_BASE_URL}"
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "stream": false,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "kin2-telescoping-rod",
+                "type": "local",
+                "digest": "sha256:83e27e24b1e534e1025235dab075c91d16df35cab1d4083b580df4ee34bb7912",
+                "source": "tasks",
+                "path": "kin_tasks/tasks/kin2-telescoping-rod"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "import_path": "dsh_agent:DeepSeekHarness",
+                "model_name": "deepseek/deepseek-flash",
+                "skills": [],
+                "override_timeout_sec": 86400.0,
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [
+                    "api.deepseek.com"
+                ],
+                "kwargs": {
+                    "version": "0.2.0-rc.2",
+                    "reasoning_effort": "high"
+                },
+                "env": {
+                    "DEEPSEEK_API_KEY": "${DEEPSEEK_API_KEY}"
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "stream": false,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "kin2-telescoping-rod",
+                "type": "local",
+                "digest": "sha256:83e27e24b1e534e1025235dab075c91d16df35cab1d4083b580df4ee34bb7912",
+                "source": "tasks",
+                "path": "kin_tasks/tasks/kin2-telescoping-rod"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "name": "claude-code",
+                "model_name": "claude-opus-5-5",
+                "skills": [],
+                "override_timeout_sec": 86400.0,
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [
+                    "api.supergpt.dev"
+                ],
+                "kwargs": {
+                    "version": "2.1.302",
+                    "reasoning_effort": "high",
+                    "disable_web_search": true
+                },
+                "env": {
+                    "ANTHROPIC_BASE_URL": "${CLAUDE_BASE_URL}",
+                    "ANTHROPIC_AUTH_TOKEN": "${CLAUDE_API_KEY}"
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "stream": false,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "kin2-telescoping-rod",
+                "type": "local",
+                "digest": "sha256:83e27e24b1e534e1025235dab075c91d16df35cab1d4083b580df4ee34bb7912",
+                "source": "tasks",
+                "path": "kin_tasks/tasks/kin2-telescoping-rod"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "name": "codex",
+                "model_name": "gpt-6.1-sol",
+                "skills": [],
+                "override_timeout_sec": 86400.0,
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [
+                    "api.supergpt.dev"
+                ],
+                "kwargs": {
+                    "version": "0.163.0",
+                    "reasoning_effort": "high",
+                    "web_search": "disabled"
+                },
+                "env": {
+                    "OPENAI_API_KEY": "${GPT_API_KEY}",
+                    "OPENAI_BASE_URL": "${GPT_BASE_URL}"
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "stream": false,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "kin2-telescoping-rod",
+                "type": "local",
+                "digest": "sha256:83e27e24b1e534e1025235dab075c91d16df35cab1d4083b580df4ee34bb7912",
+                "source": "tasks",
+                "path": "kin_tasks/tasks/kin2-telescoping-rod"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "import_path": "gemini_agent:PinnedGeminiCli",
+                "model_name": "google/gemini-4-argon-high",
+                "skills": [],
+                "override_timeout_sec": 86400.0,
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [
+                    "api.supergpt.dev"
+                ],
+                "kwargs": {
+                    "version": "0.64.0",
+                    "reasoning_effort": "high",
+                    "disable_web_search": true
+                },
+                "env": {
+                    "GEMINI_API_KEY": "${GEMINI_API_KEY}",
+                    "GOOGLE_GEMINI_BASE_URL": "${GEMINI_BASE_URL}"
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "stream": false,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "kin2-telescoping-rod",
+                "type": "local",
+                "digest": "sha256:83e27e24b1e534e1025235dab075c91d16df35cab1d4083b580df4ee34bb7912",
+                "source": "tasks",
+                "path": "kin_tasks/tasks/kin2-telescoping-rod"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "import_path": "dsh_agent:DeepSeekHarness",
+                "model_name": "anthropic/claude-opus-5-5",
+                "skills": [],
+                "override_timeout_sec": 86400.0,
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [
+                    "api.supergpt.dev"
+                ],
+                "kwargs": {
+                    "version": "0.2.0-rc.2",
+                    "reasoning_effort": "high",
+                    "stream_idle_timeout_ms": 1800000,
+                    "request_timeout_ms": 3600000
+                },
+                "env": {
+                    "ANTHROPIC_API_KEY": "${CLAUDE_API_KEY}",
+                    "ANTHROPIC_BASE_URL": "${CLAUDE_BASE_URL}"
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "stream": false,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "kin2-telescoping-rod",
+                "type": "local",
+                "digest": "sha256:83e27e24b1e534e1025235dab075c91d16df35cab1d4083b580df4ee34bb7912",
+                "source": "tasks",
+                "path": "kin_tasks/tasks/kin2-telescoping-rod"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "import_path": "dsh_agent:DeepSeekHarness",
+                "model_name": "openai/gpt-6.1-sol",
+                "skills": [],
+                "override_timeout_sec": 86400.0,
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [
+                    "api.supergpt.dev"
+                ],
+                "kwargs": {
+                    "version": "0.2.0-rc.2",
+                    "reasoning_effort": "high",
+                    "route_api": "openai-responses",
+                    "route_models": [
+                        {
+                            "id": "gpt-6.1-sol",
+                            "name": "gpt-6.1-sol",
+                            "contextWindow": 272000,
+                            "input": [
+                                "text",
+                                "image"
+                            ],
+                            "reasoningEfforts": {
+                                "off": "none",
+                                "low": "low",
+                                "medium": "medium",
+                                "high": "high",
+                                "xhigh": "xhigh",
+                                "max": "max"
+                            }
+                        }
+                    ],
+                    "lift_instructions": true,
+                    "stream_idle_timeout_ms": 1800000,
+                    "request_timeout_ms": 3600000
+                },
+                "env": {
+                    "OPENAI_API_KEY": "${GPT_API_KEY}",
+                    "OPENAI_BASE_URL": "${GPT_BASE_URL}"
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "stream": false,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "kin2-telescoping-rod",
+                "type": "local",
+                "digest": "sha256:83e27e24b1e534e1025235dab075c91d16df35cab1d4083b580df4ee34bb7912",
+                "source": "tasks",
+                "path": "kin_tasks/tasks/kin2-telescoping-rod"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "import_path": "dsh_agent:DeepSeekHarness",
+                "model_name": "google/gemini-4-argon-high",
+                "skills": [],
+                "override_timeout_sec": 86400.0,
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [
+                    "api.supergpt.dev"
+                ],
+                "kwargs": {
+                    "version": "0.2.0-rc.2",
+                    "reasoning_effort": "high",
+                    "route_models": [
+                        {
+                            "id": "gemini-4-argon-high",
+                            "name": "gemini-4-argon-high",
+                            "contextWindow": 1048576,
+                            "maxTokens": 65536,
+                            "input": [
+                                "text",
+                                "image"
+                            ],
+                            "reasoningEfforts": {
+                                "minimal": "minimal",
+                                "low": "low",
+                                "medium": "medium",
+                                "high": "high"
+                            }
+                        }
+                    ],
+                    "gemini_thinking_level": "HIGH",
+                    "stream_idle_timeout_ms": 1800000,
+                    "request_timeout_ms": 3600000
+                },
+                "env": {
+                    "GEMINI_API_KEY": "${GEMINI_API_KEY}",
+                    "GOOGLE_BASE_URL": "${GEMINI_BASE_URL}"
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "stream": false,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "kin3-snake",
+                "type": "local",
+                "digest": "sha256:347884fa4684008c740f15bb010705474bf8d3a645d830c64d69ba214085b8de",
+                "source": "tasks",
+                "path": "kin_tasks/tasks/kin3-snake"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "import_path": "dsh_agent:DeepSeekHarness",
+                "model_name": "deepseek/deepseek-flash",
+                "skills": [],
+                "override_timeout_sec": 86400.0,
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [
+                    "api.deepseek.com"
+                ],
+                "kwargs": {
+                    "version": "0.2.0-rc.2",
+                    "reasoning_effort": "high"
+                },
+                "env": {
+                    "DEEPSEEK_API_KEY": "${DEEPSEEK_API_KEY}"
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "stream": false,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "kin3-snake",
+                "type": "local",
+                "digest": "sha256:347884fa4684008c740f15bb010705474bf8d3a645d830c64d69ba214085b8de",
+                "source": "tasks",
+                "path": "kin_tasks/tasks/kin3-snake"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "name": "claude-code",
+                "model_name": "claude-opus-5-5",
+                "skills": [],
+                "override_timeout_sec": 86400.0,
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [
+                    "api.supergpt.dev"
+                ],
+                "kwargs": {
+                    "version": "2.1.302",
+                    "reasoning_effort": "high",
+                    "disable_web_search": true
+                },
+                "env": {
+                    "ANTHROPIC_BASE_URL": "${CLAUDE_BASE_URL}",
+                    "ANTHROPIC_AUTH_TOKEN": "${CLAUDE_API_KEY}"
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "stream": false,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "kin3-snake",
+                "type": "local",
+                "digest": "sha256:347884fa4684008c740f15bb010705474bf8d3a645d830c64d69ba214085b8de",
+                "source": "tasks",
+                "path": "kin_tasks/tasks/kin3-snake"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "name": "codex",
+                "model_name": "gpt-6.1-sol",
+                "skills": [],
+                "override_timeout_sec": 86400.0,
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [
+                    "api.supergpt.dev"
+                ],
+                "kwargs": {
+                    "version": "0.163.0",
+                    "reasoning_effort": "high",
+                    "web_search": "disabled"
+                },
+                "env": {
+                    "OPENAI_API_KEY": "${GPT_API_KEY}",
+                    "OPENAI_BASE_URL": "${GPT_BASE_URL}"
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "stream": false,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "kin3-snake",
+                "type": "local",
+                "digest": "sha256:347884fa4684008c740f15bb010705474bf8d3a645d830c64d69ba214085b8de",
+                "source": "tasks",
+                "path": "kin_tasks/tasks/kin3-snake"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "import_path": "gemini_agent:PinnedGeminiCli",
+                "model_name": "google/gemini-4-argon-high",
+                "skills": [],
+                "override_timeout_sec": 86400.0,
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [
+                    "api.supergpt.dev"
+                ],
+                "kwargs": {
+                    "version": "0.64.0",
+                    "reasoning_effort": "high",
+                    "disable_web_search": true
+                },
+                "env": {
+                    "GEMINI_API_KEY": "${GEMINI_API_KEY}",
+                    "GOOGLE_GEMINI_BASE_URL": "${GEMINI_BASE_URL}"
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "stream": false,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "kin3-snake",
+                "type": "local",
+                "digest": "sha256:347884fa4684008c740f15bb010705474bf8d3a645d830c64d69ba214085b8de",
+                "source": "tasks",
+                "path": "kin_tasks/tasks/kin3-snake"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "import_path": "dsh_agent:DeepSeekHarness",
+                "model_name": "anthropic/claude-opus-5-5",
+                "skills": [],
+                "override_timeout_sec": 86400.0,
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [
+                    "api.supergpt.dev"
+                ],
+                "kwargs": {
+                    "version": "0.2.0-rc.2",
+                    "reasoning_effort": "high",
+                    "stream_idle_timeout_ms": 1800000,
+                    "request_timeout_ms": 3600000
+                },
+                "env": {
+                    "ANTHROPIC_API_KEY": "${CLAUDE_API_KEY}",
+                    "ANTHROPIC_BASE_URL": "${CLAUDE_BASE_URL}"
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "stream": false,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "kin3-snake",
+                "type": "local",
+                "digest": "sha256:347884fa4684008c740f15bb010705474bf8d3a645d830c64d69ba214085b8de",
+                "source": "tasks",
+                "path": "kin_tasks/tasks/kin3-snake"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "import_path": "dsh_agent:DeepSeekHarness",
+                "model_name": "openai/gpt-6.1-sol",
+                "skills": [],
+                "override_timeout_sec": 86400.0,
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [
+                    "api.supergpt.dev"
+                ],
+                "kwargs": {
+                    "version": "0.2.0-rc.2",
+                    "reasoning_effort": "high",
+                    "route_api": "openai-responses",
+                    "route_models": [
+                        {
+                            "id": "gpt-6.1-sol",
+                            "name": "gpt-6.1-sol",
+                            "contextWindow": 272000,
+                            "input": [
+                                "text",
+                                "image"
+                            ],
+                            "reasoningEfforts": {
+                                "off": "none",
+                                "low": "low",
+                                "medium": "medium",
+                                "high": "high",
+                                "xhigh": "xhigh",
+                                "max": "max"
+                            }
+                        }
+                    ],
+                    "lift_instructions": true,
+                    "stream_idle_timeout_ms": 1800000,
+                    "request_timeout_ms": 3600000
+                },
+                "env": {
+                    "OPENAI_API_KEY": "${GPT_API_KEY}",
+                    "OPENAI_BASE_URL": "${GPT_BASE_URL}"
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "stream": false,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "kin3-snake",
+                "type": "local",
+                "digest": "sha256:347884fa4684008c740f15bb010705474bf8d3a645d830c64d69ba214085b8de",
+                "source": "tasks",
+                "path": "kin_tasks/tasks/kin3-snake"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "import_path": "dsh_agent:DeepSeekHarness",
+                "model_name": "google/gemini-4-argon-high",
+                "skills": [],
+                "override_timeout_sec": 86400.0,
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [
+                    "api.supergpt.dev"
+                ],
+                "kwargs": {
+                    "version": "0.2.0-rc.2",
+                    "reasoning_effort": "high",
+                    "route_models": [
+                        {
+                            "id": "gemini-4-argon-high",
+                            "name": "gemini-4-argon-high",
+                            "contextWindow": 1048576,
+                            "maxTokens": 65536,
+                            "input": [
+                                "text",
+                                "image"
+                            ],
+                            "reasoningEfforts": {
+                                "minimal": "minimal",
+                                "low": "low",
+                                "medium": "medium",
+                                "high": "high"
+                            }
+                        }
+                    ],
+                    "gemini_thinking_level": "HIGH",
+                    "stream_idle_timeout_ms": 1800000,
+                    "request_timeout_ms": 3600000
+                },
+                "env": {
+                    "GEMINI_API_KEY": "${GEMINI_API_KEY}",
+                    "GOOGLE_BASE_URL": "${GEMINI_BASE_URL}"
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "stream": false,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "kin4-butterfly",
+                "type": "local",
+                "digest": "sha256:c84ae9e1879d27519ca0a5c5c8f89f9aa92791a05a364b3b689c651b426c91a6",
+                "source": "tasks",
+                "path": "kin_tasks/tasks/kin4-butterfly"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "import_path": "dsh_agent:DeepSeekHarness",
+                "model_name": "deepseek/deepseek-flash",
+                "skills": [],
+                "override_timeout_sec": 86400.0,
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [
+                    "api.deepseek.com"
+                ],
+                "kwargs": {
+                    "version": "0.2.0-rc.2",
+                    "reasoning_effort": "high"
+                },
+                "env": {
+                    "DEEPSEEK_API_KEY": "${DEEPSEEK_API_KEY}"
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "stream": false,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "kin4-butterfly",
+                "type": "local",
+                "digest": "sha256:c84ae9e1879d27519ca0a5c5c8f89f9aa92791a05a364b3b689c651b426c91a6",
+                "source": "tasks",
+                "path": "kin_tasks/tasks/kin4-butterfly"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "name": "claude-code",
+                "model_name": "claude-opus-5-5",
+                "skills": [],
+                "override_timeout_sec": 86400.0,
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [
+                    "api.supergpt.dev"
+                ],
+                "kwargs": {
+                    "version": "2.1.302",
+                    "reasoning_effort": "high",
+                    "disable_web_search": true
+                },
+                "env": {
+                    "ANTHROPIC_BASE_URL": "${CLAUDE_BASE_URL}",
+                    "ANTHROPIC_AUTH_TOKEN": "${CLAUDE_API_KEY}"
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "stream": false,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "kin4-butterfly",
+                "type": "local",
+                "digest": "sha256:c84ae9e1879d27519ca0a5c5c8f89f9aa92791a05a364b3b689c651b426c91a6",
+                "source": "tasks",
+                "path": "kin_tasks/tasks/kin4-butterfly"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "name": "codex",
+                "model_name": "gpt-6.1-sol",
+                "skills": [],
+                "override_timeout_sec": 86400.0,
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [
+                    "api.supergpt.dev"
+                ],
+                "kwargs": {
+                    "version": "0.163.0",
+                    "reasoning_effort": "high",
+                    "web_search": "disabled"
+                },
+                "env": {
+                    "OPENAI_API_KEY": "${GPT_API_KEY}",
+                    "OPENAI_BASE_URL": "${GPT_BASE_URL}"
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "stream": false,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "kin4-butterfly",
+                "type": "local",
+                "digest": "sha256:c84ae9e1879d27519ca0a5c5c8f89f9aa92791a05a364b3b689c651b426c91a6",
+                "source": "tasks",
+                "path": "kin_tasks/tasks/kin4-butterfly"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "import_path": "gemini_agent:PinnedGeminiCli",
+                "model_name": "google/gemini-4-argon-high",
+                "skills": [],
+                "override_timeout_sec": 86400.0,
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [
+                    "api.supergpt.dev"
+                ],
+                "kwargs": {
+                    "version": "0.64.0",
+                    "reasoning_effort": "high",
+                    "disable_web_search": true
+                },
+                "env": {
+                    "GEMINI_API_KEY": "${GEMINI_API_KEY}",
+                    "GOOGLE_GEMINI_BASE_URL": "${GEMINI_BASE_URL}"
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "stream": false,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "kin4-butterfly",
+                "type": "local",
+                "digest": "sha256:c84ae9e1879d27519ca0a5c5c8f89f9aa92791a05a364b3b689c651b426c91a6",
+                "source": "tasks",
+                "path": "kin_tasks/tasks/kin4-butterfly"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "import_path": "dsh_agent:DeepSeekHarness",
+                "model_name": "anthropic/claude-opus-5-5",
+                "skills": [],
+                "override_timeout_sec": 86400.0,
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [
+                    "api.supergpt.dev"
+                ],
+                "kwargs": {
+                    "version": "0.2.0-rc.2",
+                    "reasoning_effort": "high",
+                    "stream_idle_timeout_ms": 1800000,
+                    "request_timeout_ms": 3600000
+                },
+                "env": {
+                    "ANTHROPIC_API_KEY": "${CLAUDE_API_KEY}",
+                    "ANTHROPIC_BASE_URL": "${CLAUDE_BASE_URL}"
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "stream": false,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "kin4-butterfly",
+                "type": "local",
+                "digest": "sha256:c84ae9e1879d27519ca0a5c5c8f89f9aa92791a05a364b3b689c651b426c91a6",
+                "source": "tasks",
+                "path": "kin_tasks/tasks/kin4-butterfly"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "import_path": "dsh_agent:DeepSeekHarness",
+                "model_name": "openai/gpt-6.1-sol",
+                "skills": [],
+                "override_timeout_sec": 86400.0,
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [
+                    "api.supergpt.dev"
+                ],
+                "kwargs": {
+                    "version": "0.2.0-rc.2",
+                    "reasoning_effort": "high",
+                    "route_api": "openai-responses",
+                    "route_models": [
+                        {
+                            "id": "gpt-6.1-sol",
+                            "name": "gpt-6.1-sol",
+                            "contextWindow": 272000,
+                            "input": [
+                                "text",
+                                "image"
+                            ],
+                            "reasoningEfforts": {
+                                "off": "none",
+                                "low": "low",
+                                "medium": "medium",
+                                "high": "high",
+                                "xhigh": "xhigh",
+                                "max": "max"
+                            }
+                        }
+                    ],
+                    "lift_instructions": true,
+                    "stream_idle_timeout_ms": 1800000,
+                    "request_timeout_ms": 3600000
+                },
+                "env": {
+                    "OPENAI_API_KEY": "${GPT_API_KEY}",
+                    "OPENAI_BASE_URL": "${GPT_BASE_URL}"
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "stream": false,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "kin4-butterfly",
+                "type": "local",
+                "digest": "sha256:c84ae9e1879d27519ca0a5c5c8f89f9aa92791a05a364b3b689c651b426c91a6",
+                "source": "tasks",
+                "path": "kin_tasks/tasks/kin4-butterfly"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "import_path": "dsh_agent:DeepSeekHarness",
+                "model_name": "google/gemini-4-argon-high",
+                "skills": [],
+                "override_timeout_sec": 86400.0,
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [
+                    "api.supergpt.dev"
+                ],
+                "kwargs": {
+                    "version": "0.2.0-rc.2",
+                    "reasoning_effort": "high",
+                    "route_models": [
+                        {
+                            "id": "gemini-4-argon-high",
+                            "name": "gemini-4-argon-high",
+                            "contextWindow": 1048576,
+                            "maxTokens": 65536,
+                            "input": [
+                                "text",
+                                "image"
+                            ],
+                            "reasoningEfforts": {
+                                "minimal": "minimal",
+                                "low": "low",
+                                "medium": "medium",
+                                "high": "high"
+                            }
+                        }
+                    ],
+                    "gemini_thinking_level": "HIGH",
+                    "stream_idle_timeout_ms": 1800000,
+                    "request_timeout_ms": 3600000
+                },
+                "env": {
+                    "GEMINI_API_KEY": "${GEMINI_API_KEY}",
+                    "GOOGLE_BASE_URL": "${GEMINI_BASE_URL}"
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "stream": false,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "kin5-folding-ruler",
+                "type": "local",
+                "digest": "sha256:9bbb0b535dc29ef18535e9af32677e666d67b3635ef84fdaf867b6130477107a",
+                "source": "tasks",
+                "path": "kin_tasks/tasks/kin5-folding-ruler"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "import_path": "dsh_agent:DeepSeekHarness",
+                "model_name": "deepseek/deepseek-flash",
+                "skills": [],
+                "override_timeout_sec": 86400.0,
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [
+                    "api.deepseek.com"
+                ],
+                "kwargs": {
+                    "version": "0.2.0-rc.2",
+                    "reasoning_effort": "high"
+                },
+                "env": {
+                    "DEEPSEEK_API_KEY": "${DEEPSEEK_API_KEY}"
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "stream": false,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "kin5-folding-ruler",
+                "type": "local",
+                "digest": "sha256:9bbb0b535dc29ef18535e9af32677e666d67b3635ef84fdaf867b6130477107a",
+                "source": "tasks",
+                "path": "kin_tasks/tasks/kin5-folding-ruler"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "name": "claude-code",
+                "model_name": "claude-opus-5-5",
+                "skills": [],
+                "override_timeout_sec": 86400.0,
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [
+                    "api.supergpt.dev"
+                ],
+                "kwargs": {
+                    "version": "2.1.302",
+                    "reasoning_effort": "high",
+                    "disable_web_search": true
+                },
+                "env": {
+                    "ANTHROPIC_BASE_URL": "${CLAUDE_BASE_URL}",
+                    "ANTHROPIC_AUTH_TOKEN": "${CLAUDE_API_KEY}"
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "stream": false,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "kin5-folding-ruler",
+                "type": "local",
+                "digest": "sha256:9bbb0b535dc29ef18535e9af32677e666d67b3635ef84fdaf867b6130477107a",
+                "source": "tasks",
+                "path": "kin_tasks/tasks/kin5-folding-ruler"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "name": "codex",
+                "model_name": "gpt-6.1-sol",
+                "skills": [],
+                "override_timeout_sec": 86400.0,
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [
+                    "api.supergpt.dev"
+                ],
+                "kwargs": {
+                    "version": "0.163.0",
+                    "reasoning_effort": "high",
+                    "web_search": "disabled"
+                },
+                "env": {
+                    "OPENAI_API_KEY": "${GPT_API_KEY}",
+                    "OPENAI_BASE_URL": "${GPT_BASE_URL}"
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "stream": false,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "kin5-folding-ruler",
+                "type": "local",
+                "digest": "sha256:9bbb0b535dc29ef18535e9af32677e666d67b3635ef84fdaf867b6130477107a",
+                "source": "tasks",
+                "path": "kin_tasks/tasks/kin5-folding-ruler"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "import_path": "gemini_agent:PinnedGeminiCli",
+                "model_name": "google/gemini-4-argon-high",
+                "skills": [],
+                "override_timeout_sec": 86400.0,
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [
+                    "api.supergpt.dev"
+                ],
+                "kwargs": {
+                    "version": "0.64.0",
+                    "reasoning_effort": "high",
+                    "disable_web_search": true
+                },
+                "env": {
+                    "GEMINI_API_KEY": "${GEMINI_API_KEY}",
+                    "GOOGLE_GEMINI_BASE_URL": "${GEMINI_BASE_URL}"
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "stream": false,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "kin5-folding-ruler",
+                "type": "local",
+                "digest": "sha256:9bbb0b535dc29ef18535e9af32677e666d67b3635ef84fdaf867b6130477107a",
+                "source": "tasks",
+                "path": "kin_tasks/tasks/kin5-folding-ruler"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "import_path": "dsh_agent:DeepSeekHarness",
+                "model_name": "anthropic/claude-opus-5-5",
+                "skills": [],
+                "override_timeout_sec": 86400.0,
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [
+                    "api.supergpt.dev"
+                ],
+                "kwargs": {
+                    "version": "0.2.0-rc.2",
+                    "reasoning_effort": "high",
+                    "stream_idle_timeout_ms": 1800000,
+                    "request_timeout_ms": 3600000
+                },
+                "env": {
+                    "ANTHROPIC_API_KEY": "${CLAUDE_API_KEY}",
+                    "ANTHROPIC_BASE_URL": "${CLAUDE_BASE_URL}"
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "stream": false,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "kin5-folding-ruler",
+                "type": "local",
+                "digest": "sha256:9bbb0b535dc29ef18535e9af32677e666d67b3635ef84fdaf867b6130477107a",
+                "source": "tasks",
+                "path": "kin_tasks/tasks/kin5-folding-ruler"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "import_path": "dsh_agent:DeepSeekHarness",
+                "model_name": "openai/gpt-6.1-sol",
+                "skills": [],
+                "override_timeout_sec": 86400.0,
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [
+                    "api.supergpt.dev"
+                ],
+                "kwargs": {
+                    "version": "0.2.0-rc.2",
+                    "reasoning_effort": "high",
+                    "route_api": "openai-responses",
+                    "route_models": [
+                        {
+                            "id": "gpt-6.1-sol",
+                            "name": "gpt-6.1-sol",
+                            "contextWindow": 272000,
+                            "input": [
+                                "text",
+                                "image"
+                            ],
+                            "reasoningEfforts": {
+                                "off": "none",
+                                "low": "low",
+                                "medium": "medium",
+                                "high": "high",
+                                "xhigh": "xhigh",
+                                "max": "max"
+                            }
+                        }
+                    ],
+                    "lift_instructions": true,
+                    "stream_idle_timeout_ms": 1800000,
+                    "request_timeout_ms": 3600000
+                },
+                "env": {
+                    "OPENAI_API_KEY": "${GPT_API_KEY}",
+                    "OPENAI_BASE_URL": "${GPT_BASE_URL}"
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "stream": false,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "kin5-folding-ruler",
+                "type": "local",
+                "digest": "sha256:9bbb0b535dc29ef18535e9af32677e666d67b3635ef84fdaf867b6130477107a",
+                "source": "tasks",
+                "path": "kin_tasks/tasks/kin5-folding-ruler"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "import_path": "dsh_agent:DeepSeekHarness",
+                "model_name": "google/gemini-4-argon-high",
+                "skills": [],
+                "override_timeout_sec": 86400.0,
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [
+                    "api.supergpt.dev"
+                ],
+                "kwargs": {
+                    "version": "0.2.0-rc.2",
+                    "reasoning_effort": "high",
+                    "route_models": [
+                        {
+                            "id": "gemini-4-argon-high",
+                            "name": "gemini-4-argon-high",
+                            "contextWindow": 1048576,
+                            "maxTokens": 65536,
+                            "input": [
+                                "text",
+                                "image"
+                            ],
+                            "reasoningEfforts": {
+                                "minimal": "minimal",
+                                "low": "low",
+                                "medium": "medium",
+                                "high": "high"
+                            }
+                        }
+                    ],
+                    "gemini_thinking_level": "HIGH",
+                    "stream_idle_timeout_ms": 1800000,
+                    "request_timeout_ms": 3600000
+                },
+                "env": {
+                    "GEMINI_API_KEY": "${GEMINI_API_KEY}",
+                    "GOOGLE_BASE_URL": "${GEMINI_BASE_URL}"
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "stream": false,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        }
+    ]
+}

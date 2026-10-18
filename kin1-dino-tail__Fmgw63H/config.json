@@ -1,0 +1,40 @@
+{
+    "task": {
+        "path": "kin_tasks/tasks/kin1-dino-tail",
+        "source": "tasks"
+    },
+    "trial_name": "kin1-dino-tail__Fmgw63H",
+    "trials_dir": "jobs/kin",
+    "agent": {
+        "import_path": "dsh_agent:DeepSeekHarness",
+        "model_name": "anthropic/claude-opus-5-5",
+        "override_timeout_sec": 86400.0,
+        "extra_allowed_hosts": [
+            "api.supergpt.dev"
+        ],
+        "kwargs": {
+            "version": "0.2.0-rc.2",
+            "reasoning_effort": "high",
+            "stream_idle_timeout_ms": 1800000,
+            "request_timeout_ms": 3600000
+        },
+        "env": {
+            "ANTHROPIC_API_KEY": "${CLAUDE_API_KEY}",
+            "ANTHROPIC_BASE_URL": "${CLAUDE_BASE_URL}"
+        }
+    },
+    "artifacts": [
+        {
+            "source": "/app",
+            "destination": "workspace",
+            "exclude": [
+                "__pycache__",
+                "*.pyc",
+                ".cache",
+                "node_modules",
+                ".venv"
+            ]
+        }
+    ],
+    "job_id": "282e061e-538f-40ef-a7a9-9143afe4c1f3"
+}

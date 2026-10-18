@@ -1,0 +1,15 @@
+{
+ "task": "kin5-folding-ruler",
+ "files": [
+  "README.md",
+  "joint_section.png",
+  "joints.json",
+  "model.scad",
+  "model.stl",
+  "parts/parts_1.stl",
+  "parts/parts_2.stl",
+  "parts/parts_3.stl",
+  "verify.py",
+  "verify_report.json"
+ ]
+}

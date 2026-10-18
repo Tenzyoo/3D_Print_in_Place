@@ -1,0 +1,224 @@
+{
+  "schema": "print_in_place_telescoping_rod_joints",
+  "version": 1,
+  "units": "mm",
+  "coordinate_system": {
+    "description": "Right-handed Cartesian; +Z is the rod center axis pointing from the collapsed bottom to the free end.",
+    "origin": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "axis": [
+      0.0,
+      0.0,
+      1.0
+    ],
+    "collapsed_state": "all four tube bottoms are at Z=0 and all tubes are coaxial",
+    "tubes_are_printed_in_this_pose": true
+  },
+  "assembly": {
+    "tube_count": 4,
+    "tube_order_outer_to_inner": [
+      "T1",
+      "T2",
+      "T3",
+      "T4"
+    ],
+    "collapsed_length": 110.0,
+    "extended_length": 320.0,
+    "max_outer_diameter": 24.8,
+    "innermost_bore_diameter": 7.0,
+    "collapsed_global_z": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "extended_global_z": [
+      0.0,
+      80.0,
+      150.0,
+      220.0
+    ],
+    "extension_order": "T1 is the outer/base tube; T2, T3 and T4 translate successively in +Z"
+  },
+  "tubes": [
+    {
+      "id": "T1",
+      "file": "parts/parts_1.stl",
+      "role": "outer/base tube",
+      "length": 110.0,
+      "outer_diameter": 24.8,
+      "inner_diameter": 20.8,
+      "wall_thickness": 2.0,
+      "global_z_collapsed": 0.0,
+      "global_z_extended": 0.0,
+      "has_keyway": true,
+      "has_key": false
+    },
+    {
+      "id": "T2",
+      "file": "parts/parts_2.stl",
+      "role": "second tube",
+      "length": 100.0,
+      "outer_diameter": 19.8,
+      "inner_diameter": 16.0,
+      "wall_thickness": 1.9,
+      "global_z_collapsed": 0.0,
+      "global_z_extended": 80.0,
+      "has_keyway": true,
+      "has_key": true
+    },
+    {
+      "id": "T3",
+      "file": "parts/parts_3.stl",
+      "role": "third tube",
+      "length": 100.0,
+      "outer_diameter": 15.0,
+      "inner_diameter": 11.4,
+      "wall_thickness": 1.8,
+      "global_z_collapsed": 0.0,
+      "global_z_extended": 150.0,
+      "has_keyway": true,
+      "has_key": true
+    },
+    {
+      "id": "T4",
+      "file": "parts/parts_4.stl",
+      "role": "innermost tube",
+      "length": 100.0,
+      "outer_diameter": 10.4,
+      "inner_diameter": 7.0,
+      "wall_thickness": 1.7,
+      "global_z_collapsed": 0.0,
+      "global_z_extended": 220.0,
+      "has_keyway": false,
+      "has_key": true
+    }
+  ],
+  "joints": [
+    {
+      "id": "J1",
+      "parent": "T1",
+      "child": "T2",
+      "motion": "prismatic",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "collapsed_child_offset": 0.0,
+      "extended_child_offset": 80.0,
+      "stroke": 80.0,
+      "engagement_at_full_extension": 30.0,
+      "limit": {
+        "type": "four radial keys in blind axial keyways",
+        "key_count": 4,
+        "key_angular_offsets_deg": [
+          0.0,
+          90.0,
+          180.0,
+          270.0
+        ],
+        "key_height": 4.0,
+        "key_radial_depth": 1.1,
+        "keyway_top_local_z": 84.0,
+        "key_top_global_z_at_full_extension": 84.0,
+        "keyway_roof_global_z_at_full_extension": 84.0,
+        "radial_catch": 0.6,
+        "separation_blocked_in_extension": true,
+        "contact_at_full_extension": "upper face of each T2 key bears on the T1 keyway roof"
+      },
+      "clearance": {
+        "body_single_side_radial": 0.5,
+        "key_to_keyway_side_each_side": 0.5,
+        "key_top_to_keyway_roof_at_collapsed": 80.0,
+        "key_od_to_keyway_floor_radial": 0.5
+      }
+    },
+    {
+      "id": "J2",
+      "parent": "T2",
+      "child": "T3",
+      "motion": "prismatic",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "collapsed_child_offset": 0.0,
+      "extended_child_offset": 70.0,
+      "stroke": 70.0,
+      "engagement_at_full_extension": 30.0,
+      "limit": {
+        "type": "four radial keys in blind axial keyways",
+        "key_count": 4,
+        "key_angular_offsets_deg": [
+          0.0,
+          90.0,
+          180.0,
+          270.0
+        ],
+        "key_height": 4.0,
+        "key_radial_depth": 1.1,
+        "keyway_top_local_z": 74.0,
+        "key_top_global_z_at_full_extension": 154.0,
+        "keyway_roof_global_z_at_full_extension": 154.0,
+        "radial_catch": 0.6,
+        "separation_blocked_in_extension": true,
+        "contact_at_full_extension": "upper face of each T3 key bears on the T2 keyway roof"
+      },
+      "clearance": {
+        "body_single_side_radial": 0.5,
+        "key_to_keyway_side_each_side": 0.5,
+        "key_top_to_keyway_roof_at_collapsed": 70.0,
+        "key_od_to_keyway_floor_radial": 0.5
+      }
+    },
+    {
+      "id": "J3",
+      "parent": "T3",
+      "child": "T4",
+      "motion": "prismatic",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "collapsed_child_offset": 0.0,
+      "extended_child_offset": 70.0,
+      "stroke": 70.0,
+      "engagement_at_full_extension": 30.0,
+      "limit": {
+        "type": "four radial keys in blind axial keyways",
+        "key_count": 4,
+        "key_angular_offsets_deg": [
+          0.0,
+          90.0,
+          180.0,
+          270.0
+        ],
+        "key_height": 4.0,
+        "key_radial_depth": 1.1,
+        "keyway_top_local_z": 74.0,
+        "key_top_global_z_at_full_extension": 224.0,
+        "keyway_roof_global_z_at_full_extension": 224.0,
+        "radial_catch": 0.6,
+        "separation_blocked_in_extension": true,
+        "contact_at_full_extension": "upper face of each T4 key bears on the T3 keyway roof"
+      },
+      "clearance": {
+        "body_single_side_radial": 0.5,
+        "key_to_keyway_side_each_side": 0.5,
+        "key_top_to_keyway_roof_at_collapsed": 70.0,
+        "key_od_to_keyway_floor_radial": 0.5
+      }
+    }
+  ],
+  "stop_chain": {
+    "description": "Each stage is independently captive. Pulling the free end first takes up 80 mm at J1, then 70 mm at J2, then 70 mm at J3; further pull is blocked by the key/keyway roofs.",
+    "total_extension": 220.0,
+    "full_extension_reached_without_losing_engagement": true
+  }
+}

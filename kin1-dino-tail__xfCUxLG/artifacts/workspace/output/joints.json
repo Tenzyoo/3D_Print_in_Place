@@ -1,0 +1,580 @@
+{
+  "schema_version": "1.0",
+  "title": "Print-in-place articulated dinosaur - joint declaration",
+  "units": "mm",
+  "coordinate_system": {
+    "handedness": "right-handed",
+    "print_orientation": "+Z up; build plate at z=0",
+    "neutral_pose": "all tail segments collinear along +X",
+    "origin": "global STL origin; all part files use this same coordinate system and pose"
+  },
+  "overall_bounds_mm": {
+    "min": [
+      -39.1957,
+      -12.3966,
+      0.0
+    ],
+    "max": [
+      60.1,
+      12.3966,
+      52.8975
+    ],
+    "extents": [
+      99.2957,
+      24.7932,
+      52.8975
+    ]
+  },
+  "overall_limit_mm": [
+    100.0,
+    50.0,
+    60.0
+  ],
+  "model_file": "model.stl",
+  "model_sha256": "f34d03700be34bd5321152f4976902134bd724f44476eb457bc54438ad09eb9e",
+  "fixed_body": "body",
+  "tail_segments": [
+    "tail_1",
+    "tail_2",
+    "tail_3"
+  ],
+  "joint_count": 3,
+  "parts": [
+    {
+      "id": "body",
+      "name": "fixed body (head, torso, four legs, tail stock)",
+      "file": "parts/parts_1.stl",
+      "role": "fixed",
+      "part_index": 1,
+      "stl_sha256": "cae2107470e658b234b53078bfc3b9b0bac45ed74aeb6f5ac98ba1bf76e764a3",
+      "bbox_min_mm": [
+        -39.1957,
+        -12.3966,
+        0.0
+      ],
+      "bbox_max_mm": [
+        25.8,
+        12.3966,
+        52.8975
+      ],
+      "extents_mm": [
+        64.9957,
+        24.7932,
+        52.8975
+      ],
+      "volume_mm3": 18289.8114,
+      "surface_area_mm2": 6097.261,
+      "centroid_mm": [
+        -5.415888,
+        -0.0,
+        20.805511
+      ],
+      "triangles": 90418,
+      "watertight": true,
+      "shell_count": 1,
+      "min_z_mm": 0.0,
+      "bed_contact_area_mm2": 164.245
+    },
+    {
+      "id": "tail_1",
+      "name": "proximal tail segment",
+      "file": "parts/parts_2.stl",
+      "role": "moving",
+      "part_index": 2,
+      "stl_sha256": "2ac1e63542cd7b0461cb39df62bcbac031d0d83f9a9c19982f0f5235a5e4ee09",
+      "bbox_min_mm": [
+        19.8024,
+        -5.2,
+        0.0
+      ],
+      "bbox_max_mm": [
+        39.3,
+        5.2,
+        9.1
+      ],
+      "extents_mm": [
+        19.4976,
+        10.4,
+        9.1
+      ],
+      "volume_mm3": 673.0304,
+      "surface_area_mm2": 710.639,
+      "centroid_mm": [
+        29.080059,
+        0.0,
+        4.004088
+      ],
+      "triangles": 3842,
+      "watertight": true,
+      "shell_count": 1,
+      "min_z_mm": 0.0,
+      "bed_contact_area_mm2": 90.489
+    },
+    {
+      "id": "tail_2",
+      "name": "middle tail segment",
+      "file": "parts/parts_3.stl",
+      "role": "moving",
+      "part_index": 3,
+      "stl_sha256": "aea7db18c14063e95948863ccfd8a6c500a106177dbfe7eb332419a77e8a075d",
+      "bbox_min_mm": [
+        33.3024,
+        -5.2,
+        0.0
+      ],
+      "bbox_max_mm": [
+        52.8,
+        5.2,
+        9.1
+      ],
+      "extents_mm": [
+        19.4976,
+        10.4,
+        9.1
+      ],
+      "volume_mm3": 673.0304,
+      "surface_area_mm2": 710.639,
+      "centroid_mm": [
+        42.580059,
+        0.0,
+        4.004088
+      ],
+      "triangles": 3842,
+      "watertight": true,
+      "shell_count": 1,
+      "min_z_mm": 0.0,
+      "bed_contact_area_mm2": 90.489
+    },
+    {
+      "id": "tail_3",
+      "name": "distal tail segment",
+      "file": "parts/parts_4.stl",
+      "role": "moving",
+      "part_index": 4,
+      "stl_sha256": "e9e067b79bb9e76a4752dcba0b531ad39c4b144007a7581e0bd776b0770ff456",
+      "bbox_min_mm": [
+        46.8024,
+        -5.2,
+        0.0
+      ],
+      "bbox_max_mm": [
+        60.1,
+        5.2,
+        8.34852
+      ],
+      "extents_mm": [
+        13.2976,
+        10.4,
+        8.34852
+      ],
+      "volume_mm3": 506.2188,
+      "surface_area_mm2": 464.337,
+      "centroid_mm": [
+        52.70691,
+        0.0,
+        3.638585
+      ],
+      "triangles": 3344,
+      "watertight": true,
+      "shell_count": 1,
+      "min_z_mm": 0.0,
+      "bed_contact_area_mm2": 50.306
+    }
+  ],
+  "joints": [
+    {
+      "id": "J1",
+      "name": "body_to_tail_1",
+      "parent": "body",
+      "child": "tail_1",
+      "position_mm": [
+        22.0,
+        0.0,
+        3.5
+      ],
+      "axis_origin_mm": [
+        22.0,
+        0.0,
+        3.5
+      ],
+      "pin_owner": "body",
+      "eye_owner": "tail_1",
+      "type": "revolute",
+      "axis": "Z",
+      "axis_direction_unit": [
+        0,
+        0,
+        1
+      ],
+      "neutral_angle_deg": 0.0,
+      "range_deg": [
+        -30.0,
+        30.0
+      ],
+      "min_angle_deg": -30.0,
+      "max_angle_deg": 30.0,
+      "required_min_range_deg": 20.0,
+      "measured_free_travel_deg": [
+        -41.0,
+        41.0
+      ],
+      "radial_shaft_clearance_mm": 0.5,
+      "axial_upper_clearance_mm": 0.5,
+      "geometry": {
+        "pin_radius_mm": 2.2,
+        "eye_hole_radius_mm": 2.7,
+        "lower_flange_radius_mm": 3.8,
+        "upper_head_radius_mm": 3.8,
+        "eye_outer_radius_mm": 5.2,
+        "eye_opening_deg": 130.0,
+        "eye_thickness_mm": 7.0,
+        "child_z_span_mm": [
+          0.0,
+          7.0
+        ],
+        "pin_lower_flange_z_mm": [
+          0.0,
+          1.5
+        ],
+        "pin_head_z_mm": [
+          7.5,
+          9.1
+        ],
+        "lower_flange_radial_clearance_at_z0_mm": 0.6,
+        "lower_cone_normal_clearance_mm": 0.4243,
+        "upper_head_axial_clearance_mm": 0.5,
+        "web_to_eye_min_2d_clearance_at_30deg_mm": 0.5,
+        "c_opening_chord_at_flange_radius_mm": 6.8879,
+        "flange_diameter_mm": 7.6,
+        "lateral_escape_interference_mm": 0.7121,
+        "axial_retention_description": "Child C-eye is captured between a 45-degree lower flange cone and a 45-degree upper head cone. Both retaining lips are 1.1 mm larger in radius than the eye hole. The C-opening chord at the flange radius (6.888 mm) is smaller than the flange diameter (7.600 mm), so the eye cannot be walked sideways off the pin."
+      }
+    },
+    {
+      "id": "J2",
+      "name": "tail_1_to_tail_2",
+      "parent": "tail_1",
+      "child": "tail_2",
+      "position_mm": [
+        35.5,
+        0.0,
+        3.5
+      ],
+      "axis_origin_mm": [
+        35.5,
+        0.0,
+        3.5
+      ],
+      "pin_owner": "tail_1",
+      "eye_owner": "tail_2",
+      "type": "revolute",
+      "axis": "Z",
+      "axis_direction_unit": [
+        0,
+        0,
+        1
+      ],
+      "neutral_angle_deg": 0.0,
+      "range_deg": [
+        -30.0,
+        30.0
+      ],
+      "min_angle_deg": -30.0,
+      "max_angle_deg": 30.0,
+      "required_min_range_deg": 20.0,
+      "measured_free_travel_deg": [
+        -41.0,
+        41.0
+      ],
+      "radial_shaft_clearance_mm": 0.5,
+      "axial_upper_clearance_mm": 0.5,
+      "geometry": {
+        "pin_radius_mm": 2.2,
+        "eye_hole_radius_mm": 2.7,
+        "lower_flange_radius_mm": 3.8,
+        "upper_head_radius_mm": 3.8,
+        "eye_outer_radius_mm": 5.2,
+        "eye_opening_deg": 130.0,
+        "eye_thickness_mm": 7.0,
+        "child_z_span_mm": [
+          0.0,
+          7.0
+        ],
+        "pin_lower_flange_z_mm": [
+          0.0,
+          1.5
+        ],
+        "pin_head_z_mm": [
+          7.5,
+          9.1
+        ],
+        "lower_flange_radial_clearance_at_z0_mm": 0.6,
+        "lower_cone_normal_clearance_mm": 0.4243,
+        "upper_head_axial_clearance_mm": 0.5,
+        "web_to_eye_min_2d_clearance_at_30deg_mm": 0.5,
+        "c_opening_chord_at_flange_radius_mm": 6.8879,
+        "flange_diameter_mm": 7.6,
+        "lateral_escape_interference_mm": 0.7121,
+        "axial_retention_description": "Child C-eye is captured between a 45-degree lower flange cone and a 45-degree upper head cone. Both retaining lips are 1.1 mm larger in radius than the eye hole. The C-opening chord at the flange radius (6.888 mm) is smaller than the flange diameter (7.600 mm), so the eye cannot be walked sideways off the pin."
+      }
+    },
+    {
+      "id": "J3",
+      "name": "tail_2_to_tail_3",
+      "parent": "tail_2",
+      "child": "tail_3",
+      "position_mm": [
+        49.0,
+        0.0,
+        3.5
+      ],
+      "axis_origin_mm": [
+        49.0,
+        0.0,
+        3.5
+      ],
+      "pin_owner": "tail_2",
+      "eye_owner": "tail_3",
+      "type": "revolute",
+      "axis": "Z",
+      "axis_direction_unit": [
+        0,
+        0,
+        1
+      ],
+      "neutral_angle_deg": 0.0,
+      "range_deg": [
+        -30.0,
+        30.0
+      ],
+      "min_angle_deg": -30.0,
+      "max_angle_deg": 30.0,
+      "required_min_range_deg": 20.0,
+      "measured_free_travel_deg": [
+        -41.0,
+        41.0
+      ],
+      "radial_shaft_clearance_mm": 0.5,
+      "axial_upper_clearance_mm": 0.5,
+      "geometry": {
+        "pin_radius_mm": 2.2,
+        "eye_hole_radius_mm": 2.7,
+        "lower_flange_radius_mm": 3.8,
+        "upper_head_radius_mm": 3.8,
+        "eye_outer_radius_mm": 5.2,
+        "eye_opening_deg": 130.0,
+        "eye_thickness_mm": 7.0,
+        "child_z_span_mm": [
+          0.0,
+          7.0
+        ],
+        "pin_lower_flange_z_mm": [
+          0.0,
+          1.5
+        ],
+        "pin_head_z_mm": [
+          7.5,
+          9.1
+        ],
+        "lower_flange_radial_clearance_at_z0_mm": 0.6,
+        "lower_cone_normal_clearance_mm": 0.4243,
+        "upper_head_axial_clearance_mm": 0.5,
+        "web_to_eye_min_2d_clearance_at_30deg_mm": 0.5,
+        "c_opening_chord_at_flange_radius_mm": 6.8879,
+        "flange_diameter_mm": 7.6,
+        "lateral_escape_interference_mm": 0.7121,
+        "axial_retention_description": "Child C-eye is captured between a 45-degree lower flange cone and a 45-degree upper head cone. Both retaining lips are 1.1 mm larger in radius than the eye hole. The C-opening chord at the flange radius (6.888 mm) is smaller than the flange diameter (7.600 mm), so the eye cannot be walked sideways off the pin."
+      }
+    }
+  ],
+  "moving_parts": {
+    "tail_1": {
+      "part_id": "tail_1",
+      "file": "parts/parts_2.stl",
+      "stl_sha256": "2ac1e63542cd7b0461cb39df62bcbac031d0d83f9a9c19982f0f5235a5e4ee09",
+      "bbox_min_mm": [
+        19.8024,
+        -5.2,
+        0.0
+      ],
+      "bbox_max_mm": [
+        39.3,
+        5.2,
+        9.1
+      ],
+      "volume_mm3": 673.0304,
+      "centroid_mm": [
+        29.080059,
+        0.0,
+        4.004088
+      ],
+      "child_eye": {
+        "joint": "J1",
+        "center_mm": [
+          22.0,
+          0.0,
+          3.5
+        ],
+        "inner_radius_mm": 2.7,
+        "outer_radius_mm": 5.2,
+        "opening_deg": 130.0,
+        "opening_direction": "toward -X (toward parent)",
+        "z_span_mm": [
+          0.0,
+          7.0
+        ],
+        "bottom_recess_depth_mm": 1.5,
+        "bottom_recess_outer_radius_mm": 4.4
+      },
+      "parent_pin": {
+        "joint": "J2",
+        "center_mm": [
+          35.5,
+          0.0,
+          3.5
+        ],
+        "shaft_radius_mm": 2.2,
+        "flange_radius_mm": 3.8,
+        "head_radius_mm": 3.8,
+        "shaft_z_span_mm": [
+          0.0,
+          9.1
+        ],
+        "lower_flange_z_mm": [
+          0.0,
+          1.5
+        ],
+        "head_z_mm": [
+          7.5,
+          9.1
+        ]
+      },
+      "local_axis": "+Z; neutral segment length axis +X"
+    },
+    "tail_2": {
+      "part_id": "tail_2",
+      "file": "parts/parts_3.stl",
+      "stl_sha256": "aea7db18c14063e95948863ccfd8a6c500a106177dbfe7eb332419a77e8a075d",
+      "bbox_min_mm": [
+        33.3024,
+        -5.2,
+        0.0
+      ],
+      "bbox_max_mm": [
+        52.8,
+        5.2,
+        9.1
+      ],
+      "volume_mm3": 673.0304,
+      "centroid_mm": [
+        42.580059,
+        0.0,
+        4.004088
+      ],
+      "child_eye": {
+        "joint": "J2",
+        "center_mm": [
+          35.5,
+          0.0,
+          3.5
+        ],
+        "inner_radius_mm": 2.7,
+        "outer_radius_mm": 5.2,
+        "opening_deg": 130.0,
+        "opening_direction": "toward -X (toward parent)",
+        "z_span_mm": [
+          0.0,
+          7.0
+        ],
+        "bottom_recess_depth_mm": 1.5,
+        "bottom_recess_outer_radius_mm": 4.4
+      },
+      "parent_pin": {
+        "joint": "J3",
+        "center_mm": [
+          49.0,
+          0.0,
+          3.5
+        ],
+        "shaft_radius_mm": 2.2,
+        "flange_radius_mm": 3.8,
+        "head_radius_mm": 3.8,
+        "shaft_z_span_mm": [
+          0.0,
+          9.1
+        ],
+        "lower_flange_z_mm": [
+          0.0,
+          1.5
+        ],
+        "head_z_mm": [
+          7.5,
+          9.1
+        ]
+      },
+      "local_axis": "+Z; neutral segment length axis +X"
+    },
+    "tail_3": {
+      "part_id": "tail_3",
+      "file": "parts/parts_4.stl",
+      "stl_sha256": "e9e067b79bb9e76a4752dcba0b531ad39c4b144007a7581e0bd776b0770ff456",
+      "bbox_min_mm": [
+        46.8024,
+        -5.2,
+        0.0
+      ],
+      "bbox_max_mm": [
+        60.1,
+        5.2,
+        8.34852
+      ],
+      "volume_mm3": 506.2188,
+      "centroid_mm": [
+        52.70691,
+        0.0,
+        3.638585
+      ],
+      "child_eye": {
+        "joint": "J3",
+        "center_mm": [
+          49.0,
+          0.0,
+          3.5
+        ],
+        "inner_radius_mm": 2.7,
+        "outer_radius_mm": 5.2,
+        "opening_deg": 130.0,
+        "opening_direction": "toward -X (toward parent)",
+        "z_span_mm": [
+          0.0,
+          7.0
+        ],
+        "bottom_recess_depth_mm": 1.5,
+        "bottom_recess_outer_radius_mm": 4.4
+      },
+      "parent_pin": null,
+      "local_axis": "+Z; neutral segment length axis +X"
+    }
+  },
+  "verification": {
+    "neutral_collisions": [],
+    "tested_pose_count": 28,
+    "collision_test": "manifold3d boolean intersection of all six part pairs at 28 poses",
+    "min_2d_joint_clearance_mm": 0.5,
+    "measured_free_travel_deg": {
+      "J1_neg": 41.0,
+      "J1_pos": 41.0,
+      "J2_neg": 41.0,
+      "J2_pos": 41.0,
+      "J3_neg": 41.0,
+      "J3_pos": 41.0
+    },
+    "note": "The declared +/-30 deg range already exceeds the +/-20 deg requirement. A geometric stop from the C-eye/web begins at about +/-41 deg, so the declared range has extra margin and does not rely on contact to hold position.",
+    "max_single_pose_extents_at_declared_range_mm": [
+      99.2957,
+      41.9379,
+      52.8975
+    ],
+    "posed_envelope_within_limits": true
+  }
+}

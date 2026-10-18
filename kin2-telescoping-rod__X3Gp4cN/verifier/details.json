@@ -1,0 +1,17 @@
+{
+ "task": "kin2-telescoping-rod",
+ "files": [
+  "PRINT_AND_INSPECTION.md",
+  "extended_preview.png",
+  "joints.json",
+  "model.scad",
+  "model.stl",
+  "parts/parts_1.stl",
+  "parts/parts_2.stl",
+  "parts/parts_3.stl",
+  "parts/parts_4.stl",
+  "section_check.png",
+  "validate_model.py",
+  "validation_report.json"
+ ]
+}

@@ -1,0 +1,9 @@
+已完成，交付文件位于 `/app/output/`：
+
+- [参数化 OpenSCAD 源码](</app/output/model.scad>)
+- [中立姿态整体 STL](</app/output/model.stl>)
+- [关节与零件定义](</app/output/joints.json>)
+- [打印方向及检查记录](</app/output/print_and_inspection.md>)
+- 六个独立零件 STL：[parts_1.stl](</app/output/parts/parts_1.stl>) 至 [parts_6.stl](</app/output/parts/parts_6.stl>)
+
+整体尺寸为 **144.5 × 14 × 10 mm**。PrusaSlicer 检查确认整体 STL 是流形网格且包含 6 个零件；六个独立 STL 也各自是单一连通零件。五个关节的轴孔径向间隙为 0.5 mm；逐关节在 −25°、0°、+25° 共 15 种姿态下进行网格相交检查，均无相交。使用指定 PLA、0.4 mm 喷嘴、0.2 mm 层高和关闭支撑的配置，已成功切出 50 层 G-code。

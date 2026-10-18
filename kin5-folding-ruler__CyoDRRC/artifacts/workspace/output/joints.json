@@ -1,0 +1,32 @@
+{
+  "units": "mm",
+  "angle_convention": {
+    "straight": 0,
+    "folded_back": 180,
+    "positive_angle": "0..180 is the fold amount; the two joints intentionally use opposite rotation senses"
+  },
+  "joints": [
+    {
+      "id": 1,
+      "segments": [1, 2],
+      "axis": [0, 0, 1],
+      "position_straight": [40, -13, 0],
+      "range_degrees": [0, 180],
+      "fold_direction": "clockwise about +Z; segment 2 folds from +X toward -Y, placing its body in the -Y lane at 180 degrees",
+      "pin_segment": 1,
+      "eye_segment": 2,
+      "radial_clearance_mm": 0.5
+    },
+    {
+      "id": 2,
+      "segments": [2, 3],
+      "axis": [0, 0, 1],
+      "position_straight": [80, 13, 0],
+      "range_degrees": [0, 180],
+      "fold_direction": "counterclockwise about +Z; segment 3 folds from +X toward +Y, placing its body in the +Y lane relative to segment 2 at 180 degrees",
+      "pin_segment": 2,
+      "eye_segment": 3,
+      "radial_clearance_mm": 0.5
+    }
+  ]
+}

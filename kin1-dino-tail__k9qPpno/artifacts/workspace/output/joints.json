@@ -1,0 +1,114 @@
+{
+  "units": "mm",
+  "coordinate_system": {
+    "origin": "OpenSCAD world origin",
+    "x_axis": "head to tail in neutral pose",
+    "y_axis": "left/right across body",
+    "z_axis": "vertical; all tail pivots rotate about +Z",
+    "neutral_pose": "all four parts in their exported coordinates"
+  },
+  "parts": [
+    {
+      "id": "body",
+      "part_number": 1,
+      "stl": "parts/parts_1.stl",
+      "role": "fixed head, torso, four legs, and first integrated male pin",
+      "identification_geometry": {
+        "aabb_min": [-32.0, -17.2, 0.0],
+        "aabb_max": [17.9, 17.2, 8.65],
+        "pivot_pin_centers": [[14.8, 0.0, 0.0]],
+        "fixed_leg_count": 4
+      }
+    },
+    {
+      "id": "tail_segment_1",
+      "part_number": 2,
+      "stl": "parts/parts_2.stl",
+      "role": "first independently moving tail segment; female socket at proximal end and male pin at distal end",
+      "identification_geometry": {
+        "aabb_min": [12.0373, -4.3, 0.0],
+        "aabb_max": [34.1, 4.3, 6.0],
+        "proximal_socket_center": [14.8, 0.0, 0.0],
+        "distal_pin_center": [31.0, 0.0, 0.0],
+        "link_outline_xy": [[18.7, -2.35], [26.2, -1.55], [26.2, 1.55], [18.7, 2.35]]
+      }
+    },
+    {
+      "id": "tail_segment_2",
+      "part_number": 3,
+      "stl": "parts/parts_3.stl",
+      "role": "second independently moving tail segment; female socket at proximal end and male pin at distal end",
+      "identification_geometry": {
+        "aabb_min": [28.2373, -4.3, 0.0],
+        "aabb_max": [47.1, 4.3, 6.0],
+        "proximal_socket_center": [31.0, 0.0, 0.0],
+        "distal_pin_center": [44.0, 0.0, 0.0],
+        "link_outline_xy": [[34.9, -1.65], [39.35, -1.15], [39.35, 1.15], [34.9, 1.65]]
+      }
+    },
+    {
+      "id": "tail_segment_3",
+      "part_number": 4,
+      "stl": "parts/parts_4.stl",
+      "role": "third independently moving tail segment and tapered tip",
+      "identification_geometry": {
+        "aabb_min": [41.2373, -4.3, 0.0],
+        "aabb_max": [52.05, 4.3, 6.0],
+        "proximal_socket_center": [44.0, 0.0, 0.0],
+        "tip_center_approx": [51.8, 0.0, 0.0]
+      }
+    }
+  ],
+  "joint_design": {
+    "type": "integral vertical pin with captured radial flange in a C-shaped female socket",
+    "pin_radius": 1.8,
+    "bore_radius": 2.3,
+    "radial_pin_bore_clearance": 0.5,
+    "flange_radius": 3.1,
+    "chamber_radius": 3.7,
+    "radial_flange_chamber_clearance": 0.6,
+    "flange_z": [2.2, 2.9],
+    "socket_profile_z": {
+      "bearing_bore_radius_ends": [0.0, 0.55, 4.7, 6.0],
+      "flange_chamber_radius_interval": [1.95, 3.3],
+      "shoulder_transitions": "45-degree conical transitions from 2.3 mm bearing radius to 3.7 mm chamber radius"
+    },
+    "slot_relief": {
+      "angular_interval_degrees_about_local_positive_x": [130, 230],
+      "purpose": "clear the short bed-level pin anchor web while retaining the flange over the declared sweep"
+    },
+    "axial_retention": "the 3.1 mm flange is larger than the 2.3 mm bearing opening; conical shoulders prevent direct axial passage"
+  },
+  "joints": [
+    {
+      "id": "joint_1",
+      "connects": ["body", "tail_segment_1"],
+      "axis_origin": [14.8, 0.0, 0.0],
+      "axis_direction": [0.0, 0.0, 1.0],
+      "neutral_angle_degrees": 0.0,
+      "declared_motion_range_degrees": [-20.0, 20.0],
+      "moving_part": "tail_segment_1",
+      "pin_owner": "body"
+    },
+    {
+      "id": "joint_2",
+      "connects": ["tail_segment_1", "tail_segment_2"],
+      "axis_origin": [31.0, 0.0, 0.0],
+      "axis_direction": [0.0, 0.0, 1.0],
+      "neutral_angle_degrees": 0.0,
+      "declared_motion_range_degrees": [-20.0, 20.0],
+      "moving_part": "tail_segment_2",
+      "pin_owner": "tail_segment_1"
+    },
+    {
+      "id": "joint_3",
+      "connects": ["tail_segment_2", "tail_segment_3"],
+      "axis_origin": [44.0, 0.0, 0.0],
+      "axis_direction": [0.0, 0.0, 1.0],
+      "neutral_angle_degrees": 0.0,
+      "declared_motion_range_degrees": [-20.0, 20.0],
+      "moving_part": "tail_segment_3",
+      "pin_owner": "tail_segment_2"
+    }
+  ]
+}

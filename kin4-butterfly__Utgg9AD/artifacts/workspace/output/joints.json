@@ -1,0 +1,43 @@
+{
+  "units": "mm",
+  "angle_units": "deg",
+  "coordinate_frame": "X = body longitudinal axis (head toward +X), Y = wing span (butterfly's left = +Y), Z = vertical / print build direction. All STL files share this frame and the neutral pose.",
+  "neutral_pose": "all joint angles = 0 (as in model.stl)",
+  "fixed_part": "parts_1",
+  "parts": [
+    {"id": "parts_1", "name": "body",       "file": "parts/parts_1.stl", "role": "fixed: head, eyes, antennae, thorax, abdomen, 2 pins with retaining caps"},
+    {"id": "parts_2", "name": "left_wing",  "file": "parts/parts_2.stl", "role": "moving: left wing (+Y side) with eye ring"},
+    {"id": "parts_3", "name": "right_wing", "file": "parts/parts_3.stl", "role": "moving: right wing (-Y side) with eye ring"}
+  ],
+  "joints": [
+    {
+      "name": "left_wing_joint",
+      "type": "revolute",
+      "parent": "parts_1",
+      "child": "parts_2",
+      "origin": [0.0, 11.0, 0.0],
+      "axis": [0.0, 0.0, 1.0],
+      "axis_note": "rotation axis is the line through origin parallel to +Z; positive angle = right-hand rule about +Z (counter-clockwise seen from above)",
+      "range_deg": [-30.0, 30.0],
+      "neutral_deg": 0.0,
+      "independent": true,
+      "pin": {"shaft_diameter": 5.0, "hole_diameter": 6.0, "radial_clearance": 0.5, "shaft_z_range": [1.9, 5.3]},
+      "axial_retention": "lower 45deg pin flange (D8) under the eye ring + upper 45deg cone cap (D15) over the eye ring; normal clearance 0.5 mm everywhere"
+    },
+    {
+      "name": "right_wing_joint",
+      "type": "revolute",
+      "parent": "parts_1",
+      "child": "parts_3",
+      "origin": [0.0, -11.0, 0.0],
+      "axis": [0.0, 0.0, 1.0],
+      "axis_note": "rotation axis is the line through origin parallel to +Z; positive angle = right-hand rule about +Z (counter-clockwise seen from above)",
+      "range_deg": [-30.0, 30.0],
+      "neutral_deg": 0.0,
+      "independent": true,
+      "pin": {"shaft_diameter": 5.0, "hole_diameter": 6.0, "radial_clearance": 0.5, "shaft_z_range": [1.9, 5.3]},
+      "axial_retention": "lower 45deg pin flange (D8) under the eye ring + upper 45deg cone cap (D15) over the eye ring; normal clearance 0.5 mm everywhere"
+    }
+  ],
+  "motion_validation": "Rotate each child part about its joint axis by any angle in range_deg, with the other wing at any angle in its range (or held still); no part pair intersects (see verification_report.json)."
+}

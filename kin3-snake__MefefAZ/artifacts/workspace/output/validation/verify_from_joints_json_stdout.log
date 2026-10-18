@@ -1,0 +1,10 @@
+{
+  "source": "joints.json",
+  "parts_loaded": 6,
+  "joints_checked": 5,
+  "angles_per_joint": [
+    -30,
+    30
+  ],
+  "all_declared_ranges_interference_free": true
+}

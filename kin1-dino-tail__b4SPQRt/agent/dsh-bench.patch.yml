@@ -1,0 +1,62 @@
+# Written by the Harbor dsh adapter.
+[
+  {
+    "id": "agent-default-model",
+    "config": {
+      "provider": "openai",
+      "model": "gpt-6.1-sol",
+      "reasoningEffort": "high"
+    }
+  },
+  {
+    "id": "session-persistence-jsonl",
+    "config": {
+      "root": "/logs/agent/dsh-home/sessions",
+      "compression": "none"
+    }
+  },
+  {
+    "id": "llm-pi-ai",
+    "config": {
+      "providers": {
+        "openai": {
+          "apiKeyEnv": "OPENAI_API_KEY",
+          "baseURL": "http://127.0.0.1:18080",
+          "api": "openai-responses",
+          "models": [
+            {
+              "id": "gpt-6.1-sol",
+              "name": "gpt-6.1-sol",
+              "contextWindow": 272000,
+              "input": [
+                "text",
+                "image"
+              ],
+              "reasoningEfforts": {
+                "off": "none",
+                "low": "low",
+                "medium": "medium",
+                "high": "high",
+                "xhigh": "xhigh",
+                "max": "max"
+              }
+            }
+          ],
+          "reasoning": "high",
+          "streamIdleTimeoutMs": 1800000,
+          "timeoutMs": 3600000
+        }
+      }
+    }
+  },
+  {
+    "id": "tool-web",
+    "disabled": true
+  },
+  {
+    "id": "session-log-deepseek",
+    "config": {
+      "enabled": false
+    }
+  }
+]

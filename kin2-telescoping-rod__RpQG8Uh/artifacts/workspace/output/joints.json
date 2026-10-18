@@ -1,0 +1,49 @@
+{
+  "units": "mm",
+  "assembly_pose": "fully retracted, all tube bases at z=0",
+  "axis": [0, 0, 1],
+  "joints": [
+    {
+      "outer_part": "parts_1.stl",
+      "inner_part": "parts_2.stl",
+      "type": "prismatic",
+      "axis": [0, 0, 1],
+      "assembly_offset": 0,
+      "retraction_limit": -4,
+      "extension_limit": 70,
+      "usable_extension_stroke": 70,
+      "retention": "three T-head sliders captured in three axial slots; slot ends limit travel"
+    },
+    {
+      "outer_part": "parts_2.stl",
+      "inner_part": "parts_3.stl",
+      "type": "prismatic",
+      "axis": [0, 0, 1],
+      "assembly_offset": 0,
+      "retraction_limit": -4,
+      "extension_limit": 70,
+      "usable_extension_stroke": 70,
+      "retention": "three T-head sliders captured in three axial slots; slot ends limit travel"
+    },
+    {
+      "outer_part": "parts_3.stl",
+      "inner_part": "parts_4.stl",
+      "type": "prismatic",
+      "axis": [0, 0, 1],
+      "assembly_offset": 0,
+      "retraction_limit": -4,
+      "extension_limit": 70,
+      "usable_extension_stroke": 70,
+      "retention": "three T-head sliders captured in three axial slots; slot ends limit travel"
+    }
+  ],
+  "dimensions": {
+    "collapsed_length": 100,
+    "fully_extended_length": 310,
+    "maximum_outer_diameter_in_assembly_pose": 24.85,
+    "nominal_sliding_radial_clearance": 0.5,
+    "slider_stem_to_slot_side_clearance": 0.6,
+    "slider_head_to_slot_side_clearance": 0.5,
+    "slider_head_to_parent_outer_wall_clearance": 0.4
+  }
+}

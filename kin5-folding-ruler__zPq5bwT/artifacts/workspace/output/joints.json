@@ -1,0 +1,43 @@
+{
+  "units": "mm",
+  "frame": "与 model.stl 及 parts/*.stl 相同的装配坐标系；文件中的姿态为 0°（完全展开）。Z 轴竖直向上 = 打印方向，z=0 为热床面。",
+  "angle_convention": "0° = 相邻尺段共线展开；180° = 子段向回折叠、与父段并排。角度为子段相对父段绕 axis_direction 的右手旋转角。",
+  "kinematic_chain": "parts_1 (基座) -> J1 -> parts_2 -> J2 -> parts_3；转动某关节时，子段及其下游尺段随之整体转动",
+  "parts": [
+    {"index": 1, "file": "parts/parts_1.stl", "x_range_at_0deg": [0, 40]},
+    {"index": 2, "file": "parts/parts_2.stl", "x_range_at_0deg": [40.5, 80.5]},
+    {"index": 3, "file": "parts/parts_3.stl", "x_range_at_0deg": [81, 121]}
+  ],
+  "joints": [
+    {
+      "name": "J1",
+      "type": "revolute",
+      "parent": "parts_1",
+      "child": "parts_2",
+      "moving_parts": ["parts_2", "parts_3"],
+      "pin_owner": "parts_1",
+      "hole_owner": "parts_2",
+      "axis_origin": [40.25, 6.4, 0.0],
+      "axis_direction": [0, 0, 1],
+      "pin_center_at_mid_height": [40.25, 6.4, 2.5],
+      "range_deg": [0, 180],
+      "fold_direction": "绕 +Z 逆时针（俯视 CCW）：parts_2 从 +X 方向经 +Y 侧摆到 parts_1 的 +Y 侧（并排间隙 0.8 mm）",
+      "radial_clearance_mm": 0.5
+    },
+    {
+      "name": "J2",
+      "type": "revolute",
+      "parent": "parts_2",
+      "child": "parts_3",
+      "moving_parts": ["parts_3"],
+      "pin_owner": "parts_2",
+      "hole_owner": "parts_3",
+      "axis_origin": [80.75, -6.4, 0.0],
+      "axis_direction": [0, 0, -1],
+      "pin_center_at_mid_height": [80.75, -6.4, 2.5],
+      "range_deg": [0, 180],
+      "fold_direction": "绕 +Z 顺时针（俯视 CW，即绕 axis_direction=-Z 的正角度）：parts_3 从 +X 方向经 -Y 侧摆到 parts_2 的 -Y 侧（并排间隙 0.8 mm）；与 J1 构成 Z 字形折叠",
+      "radial_clearance_mm": 0.5
+    }
+  ]
+}

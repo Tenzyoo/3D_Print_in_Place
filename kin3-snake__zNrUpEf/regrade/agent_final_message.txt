@@ -1,0 +1,8 @@
+交付文件已生成于 `/app/output/`：
+
+- `model.scad`、`model.stl`、`joints.json`、`PRINT_NOTES.md`
+- `parts/parts_1.stl` 至 `parts/parts_6.stl`
+
+**几何检查结果：**总装网格水密，包含 6 个独立连通组件；六个单件 STL 各为一个水密组件。直线姿态外廓约为 **123.49 × 13.98 × 7.995 mm**，在尺寸限制内。销头与套环的名义径向间隙为 0.50 mm，轴向间隙为 0.50 mm。
+
+**重要限制：目前交付未能证明满足全部要求，不建议直接打印。**`joints.json` 中的 ±25° 是目标范围，尚未通过关节扫掠或实物验证；当前 40° 喉口也不能保证该行程无干涉。PrusaSlicer 无支撑切片虽成功导出 G-code，但报告了 **Floating bridge anchors、Low bed adhesion、Loose extrusions**，所以无支撑打印稳定性未通过。`PRINT_NOTES.md` 已记录这些限制和检查结果。

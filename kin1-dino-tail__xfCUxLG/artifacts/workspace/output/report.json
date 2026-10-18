@@ -1,0 +1,314 @@
+{
+  "schema_version": "1.0",
+  "title": "FDM 打印的一体化可活动小恐龙 - 检查报告",
+  "overall_status": "通过：几何、关节运动学、防脱结构与切片检查均通过；未做实体打印首件验证。",
+  "environment": {
+    "openscad": "2021.01",
+    "python": "3.12",
+    "trimesh": "5.1.1",
+    "manifold3d": "available",
+    "prusa_slicer": "2.7.2",
+    "slicer_profile": "/opt/slicer/p1s_pla_0.20mm_nosupport.ini",
+    "material": "PLA",
+    "nozzle_diameter_mm": 0.4,
+    "layer_height_mm": 0.2,
+    "stl_units": "mm"
+  },
+  "deliverables": {
+    "source": "model.scad",
+    "complete_print_stl": "model.stl",
+    "part_stls": {
+      "body": "parts/parts_1.stl",
+      "tail_1": "parts/parts_2.stl",
+      "tail_2": "parts/parts_3.stl",
+      "tail_3": "parts/parts_4.stl"
+    },
+    "joint_declaration": "joints.json"
+  },
+  "design_summary": {
+    "fixed_body": "头部、躯干、四条腿、尾部根座和 J1 的固定销轴属于同一个固定主体。",
+    "moving_parts": "尾巴由 tail_1、tail_2、tail_3 三个独立零件组成。",
+    "joints": "3 个真实的绕 Z 轴回转销轴关节：body→tail_1、tail_1→tail_2、tail_2→tail_3；无静态假关节。",
+    "print_pose": "所有零件的底面均在 z=0；直接在打印平台上一次打印，打印后无需装入销轴、螺丝或任何其他零件。",
+    "print_in_place_clearance": "销轴-轴孔单边径向间隙 0.50 mm；上端轴向间隙 0.50 mm；下端 45° 防脱锥面最小法向间隙约 0.42 mm。",
+    "captive_design": "每个销轴有下法兰和上锥形挡头，形成上下双向轴向防脱；子件 C 形孔包角 230°，开口仅用于让上一节的连接筋通过。",
+    "tail_stock": "固定主体后下方有一个中央尾根座，底面在 z=0。它是固定主体的一部分，不是额外腿、也不是可拆支撑。"
+  },
+  "checks": [
+    {
+      "id": "DIM-01",
+      "name": "整体外接尺寸",
+      "status": "pass",
+      "measured_extents_mm": [
+        99.2957,
+        24.7932,
+        52.8975
+      ],
+      "limit_mm": [
+        100.0,
+        50.0,
+        60.0
+      ],
+      "margin_mm": [
+        0.7043,
+        25.2068,
+        7.1025
+      ],
+      "method": "trimesh 与 PrusaSlicer --info 双重读取 model.stl 包围盒"
+    },
+    {
+      "id": "MESH-01",
+      "name": "整体 STL 网格完整性",
+      "status": "pass",
+      "watertight": true,
+      "winding_consistent": true,
+      "shell_count": 4,
+      "triangles": 101446,
+      "volume_mm3": 20142.0909,
+      "note": "4 个互不融合的网格壳对应 4 个打印零件，正是 print-in-place 的预期结构。"
+    },
+    {
+      "id": "PART-01",
+      "name": "独立零件 STL 一致性",
+      "status": "pass",
+      "parts": {
+        "body": {
+          "bbox_min_mm": [
+            -39.1957,
+            -12.3966,
+            0.0
+          ],
+          "bbox_max_mm": [
+            25.8,
+            12.3966,
+            52.8975
+          ],
+          "volume_mm3": 18289.8114,
+          "watertight": true,
+          "shell_count": 1
+        },
+        "tail_1": {
+          "bbox_min_mm": [
+            19.8024,
+            -5.2,
+            0.0
+          ],
+          "bbox_max_mm": [
+            39.3,
+            5.2,
+            9.1
+          ],
+          "volume_mm3": 673.0304,
+          "watertight": true,
+          "shell_count": 1
+        },
+        "tail_2": {
+          "bbox_min_mm": [
+            33.3024,
+            -5.2,
+            0.0
+          ],
+          "bbox_max_mm": [
+            52.8,
+            5.2,
+            9.1
+          ],
+          "volume_mm3": 673.0304,
+          "watertight": true,
+          "shell_count": 1
+        },
+        "tail_3": {
+          "bbox_min_mm": [
+            46.8024,
+            -5.2,
+            0.0
+          ],
+          "bbox_max_mm": [
+            60.1,
+            5.2,
+            8.34852
+          ],
+          "volume_mm3": 506.2188,
+          "watertight": true,
+          "shell_count": 1
+        }
+      },
+      "volume_sum_mm3": 20142.0909,
+      "model_volume_mm3": 20142.0909,
+      "note": "四个零件与 model.stl 使用同一坐标系和同一中立姿态；体积之和与整体 STL 体积一致。"
+    },
+    {
+      "id": "BED-01",
+      "name": "一次打印的置床与接触",
+      "status": "pass",
+      "all_parts_min_z_mm": 0.0,
+      "bed_contact_area_mm2": {
+        "body": 164.245,
+        "tail_1": 90.489,
+        "tail_2": 90.489,
+        "tail_3": 50.306
+      },
+      "note": "四个零件都直接接触打印平台，没有悬空零件；脚掌与尾根座做了平底裁切以增加首层附着。"
+    },
+    {
+      "id": "JOINT-01",
+      "name": "关节数量、类型与位置",
+      "status": "pass",
+      "joint_count": 3,
+      "joints": [
+        {
+          "id": "J1",
+          "parent": "body",
+          "child": "tail_1",
+          "position_mm": [
+            22.0,
+            0.0,
+            3.5
+          ],
+          "axis": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "id": "J2",
+          "parent": "tail_1",
+          "child": "tail_2",
+          "position_mm": [
+            35.5,
+            0.0,
+            3.5
+          ],
+          "axis": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "id": "J3",
+          "parent": "tail_2",
+          "child": "tail_3",
+          "position_mm": [
+            49.0,
+            0.0,
+            3.5
+          ],
+          "axis": [
+            0,
+            0,
+            1
+          ]
+        }
+      ],
+      "note": "所有关节轴线均为全局 +Z，尾巴在 XY 水平面内左右摆动。"
+    },
+    {
+      "id": "CLEAR-01",
+      "name": "销轴与轴孔径向间隙",
+      "status": "pass",
+      "pin_radius_mm": 2.2,
+      "hole_radius_mm": 2.7,
+      "single_side_radial_clearance_mm": 0.5,
+      "allowed_mm": [
+        0.4,
+        0.6
+      ],
+      "note": "三个关节完全一致。"
+    },
+    {
+      "id": "CLEAR-02",
+      "name": "其他活动面间隙",
+      "status": "pass",
+      "upper_head_axial_gap_mm": 0.5,
+      "lower_recess_radial_gap_at_z0_mm": 0.6,
+      "lower_cone_min_normal_gap_mm": 0.4243,
+      "parent_body_relief_to_child_eye_mm": 0.5,
+      "tail_stock_to_child_swept_circle_mm": 0.6,
+      "note": "所有相邻活动面均留有明确非零间隙；没有零间隙滑动面。"
+    },
+    {
+      "id": "RANGE-01",
+      "name": "关节活动范围",
+      "status": "pass",
+      "declared_range_deg": [
+        -30.0,
+        30.0
+      ],
+      "required_range_deg": [
+        -20.0,
+        20.0
+      ],
+      "measured_free_travel_deg": [
+        -41.0,
+        41.0
+      ],
+      "min_2d_clearance_up_to_30deg_mm": 0.5,
+      "note": "声明 ±30° 已超过 ±20° 要求；几何硬限位约 ±41°，因此 ±30° 内不靠接触限位。"
+    },
+    {
+      "id": "KIN-01",
+      "name": "运动碰撞扫掠",
+      "status": "pass",
+      "tested_pose_count": 28,
+      "collision_poses": [],
+      "method": "将 tail_1/tail_2/tail_3 按关节链变换，对 4 个零件的 6 组配对做 manifold3d 布尔求交；覆盖 ±20° 与 ±30° 的 8 个角点组合以及单关节极限。",
+      "note": "全部测试姿态下均无体积重叠。",
+      "max_single_pose_extents_at_declared_range_mm": [
+        99.2957,
+        41.9379,
+        52.8975
+      ],
+      "posed_envelope_within_limits": true,
+      "pose_envelope_note": "在 J1/J2/J3 各自 ±30° 的单姿态组合中，最大单姿态外接尺寸仍为 99.30×41.94×52.90 mm，小于 100×50×60 mm。"
+    },
+    {
+      "id": "CAPTURE-01",
+      "name": "轴向防脱结构",
+      "status": "pass",
+      "lower_retaining_lip_radial_overlap_mm": 1.1,
+      "upper_retaining_lip_radial_overlap_mm": 1.1,
+      "c_opening_chord_at_flange_radius_mm": 6.8879,
+      "flange_diameter_mm": 7.6,
+      "lateral_escape_interference_mm": 0.7121,
+      "note": "下法兰与上挡头直径均大于轴孔；C 形开口在法兰半径处的弦长小于法兰直径，且销轴两端有挡边，无法沿 Z 轴直接拔出，也不能无变形地横向跨过法兰。"
+    },
+    {
+      "id": "SUPPORT-01",
+      "name": "关节间隙内不使用支撑",
+      "status": "pass",
+      "retention_geometry": "下端 45° 锥形凹槽 + 上端 45° 锥形挡头；首层均由销轴或平台自支撑。",
+      "gcode_support_markers": 0,
+      "supports_generated": false,
+      "note": "切片 G-code 中 ;TYPE:Support 计数为 0；所有关节间隙没有支撑材料路径。"
+    },
+    {
+      "id": "SLICE-01",
+      "name": "PrusaSlicer 切片检查",
+      "status": "pass_with_warnings",
+      "manifold": "yes",
+      "number_of_parts": 4,
+      "layer_count": 264,
+      "estimated_print_time": "1h 43m 35s (normal mode, no support)",
+      "filament_cm3": 10.51,
+      "gcode_support_markers": 0,
+      "warnings": [
+        "Floating object part",
+        "Floating bridge anchors",
+        "Low bed adhesion"
+      ],
+      "note": "切片成功并导出 G-code。警告为 PrusaSlicer 对多壳 print-in-place 零件、桥接区和首层附着裕量的稳定性启发式提示，不是网格错误；G-code 中没有支撑。"
+    }
+  ],
+  "limitations": [
+    "本环境没有实体 3D 打印机，因此未做实际 PLA 首件打印、拔脱力测试、反复摆动寿命测试或表面融合检查；结论来自几何检查、运动学布尔检查和切片检查。",
+    "0.5 mm 单边径向间隙是按 0.4 mm 喷嘴、0.2 mm 层高设计的。实际耗材收缩、挤出倍率、象脚和拉丝会改变有效间隙；首件应校准 flow/elephant-foot，并在打印后用轻微来回摆动破开关节。",
+    "PrusaSlicer 的无支撑切片给出 Floating object part / Floating bridge anchors / Low bed adhesion 稳定性提示。G-code 中没有支撑，也没有把支撑放进关节间隙；建议加 5 mm brim、提高首层附着并加强悬垂冷却后再打印。",
+    "上防脱挡头的 45° 悬垂面位于活动间隙上方，冷却不足时可能出现轻微下垂；这是 FDM 工艺限制。设计上已用 45° 锥面、0.5 mm 轴向间隙和完全无支撑的间隙来降低风险。",
+    "固定主体后下方的尾根座接触打印平台，以便把第一关节放到低处、让整条尾巴贴床打印。它属于固定主体，不是额外腿或可拆支撑；如果不希望它触床，需要重新布置第一关节高度。",
+    "未对 2.0–3.0 mm 宽的连接筋和 4.4 mm 直径销轴做极限扭矩/冲击强度测试；正常桌面把玩预期足够，但不能保证承受故意大力扭转。"
+  ],
+  "unimplemented_joints": [],
+  "conclusion": "3 个关节都是可独立绕 Z 轴旋转的销轴铰链，均具备上下双向轴向防脱结构，声明活动范围 ±30°，满足 ±20° 要求；没有用静态外观冒充活动关节。"
+}

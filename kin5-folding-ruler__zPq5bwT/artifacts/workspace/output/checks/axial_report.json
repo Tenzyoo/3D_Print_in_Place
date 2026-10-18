@@ -1,0 +1,14 @@
+{
+ "J1 @0deg child +Z": 0.65,
+ "J1 @0deg child -Z": 0.65,
+ "J1 @90deg child +Z": 0.65,
+ "J1 @90deg child -Z": 0.65,
+ "J1 @180deg child +Z": 0.65,
+ "J1 @180deg child -Z": 0.65,
+ "J2 @0deg child +Z": 0.65,
+ "J2 @0deg child -Z": 0.65,
+ "J2 @90deg child +Z": 0.65,
+ "J2 @90deg child -Z": 0.65,
+ "J2 @180deg child +Z": 0.65,
+ "J2 @180deg child -Z": 0.65
+}

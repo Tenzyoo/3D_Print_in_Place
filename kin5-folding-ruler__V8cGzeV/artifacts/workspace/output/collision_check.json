@@ -1,0 +1,9 @@
+{
+  "step_deg": 2.0,
+  "poses": 8281,
+  "max_overlap_volume_mm3": 0.0,
+  "failure_count": 0,
+  "failures": [],
+  "elapsed_s": 85.07,
+  "convention": "joint angles are non-negative; fold_sign is applied about the declared +Z axis"
+}

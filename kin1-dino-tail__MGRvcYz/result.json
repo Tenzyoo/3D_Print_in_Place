@@ -1,0 +1,150 @@
+{
+    "id": "be09fa36-7417-47a8-b544-564b98102369",
+    "task_name": "kin1-dino-tail",
+    "trial_name": "kin1-dino-tail__MGRvcYz",
+    "trial_uri": "file:///home/yuyang/Documents/bench_env/jobs/kin/kin1-dino-tail__MGRvcYz",
+    "task_id": {
+        "path": "kin_tasks/tasks/kin1-dino-tail"
+    },
+    "source": "tasks",
+    "task_checksum": "498470b98d657362999ed883883bfee9548228b3ac1862dad1097f4c52b00227",
+    "config": {
+        "task": {
+            "path": "kin_tasks/tasks/kin1-dino-tail",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": "tasks"
+        },
+        "trial_name": "kin1-dino-tail__MGRvcYz",
+        "trials_dir": "jobs/kin",
+        "install_only": false,
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": null,
+            "import_path": "gemini_agent:PinnedGeminiCli",
+            "model_name": "google/gemini-4-argon-high",
+            "n_concurrent": null,
+            "concurrency_group": null,
+            "skills": [],
+            "override_timeout_sec": 86400.0,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "resume_trajectory": false,
+            "load_trajectory": null,
+            "extra_allowed_hosts": [
+                "api.supergpt.dev"
+            ],
+            "kwargs": {
+                "version": "0.64.0",
+                "reasoning_effort": "high",
+                "disable_web_search": true
+            },
+            "env": {
+                "GEMINI_API_KEY": "${GEMINI_API_KEY}",
+                "GOOGLE_GEMINI_BASE_URL": "${GEMINI_BASE_URL}"
+            },
+            "mcp_servers": []
+        },
+        "user_agent": null,
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "stream": false,
+            "cpu_enforcement_policy": "auto",
+            "memory_enforcement_policy": "auto",
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "override_tpu": null,
+            "mounts": null,
+            "extra_docker_compose": [],
+            "kwargs": {},
+            "extra_allowed_hosts": []
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "artifacts": [
+            {
+                "source": "/app",
+                "destination": "workspace",
+                "exclude": [
+                    "__pycache__",
+                    "*.pyc",
+                    ".cache",
+                    "node_modules",
+                    ".venv"
+                ],
+                "service": null
+            }
+        ],
+        "extra_instruction_paths": [],
+        "extra_instructions": [],
+        "job_id": "282e061e-538f-40ef-a7a9-9143afe4c1f3",
+        "source_trial": null
+    },
+    "agent_info": {
+        "name": "gemini-cli",
+        "version": "0.64.0",
+        "model_info": {
+            "name": "gemini-4-argon-high",
+            "provider": "google"
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": 719751,
+        "n_cache_tokens": 560674,
+        "n_output_tokens": 60067,
+        "cost_usd": null,
+        "model_usage": {
+            "gemini-4-argon-high": {
+                "n_input_tokens": 719751,
+                "n_cache_tokens": 560674,
+                "n_output_tokens": 60067,
+                "cost_usd": null
+            }
+        },
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0,
+            "pass": 0
+        }
+    },
+    "verifier_environment_mode": "shared",
+    "exception_info": null,
+    "started_at": "2026-10-18T09:10:23.515667Z",
+    "finished_at": "2026-10-18T09:25:49.172550Z",
+    "environment_setup": {
+        "started_at": "2026-10-18T09:10:23.652838Z",
+        "finished_at": "2026-10-18T09:10:29.300840Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-10-18T09:10:29.300860Z",
+        "finished_at": "2026-10-18T09:10:31.126007Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-10-18T09:10:31.126165Z",
+        "finished_at": "2026-10-18T09:25:34.568817Z"
+    },
+    "verifier": {
+        "started_at": "2026-10-18T09:25:35.585677Z",
+        "finished_at": "2026-10-18T09:25:38.242932Z"
+    },
+    "step_results": null
+}

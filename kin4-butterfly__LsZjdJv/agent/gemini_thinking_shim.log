@@ -1,0 +1,422 @@
+shim listening on 127.0.0.1:18081 -> https://api.supergpt.dev (thinkingLevel HIGH)
+10:10:01 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=3309 secs=8.2
+10:10:05 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=5177 secs=11.7
+10:10:08 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=1825 secs=7.1
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 49560)
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/http/client.py", line 584, in _get_chunk_left
+    chunk_left = self._read_next_chunk_size()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 551, in _read_next_chunk_size
+    return int(line, 16)
+           ^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 16: b''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/logs/agent/gemini_thinking_shim.py", line 61, in do_POST
+    self._forward()
+  File "/logs/agent/gemini_thinking_shim.py", line 93, in _forward
+    while chunk := resp.read1(65536):
+                   ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 680, in read1
+    return self._read1_chunked(n)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 721, in _read1_chunked
+    chunk_left = self._get_chunk_left()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 586, in _get_chunk_left
+    raise IncompleteRead(b'')
+http.client.IncompleteRead: IncompleteRead(0 bytes read)
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 42190)
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/http/client.py", line 584, in _get_chunk_left
+    chunk_left = self._read_next_chunk_size()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 551, in _read_next_chunk_size
+    return int(line, 16)
+           ^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 16: b''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/logs/agent/gemini_thinking_shim.py", line 61, in do_POST
+    self._forward()
+  File "/logs/agent/gemini_thinking_shim.py", line 93, in _forward
+    while chunk := resp.read1(65536):
+                   ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 680, in read1
+    return self._read1_chunked(n)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 721, in _read1_chunked
+    chunk_left = self._get_chunk_left()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 586, in _get_chunk_left
+    raise IncompleteRead(b'')
+http.client.IncompleteRead: IncompleteRead(0 bytes read)
+----------------------------------------
+10:11:51 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=13936 secs=25.8
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 45514)
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/http/client.py", line 584, in _get_chunk_left
+    chunk_left = self._read_next_chunk_size()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 551, in _read_next_chunk_size
+    return int(line, 16)
+           ^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 16: b''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/logs/agent/gemini_thinking_shim.py", line 61, in do_POST
+    self._forward()
+  File "/logs/agent/gemini_thinking_shim.py", line 93, in _forward
+    while chunk := resp.read1(65536):
+                   ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 680, in read1
+    return self._read1_chunked(n)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 721, in _read1_chunked
+    chunk_left = self._get_chunk_left()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 586, in _get_chunk_left
+    raise IncompleteRead(b'')
+http.client.IncompleteRead: IncompleteRead(0 bytes read)
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 50722)
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/http/client.py", line 584, in _get_chunk_left
+    chunk_left = self._read_next_chunk_size()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 551, in _read_next_chunk_size
+    return int(line, 16)
+           ^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 16: b''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/logs/agent/gemini_thinking_shim.py", line 61, in do_POST
+    self._forward()
+  File "/logs/agent/gemini_thinking_shim.py", line 93, in _forward
+    while chunk := resp.read1(65536):
+                   ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 680, in read1
+    return self._read1_chunked(n)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 721, in _read1_chunked
+    chunk_left = self._get_chunk_left()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 586, in _get_chunk_left
+    raise IncompleteRead(b'')
+http.client.IncompleteRead: IncompleteRead(0 bytes read)
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 41962)
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/http/client.py", line 584, in _get_chunk_left
+    chunk_left = self._read_next_chunk_size()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 551, in _read_next_chunk_size
+    return int(line, 16)
+           ^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 16: b''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/logs/agent/gemini_thinking_shim.py", line 61, in do_POST
+    self._forward()
+  File "/logs/agent/gemini_thinking_shim.py", line 93, in _forward
+    while chunk := resp.read1(65536):
+                   ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 680, in read1
+    return self._read1_chunked(n)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 721, in _read1_chunked
+    chunk_left = self._get_chunk_left()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 586, in _get_chunk_left
+    raise IncompleteRead(b'')
+http.client.IncompleteRead: IncompleteRead(0 bytes read)
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 48208)
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/http/client.py", line 584, in _get_chunk_left
+    chunk_left = self._read_next_chunk_size()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 551, in _read_next_chunk_size
+    return int(line, 16)
+           ^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 16: b''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/logs/agent/gemini_thinking_shim.py", line 61, in do_POST
+    self._forward()
+  File "/logs/agent/gemini_thinking_shim.py", line 93, in _forward
+    while chunk := resp.read1(65536):
+                   ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 680, in read1
+    return self._read1_chunked(n)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 721, in _read1_chunked
+    chunk_left = self._get_chunk_left()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 586, in _get_chunk_left
+    raise IncompleteRead(b'')
+http.client.IncompleteRead: IncompleteRead(0 bytes read)
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 41572)
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/http/client.py", line 584, in _get_chunk_left
+    chunk_left = self._read_next_chunk_size()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 551, in _read_next_chunk_size
+    return int(line, 16)
+           ^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 16: b''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/logs/agent/gemini_thinking_shim.py", line 61, in do_POST
+    self._forward()
+  File "/logs/agent/gemini_thinking_shim.py", line 93, in _forward
+    while chunk := resp.read1(65536):
+                   ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 680, in read1
+    return self._read1_chunked(n)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 721, in _read1_chunked
+    chunk_left = self._get_chunk_left()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 586, in _get_chunk_left
+    raise IncompleteRead(b'')
+http.client.IncompleteRead: IncompleteRead(0 bytes read)
+----------------------------------------
+10:21:14 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=160610 secs=286.8
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 58432)
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/http/client.py", line 584, in _get_chunk_left
+    chunk_left = self._read_next_chunk_size()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 551, in _read_next_chunk_size
+    return int(line, 16)
+           ^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 16: b''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/logs/agent/gemini_thinking_shim.py", line 61, in do_POST
+    self._forward()
+  File "/logs/agent/gemini_thinking_shim.py", line 93, in _forward
+    while chunk := resp.read1(65536):
+                   ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 680, in read1
+    return self._read1_chunked(n)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 721, in _read1_chunked
+    chunk_left = self._get_chunk_left()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 586, in _get_chunk_left
+    raise IncompleteRead(b'')
+http.client.IncompleteRead: IncompleteRead(0 bytes read)
+----------------------------------------
+10:26:33 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=54523 secs=136.5
+10:26:41 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=1625 secs=7.8
+10:28:00 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=2472 secs=18.6
+10:29:06 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=7941 secs=31.0
+10:29:26 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=2588 secs=14.8
+10:30:55 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=34275 secs=87.9
+10:31:10 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent?alt=sse thinking=budget--1->level-HIGH upstream-error=RemoteDisconnected('Remote end closed connection without response')
+10:31:20 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=1509 secs=8.8
+10:32:18 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=3211 secs=18.7
+10:32:47 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=11076 secs=28.2
+10:33:02 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=1251 secs=15.4
+10:33:49 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=5527 secs=16.1
+10:34:03 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=1894 secs=10.4
+10:35:46 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=37811 secs=102.6
+10:35:58 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=1836 secs=11.9
+10:37:16 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=1587 secs=36.6
+10:37:56 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=14695 secs=40.0
+10:39:05 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=2573 secs=68.2
+10:40:51 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=6754 secs=64.5
+10:41:28 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=988 secs=34.8
+10:41:52 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=9485 secs=24.1
+10:42:45 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=16724 secs=51.8
+10:43:01 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=1877 secs=16.2
+10:45:04 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=1400 secs=63.7
+10:45:31 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=6360 secs=27.1
+10:45:57 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=5393 secs=25.1
+10:46:48 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=16114 secs=51.1
+10:47:18 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=1434 secs=27.8
+10:47:34 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=3181 secs=16.0
+10:49:07 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=937 secs=32.9
+10:49:33 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=2773 secs=25.5
+10:50:17 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=4627 secs=32.8
+10:50:51 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=2846 secs=33.3
+10:51:29 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=9389 secs=30.8
+10:52:04 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=2749 secs=21.1
+10:53:11 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=2717 secs=66.5
+10:53:34 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=5249 secs=21.9
+10:54:04 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=2947 secs=16.8
+10:54:27 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=6218 secs=21.4
+10:56:03 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=11372 secs=48.7
+10:57:38 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=10200 secs=35.4
+10:57:51 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=2216 secs=11.9
+10:58:34 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=13556 secs=41.3
+10:59:29 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=4267 secs=41.0
+11:00:05 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=2383 secs=36.0
+11:01:20 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=957 secs=15.6
+11:02:22 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=2136 secs=61.8
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 49032)
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/http/client.py", line 584, in _get_chunk_left
+    chunk_left = self._read_next_chunk_size()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 551, in _read_next_chunk_size
+    return int(line, 16)
+           ^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 16: b''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/logs/agent/gemini_thinking_shim.py", line 61, in do_POST
+    self._forward()
+  File "/logs/agent/gemini_thinking_shim.py", line 93, in _forward
+    while chunk := resp.read1(65536):
+                   ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 680, in read1
+    return self._read1_chunked(n)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 721, in _read1_chunked
+    chunk_left = self._get_chunk_left()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 586, in _get_chunk_left
+    raise IncompleteRead(b'')
+http.client.IncompleteRead: IncompleteRead(0 bytes read)
+----------------------------------------
+11:04:31 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=17840 secs=50.8
+11:04:55 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=2550 secs=23.0
+11:06:07 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=969 secs=12.2
+11:06:30 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=5155 secs=17.0
+11:06:51 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=5998 secs=19.9
+11:07:18 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=1847 secs=12.2
+11:07:51 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=9831 secs=33.5
+11:08:25 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=3026 secs=18.8
+11:09:38 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=933 secs=13.6
+11:10:10 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=8803 secs=27.4
+11:10:51 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=6016 secs=36.9
+11:12:25 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=2987 secs=76.3
+11:13:11 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=10249 secs=45.3
+11:13:53 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=3406 secs=25.3
+11:15:07 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=957 secs=13.3
+11:15:41 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=4322 secs=28.2
+11:17:15 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=200 bytes=7832 secs=94.3
+11:19:33 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=budget--1->level-HIGH status=524 bytes=7755 secs=136.5

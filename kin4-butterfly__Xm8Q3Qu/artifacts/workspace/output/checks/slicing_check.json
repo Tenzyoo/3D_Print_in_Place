@@ -1,0 +1,75 @@
+{
+ "prusa_info": [
+  "[model.stl]",
+  "size_x = 94.789299",
+  "size_y = 98.788200",
+  "size_z = 10.980700",
+  "min_x = -40.989300",
+  "min_y = -49.394100",
+  "min_z = 0.000000",
+  "max_x = 53.799999",
+  "max_y = 49.394100",
+  "max_z = 10.980700",
+  "number_of_facets = 24322",
+  "manifold = yes",
+  "number_of_parts =  3",
+  "volume = 11692.943359"
+ ],
+ "nosupport_slice": {
+  "rc": 0,
+  "log": [
+   "88 => Generating skirt and brim",
+   "90 => Exporting G-code to /tmp/work/model_nosupport.gcode",
+   "Slicing result exported to /tmp/work/model_nosupport.gcode"
+  ],
+  "estimated printing time (normal mode)": "1h 20m 48s",
+  "filament used [g]": null,
+  "filament used [mm]": "3583.35",
+  "layers": 55,
+  "support_extrusions": 0
+ },
+ "toolpath_check": {
+  "layers_checked": 55,
+  "extrusion_sample_points": 779049,
+  "points_outside_every_part": 0,
+  "segments_joining_two_parts": 0,
+  "min_printed_gap_between_parts_mm": {
+   "body|left_wing": {
+    "gap": 0.475,
+    "layer_z": 2.6,
+    "at_xy": [
+     8.77,
+     13.07
+    ]
+   },
+   "body|right_wing": {
+    "gap": 0.474,
+    "layer_z": 3.2,
+    "at_xy": [
+     9.9,
+     -15.02
+    ]
+   },
+   "left_wing|right_wing": {
+    "gap": 17.108,
+    "layer_z": 0.2,
+    "at_xy": [
+     18.14,
+     8.76
+    ]
+   }
+  }
+ },
+ "autosupport_slice": {
+  "rc": 0,
+  "log": [
+   "88 => Generating skirt and brim",
+   "90 => Exporting G-code to /tmp/work/model_autosupport.gcode",
+   "Slicing result exported to /tmp/work/model_autosupport.gcode"
+  ],
+  "support_segments": 0,
+  "support_length_mm": 0.0,
+  "support_segments_within_10mm_of_a_joint_axis": 0,
+  "sample_locations": []
+ }
+}

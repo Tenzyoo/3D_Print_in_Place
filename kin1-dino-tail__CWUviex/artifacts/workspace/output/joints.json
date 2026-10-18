@@ -1,0 +1,841 @@
+{
+  "model_name": "articulated_print_in_place_dinosaur",
+  "units": "mm",
+  "angle_units": "deg",
+  "coordinate_system": {
+    "x_axis": "+X towards head/snout, -X towards tail tip",
+    "y_axis": "+Y left side, -Y right side (symmetric about Y=0)",
+    "z_axis": "+Z vertical build direction (build plate at Z=0)"
+  },
+  "files": {
+    "scad": "model.scad",
+    "assembled_stl": "model.stl",
+    "part_stls": [
+      "parts/parts_1.stl",
+      "parts/parts_2.stl",
+      "parts/parts_3.stl",
+      "parts/parts_4.stl"
+    ]
+  },
+  "overall_bounding_box": {
+    "min": [
+      -48.0,
+      -17.0,
+      0.0
+    ],
+    "max": [
+      44.7,
+      17.0,
+      54.5
+    ],
+    "size": [
+      92.7,
+      34.0,
+      54.5
+    ],
+    "max_allowed_size": [
+      100.0,
+      50.0,
+      60.0
+    ]
+  },
+  "fixed_body": {
+    "id": "parts_1",
+    "index": 1,
+    "name": "fixed_main_body",
+    "label_zh": "固定主体（头部、颈部、躯干、四条腿及关节1销轴）",
+    "file": "parts/parts_1.stl",
+    "role": "fixed_body",
+    "is_fixed": true,
+    "anatomical_features": [
+      "head",
+      "snout_nostrils",
+      "eyes",
+      "crown_crest",
+      "neck",
+      "torso",
+      "dorsal_plates",
+      "front_left_leg",
+      "front_right_leg",
+      "rear_left_leg",
+      "rear_right_leg",
+      "joint_1_pin_and_bridge"
+    ],
+    "parent_joint": null,
+    "child_joint": "joint_1",
+    "geometry": {
+      "bounding_box": {
+        "min": [
+          -7.85,
+          -17.0,
+          0.0
+        ],
+        "max": [
+          44.7,
+          17.0,
+          54.5
+        ],
+        "size": [
+          52.55,
+          34.0,
+          54.5
+        ]
+      },
+      "bbox_min": [
+        -7.85,
+        -17.0,
+        0.0
+      ],
+      "bbox_max": [
+        44.7,
+        17.0,
+        54.5
+      ],
+      "dimensions_mm": [
+        52.55,
+        34.0,
+        54.5
+      ],
+      "centroid_mm": [
+        15.9116,
+        0.0,
+        17.7957
+      ],
+      "volume_mm3": 24071.92,
+      "surface_area_mm2": 6340.09,
+      "bed_contact_area_mm2": 786.94,
+      "vertex_count": 5270,
+      "face_count": 10536,
+      "is_watertight": true,
+      "is_volume": true
+    }
+  },
+  "tail_segments": [
+    {
+      "id": "parts_2",
+      "index": 2,
+      "tail_segment_index": 1,
+      "name": "tail_segment_1",
+      "label_zh": "第一段尾巴（前部关节1轴孔环、尾段1主体、后部关节2销轴）",
+      "file": "parts/parts_2.stl",
+      "role": "moving_tail_segment",
+      "is_fixed": false,
+      "anatomical_features": [
+        "joint_1_bore_housing",
+        "tail_segment_1_body",
+        "dorsal_spine_1",
+        "joint_2_pin_and_bridge"
+      ],
+      "parent_joint": "joint_1",
+      "child_joint": "joint_2",
+      "geometry": {
+        "bounding_box": {
+          "min": [
+            -23.15,
+            -5.7,
+            0.0
+          ],
+          "max": [
+            1.3,
+            5.7,
+            23.2
+          ],
+          "size": [
+            24.45,
+            11.4,
+            23.2
+          ]
+        },
+        "bbox_min": [
+          -23.15,
+          -5.7,
+          0.0
+        ],
+        "bbox_max": [
+          1.3,
+          5.7,
+          23.2
+        ],
+        "dimensions_mm": [
+          24.45,
+          11.4,
+          23.2
+        ],
+        "centroid_mm": [
+          -11.3911,
+          0.0,
+          8.5812
+        ],
+        "volume_mm3": 2648.78,
+        "surface_area_mm2": 1988.9,
+        "bed_contact_area_mm2": 143.91,
+        "vertex_count": 1732,
+        "face_count": 3464,
+        "is_watertight": true,
+        "is_volume": true
+      }
+    },
+    {
+      "id": "parts_3",
+      "index": 3,
+      "tail_segment_index": 2,
+      "name": "tail_segment_2",
+      "label_zh": "第二段尾巴（前部关节2轴孔环、尾段2主体、后部关节3销轴）",
+      "file": "parts/parts_3.stl",
+      "role": "moving_tail_segment",
+      "is_fixed": false,
+      "anatomical_features": [
+        "joint_2_bore_housing",
+        "tail_segment_2_body",
+        "dorsal_spine_2",
+        "joint_3_pin_and_bridge"
+      ],
+      "parent_joint": "joint_2",
+      "child_joint": "joint_3",
+      "geometry": {
+        "bounding_box": {
+          "min": [
+            -37.45,
+            -5.5,
+            0.0
+          ],
+          "max": [
+            -14.4,
+            5.5,
+            20.6
+          ],
+          "size": [
+            23.05,
+            11.0,
+            20.6
+          ]
+        },
+        "bbox_min": [
+          -37.45,
+          -5.5,
+          0.0
+        ],
+        "bbox_max": [
+          -14.4,
+          5.5,
+          20.6
+        ],
+        "dimensions_mm": [
+          23.05,
+          11.0,
+          20.6
+        ],
+        "centroid_mm": [
+          -26.5076,
+          -0.0,
+          7.5509
+        ],
+        "volume_mm3": 2078.4,
+        "surface_area_mm2": 1679.14,
+        "bed_contact_area_mm2": 128.45,
+        "vertex_count": 1734,
+        "face_count": 3468,
+        "is_watertight": true,
+        "is_volume": true
+      }
+    },
+    {
+      "id": "parts_4",
+      "index": 4,
+      "tail_segment_index": 3,
+      "name": "tail_segment_3",
+      "label_zh": "第三段尾巴/尾尖（前部关节3轴孔环、流线型收尖尾端及背棘）",
+      "file": "parts/parts_4.stl",
+      "role": "moving_tail_segment",
+      "is_fixed": false,
+      "anatomical_features": [
+        "joint_3_bore_housing",
+        "tapered_tail_tip",
+        "dorsal_spine_3"
+      ],
+      "parent_joint": "joint_3",
+      "child_joint": null,
+      "geometry": {
+        "bounding_box": {
+          "min": [
+            -48.0,
+            -4.9,
+            0.0
+          ],
+          "max": [
+            -29.1,
+            4.9,
+            15.9
+          ],
+          "size": [
+            18.9,
+            9.8,
+            15.9
+          ]
+        },
+        "bbox_min": [
+          -48.0,
+          -4.9,
+          0.0
+        ],
+        "bbox_max": [
+          -29.1,
+          4.9,
+          15.9
+        ],
+        "dimensions_mm": [
+          18.9,
+          9.8,
+          15.9
+        ],
+        "centroid_mm": [
+          -37.9981,
+          0.0,
+          5.6828
+        ],
+        "volume_mm3": 1255.03,
+        "surface_area_mm2": 899.54,
+        "bed_contact_area_mm2": 91.89,
+        "vertex_count": 1194,
+        "face_count": 2388,
+        "is_watertight": true,
+        "is_volume": true
+      }
+    }
+  ],
+  "parts": [
+    {
+      "id": "parts_1",
+      "index": 1,
+      "name": "fixed_main_body",
+      "label_zh": "固定主体（头部、颈部、躯干、四条腿及关节1销轴）",
+      "file": "parts/parts_1.stl",
+      "role": "fixed_body",
+      "is_fixed": true,
+      "anatomical_features": [
+        "head",
+        "snout_nostrils",
+        "eyes",
+        "crown_crest",
+        "neck",
+        "torso",
+        "dorsal_plates",
+        "front_left_leg",
+        "front_right_leg",
+        "rear_left_leg",
+        "rear_right_leg",
+        "joint_1_pin_and_bridge"
+      ],
+      "parent_joint": null,
+      "child_joint": "joint_1",
+      "geometry": {
+        "bounding_box": {
+          "min": [
+            -7.85,
+            -17.0,
+            0.0
+          ],
+          "max": [
+            44.7,
+            17.0,
+            54.5
+          ],
+          "size": [
+            52.55,
+            34.0,
+            54.5
+          ]
+        },
+        "bbox_min": [
+          -7.85,
+          -17.0,
+          0.0
+        ],
+        "bbox_max": [
+          44.7,
+          17.0,
+          54.5
+        ],
+        "dimensions_mm": [
+          52.55,
+          34.0,
+          54.5
+        ],
+        "centroid_mm": [
+          15.9116,
+          0.0,
+          17.7957
+        ],
+        "volume_mm3": 24071.92,
+        "surface_area_mm2": 6340.09,
+        "bed_contact_area_mm2": 786.94,
+        "vertex_count": 5270,
+        "face_count": 10536,
+        "is_watertight": true,
+        "is_volume": true
+      }
+    },
+    {
+      "id": "parts_2",
+      "index": 2,
+      "tail_segment_index": 1,
+      "name": "tail_segment_1",
+      "label_zh": "第一段尾巴（前部关节1轴孔环、尾段1主体、后部关节2销轴）",
+      "file": "parts/parts_2.stl",
+      "role": "moving_tail_segment",
+      "is_fixed": false,
+      "anatomical_features": [
+        "joint_1_bore_housing",
+        "tail_segment_1_body",
+        "dorsal_spine_1",
+        "joint_2_pin_and_bridge"
+      ],
+      "parent_joint": "joint_1",
+      "child_joint": "joint_2",
+      "geometry": {
+        "bounding_box": {
+          "min": [
+            -23.15,
+            -5.7,
+            0.0
+          ],
+          "max": [
+            1.3,
+            5.7,
+            23.2
+          ],
+          "size": [
+            24.45,
+            11.4,
+            23.2
+          ]
+        },
+        "bbox_min": [
+          -23.15,
+          -5.7,
+          0.0
+        ],
+        "bbox_max": [
+          1.3,
+          5.7,
+          23.2
+        ],
+        "dimensions_mm": [
+          24.45,
+          11.4,
+          23.2
+        ],
+        "centroid_mm": [
+          -11.3911,
+          0.0,
+          8.5812
+        ],
+        "volume_mm3": 2648.78,
+        "surface_area_mm2": 1988.9,
+        "bed_contact_area_mm2": 143.91,
+        "vertex_count": 1732,
+        "face_count": 3464,
+        "is_watertight": true,
+        "is_volume": true
+      }
+    },
+    {
+      "id": "parts_3",
+      "index": 3,
+      "tail_segment_index": 2,
+      "name": "tail_segment_2",
+      "label_zh": "第二段尾巴（前部关节2轴孔环、尾段2主体、后部关节3销轴）",
+      "file": "parts/parts_3.stl",
+      "role": "moving_tail_segment",
+      "is_fixed": false,
+      "anatomical_features": [
+        "joint_2_bore_housing",
+        "tail_segment_2_body",
+        "dorsal_spine_2",
+        "joint_3_pin_and_bridge"
+      ],
+      "parent_joint": "joint_2",
+      "child_joint": "joint_3",
+      "geometry": {
+        "bounding_box": {
+          "min": [
+            -37.45,
+            -5.5,
+            0.0
+          ],
+          "max": [
+            -14.4,
+            5.5,
+            20.6
+          ],
+          "size": [
+            23.05,
+            11.0,
+            20.6
+          ]
+        },
+        "bbox_min": [
+          -37.45,
+          -5.5,
+          0.0
+        ],
+        "bbox_max": [
+          -14.4,
+          5.5,
+          20.6
+        ],
+        "dimensions_mm": [
+          23.05,
+          11.0,
+          20.6
+        ],
+        "centroid_mm": [
+          -26.5076,
+          -0.0,
+          7.5509
+        ],
+        "volume_mm3": 2078.4,
+        "surface_area_mm2": 1679.14,
+        "bed_contact_area_mm2": 128.45,
+        "vertex_count": 1734,
+        "face_count": 3468,
+        "is_watertight": true,
+        "is_volume": true
+      }
+    },
+    {
+      "id": "parts_4",
+      "index": 4,
+      "tail_segment_index": 3,
+      "name": "tail_segment_3",
+      "label_zh": "第三段尾巴/尾尖（前部关节3轴孔环、流线型收尖尾端及背棘）",
+      "file": "parts/parts_4.stl",
+      "role": "moving_tail_segment",
+      "is_fixed": false,
+      "anatomical_features": [
+        "joint_3_bore_housing",
+        "tapered_tail_tip",
+        "dorsal_spine_3"
+      ],
+      "parent_joint": "joint_3",
+      "child_joint": null,
+      "geometry": {
+        "bounding_box": {
+          "min": [
+            -48.0,
+            -4.9,
+            0.0
+          ],
+          "max": [
+            -29.1,
+            4.9,
+            15.9
+          ],
+          "size": [
+            18.9,
+            9.8,
+            15.9
+          ]
+        },
+        "bbox_min": [
+          -48.0,
+          -4.9,
+          0.0
+        ],
+        "bbox_max": [
+          -29.1,
+          4.9,
+          15.9
+        ],
+        "dimensions_mm": [
+          18.9,
+          9.8,
+          15.9
+        ],
+        "centroid_mm": [
+          -37.9981,
+          0.0,
+          5.6828
+        ],
+        "volume_mm3": 1255.03,
+        "surface_area_mm2": 899.54,
+        "bed_contact_area_mm2": 91.89,
+        "vertex_count": 1194,
+        "face_count": 2388,
+        "is_watertight": true,
+        "is_volume": true
+      }
+    }
+  ],
+  "joints": [
+    {
+      "id": "joint_1",
+      "index": 1,
+      "name": "body_to_tail_segment_1",
+      "label_zh": "固定主体与第一段尾巴之间的旋转销轴关节",
+      "type": "revolute_z_pin",
+      "parent_part": "parts_1",
+      "parent_file": "parts/parts_1.stl",
+      "child_part": "parts_2",
+      "child_file": "parts/parts_2.stl",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "rotation_axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "position": [
+        -4.0,
+        0.0,
+        9.75
+      ],
+      "origin": [
+        -4.0,
+        0.0,
+        0.0
+      ],
+      "axis_xy_mm": [
+        -4.0,
+        0.0
+      ],
+      "z_span_mm": [
+        0.0,
+        19.5
+      ],
+      "range_of_motion_deg": {
+        "min": -28.0,
+        "max": 28.0,
+        "collision_free_min": -29.0,
+        "collision_free_max": 29.0,
+        "neutral": 0.0,
+        "required_min_abs": 20.0
+      },
+      "range_deg": [
+        -28.0,
+        28.0
+      ],
+      "pin_and_bore_dimensions": {
+        "pin_owner": "parts_1",
+        "bore_owner": "parts_2",
+        "pin_shaft_radius_mm": 2.6,
+        "pin_shaft_diameter_mm": 5.2,
+        "bore_radius_mm": 3.1,
+        "bore_diameter_mm": 6.2,
+        "single_side_radial_clearance_mm": 0.5,
+        "measured_mesh_radial_clearance_mm": 0.4965,
+        "measured_min_3d_surface_clearance_mm": 0.4759,
+        "cylindrical_shaft_z_range_mm": [
+          2.95,
+          7.62
+        ],
+        "bore_housing_outer_radius_mm": 5.3,
+        "upstream_housing_cutout_radius_mm": 5.8
+      },
+      "axial_retention": {
+        "has_axial_retention": true,
+        "mechanism": "bidirectional_double_conical_flange_and_top_bridge",
+        "bottom_flange_radius_mm": 3.85,
+        "top_flange_radius_mm": 3.85,
+        "bore_neck_radius_mm": 3.1,
+        "radial_overlap_per_side_mm": 0.75,
+        "diametral_overlap_mm": 1.5,
+        "cone_slope_deg_from_horizontal": 51.1,
+        "axial_free_play_mm": [
+          -0.85,
+          0.8
+        ],
+        "interference_volume_at_dz_minus_1p5mm_mm3": 11.05,
+        "interference_volume_at_dz_plus_1p5mm_mm3": 13.74
+      }
+    },
+    {
+      "id": "joint_2",
+      "index": 2,
+      "name": "tail_segment_1_to_tail_segment_2",
+      "label_zh": "第一段尾巴与第二段尾巴之间的旋转销轴关节",
+      "type": "revolute_z_pin",
+      "parent_part": "parts_2",
+      "parent_file": "parts/parts_2.stl",
+      "child_part": "parts_3",
+      "child_file": "parts/parts_3.stl",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "rotation_axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "position": [
+        -19.5,
+        0.0,
+        8.75
+      ],
+      "origin": [
+        -19.5,
+        0.0,
+        0.0
+      ],
+      "axis_xy_mm": [
+        -19.5,
+        0.0
+      ],
+      "z_span_mm": [
+        0.0,
+        17.5
+      ],
+      "range_of_motion_deg": {
+        "min": -35.0,
+        "max": 35.0,
+        "collision_free_min": -40.0,
+        "collision_free_max": 40.0,
+        "neutral": 0.0,
+        "required_min_abs": 20.0
+      },
+      "range_deg": [
+        -35.0,
+        35.0
+      ],
+      "pin_and_bore_dimensions": {
+        "pin_owner": "parts_2",
+        "bore_owner": "parts_3",
+        "pin_shaft_radius_mm": 2.4,
+        "pin_shaft_diameter_mm": 4.8,
+        "bore_radius_mm": 2.9,
+        "bore_diameter_mm": 5.8,
+        "single_side_radial_clearance_mm": 0.5,
+        "measured_mesh_radial_clearance_mm": 0.4966,
+        "measured_min_3d_surface_clearance_mm": 0.4751,
+        "cylindrical_shaft_z_range_mm": [
+          2.95,
+          5.62
+        ],
+        "bore_housing_outer_radius_mm": 5.1,
+        "upstream_housing_cutout_radius_mm": 5.6
+      },
+      "axial_retention": {
+        "has_axial_retention": true,
+        "mechanism": "bidirectional_double_conical_flange_and_top_bridge",
+        "bottom_flange_radius_mm": 3.65,
+        "top_flange_radius_mm": 3.65,
+        "bore_neck_radius_mm": 2.9,
+        "radial_overlap_per_side_mm": 0.75,
+        "diametral_overlap_mm": 1.5,
+        "cone_slope_deg_from_horizontal": 51.1,
+        "axial_free_play_mm": [
+          -0.85,
+          0.8
+        ],
+        "interference_volume_at_dz_minus_1p5mm_mm3": 10.42,
+        "interference_volume_at_dz_plus_1p5mm_mm3": 13.03
+      }
+    },
+    {
+      "id": "joint_3",
+      "index": 3,
+      "name": "tail_segment_2_to_tail_segment_3",
+      "label_zh": "第二段尾巴与第三段尾巴之间的旋转销轴关节",
+      "type": "revolute_z_pin",
+      "parent_part": "parts_3",
+      "parent_file": "parts/parts_3.stl",
+      "child_part": "parts_4",
+      "child_file": "parts/parts_4.stl",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "rotation_axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "position": [
+        -34.0,
+        0.0,
+        7.75
+      ],
+      "origin": [
+        -34.0,
+        0.0,
+        0.0
+      ],
+      "axis_xy_mm": [
+        -34.0,
+        0.0
+      ],
+      "z_span_mm": [
+        0.0,
+        15.5
+      ],
+      "range_of_motion_deg": {
+        "min": -35.0,
+        "max": 35.0,
+        "collision_free_min": -44.0,
+        "collision_free_max": 44.0,
+        "neutral": 0.0,
+        "required_min_abs": 20.0
+      },
+      "range_deg": [
+        -35.0,
+        35.0
+      ],
+      "pin_and_bore_dimensions": {
+        "pin_owner": "parts_3",
+        "bore_owner": "parts_4",
+        "pin_shaft_radius_mm": 2.2,
+        "pin_shaft_diameter_mm": 4.4,
+        "bore_radius_mm": 2.7,
+        "bore_diameter_mm": 5.4,
+        "single_side_radial_clearance_mm": 0.5,
+        "measured_mesh_radial_clearance_mm": 0.4967,
+        "measured_min_3d_surface_clearance_mm": 0.4721,
+        "cylindrical_shaft_z_range_mm": [
+          2.95,
+          3.62
+        ],
+        "bore_housing_outer_radius_mm": 4.9,
+        "upstream_housing_cutout_radius_mm": 5.4
+      },
+      "axial_retention": {
+        "has_axial_retention": true,
+        "mechanism": "bidirectional_double_conical_flange_and_top_bridge",
+        "bottom_flange_radius_mm": 3.45,
+        "top_flange_radius_mm": 3.45,
+        "bore_neck_radius_mm": 2.7,
+        "radial_overlap_per_side_mm": 0.75,
+        "diametral_overlap_mm": 1.5,
+        "cone_slope_deg_from_horizontal": 51.1,
+        "axial_free_play_mm": [
+          -0.85,
+          0.8
+        ],
+        "interference_volume_at_dz_minus_1p5mm_mm3": 9.78,
+        "interference_volume_at_dz_plus_1p5mm_mm3": 12.27
+      }
+    }
+  ],
+  "kinematic_chain": [
+    {
+      "from": "parts_1",
+      "joint": "joint_1",
+      "to": "parts_2"
+    },
+    {
+      "from": "parts_2",
+      "joint": "joint_2",
+      "to": "parts_3"
+    },
+    {
+      "from": "parts_3",
+      "joint": "joint_3",
+      "to": "parts_4"
+    }
+  ]
+}

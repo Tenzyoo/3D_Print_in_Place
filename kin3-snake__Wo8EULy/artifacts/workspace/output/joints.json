@@ -1,0 +1,38 @@
+{
+  "units": "mm",
+  "model": "Articulated print-in-place snake",
+  "coordinate_system": {
+    "neutral_axis": "+X",
+    "rotation_axis": "Z",
+    "neutral_pose": "all six link centerlines collinear in the XY plane",
+    "segment_pitch": 25.0
+  },
+  "joint_geometry": {
+    "shaft_radius": 2.5,
+    "socket_radius": 3.0,
+    "radial_clearance": 0.5,
+    "socket_outer_radius": 5.2,
+    "socket_arc_deg": 230,
+    "stem_slot_opening_deg": 130,
+    "socket_height": 7.2,
+    "retainer_start_z": 7.3,
+    "retainer_height": 2.0,
+    "retainer_radius": 4.5,
+    "axial_retainer_gap": 0.6
+  },
+  "links": [
+    {"id": 0, "name": "head", "file": "parts/parts_1.stl"},
+    {"id": 1, "name": "body_1", "file": "parts/parts_2.stl"},
+    {"id": 2, "name": "body_2", "file": "parts/parts_3.stl"},
+    {"id": 3, "name": "body_3", "file": "parts/parts_4.stl"},
+    {"id": 4, "name": "body_4", "file": "parts/parts_5.stl"},
+    {"id": 5, "name": "body_5", "file": "parts/parts_6.stl"}
+  ],
+  "joints": [
+    {"id": 1, "a": 0, "b": 1, "type": "captive_pin_revolute", "axis": [0,0,1], "position": [12.5,0,0], "range_deg": [-25,25]},
+    {"id": 2, "a": 1, "b": 2, "type": "captive_pin_revolute", "axis": [0,0,1], "position": [37.5,0,0], "range_deg": [-25,25]},
+    {"id": 3, "a": 2, "b": 3, "type": "captive_pin_revolute", "axis": [0,0,1], "position": [62.5,0,0], "range_deg": [-25,25]},
+    {"id": 4, "a": 3, "b": 4, "type": "captive_pin_revolute", "axis": [0,0,1], "position": [87.5,0,0], "range_deg": [-25,25]},
+    {"id": 5, "a": 4, "b": 5, "type": "captive_pin_revolute", "axis": [0,0,1], "position": [112.5,0,0], "range_deg": [-25,25]}
+  ]
+}

@@ -1,0 +1,24 @@
+{
+ "task": "kin5-folding-ruler",
+ "files": [
+  "README.md",
+  "checks/axial_report.json",
+  "checks/check_axial.py",
+  "checks/check_motion.py",
+  "checks/check_slices.py",
+  "checks/joint_section.png",
+  "checks/motion_report.json",
+  "checks/slice_report_model_autosupport.json",
+  "checks/slice_report_model_nosupport.json",
+  "joints.json",
+  "model.scad",
+  "model.stl",
+  "parts/parts_1.stl",
+  "parts/parts_2.stl",
+  "parts/parts_3.stl",
+  "slice/model_autosupport.gcode",
+  "slice/model_nosupport.gcode",
+  "slice/slicer_autosupport.log",
+  "slice/slicer_nosupport.log"
+ ]
+}

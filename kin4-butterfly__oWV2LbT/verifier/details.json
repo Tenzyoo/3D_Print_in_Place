@@ -1,0 +1,17 @@
+{
+ "task": "kin4-butterfly",
+ "files": [
+  "README.md",
+  "checks.txt",
+  "joint_section.png",
+  "joints.json",
+  "model.scad",
+  "model.stl",
+  "model_nosupport.gcode",
+  "parts/parts_1.stl",
+  "parts/parts_2.stl",
+  "parts/parts_3.stl",
+  "preview.png",
+  "preview_top.png"
+ ]
+}

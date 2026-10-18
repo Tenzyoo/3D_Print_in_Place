@@ -1,0 +1,696 @@
+{
+  "schema": "print_in_place_articulated_snake_joints/v1",
+  "description": "Six independent rigid parts (1 head + 5 body links) connected by five coaxial print-in-place revolute joints. All parts are in the neutral straight pose and in the same global coordinate frame as model.stl.",
+  "units": "mm",
+  "coordinate_system": {
+    "handedness": "right",
+    "x_axis": "head-to-tail direction in neutral pose",
+    "y_axis": "lateral; +Y is the snake's left side when looking from +Z",
+    "z_axis": "up, normal to the print bed",
+    "origin": "head tip at x=0, y=0; print-bed plane z=0"
+  },
+  "neutral_pose": {
+    "description": "Straight, all joint angles 0 deg. This is the STL/printing pose.",
+    "bbox_min_mm": [
+      0.0,
+      -10.0,
+      0.0
+    ],
+    "bbox_max_mm": [
+      158.0,
+      10.0,
+      10.8
+    ],
+    "size_mm": [
+      158.0,
+      20.0,
+      10.8
+    ],
+    "bbox_limit_mm": [
+      160,
+      50,
+      40
+    ],
+    "all_part_transforms_identity": true
+  },
+  "parts": [
+    {
+      "id": 1,
+      "name": "head",
+      "role": "head",
+      "file": "parts/parts_1.stl",
+      "mesh": "parts/parts_1.stl",
+      "neutral_transform": {
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "translation_mm": [
+          0,
+          0,
+          0
+        ]
+      },
+      "bbox_mm": [
+        [
+          0.0,
+          -10.0,
+          0.0
+        ],
+        [
+          33.0,
+          10.0,
+          10.8
+        ]
+      ],
+      "volume_mm3": 3932.118,
+      "watertight": true
+    },
+    {
+      "id": 2,
+      "name": "body_1",
+      "role": "body",
+      "file": "parts/parts_2.stl",
+      "mesh": "parts/parts_2.stl",
+      "neutral_transform": {
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "translation_mm": [
+          0,
+          0,
+          0
+        ]
+      },
+      "bbox_mm": [
+        [
+          26.698,
+          -9.0,
+          0.0
+        ],
+        [
+          59.0,
+          9.0,
+          10.0
+        ]
+      ],
+      "volume_mm3": 3135.603,
+      "watertight": true
+    },
+    {
+      "id": 3,
+      "name": "body_2",
+      "role": "body",
+      "file": "parts/parts_3.stl",
+      "mesh": "parts/parts_3.stl",
+      "neutral_transform": {
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "translation_mm": [
+          0,
+          0,
+          0
+        ]
+      },
+      "bbox_mm": [
+        [
+          52.698,
+          -9.0,
+          0.0
+        ],
+        [
+          85.0,
+          9.0,
+          10.0
+        ]
+      ],
+      "volume_mm3": 3135.603,
+      "watertight": true
+    },
+    {
+      "id": 4,
+      "name": "body_3",
+      "role": "body",
+      "file": "parts/parts_4.stl",
+      "mesh": "parts/parts_4.stl",
+      "neutral_transform": {
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "translation_mm": [
+          0,
+          0,
+          0
+        ]
+      },
+      "bbox_mm": [
+        [
+          78.698,
+          -9.0,
+          0.0
+        ],
+        [
+          111.0,
+          9.0,
+          10.0
+        ]
+      ],
+      "volume_mm3": 3135.603,
+      "watertight": true
+    },
+    {
+      "id": 5,
+      "name": "body_4",
+      "role": "body",
+      "file": "parts/parts_5.stl",
+      "mesh": "parts/parts_5.stl",
+      "neutral_transform": {
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "translation_mm": [
+          0,
+          0,
+          0
+        ]
+      },
+      "bbox_mm": [
+        [
+          104.698,
+          -9.0,
+          0.0
+        ],
+        [
+          137.0,
+          9.0,
+          10.0
+        ]
+      ],
+      "volume_mm3": 3135.634,
+      "watertight": true
+    },
+    {
+      "id": 6,
+      "name": "body_5",
+      "role": "body",
+      "file": "parts/parts_6.stl",
+      "mesh": "parts/parts_6.stl",
+      "neutral_transform": {
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "translation_mm": [
+          0,
+          0,
+          0
+        ]
+      },
+      "bbox_mm": [
+        [
+          130.698,
+          -9.0,
+          0.0
+        ],
+        [
+          158.0,
+          9.0,
+          10.0
+        ]
+      ],
+      "volume_mm3": 3087.481,
+      "watertight": true
+    }
+  ],
+  "joints": [
+    {
+      "id": 1,
+      "name": "joint_1",
+      "type": "revolute",
+      "axis_name": "Z",
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "axis_vector": [
+        0,
+        0,
+        1
+      ],
+      "origin": [
+        28.0,
+        0,
+        0
+      ],
+      "origin_mm": [
+        28.0,
+        0,
+        0
+      ],
+      "position": [
+        28.0,
+        0,
+        0
+      ],
+      "position_mm": [
+        28.0,
+        0,
+        0
+      ],
+      "neutral_angle_deg": 0,
+      "parent_part_id": 1,
+      "child_part_id": 2,
+      "parent_part": "head",
+      "child_part": "body_1",
+      "parent": "head",
+      "child": "body_1",
+      "parent_file": "parts/parts_1.stl",
+      "child_file": "parts/parts_2.stl",
+      "child_chain_part_ids": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "min_deg": -30,
+      "max_deg": 30,
+      "range_deg": [
+        -30,
+        30
+      ],
+      "motion_range_deg": {
+        "min": -30,
+        "max": 30
+      },
+      "required_range_deg": [
+        -25,
+        25
+      ],
+      "tested_no_collision_range_deg": [
+        -35,
+        35
+      ],
+      "radial_clearance_shaft_hole_mm": 0.55,
+      "radial_clearance_flange_counterbore_mm": 0.5,
+      "other_moving_face_min_clearance_at_30deg_mm": 0.4595,
+      "interference_at_30deg": false,
+      "axial_retention": {
+        "type": "captive double flange / stepped socket",
+        "upper_stop": {
+          "first_contact_relative_z_mm": 0.75
+        },
+        "lower_stop": {
+          "first_contact_relative_z_mm": -1.0
+        }
+      }
+    },
+    {
+      "id": 2,
+      "name": "joint_2",
+      "type": "revolute",
+      "axis_name": "Z",
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "axis_vector": [
+        0,
+        0,
+        1
+      ],
+      "origin": [
+        54.0,
+        0,
+        0
+      ],
+      "origin_mm": [
+        54.0,
+        0,
+        0
+      ],
+      "position": [
+        54.0,
+        0,
+        0
+      ],
+      "position_mm": [
+        54.0,
+        0,
+        0
+      ],
+      "neutral_angle_deg": 0,
+      "parent_part_id": 2,
+      "child_part_id": 3,
+      "parent_part": "body_1",
+      "child_part": "body_2",
+      "parent": "body_1",
+      "child": "body_2",
+      "parent_file": "parts/parts_2.stl",
+      "child_file": "parts/parts_3.stl",
+      "child_chain_part_ids": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "min_deg": -30,
+      "max_deg": 30,
+      "range_deg": [
+        -30,
+        30
+      ],
+      "motion_range_deg": {
+        "min": -30,
+        "max": 30
+      },
+      "required_range_deg": [
+        -25,
+        25
+      ],
+      "tested_no_collision_range_deg": [
+        -35,
+        35
+      ],
+      "radial_clearance_shaft_hole_mm": 0.55,
+      "radial_clearance_flange_counterbore_mm": 0.5,
+      "other_moving_face_min_clearance_at_30deg_mm": 0.4598,
+      "interference_at_30deg": false,
+      "axial_retention": {
+        "type": "captive double flange / stepped socket",
+        "upper_stop": {
+          "first_contact_relative_z_mm": 0.75
+        },
+        "lower_stop": {
+          "first_contact_relative_z_mm": -1.0
+        }
+      }
+    },
+    {
+      "id": 3,
+      "name": "joint_3",
+      "type": "revolute",
+      "axis_name": "Z",
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "axis_vector": [
+        0,
+        0,
+        1
+      ],
+      "origin": [
+        80.0,
+        0,
+        0
+      ],
+      "origin_mm": [
+        80.0,
+        0,
+        0
+      ],
+      "position": [
+        80.0,
+        0,
+        0
+      ],
+      "position_mm": [
+        80.0,
+        0,
+        0
+      ],
+      "neutral_angle_deg": 0,
+      "parent_part_id": 3,
+      "child_part_id": 4,
+      "parent_part": "body_2",
+      "child_part": "body_3",
+      "parent": "body_2",
+      "child": "body_3",
+      "parent_file": "parts/parts_3.stl",
+      "child_file": "parts/parts_4.stl",
+      "child_chain_part_ids": [
+        4,
+        5,
+        6
+      ],
+      "min_deg": -30,
+      "max_deg": 30,
+      "range_deg": [
+        -30,
+        30
+      ],
+      "motion_range_deg": {
+        "min": -30,
+        "max": 30
+      },
+      "required_range_deg": [
+        -25,
+        25
+      ],
+      "tested_no_collision_range_deg": [
+        -35,
+        35
+      ],
+      "radial_clearance_shaft_hole_mm": 0.55,
+      "radial_clearance_flange_counterbore_mm": 0.5,
+      "other_moving_face_min_clearance_at_30deg_mm": 0.4598,
+      "interference_at_30deg": false,
+      "axial_retention": {
+        "type": "captive double flange / stepped socket",
+        "upper_stop": {
+          "first_contact_relative_z_mm": 0.75
+        },
+        "lower_stop": {
+          "first_contact_relative_z_mm": -1.0
+        }
+      }
+    },
+    {
+      "id": 4,
+      "name": "joint_4",
+      "type": "revolute",
+      "axis_name": "Z",
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "axis_vector": [
+        0,
+        0,
+        1
+      ],
+      "origin": [
+        106.0,
+        0,
+        0
+      ],
+      "origin_mm": [
+        106.0,
+        0,
+        0
+      ],
+      "position": [
+        106.0,
+        0,
+        0
+      ],
+      "position_mm": [
+        106.0,
+        0,
+        0
+      ],
+      "neutral_angle_deg": 0,
+      "parent_part_id": 4,
+      "child_part_id": 5,
+      "parent_part": "body_3",
+      "child_part": "body_4",
+      "parent": "body_3",
+      "child": "body_4",
+      "parent_file": "parts/parts_4.stl",
+      "child_file": "parts/parts_5.stl",
+      "child_chain_part_ids": [
+        5,
+        6
+      ],
+      "min_deg": -30,
+      "max_deg": 30,
+      "range_deg": [
+        -30,
+        30
+      ],
+      "motion_range_deg": {
+        "min": -30,
+        "max": 30
+      },
+      "required_range_deg": [
+        -25,
+        25
+      ],
+      "tested_no_collision_range_deg": [
+        -35,
+        35
+      ],
+      "radial_clearance_shaft_hole_mm": 0.55,
+      "radial_clearance_flange_counterbore_mm": 0.5,
+      "other_moving_face_min_clearance_at_30deg_mm": 0.4598,
+      "interference_at_30deg": false,
+      "axial_retention": {
+        "type": "captive double flange / stepped socket",
+        "upper_stop": {
+          "first_contact_relative_z_mm": 0.75
+        },
+        "lower_stop": {
+          "first_contact_relative_z_mm": -1.0
+        }
+      }
+    },
+    {
+      "id": 5,
+      "name": "joint_5",
+      "type": "revolute",
+      "axis_name": "Z",
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "axis_vector": [
+        0,
+        0,
+        1
+      ],
+      "origin": [
+        132.0,
+        0,
+        0
+      ],
+      "origin_mm": [
+        132.0,
+        0,
+        0
+      ],
+      "position": [
+        132.0,
+        0,
+        0
+      ],
+      "position_mm": [
+        132.0,
+        0,
+        0
+      ],
+      "neutral_angle_deg": 0,
+      "parent_part_id": 5,
+      "child_part_id": 6,
+      "parent_part": "body_4",
+      "child_part": "body_5",
+      "parent": "body_4",
+      "child": "body_5",
+      "parent_file": "parts/parts_5.stl",
+      "child_file": "parts/parts_6.stl",
+      "child_chain_part_ids": [
+        6
+      ],
+      "min_deg": -30,
+      "max_deg": 30,
+      "range_deg": [
+        -30,
+        30
+      ],
+      "motion_range_deg": {
+        "min": -30,
+        "max": 30
+      },
+      "required_range_deg": [
+        -25,
+        25
+      ],
+      "tested_no_collision_range_deg": [
+        -35,
+        35
+      ],
+      "radial_clearance_shaft_hole_mm": 0.55,
+      "radial_clearance_flange_counterbore_mm": 0.5,
+      "other_moving_face_min_clearance_at_30deg_mm": 0.4596,
+      "interference_at_30deg": false,
+      "axial_retention": {
+        "type": "captive double flange / stepped socket",
+        "upper_stop": {
+          "first_contact_relative_z_mm": 0.75
+        },
+        "lower_stop": {
+          "first_contact_relative_z_mm": -1.0
+        }
+      }
+    }
+  ],
+  "independent_motion_validation": {
+    "procedure": "For joint j, keep the parent part (id = parent_part_id) and all earlier parts fixed; rotate the child part and every later part (ids child_chain_part_ids) as one rigid child chain about the joint origin and +Z axis. Apply the listed angle in degrees. Other joints stay at 0 deg. Part STLs already share the neutral world coordinates, so no neutral offset is needed.",
+    "angle_sign": "positive angle is counter-clockwise when viewed from +Z",
+    "tested_angles_deg": [
+      -35,
+      -30,
+      -25,
+      0,
+      25,
+      30,
+      35
+    ],
+    "result": "No triangle-mesh intersection at any tested angle; maximum collision volume 0.0 mm^3.",
+    "full_details": "validation/validation_report.json",
+    "independent_check_script": "validation/verify_from_joints_json.py",
+    "independent_check_result": "validation/joints_json_motion_check.json"
+  },
+  "print": {
+    "material": "PLA",
+    "nozzle_diameter_mm": 0.4,
+    "layer_height_mm": 0.2,
+    "orientation": "Z up exactly as exported; every part bottom face lies on z=0",
+    "supports": false,
+    "brim": false,
+    "skirt": false,
+    "single_print_all_parts": true,
+    "post_assembly": "none",
+    "slicer": "PrusaSlicer 2.7.2",
+    "profile": "/opt/slicer/p1s_pla_0.20mm_nosupport.ini",
+    "layer_count": 54,
+    "estimated_print_time": "1h 18m 39s",
+    "filament_used_cm3": 10.27
+  },
+  "checks": {
+    "model_watertight": true,
+    "model_components": 6,
+    "part_count": 6,
+    "all_parts_watertight": true,
+    "sum_part_volume_equals_model": true,
+    "neutral_interference": false,
+    "min_in_plane_layer_gap_mm": 0.4992,
+    "first_layer_road_islands": 6,
+    "all_layers_z_le_10_have_6_islands": true,
+    "support_toolpaths": 0,
+    "details": [
+      "validation/validation_report.json",
+      "validation/slice_metrics.json",
+      "validation/layer_island_check.json",
+      "validation/joints_json_motion_check.json",
+      "validation/angle_sweep_check.json"
+    ],
+    "angle_sweep": "validation/angle_sweep_check.json"
+  }
+}

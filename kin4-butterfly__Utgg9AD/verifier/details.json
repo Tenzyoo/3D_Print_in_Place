@@ -1,0 +1,19 @@
+{
+ "task": "kin4-butterfly",
+ "files": [
+  "README.md",
+  "joint_section.png",
+  "joints.json",
+  "model.scad",
+  "model.stl",
+  "parts/parts_1.stl",
+  "parts/parts_2.stl",
+  "parts/parts_3.stl",
+  "preview_iso.png",
+  "preview_motion_pm30.png",
+  "slice_check.py",
+  "slice_report.json",
+  "verification_report.json",
+  "verify_geometry.py"
+ ]
+}

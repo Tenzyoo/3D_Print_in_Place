@@ -1,0 +1,172 @@
+{
+  "source": "joints.json",
+  "parts_loaded": 6,
+  "joints_checked": 5,
+  "angles_per_joint": [
+    -30,
+    30
+  ],
+  "all_declared_ranges_interference_free": true,
+  "results": [
+    {
+      "joint_id": 1,
+      "angle_deg": -30,
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "origin_mm": [
+        28.0,
+        0.0,
+        0.0
+      ],
+      "collisions": [],
+      "max_collision_volume_mm3": 0.0
+    },
+    {
+      "joint_id": 1,
+      "angle_deg": 30,
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "origin_mm": [
+        28.0,
+        0.0,
+        0.0
+      ],
+      "collisions": [],
+      "max_collision_volume_mm3": 0.0
+    },
+    {
+      "joint_id": 2,
+      "angle_deg": -30,
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "origin_mm": [
+        54.0,
+        0.0,
+        0.0
+      ],
+      "collisions": [],
+      "max_collision_volume_mm3": 0.0
+    },
+    {
+      "joint_id": 2,
+      "angle_deg": 30,
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "origin_mm": [
+        54.0,
+        0.0,
+        0.0
+      ],
+      "collisions": [],
+      "max_collision_volume_mm3": 0.0
+    },
+    {
+      "joint_id": 3,
+      "angle_deg": -30,
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "origin_mm": [
+        80.0,
+        0.0,
+        0.0
+      ],
+      "collisions": [],
+      "max_collision_volume_mm3": 0.0
+    },
+    {
+      "joint_id": 3,
+      "angle_deg": 30,
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "origin_mm": [
+        80.0,
+        0.0,
+        0.0
+      ],
+      "collisions": [],
+      "max_collision_volume_mm3": 0.0
+    },
+    {
+      "joint_id": 4,
+      "angle_deg": -30,
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "origin_mm": [
+        106.0,
+        0.0,
+        0.0
+      ],
+      "collisions": [],
+      "max_collision_volume_mm3": 0.0
+    },
+    {
+      "joint_id": 4,
+      "angle_deg": 30,
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "origin_mm": [
+        106.0,
+        0.0,
+        0.0
+      ],
+      "collisions": [],
+      "max_collision_volume_mm3": 0.0
+    },
+    {
+      "joint_id": 5,
+      "angle_deg": -30,
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "origin_mm": [
+        132.0,
+        0.0,
+        0.0
+      ],
+      "collisions": [],
+      "max_collision_volume_mm3": 0.0
+    },
+    {
+      "joint_id": 5,
+      "angle_deg": 30,
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "origin_mm": [
+        132.0,
+        0.0,
+        0.0
+      ],
+      "collisions": [],
+      "max_collision_volume_mm3": 0.0
+    }
+  ]
+}

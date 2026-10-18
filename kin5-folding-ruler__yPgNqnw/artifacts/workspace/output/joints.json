@@ -1,0 +1,52 @@
+{
+  "units": "mm",
+  "angle_units": "deg",
+  "coordinate_system": "Same as model.stl and parts/*.stl. X = ruler length, Y = width, Z = thickness / print direction (bed at z = 0). All files are in the fully unfolded 0 deg pose.",
+  "angle_definition": "0 deg = adjacent segments in a straight line (unfolded, as exported); 180 deg = child folded back alongside the parent.",
+  "parts": [
+    {"id": 1, "file": "parts/parts_1.stl", "name": "segment 1", "role": "base (fixed)"},
+    {"id": 2, "file": "parts/parts_2.stl", "name": "segment 2"},
+    {"id": 3, "file": "parts/parts_3.stl", "name": "segment 3"}
+  ],
+  "kinematic_chain": "parts_1 -> joint_1 -> parts_2 -> joint_2 -> parts_3",
+  "joints": [
+    {
+      "name": "joint_1",
+      "type": "revolute",
+      "parent": "parts_1",
+      "child": "parts_2",
+      "connects_parts": [1, 2],
+      "axis_origin": [40.25, 6.25, 0.0],
+      "axis_direction": [0.0, 0.0, 1.0],
+      "range_deg": [0, 180],
+      "fold_direction": "Positive rotation about the axis direction (+Z, counter-clockwise seen from above). parts_2 swings toward +Y and at 180 deg lies on the +Y side of parts_1 with a 0.5 mm side gap.",
+      "child_transform": "rotate parts_2 (and everything downstream) by +angle about axis_direction through axis_origin",
+      "pin_owner": "parts_1",
+      "hole_owner": "parts_2",
+      "pin_diameter": 4.0,
+      "hole_diameter": 5.0,
+      "radial_clearance_per_side": 0.5,
+      "axial_retention": "up: ring of parts_2 (top z=2.4) under cap of parts_1 (bottom z=2.8); down: 49.4 deg conical flange on pin (r 3.2 at z=0) under matching cone in parts_2 hole (min r 2.5)"
+    },
+    {
+      "name": "joint_2",
+      "type": "revolute",
+      "parent": "parts_2",
+      "child": "parts_3",
+      "connects_parts": [2, 3],
+      "axis_origin": [80.75, -6.25, 0.0],
+      "axis_direction": [0.0, 0.0, -1.0],
+      "range_deg": [0, 180],
+      "fold_direction": "Positive rotation about the axis direction (-Z, i.e. clockwise seen from above, relative to parts_2). parts_3 swings toward the -Y side of parts_2 and at 180 deg lies alongside parts_2 (Z-fold) with a 0.5 mm side gap.",
+      "child_transform": "rotate parts_3 by +angle about axis_direction through axis_origin, applied in the frame of parts_2 (i.e. after the joint_1 transform)",
+      "pin_owner": "parts_2",
+      "hole_owner": "parts_3",
+      "pin_diameter": 4.0,
+      "hole_diameter": 5.0,
+      "radial_clearance_per_side": 0.5,
+      "axial_retention": "up: ring of parts_3 (top z=2.4) under cap of parts_2 (bottom z=2.8); down: 49.4 deg conical flange on pin under matching cone in parts_3 hole"
+    }
+  ],
+  "independent_motion": "Each joint has its own pin and its own 0..180 deg range; the two joints are mechanically independent. World pose of parts_3 = R_joint1(a1) * R_joint2(a2).",
+  "hard_stops": "Measured with verify.py: below 0 deg the segment end faces collide at about -2.4 deg; above 180 deg the side faces collide at about 180.8 deg (natural end stops)."
+}

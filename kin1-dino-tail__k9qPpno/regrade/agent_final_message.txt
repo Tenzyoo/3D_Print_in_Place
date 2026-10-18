@@ -1,0 +1,10 @@
+文件已生成到 `/app/output/`：
+
+- [model.scad](/app/output/model.scad)：可重新生成模型；`part_id` 可选择装配体或单个零件。
+- [model.stl](/app/output/model.stl)：中立姿态整机；[零件 STL 目录](/app/output/parts/)内有 `parts_1.stl` 至 `parts_4.stl`。
+- [joints.json](/app/output/joints.json)：零件几何识别信息及三个关节的轴、位置和运动范围。
+- [report.json](/app/output/report.json)：检查结果与限制。
+
+模型包围尺寸为 **84.05 × 34.40 × 8.65 mm**。整机由 4 个封闭连通零件组成；销轴单侧径向间隙为 0.5 mm。三个关节在 ±20°、每 2° 的采样姿态及 14 个 Z 截面上均未发现相邻件截面重叠。
+
+**打印可靠性限制：**无支撑切片成功导出，但 PrusaSlicer 报告浮空桥接锚点、松散挤出和低床面附着风险。报告已注明：关节在实际打印后能否顺利脱离并自由活动，仍需实物验证。

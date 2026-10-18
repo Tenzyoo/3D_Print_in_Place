@@ -1,0 +1,6 @@
+{
+ "task": "kin1-dino-tail",
+ "files": [
+  "model.scad"
+ ]
+}

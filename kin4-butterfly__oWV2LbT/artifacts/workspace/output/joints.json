@@ -1,0 +1,246 @@
+{
+  "format": "print_in_place_butterfly_joints",
+  "version": 1,
+  "units": "mm",
+  "angle_units": "deg",
+  "coordinate_system": {
+    "description": "X = torso longitudinal axis (head towards +X); Y = left/right wing span (+Y = left wing); Z = vertical/build direction.",
+    "handedness": "right-handed",
+    "origin": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "neutral_pose": {
+    "description": "Both wings at 0 deg, as stored in model.stl and all part STLs.",
+    "left_wing_angle_deg": 0.0,
+    "right_wing_angle_deg": 0.0,
+    "model_file": "model.stl"
+  },
+  "parts": [
+    {
+      "id": 1,
+      "name": "torso",
+      "role": "fixed",
+      "file": "parts/parts_1.stl",
+      "bounds_mm": {
+        "min": [
+          -38.5,
+          -17.7,
+          0.0
+        ],
+        "max": [
+          41.1,
+          17.7,
+          6.2
+        ]
+      },
+      "volume_mm3": 2775.854
+    },
+    {
+      "id": 2,
+      "name": "left_wing",
+      "role": "moving",
+      "file": "parts/parts_2.stl",
+      "bounds_mm": {
+        "min": [
+          -29.0,
+          10.881,
+          0.0
+        ],
+        "max": [
+          31.0,
+          49.3,
+          3.2
+        ]
+      },
+      "volume_mm3": 4252.532
+    },
+    {
+      "id": 3,
+      "name": "right_wing",
+      "role": "moving",
+      "file": "parts/parts_3.stl",
+      "bounds_mm": {
+        "min": [
+          -29.0,
+          -49.3,
+          0.0
+        ],
+        "max": [
+          31.0,
+          -10.881,
+          3.2
+        ]
+      },
+      "volume_mm3": 4252.532
+    }
+  ],
+  "joints": [
+    {
+      "id": "J_left",
+      "name": "left wing revolute joint",
+      "type": "revolute",
+      "parent": "torso",
+      "child": "left_wing",
+      "axis": {
+        "origin_mm": [
+          0.0,
+          13.5,
+          0.0
+        ],
+        "direction_unit": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "z_span_mm": [
+          0.0,
+          6.2
+        ],
+        "axis_line_mm": [
+          [
+            0.0,
+            13.5,
+            0.0
+          ],
+          [
+            0.0,
+            13.5,
+            6.2
+          ]
+        ]
+      },
+      "neutral_angle_deg": 0.0,
+      "expected_motion_range_deg": [
+        -30.0,
+        30.0
+      ],
+      "positive_rotation": "counter-clockwise when viewed from +Z (right-hand rule about +Z)",
+      "independent": true,
+      "bearing": {
+        "pin_radius_mm": 2.5,
+        "hole_radius_mm": 3.0,
+        "radial_clearance_per_side_mm": 0.5
+      },
+      "axial_retention": {
+        "lower": "fixed lower flange on pin, captured by the wing's lower bearing shoulder",
+        "upper": "fixed mushroom cap on pin, overlapping the wing top around the 3.0 mm bore",
+        "captive_after_print": true,
+        "upward_lift_before_capture_mm": 1.1,
+        "downward_drop_before_flange_stop_mm": 0.55,
+        "cap_min_z_above_wing_top_mm": 0.6,
+        "actual_axial_gap_at_bore_edge_mm": 1.1
+      },
+      "clearance_notes": "0.5 mm radial pin/bore and lower-flange/counterbore clearance; cap base 0.6 mm above the wing top plane (1.1 mm actual bore-edge lift before capture); 0.55 mm lower axial gap; all joint gaps are air, no support material.",
+      "rotation_plane": "XY",
+      "hard_stops": false
+    },
+    {
+      "id": "J_right",
+      "name": "right wing revolute joint",
+      "type": "revolute",
+      "parent": "torso",
+      "child": "right_wing",
+      "axis": {
+        "origin_mm": [
+          0.0,
+          -13.5,
+          0.0
+        ],
+        "direction_unit": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "z_span_mm": [
+          0.0,
+          6.2
+        ],
+        "axis_line_mm": [
+          [
+            0.0,
+            -13.5,
+            0.0
+          ],
+          [
+            0.0,
+            -13.5,
+            6.2
+          ]
+        ]
+      },
+      "neutral_angle_deg": 0.0,
+      "expected_motion_range_deg": [
+        -30.0,
+        30.0
+      ],
+      "positive_rotation": "counter-clockwise when viewed from +Z (right-hand rule about +Z)",
+      "independent": true,
+      "bearing": {
+        "pin_radius_mm": 2.5,
+        "hole_radius_mm": 3.0,
+        "radial_clearance_per_side_mm": 0.5
+      },
+      "axial_retention": {
+        "lower": "fixed lower flange on pin, captured by the wing's lower bearing shoulder",
+        "upper": "fixed mushroom cap on pin, overlapping the wing top around the 3.0 mm bore",
+        "captive_after_print": true,
+        "upward_lift_before_capture_mm": 1.1,
+        "downward_drop_before_flange_stop_mm": 0.55,
+        "cap_min_z_above_wing_top_mm": 0.6,
+        "actual_axial_gap_at_bore_edge_mm": 1.1
+      },
+      "clearance_notes": "0.5 mm radial pin/bore and lower-flange/counterbore clearance; cap base 0.6 mm above the wing top plane (1.1 mm actual bore-edge lift before capture); 0.55 mm lower axial gap; all joint gaps are air, no support material.",
+      "rotation_plane": "XY",
+      "hard_stops": false
+    }
+  ],
+  "verification": {
+    "collision_check": {
+      "method": "trimesh 5.1.1 + manifold3d boolean intersection on the three STL bodies",
+      "left_wing_sweep_deg": [
+        -30,
+        -20,
+        -10,
+        0,
+        10,
+        20,
+        30
+      ],
+      "right_wing_sweep_deg": [
+        -30,
+        -20,
+        -10,
+        0,
+        10,
+        20,
+        30
+      ],
+      "left_right_combinations_tested": 49,
+      "intersections_found": 0,
+      "fine_sweep": {
+        "wing_torso_step_deg": 1,
+        "both_wings_step_deg": 5,
+        "both_wings_combinations": 169,
+        "intersections_found": 0
+      }
+    },
+    "minimum_planar_clearance_mm": 0.4997,
+    "minimum_wing_to_wing_clearance_mm": 16.85,
+    "envelope_mm": {
+      "x": 79.6,
+      "y": 98.6,
+      "z": 6.2
+    },
+    "print": {
+      "process": "PLA, 0.4 mm nozzle, 0.2 mm layer, no supports",
+      "prusaslicer_profile": "/opt/slicer/p1s_pla_0.20mm_nosupport.ini",
+      "layer_count": 31,
+      "support_toolpaths": 0,
+      "stability_warning": false,
+      "sliced_file": "model_nosupport.gcode"
+    }
+  }
+}

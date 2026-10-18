@@ -1,0 +1,49 @@
+{
+  "units": "mm",
+  "model": "three_section_print_in_place_folding_ruler",
+  "material": "PLA",
+  "no_post_assembly": true,
+  "expanded_angle_convention": "0 degrees is collinear; 180 degrees folds back",
+  "coordinate_system": {
+    "x": "ruler longitudinal direction in the expanded pose",
+    "y": "ruler width direction",
+    "z": "hinge axis and print-build vertical direction"
+  },
+  "sections": [
+    {"id": 1, "body_length": 40, "body_width": 12, "body_thickness": 5, "expanded_body_x": [-43, -3], "z_level": 0},
+    {"id": 2, "body_length": 40, "body_width": 12, "body_thickness": 5, "expanded_body_x": [3, 43], "z_level": 6},
+    {"id": 3, "body_length": 40, "body_width": 12, "body_thickness": 5, "expanded_body_x": [49, 89], "z_level": 12}
+  ],
+  "joints": [
+    {
+      "id": 1,
+      "connects_sections": [1, 2],
+      "axis": {"type": "revolute", "direction": [0, 0, 1], "position_expanded": [0, -0.8, 0]},
+      "angle": {"min_deg": 0, "max_deg": 180, "expanded_deg": 0, "folded_deg": 180, "meaning": "section 2 relative to section 1"},
+      "fold_direction": "positive right-hand rotation about +Z; section 2 swings toward -X/-Y at 180 degrees",
+      "shaft_radius": 1.6,
+      "bore_radius": 2.1,
+      "single_side_radial_clearance": 0.5,
+      "axial_capture": "lower collar plus upper tapered collar on section 1, barrel on section 2",
+      "active_axial_clearance": 0.3
+    },
+    {
+      "id": 2,
+      "connects_sections": [2, 3],
+      "axis": {"type": "revolute", "direction": [0, 0, 1], "position_expanded": [46, -0.8, 0]},
+      "angle": {"min_deg": 0, "max_deg": 180, "expanded_deg": 0, "folded_deg": 180, "meaning": "section 3 relative to section 2"},
+      "fold_direction": "positive right-hand rotation about +Z; section 3 swings toward -X/-Y at 180 degrees",
+      "shaft_radius": 1.6,
+      "bore_radius": 2.1,
+      "single_side_radial_clearance": 0.5,
+      "axial_capture": "lower collar plus upper tapered collar on section 2, barrel on section 3",
+      "active_axial_clearance": 0.3
+    }
+  ],
+  "motion_clearance_design": {
+    "z_step_between_leaf_bodies": 6,
+    "leaf_thickness": 5,
+    "inter_leaf_z_clearance": 1,
+    "purpose": "prevents the wide leaves from intersecting during the complete 0..180 degree XY sweep and when both joints are folded"
+  }
+}

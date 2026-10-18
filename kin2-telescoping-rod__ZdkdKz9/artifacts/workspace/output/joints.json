@@ -1,0 +1,127 @@
+{
+  "units": "mm",
+  "coordinate_frame": "model.stl / parts/*.stl, collapsed (as-printed) pose; Z = rod axis, print up",
+  "parts": {
+    "parts_1": {
+      "file": "parts/parts_1.stl",
+      "role": "outermost tube (base)"
+    },
+    "parts_2": {
+      "file": "parts/parts_2.stl",
+      "role": "tube 2"
+    },
+    "parts_3": {
+      "file": "parts/parts_3.stl",
+      "role": "tube 3"
+    },
+    "parts_4": {
+      "file": "parts/parts_4.stl",
+      "role": "innermost tube (tip)"
+    }
+  },
+  "joints": [
+    {
+      "name": "slide_1_2",
+      "type": "prismatic",
+      "parent": "parts_1",
+      "child": "parts_2",
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "position_at_print": 0.0,
+      "limits": {
+        "lower": -1.1,
+        "upper": 86.9
+      },
+      "limits_verified_by_collision_sweep": {
+        "lower": -1.109,
+        "upper": 86.906
+      },
+      "stroke": 88.0,
+      "radial_clearance_per_side": {
+        "collar_vs_parent_bore": 0.5,
+        "child_body_vs_parent_lip": 0.5
+      },
+      "upper_stop": "45deg top cone of parts_2 bottom collar (r 10.8) contacts 45deg underside cone of parts_1 top inward lip (r_in 9.9); radial engagement 0.9 mm",
+      "lower_stop": "45deg underside cone of parts_2 top flange (r_out 11.4) contacts top inner edge of parts_1; axial gap at print 0.6 mm",
+      "overlap_at_full_extension": 20.19
+    },
+    {
+      "name": "slide_2_3",
+      "type": "prismatic",
+      "parent": "parts_2",
+      "child": "parts_3",
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "position_at_print": 0.0,
+      "limits": {
+        "lower": -1.1,
+        "upper": 90.9
+      },
+      "limits_verified_by_collision_sweep": {
+        "lower": -1.11,
+        "upper": 90.906
+      },
+      "stroke": 92.0,
+      "radial_clearance_per_side": {
+        "collar_vs_parent_bore": 0.5,
+        "child_body_vs_parent_lip": 0.5
+      },
+      "upper_stop": "45deg top cone of parts_3 bottom collar (r 7.7) contacts 45deg underside cone of parts_2 top inward lip (r_in 6.8); radial engagement 0.9 mm",
+      "lower_stop": "45deg underside cone of parts_3 top flange (r_out 8.3) contacts top inner edge of parts_2; axial gap at print 0.6 mm",
+      "overlap_at_full_extension": 20.19
+    },
+    {
+      "name": "slide_3_4",
+      "type": "prismatic",
+      "parent": "parts_3",
+      "child": "parts_4",
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "position_at_print": 0.0,
+      "limits": {
+        "lower": -1.1,
+        "upper": 94.9
+      },
+      "limits_verified_by_collision_sweep": {
+        "lower": -1.11,
+        "upper": 94.906
+      },
+      "stroke": 96.0,
+      "radial_clearance_per_side": {
+        "collar_vs_parent_bore": 0.5,
+        "child_body_vs_parent_lip": 0.5
+      },
+      "upper_stop": "45deg top cone of parts_4 bottom collar (r 4.6) contacts 45deg underside cone of parts_3 top inward lip (r_in 3.7); radial engagement 0.9 mm",
+      "lower_stop": "45deg underside cone of parts_4 top flange (r_out 5.2) contacts top inner edge of parts_3; axial gap at print 0.6 mm",
+      "overlap_at_full_extension": 20.19
+    }
+  ],
+  "collapsed_length": 119.0,
+  "max_outer_diameter": 25.0,
+  "extended_length_design": 391.7,
+  "extended_length_verified": 391.72
+}

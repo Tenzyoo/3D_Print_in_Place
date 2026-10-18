@@ -1,0 +1,178 @@
+{
+  "units": "mm",
+  "passed": true,
+  "assembly_stl": {
+    "file": "model.stl",
+    "watertight": true,
+    "winding_consistent": true,
+    "components": 4,
+    "facets": 6096,
+    "volume_mm3": 33477.74,
+    "bounds_min": [
+      -12.4,
+      -12.4,
+      0.0
+    ],
+    "bounds_max": [
+      12.4,
+      12.4,
+      110.0
+    ],
+    "extents": [
+      24.8,
+      24.8,
+      110.0
+    ]
+  },
+  "part_stls": [
+    {
+      "file": "parts/parts_1.stl",
+      "watertight": true,
+      "volume_mm3": 13352.131,
+      "bounds_min": [
+        -12.4,
+        -12.4,
+        0.0
+      ],
+      "bounds_max": [
+        12.4,
+        12.4,
+        110.0
+      ],
+      "matches_assembly_component": true
+    },
+    {
+      "file": "parts/parts_2.stl",
+      "watertight": true,
+      "volume_mm3": 9120.132,
+      "bounds_min": [
+        -11.0,
+        -11.0,
+        0.0
+      ],
+      "bounds_max": [
+        11.0,
+        11.0,
+        100.0
+      ],
+      "matches_assembly_component": true
+    },
+    {
+      "file": "parts/parts_3.stl",
+      "watertight": true,
+      "volume_mm3": 6319.953,
+      "bounds_min": [
+        -8.5981,
+        -8.5981,
+        0.0
+      ],
+      "bounds_max": [
+        8.5981,
+        8.5981,
+        100.0
+      ],
+      "matches_assembly_component": true
+    },
+    {
+      "file": "parts/parts_4.stl",
+      "watertight": true,
+      "volume_mm3": 4685.523,
+      "bounds_min": [
+        -6.3,
+        -6.3,
+        0.0
+      ],
+      "bounds_max": [
+        6.3,
+        6.3,
+        100.0
+      ],
+      "matches_assembly_component": true
+    }
+  ],
+  "dimensions": {
+    "collapsed_length": 110.0,
+    "extended_length": 320.0,
+    "max_outer_diameter": 24.8,
+    "inner_bore_diameter": 7.0
+  },
+  "joints": {
+    "order_outer_to_inner": [
+      "T1",
+      "T2",
+      "T3",
+      "T4"
+    ],
+    "axis": [
+      0,
+      0,
+      1
+    ],
+    "strokes": [
+      80.0,
+      70.0,
+      70.0
+    ],
+    "global_extended_z": [
+      0.0,
+      80.0,
+      150.0,
+      220.0
+    ],
+    "engagement_at_full_extension": [
+      30.0,
+      30.0,
+      30.0
+    ],
+    "key_height": 4.0,
+    "key_radial_depth": 1.1,
+    "key_radial_catch": 0.6
+  },
+  "clearance_checks": {
+    "nominal_body_and_key_gap": 0.5,
+    "measured_section_boundary_distances": {
+      "key_height_z2": {
+        "T1-T2": 0.498356,
+        "T2-T3": 0.497953,
+        "T3-T4": 0.498779
+      },
+      "cylindrical_z50": {
+        "T1-T2": 0.499774,
+        "T2-T3": 0.499797,
+        "T3-T4": 0.499765
+      },
+      "upper_cylindrical_z90": {
+        "T1-T2": 0.498807,
+        "T2-T3": 0.499705,
+        "T3-T4": 0.499605
+      }
+    },
+    "min_measured_mm": 0.497953,
+    "max_measured_mm": 0.499797
+  },
+  "motion_checks": {
+    "collapsed_pair_overlap_max_mm2": 0.0,
+    "full_extension_pair_overlap_max_mm2": 0.0,
+    "overtravel_tests": {
+      "J1": {
+        "additional_child_offset_mm": 0.25,
+        "max_overlap_area_mm2": 12.645563,
+        "blocked": true
+      },
+      "J2": {
+        "additional_child_offset_mm": 0.25,
+        "max_overlap_area_mm2": 9.1631,
+        "blocked": true
+      },
+      "J3": {
+        "additional_child_offset_mm": 0.25,
+        "max_overlap_area_mm2": 5.775647,
+        "blocked": true
+      }
+    }
+  },
+  "notes": [
+    "The 0.497-0.500 mm faceted-polygon values are the 0.50 mm CAD clearance; polygon faceting accounts for the small deviation.",
+    "At a hard stop the key and keyway roof intentionally touch; during printing and normal sliding they are separated."
+  ]
+}

@@ -1,0 +1,42 @@
+# Written by the Harbor dsh adapter.
+[
+  {
+    "id": "agent-default-model",
+    "config": {
+      "provider": "anthropic",
+      "model": "claude-opus-5-5",
+      "reasoningEffort": "high"
+    }
+  },
+  {
+    "id": "session-persistence-jsonl",
+    "config": {
+      "root": "/logs/agent/dsh-home/sessions",
+      "compression": "none"
+    }
+  },
+  {
+    "id": "llm-pi-ai",
+    "config": {
+      "providers": {
+        "anthropic": {
+          "apiKeyEnv": "ANTHROPIC_API_KEY",
+          "baseURL": "https://api.supergpt.dev",
+          "reasoning": "high",
+          "streamIdleTimeoutMs": 1800000,
+          "timeoutMs": 3600000
+        }
+      }
+    }
+  },
+  {
+    "id": "tool-web",
+    "disabled": true
+  },
+  {
+    "id": "session-log-deepseek",
+    "config": {
+      "enabled": false
+    }
+  }
+]

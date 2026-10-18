@@ -1,0 +1,202 @@
+{
+    "job_name": "kin",
+    "n_concurrent_trials": 7,
+    "quiet": true,
+    "retry": {
+        "max_retries": 2,
+        "include_exceptions": [
+            "UnknownApiError",
+            "ApiInternalServerError",
+            "AgentSetupTimeoutError",
+            "EnvironmentStartTimeoutError",
+            "HealthcheckError",
+            "ApiConnectionClosedError",
+            "ApiRateLimitError",
+            "ApiResponseStalledError",
+            "ApiOverloadedError",
+            "NetworkConnectionError"
+        ],
+        "min_wait_sec": 30.0,
+        "max_wait_sec": 300.0
+    },
+    "agents": [
+        {
+            "import_path": "dsh_agent:DeepSeekHarness",
+            "model_name": "deepseek/deepseek-flash",
+            "override_timeout_sec": 86400.0,
+            "extra_allowed_hosts": [
+                "api.deepseek.com"
+            ],
+            "kwargs": {
+                "version": "0.2.0-rc.2",
+                "reasoning_effort": "high"
+            },
+            "env": {
+                "DEEPSEEK_API_KEY": "${DEEPSEEK_API_KEY}"
+            }
+        },
+        {
+            "name": "claude-code",
+            "model_name": "claude-opus-5-5",
+            "override_timeout_sec": 86400.0,
+            "extra_allowed_hosts": [
+                "api.supergpt.dev"
+            ],
+            "kwargs": {
+                "version": "2.1.302",
+                "reasoning_effort": "high",
+                "disable_web_search": true
+            },
+            "env": {
+                "ANTHROPIC_BASE_URL": "${CLAUDE_BASE_URL}",
+                "ANTHROPIC_AUTH_TOKEN": "${CLAUDE_API_KEY}"
+            }
+        },
+        {
+            "name": "codex",
+            "model_name": "gpt-6.1-sol",
+            "override_timeout_sec": 86400.0,
+            "extra_allowed_hosts": [
+                "api.supergpt.dev"
+            ],
+            "kwargs": {
+                "version": "0.163.0",
+                "reasoning_effort": "high",
+                "web_search": "disabled"
+            },
+            "env": {
+                "OPENAI_API_KEY": "${GPT_API_KEY}",
+                "OPENAI_BASE_URL": "${GPT_BASE_URL}"
+            }
+        },
+        {
+            "import_path": "gemini_agent:PinnedGeminiCli",
+            "model_name": "google/gemini-4-argon-high",
+            "override_timeout_sec": 86400.0,
+            "extra_allowed_hosts": [
+                "api.supergpt.dev"
+            ],
+            "kwargs": {
+                "version": "0.64.0",
+                "reasoning_effort": "high",
+                "disable_web_search": true
+            },
+            "env": {
+                "GEMINI_API_KEY": "${GEMINI_API_KEY}",
+                "GOOGLE_GEMINI_BASE_URL": "${GEMINI_BASE_URL}"
+            }
+        },
+        {
+            "import_path": "dsh_agent:DeepSeekHarness",
+            "model_name": "anthropic/claude-opus-5-5",
+            "override_timeout_sec": 86400.0,
+            "extra_allowed_hosts": [
+                "api.supergpt.dev"
+            ],
+            "kwargs": {
+                "version": "0.2.0-rc.2",
+                "reasoning_effort": "high",
+                "stream_idle_timeout_ms": 1800000,
+                "request_timeout_ms": 3600000
+            },
+            "env": {
+                "ANTHROPIC_API_KEY": "${CLAUDE_API_KEY}",
+                "ANTHROPIC_BASE_URL": "${CLAUDE_BASE_URL}"
+            }
+        },
+        {
+            "import_path": "dsh_agent:DeepSeekHarness",
+            "model_name": "openai/gpt-6.1-sol",
+            "override_timeout_sec": 86400.0,
+            "extra_allowed_hosts": [
+                "api.supergpt.dev"
+            ],
+            "kwargs": {
+                "version": "0.2.0-rc.2",
+                "reasoning_effort": "high",
+                "route_api": "openai-responses",
+                "route_models": [
+                    {
+                        "id": "gpt-6.1-sol",
+                        "name": "gpt-6.1-sol",
+                        "contextWindow": 272000,
+                        "input": [
+                            "text",
+                            "image"
+                        ],
+                        "reasoningEfforts": {
+                            "off": "none",
+                            "low": "low",
+                            "medium": "medium",
+                            "high": "high",
+                            "xhigh": "xhigh",
+                            "max": "max"
+                        }
+                    }
+                ],
+                "lift_instructions": true,
+                "stream_idle_timeout_ms": 1800000,
+                "request_timeout_ms": 3600000
+            },
+            "env": {
+                "OPENAI_API_KEY": "${GPT_API_KEY}",
+                "OPENAI_BASE_URL": "${GPT_BASE_URL}"
+            }
+        },
+        {
+            "import_path": "dsh_agent:DeepSeekHarness",
+            "model_name": "google/gemini-4-argon-high",
+            "override_timeout_sec": 86400.0,
+            "extra_allowed_hosts": [
+                "api.supergpt.dev"
+            ],
+            "kwargs": {
+                "version": "0.2.0-rc.2",
+                "reasoning_effort": "high",
+                "route_models": [
+                    {
+                        "id": "gemini-4-argon-high",
+                        "name": "gemini-4-argon-high",
+                        "contextWindow": 1048576,
+                        "maxTokens": 65536,
+                        "input": [
+                            "text",
+                            "image"
+                        ],
+                        "reasoningEfforts": {
+                            "minimal": "minimal",
+                            "low": "low",
+                            "medium": "medium",
+                            "high": "high"
+                        }
+                    }
+                ],
+                "gemini_thinking_level": "HIGH",
+                "stream_idle_timeout_ms": 1800000,
+                "request_timeout_ms": 3600000
+            },
+            "env": {
+                "GEMINI_API_KEY": "${GEMINI_API_KEY}",
+                "GOOGLE_BASE_URL": "${GEMINI_BASE_URL}"
+            }
+        }
+    ],
+    "datasets": [
+        {
+            "path": "kin_tasks/tasks"
+        }
+    ],
+    "artifacts": [
+        {
+            "source": "/app",
+            "destination": "workspace",
+            "exclude": [
+                "__pycache__",
+                "*.pyc",
+                ".cache",
+                "node_modules",
+                ".venv"
+            ]
+        }
+    ]
+}

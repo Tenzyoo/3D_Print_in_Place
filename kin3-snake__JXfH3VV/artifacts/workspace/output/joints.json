@@ -1,0 +1,260 @@
+{
+  "model": "model.stl",
+  "units": "mm",
+  "angle_units": "deg",
+  "head": {
+    "id": "parts_1",
+    "index": 1,
+    "name": "head",
+    "role": "head",
+    "file": "parts/parts_1.stl"
+  },
+  "body_segments": [
+    {
+      "id": "parts_2",
+      "index": 2,
+      "segment_number": 1,
+      "name": "body_segment_1",
+      "role": "body",
+      "file": "parts/parts_2.stl"
+    },
+    {
+      "id": "parts_3",
+      "index": 3,
+      "segment_number": 2,
+      "name": "body_segment_2",
+      "role": "body",
+      "file": "parts/parts_3.stl"
+    },
+    {
+      "id": "parts_4",
+      "index": 4,
+      "segment_number": 3,
+      "name": "body_segment_3",
+      "role": "body",
+      "file": "parts/parts_4.stl"
+    },
+    {
+      "id": "parts_5",
+      "index": 5,
+      "segment_number": 4,
+      "name": "body_segment_4",
+      "role": "body",
+      "file": "parts/parts_5.stl"
+    },
+    {
+      "id": "parts_6",
+      "index": 6,
+      "segment_number": 5,
+      "name": "body_segment_5_tail",
+      "role": "body",
+      "file": "parts/parts_6.stl"
+    }
+  ],
+  "parts": [
+    {
+      "id": "parts_1",
+      "index": 1,
+      "name": "head",
+      "role": "head",
+      "file": "parts/parts_1.stl"
+    },
+    {
+      "id": "parts_2",
+      "index": 2,
+      "name": "body_segment_1",
+      "role": "body",
+      "file": "parts/parts_2.stl"
+    },
+    {
+      "id": "parts_3",
+      "index": 3,
+      "name": "body_segment_2",
+      "role": "body",
+      "file": "parts/parts_3.stl"
+    },
+    {
+      "id": "parts_4",
+      "index": 4,
+      "name": "body_segment_3",
+      "role": "body",
+      "file": "parts/parts_4.stl"
+    },
+    {
+      "id": "parts_5",
+      "index": 5,
+      "name": "body_segment_4",
+      "role": "body",
+      "file": "parts/parts_5.stl"
+    },
+    {
+      "id": "parts_6",
+      "index": 6,
+      "name": "body_segment_5_tail",
+      "role": "body",
+      "file": "parts/parts_6.stl"
+    }
+  ],
+  "joints": [
+    {
+      "id": "joint_1",
+      "index": 1,
+      "name": "head_to_body_1",
+      "type": "revolute",
+      "joint_style": "pin_spool_axial_retention",
+      "parent": "parts_1",
+      "child": "parts_2",
+      "part_a": "parts_1",
+      "part_b": "parts_2",
+      "parts": ["parts_1", "parts_2"],
+      "parent_file": "parts/parts_1.stl",
+      "child_file": "parts/parts_2.stl",
+      "axis": [0.0, 0.0, 1.0],
+      "position": [-45.0, 0.0, 7.8],
+      "origin": [-45.0, 0.0, 0.0],
+      "z_span": [0.0, 15.6],
+      "pin_shaft_radius": 4.1,
+      "pin_flange_radius": 5.724,
+      "radial_clearance": 0.52,
+      "range": [-30.0, 30.0],
+      "range_deg": [-30.0, 30.0],
+      "min_angle_deg": -30.0,
+      "max_angle_deg": 30.0,
+      "limits": {
+        "min": -30.0,
+        "max": 30.0,
+        "required_min": -25.0,
+        "required_max": 25.0,
+        "unit": "deg"
+      }
+    },
+    {
+      "id": "joint_2",
+      "index": 2,
+      "name": "body_1_to_body_2",
+      "type": "revolute",
+      "joint_style": "pin_spool_axial_retention",
+      "parent": "parts_2",
+      "child": "parts_3",
+      "part_a": "parts_2",
+      "part_b": "parts_3",
+      "parts": ["parts_2", "parts_3"],
+      "parent_file": "parts/parts_2.stl",
+      "child_file": "parts/parts_3.stl",
+      "axis": [0.0, 0.0, 1.0],
+      "position": [-21.0, 0.0, 7.4],
+      "origin": [-21.0, 0.0, 0.0],
+      "z_span": [0.0, 14.8],
+      "pin_shaft_radius": 3.95,
+      "pin_flange_radius": 5.574,
+      "radial_clearance": 0.52,
+      "range": [-30.0, 30.0],
+      "range_deg": [-30.0, 30.0],
+      "min_angle_deg": -30.0,
+      "max_angle_deg": 30.0,
+      "limits": {
+        "min": -30.0,
+        "max": 30.0,
+        "required_min": -25.0,
+        "required_max": 25.0,
+        "unit": "deg"
+      }
+    },
+    {
+      "id": "joint_3",
+      "index": 3,
+      "name": "body_2_to_body_3",
+      "type": "revolute",
+      "joint_style": "pin_spool_axial_retention",
+      "parent": "parts_3",
+      "child": "parts_4",
+      "part_a": "parts_3",
+      "part_b": "parts_4",
+      "parts": ["parts_3", "parts_4"],
+      "parent_file": "parts/parts_3.stl",
+      "child_file": "parts/parts_4.stl",
+      "axis": [0.0, 0.0, 1.0],
+      "position": [3.0, 0.0, 7.0],
+      "origin": [3.0, 0.0, 0.0],
+      "z_span": [0.0, 14.0],
+      "pin_shaft_radius": 3.8,
+      "pin_flange_radius": 5.424,
+      "radial_clearance": 0.52,
+      "range": [-30.0, 30.0],
+      "range_deg": [-30.0, 30.0],
+      "min_angle_deg": -30.0,
+      "max_angle_deg": 30.0,
+      "limits": {
+        "min": -30.0,
+        "max": 30.0,
+        "required_min": -25.0,
+        "required_max": 25.0,
+        "unit": "deg"
+      }
+    },
+    {
+      "id": "joint_4",
+      "index": 4,
+      "name": "body_3_to_body_4",
+      "type": "revolute",
+      "joint_style": "pin_spool_axial_retention",
+      "parent": "parts_4",
+      "child": "parts_5",
+      "part_a": "parts_4",
+      "part_b": "parts_5",
+      "parts": ["parts_4", "parts_5"],
+      "parent_file": "parts/parts_4.stl",
+      "child_file": "parts/parts_5.stl",
+      "axis": [0.0, 0.0, 1.0],
+      "position": [27.0, 0.0, 6.6],
+      "origin": [27.0, 0.0, 0.0],
+      "z_span": [0.0, 13.2],
+      "pin_shaft_radius": 3.65,
+      "pin_flange_radius": 5.274,
+      "radial_clearance": 0.52,
+      "range": [-30.0, 30.0],
+      "range_deg": [-30.0, 30.0],
+      "min_angle_deg": -30.0,
+      "max_angle_deg": 30.0,
+      "limits": {
+        "min": -30.0,
+        "max": 30.0,
+        "required_min": -25.0,
+        "required_max": 25.0,
+        "unit": "deg"
+      }
+    },
+    {
+      "id": "joint_5",
+      "index": 5,
+      "name": "body_4_to_body_5_tail",
+      "type": "revolute",
+      "joint_style": "pin_spool_axial_retention",
+      "parent": "parts_5",
+      "child": "parts_6",
+      "part_a": "parts_5",
+      "part_b": "parts_6",
+      "parts": ["parts_5", "parts_6"],
+      "parent_file": "parts/parts_5.stl",
+      "child_file": "parts/parts_6.stl",
+      "axis": [0.0, 0.0, 1.0],
+      "position": [51.0, 0.0, 6.2],
+      "origin": [51.0, 0.0, 0.0],
+      "z_span": [0.0, 12.4],
+      "pin_shaft_radius": 3.5,
+      "pin_flange_radius": 5.124,
+      "radial_clearance": 0.52,
+      "range": [-30.0, 30.0],
+      "range_deg": [-30.0, 30.0],
+      "min_angle_deg": -30.0,
+      "max_angle_deg": 30.0,
+      "limits": {
+        "min": -30.0,
+        "max": 30.0,
+        "required_min": -25.0,
+        "required_max": 25.0,
+        "unit": "deg"
+      }
+    }
+  ]
+}

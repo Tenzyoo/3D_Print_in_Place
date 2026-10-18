@@ -1,0 +1,7 @@
+{
+ "task": "kin3-snake",
+ "files": [
+  "model.scad",
+  "model.stl"
+ ]
+}

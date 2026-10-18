@@ -1,0 +1,60 @@
+# Written by the Harbor dsh adapter.
+[
+  {
+    "id": "agent-default-model",
+    "config": {
+      "provider": "google",
+      "model": "gemini-4-argon-high",
+      "reasoningEffort": "high"
+    }
+  },
+  {
+    "id": "session-persistence-jsonl",
+    "config": {
+      "root": "/logs/agent/dsh-home/sessions",
+      "compression": "none"
+    }
+  },
+  {
+    "id": "llm-pi-ai",
+    "config": {
+      "providers": {
+        "google": {
+          "apiKeyEnv": "GOOGLE_API_KEY",
+          "baseURL": "http://127.0.0.1:18081/v1beta",
+          "models": [
+            {
+              "id": "gemini-4-argon-high",
+              "name": "gemini-4-argon-high",
+              "contextWindow": 1048576,
+              "maxTokens": 65536,
+              "input": [
+                "text",
+                "image"
+              ],
+              "reasoningEfforts": {
+                "minimal": "minimal",
+                "low": "low",
+                "medium": "medium",
+                "high": "high"
+              }
+            }
+          ],
+          "reasoning": "high",
+          "streamIdleTimeoutMs": 1800000,
+          "timeoutMs": 3600000
+        }
+      }
+    }
+  },
+  {
+    "id": "tool-web",
+    "disabled": true
+  },
+  {
+    "id": "session-log-deepseek",
+    "config": {
+      "enabled": false
+    }
+  }
+]

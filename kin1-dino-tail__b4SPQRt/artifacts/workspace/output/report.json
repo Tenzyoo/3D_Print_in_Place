@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0",
+  "model": "print-in-place articulated dinosaur",
+  "source": "model.scad",
+  "units": "mm",
+  "print_process": {
+    "material": "PLA",
+    "nozzle_mm": 0.4,
+    "layer_height_mm": 0.2,
+    "orientation": "Z vertical; flat undersides on build plate",
+    "joint_support_policy": "No support material in any joint gap; intended no-support profile used for the assembly check",
+    "profile_checked": "/opt/slicer/p1s_pla_0.20mm_nosupport.ini"
+  },
+  "deliverables": {
+    "source": "model.scad",
+    "assembly_stl": "model.stl",
+    "part_stls": ["parts/parts_1.stl", "parts/parts_2.stl", "parts/parts_3.stl", "parts/parts_4.stl"]
+  },
+  "declared_constraints": {
+    "maximum_size_mm": [100.0, 50.0, 60.0],
+    "required_parts": {"fixed_body": 1, "tail_segments": 3, "tail_joints": 3},
+    "shaft_bore_single_side_clearance_mm": 0.5,
+    "minimum_joint_motion_deg": 20.0
+  },
+  "checks": {
+    "openscad": {"command_mode": "--hardwarnings --check-parameters true --check-parameter-ranges true", "assembly_exit_code": 0, "part_exports_exit_code": 0, "result": "pass"},
+    "assembly_mesh": {
+      "bounds_min_mm": [-25.6914, -10.4775, 0.0],
+      "bounds_max_mm": [62.95, 10.4775, 23.1867],
+      "extents_mm": [88.6414, 20.955, 23.1867],
+      "volume_mm3_approx": 8921.90,
+      "watertight": true,
+      "winding_consistent": true,
+      "finite_vertices": true,
+      "connected_watertight_components": 4,
+      "expected_components": 4,
+      "result": "pass"
+    },
+    "individual_parts": {
+      "parts_1": {"bounds_min_mm": [-25.6914, -10.4775, 0.0], "bounds_max_mm": [27.5, 10.4775, 23.1867], "watertight": true, "components": 1},
+      "parts_2": {"bounds_min_mm": [21.3, -3.5, 0.0], "bounds_max_mm": [41.5, 3.5, 7.4], "watertight": true, "components": 1},
+      "parts_3": {"bounds_min_mm": [35.3, -3.5, 0.0], "bounds_max_mm": [55.5, 3.5, 7.4], "watertight": true, "components": 1},
+      "parts_4": {"bounds_min_mm": [49.3, -2.7, 0.0], "bounds_max_mm": [62.95, 2.7, 7.4], "watertight": true, "components": 1}
+    },
+    "dimensional_envelope": {"limit_mm": [100.0, 50.0, 60.0], "measured_mm": [89.1414, 20.955, 23.1867], "result": "pass"},
+    "joint_motion_mesh_sample": {
+      "method": "nearest-vertex spacing between separately exported part meshes after Z rotations",
+      "angles_checked_deg": [-20.0, 0.0, 20.0],
+      "minimum_sampled_pair_spacing_mm": {"J1": {"-20": 0.5168, "0": 0.5098, "20": 0.5168}, "J2": {"-20": 0.3607, "0": 0.3500, "20": 0.3607}, "J3": {"-20": 0.3607, "0": 0.3500, "20": 0.3607}},
+      "declared_motion_requirement": "at least +/-20 degrees",
+      "result": "pass for the sampled CAD poses; this is not a substitute for a physical print test"
+    },
+    "slicer": {
+      "prusa_slicer_info": {"manifold": true, "number_of_parts": 4, "reported_size_mm": [88.641403, 20.955, 23.186701], "reported_volume_mm3": 8921.861328},
+      "no_support_slice": {"completed": true, "gcode": "/tmp/dino_nosupport.gcode", "support_feature_markers": 0, "result": "pass for support-free joint-gap slicing"},
+      "automatic_support_slice": {"completed": true, "gcode": "/tmp/dino_support.gcode", "support_feature_markers": "present", "result": "informational; supports are not used for the joint gaps"}
+    }
+  },
+  "limitations": [
+    "No physical PLA print and break-in test was possible in this environment. The 0.50 mm radial clearance, 0.60 mm vertical receiver-to-tail-base gap, captive keeper geometry, and +/-20 degree poses were checked in CAD/STL and by slicing, but printer calibration can still cause a tight or fused joint.",
+    "The automatic-support slice reports general print-stability/overhang warnings and generates support elsewhere on the dinosaur. The intended assembly was also successfully sliced with the supplied no-support profile and contains no support feature markers; no support is required inside the joint gaps. A brim may be useful for bed adhesion.",
+    "The nearest-spacing motion check is a mesh-vertex sampling check, not a certified continuous collision proof. It found positive spacing at the neutral and +/-20 degree samples for all three joints."
+  ]
+}

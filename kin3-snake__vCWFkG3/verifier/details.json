@@ -1,0 +1,23 @@
+{
+ "task": "kin3-snake",
+ "files": [
+  "README.md",
+  "build.sh",
+  "checks/gcode_gap_report.txt",
+  "checks/geometry_report.txt",
+  "checks/make_joints.py",
+  "checks/preview_iso.png",
+  "checks/preview_top.png",
+  "checks/verify_gcode_gaps.py",
+  "checks/verify_geometry.py",
+  "joints.json",
+  "model.scad",
+  "model.stl",
+  "parts/parts_1.stl",
+  "parts/parts_2.stl",
+  "parts/parts_3.stl",
+  "parts/parts_4.stl",
+  "parts/parts_5.stl",
+  "parts/parts_6.stl"
+ ]
+}

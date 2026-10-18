@@ -1,0 +1,53 @@
+{
+  "units": "mm",
+  "description": "4-stage print-in-place telescoping rod. Tubes numbered from outside (1) to inside (4); files parts/parts_N.stl. All coordinates in the model.stl frame; as-printed (collapsed) pose = travel 0.",
+  "axis_origin": [0, 0, 0],
+  "joints": [
+    {
+      "name": "J1_tube1_tube2",
+      "type": "prismatic",
+      "parent_part": 1, "child_part": 2,
+      "parent_file": "parts/parts_1.stl", "child_file": "parts/parts_2.stl",
+      "axis": [0, 0, 1],
+      "travel_mm": {"min": -0.85, "max": 84.55, "as_printed": 0.0},
+      "stroke_mm": 85.4,
+      "limits": {
+        "extension_stop": "45deg top cone of collar on tube2 (r 9.4->10.7) contacts 45deg underside of top lip of tube1 (r 10.4..11.2 overlap 0.8 mm radial) at +84.55",
+        "collapse_stop": "45deg underside of collar on tube2 contacts 45deg top of bottom lip of tube1 at -0.85 (print-state normal gap 0.60 mm)"
+      },
+      "radial_clearance_mm": {"tube2_wall_vs_tube1_lips": 0.5, "tube2_collar_vs_tube1_counterbore": 0.5}
+    },
+    {
+      "name": "J2_tube2_tube3",
+      "type": "prismatic",
+      "parent_part": 2, "child_part": 3,
+      "parent_file": "parts/parts_2.stl", "child_file": "parts/parts_3.stl",
+      "axis": [0, 0, 1],
+      "travel_mm": {"min": -0.85, "max": 87.55, "as_printed": 0.0},
+      "stroke_mm": 88.4,
+      "limits": {
+        "extension_stop": "collar on tube3 contacts top lip of tube2 at +87.55",
+        "collapse_stop": "collar on tube3 contacts bottom lip of tube2 at -0.85"
+      },
+      "radial_clearance_mm": {"tube3_wall_vs_tube2_lips": 0.5, "tube3_collar_vs_tube2_counterbore": 0.5}
+    },
+    {
+      "name": "J3_tube3_tube4",
+      "type": "prismatic",
+      "parent_part": 3, "child_part": 4,
+      "parent_file": "parts/parts_3.stl", "child_file": "parts/parts_4.stl",
+      "axis": [0, 0, 1],
+      "travel_mm": {"min": -0.85, "max": 90.55, "as_printed": 0.0},
+      "stroke_mm": 91.4,
+      "limits": {
+        "extension_stop": "collar on tube4 contacts top lip of tube3 at +90.55",
+        "collapse_stop": "collar on tube4 contacts bottom lip of tube3 at -0.85"
+      },
+      "radial_clearance_mm": {"tube4_wall_vs_tube3_lips": 0.5, "tube4_collar_vs_tube3_counterbore": 0.5}
+    }
+  ],
+  "chain": "tube1 (base, fixed) -> J1 -> tube2 -> J2 -> tube3 -> J3 -> tube4",
+  "collapsed_length_mm": 119.0,
+  "extended_length_mm": 381.65,
+  "max_outer_diameter_mm": 24.8
+}

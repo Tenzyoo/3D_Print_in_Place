@@ -1,0 +1,41 @@
+== 1. mesh validity
+tube 1: watertight=True bodies=1 vol=9894.7 mm3  OD=25.00  z=[0.00,107.00]
+tube 2: watertight=True bodies=1 vol=9415.7 mm3  OD=22.80  z=[0.00,111.00]
+tube 3: watertight=True bodies=1 vol=6342.3 mm3  OD=16.60  z=[0.00,115.00]
+tube 4: watertight=True bodies=1 vol=3042.8 mm3  OD=10.40  z=[0.00,119.00]
+model: watertight=True bodies=4 vol=28695.5 (sum parts 28695.5) size=[ 25.  25. 119.]
+== 2. static interference (assembled/printed state)
+tube 1 & tube 2: intersection volume = 0.000000
+tube 1 & tube 3: intersection volume = 0.000000
+tube 1 & tube 4: intersection volume = 0.000000
+tube 2 & tube 3: intersection volume = 0.000000
+tube 2 & tube 4: intersection volume = 0.000000
+tube 3 & tube 4: intersection volume = 0.000000
+== 3. clearances in axial section
+tube 1 section bounds (r,z) = [  9.9   0.   12.5 107. ]
+tube 2 section bounds (r,z) = [  6.8   0.   11.4 111. ]
+tube 3 section bounds (r,z) = [  3.7   0.    8.3 115. ]
+tube 4 section bounds (r,z) = [  2.    0.    5.2 119. ]
+min gap tube 1 <-> tube 2: 0.500 mm
+min gap tube 2 <-> tube 3: 0.500 mm
+min gap tube 3 <-> tube 4: 0.500 mm
+tube 1/2: collar-bore gap @z=10.0: 0.500  lip-body gap @z=106.0: 0.500
+tube 2/3: collar-bore gap @z=10.0: 0.500  lip-body gap @z=110.0: 0.500
+tube 3/4: collar-bore gap @z=10.0: 0.500  lip-body gap @z=114.0: 0.500
+== 4. motion sweep
+tube 2 in tube 1: free stroke z = [-1.109, 86.906] mm (stroke 88.02, swept every 0.5 mm collision-free); pull-out stop holds: True; push-through stop holds: True
+tube 3 in tube 2: free stroke z = [-1.110, 90.906] mm (stroke 92.02, swept every 0.5 mm collision-free); pull-out stop holds: True; push-through stop holds: True
+tube 4 in tube 3: free stroke z = [-1.110, 94.906] mm (stroke 96.02, swept every 0.5 mm collision-free); pull-out stop holds: True; push-through stop holds: True
+== 5. fully extended state
+offsets [  0.    86.86 177.71 272.57]; extended length = 391.57 mm, all pairs collision-free
+overlap at full extension: [20.14 20.14 20.14]
+== 6. overhangs (down-facing surfaces, excluding bed contact z=0)
+tube 1: 960 down-facing faces above bed, flattest one is 45.0 deg from horizontal (>=45 deg = self-supporting)
+        flat (unsupported) ceilings: 0
+tube 2: 1280 down-facing faces above bed, flattest one is 45.0 deg from horizontal (>=45 deg = self-supporting)
+        flat (unsupported) ceilings: 0
+tube 3: 1280 down-facing faces above bed, flattest one is 45.0 deg from horizontal (>=45 deg = self-supporting)
+        flat (unsupported) ceilings: 0
+tube 4: 960 down-facing faces above bed, flattest one is 45.0 deg from horizontal (>=45 deg = self-supporting)
+        flat (unsupported) ceilings: 0
+ALL GEOMETRY CHECKS PASSED

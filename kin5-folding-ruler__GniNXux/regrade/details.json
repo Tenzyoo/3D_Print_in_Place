@@ -1,0 +1,51 @@
+{
+ "task": "kin5-folding-ruler",
+ "evaluator": "kin-eval 1.0",
+ "notes": [
+  "no usable model.stl or parts STL"
+ ],
+ "config_sha256": "2df586e27ab223ed6d0dea3dbacfc06b0f07383247511a061d0537d826d74092",
+ "geometry_source": null,
+ "core": {
+  "C1_separation": {
+   "pass": false,
+   "why": "not evaluated"
+  },
+  "C2_clearance": {
+   "pass": false,
+   "why": "not evaluated"
+  },
+  "C3_motion": {
+   "pass": false,
+   "why": "not evaluated"
+  },
+  "C4_retention": {
+   "pass": false,
+   "why": "not evaluated"
+  }
+ },
+ "aux": {
+  "deliverables": {
+   "model_scad": false,
+   "model_stl": false,
+   "n_part_files": 0,
+   "part_files_ok": false,
+   "joints_json": false,
+   "doc_mentions_orientation": false,
+   "doc_mentions_slicing": false
+  }
+ },
+ "summary": {
+  "C1_separation": false,
+  "C2_clearance": false,
+  "C3_motion": false,
+  "C4_retention": false,
+  "n_pass": 0,
+  "joint_fracs": {
+   "C2_clearance": null,
+   "C3_motion": null,
+   "C4_retention": null
+  }
+ },
+ "secs": 0.0
+}

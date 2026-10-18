@@ -1,0 +1,35 @@
+{
+ "gcode": "model_nosupport.gcode",
+ "layers": 280,
+ "mean_track_to_mesh_alignment": 0.9925,
+ "in_layer_fused_components": [],
+ "n_in_layer_fused": 0,
+ "stacked_on_other_part": [],
+ "n_stacked": 0,
+ "min_in_layer_gap_between_parts_mm (gap,z)": {
+  "1-2": [
+   0.383,
+   7.0
+  ],
+  "1-3": [
+   4.911,
+   7.0
+  ],
+  "1-4": [
+   19.912,
+   7.0
+  ],
+  "2-3": [
+   0.384,
+   7.0
+  ],
+  "2-4": [
+   4.912,
+   7.0
+  ],
+  "3-4": [
+   0.386,
+   7.0
+  ]
+ }
+}

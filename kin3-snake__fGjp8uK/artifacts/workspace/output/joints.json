@@ -1,0 +1,247 @@
+{
+  "units": "mm",
+  "coordinate_system": "model.stl frame; head points +X, Z up, bed at z=0; parts share this frame in neutral straight pose",
+  "head": "part_1",
+  "bodies": [
+    "part_2",
+    "part_3",
+    "part_4",
+    "part_5",
+    "part_6"
+  ],
+  "parts": [
+    {
+      "id": "part_1",
+      "name": "head",
+      "file": "parts/parts_1.stl",
+      "role": "head"
+    },
+    {
+      "id": "part_2",
+      "name": "body_1",
+      "file": "parts/parts_2.stl",
+      "role": "body"
+    },
+    {
+      "id": "part_3",
+      "name": "body_2",
+      "file": "parts/parts_3.stl",
+      "role": "body"
+    },
+    {
+      "id": "part_4",
+      "name": "body_3",
+      "file": "parts/parts_4.stl",
+      "role": "body"
+    },
+    {
+      "id": "part_5",
+      "name": "body_4",
+      "file": "parts/parts_5.stl",
+      "role": "body"
+    },
+    {
+      "id": "part_6",
+      "name": "body_5_tail",
+      "file": "parts/parts_6.stl",
+      "role": "body"
+    }
+  ],
+  "joints": [
+    {
+      "id": "joint_1",
+      "type": "revolute",
+      "parent": "part_1",
+      "child": "part_2",
+      "parent_name": "head",
+      "child_name": "body_1",
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "origin": [
+        0.0,
+        0.0,
+        7.0
+      ],
+      "pin_owner": "part_2",
+      "socket_owner": "part_1",
+      "range_deg": [
+        -30.0,
+        30.0
+      ],
+      "neutral_deg": 0.0,
+      "note": "child part (and the chain behind it) rotates about axis through origin; required >= +/-25 deg, declared +/-30 deg, collision-free to +/-33 deg (neck/slot hard stop)",
+      "verified": {
+        "collision_free_deg": [
+          -33,
+          33
+        ],
+        "axial_interference_after_dz_mm": [
+          -0.75,
+          0.75
+        ]
+      }
+    },
+    {
+      "id": "joint_2",
+      "type": "revolute",
+      "parent": "part_2",
+      "child": "part_3",
+      "parent_name": "body_1",
+      "child_name": "body_2",
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "origin": [
+        -22.0,
+        0.0,
+        7.0
+      ],
+      "pin_owner": "part_3",
+      "socket_owner": "part_2",
+      "range_deg": [
+        -30.0,
+        30.0
+      ],
+      "neutral_deg": 0.0,
+      "note": "child part (and the chain behind it) rotates about axis through origin; required >= +/-25 deg, declared +/-30 deg, collision-free to +/-33 deg (neck/slot hard stop)",
+      "verified": {
+        "collision_free_deg": [
+          -33,
+          33
+        ],
+        "axial_interference_after_dz_mm": [
+          -0.75,
+          0.75
+        ]
+      }
+    },
+    {
+      "id": "joint_3",
+      "type": "revolute",
+      "parent": "part_3",
+      "child": "part_4",
+      "parent_name": "body_2",
+      "child_name": "body_3",
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "origin": [
+        -44.0,
+        0.0,
+        7.0
+      ],
+      "pin_owner": "part_4",
+      "socket_owner": "part_3",
+      "range_deg": [
+        -30.0,
+        30.0
+      ],
+      "neutral_deg": 0.0,
+      "note": "child part (and the chain behind it) rotates about axis through origin; required >= +/-25 deg, declared +/-30 deg, collision-free to +/-33 deg (neck/slot hard stop)",
+      "verified": {
+        "collision_free_deg": [
+          -33,
+          33
+        ],
+        "axial_interference_after_dz_mm": [
+          -0.75,
+          0.75
+        ]
+      }
+    },
+    {
+      "id": "joint_4",
+      "type": "revolute",
+      "parent": "part_4",
+      "child": "part_5",
+      "parent_name": "body_3",
+      "child_name": "body_4",
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "origin": [
+        -66.0,
+        0.0,
+        7.0
+      ],
+      "pin_owner": "part_5",
+      "socket_owner": "part_4",
+      "range_deg": [
+        -30.0,
+        30.0
+      ],
+      "neutral_deg": 0.0,
+      "note": "child part (and the chain behind it) rotates about axis through origin; required >= +/-25 deg, declared +/-30 deg, collision-free to +/-33 deg (neck/slot hard stop)",
+      "verified": {
+        "collision_free_deg": [
+          -33,
+          33
+        ],
+        "axial_interference_after_dz_mm": [
+          -0.75,
+          0.75
+        ]
+      }
+    },
+    {
+      "id": "joint_5",
+      "type": "revolute",
+      "parent": "part_5",
+      "child": "part_6",
+      "parent_name": "body_4",
+      "child_name": "body_5_tail",
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "origin": [
+        -88.0,
+        0.0,
+        7.0
+      ],
+      "pin_owner": "part_6",
+      "socket_owner": "part_5",
+      "range_deg": [
+        -30.0,
+        30.0
+      ],
+      "neutral_deg": 0.0,
+      "note": "child part (and the chain behind it) rotates about axis through origin; required >= +/-25 deg, declared +/-30 deg, collision-free to +/-33 deg (neck/slot hard stop)",
+      "verified": {
+        "collision_free_deg": [
+          -33,
+          33
+        ],
+        "axial_interference_after_dz_mm": [
+          -0.75,
+          0.75
+        ]
+      }
+    }
+  ],
+  "chain": [
+    "part_1",
+    "part_2",
+    "part_3",
+    "part_4",
+    "part_5",
+    "part_6"
+  ],
+  "joint_design": {
+    "pin_radius": 4.0,
+    "bore_radius": 4.5,
+    "radial_clearance_single_side": 0.5,
+    "collar": "45 deg double cone, radius 6.0 on pin / 6.5 in socket, axial lock both directions",
+    "other_moving_clearance": 0.6
+  }
+}

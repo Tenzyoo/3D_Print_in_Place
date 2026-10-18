@@ -1,0 +1,40 @@
+{
+  "units": "mm",
+  "coordinate_system": {
+    "x": "torso longitudinal axis; head toward negative X",
+    "y": "left/right wing spread; right wing +Y, left wing -Y",
+    "z": "vertical; print bed is z=0"
+  },
+  "neutral_pose": {"left_wing_deg": 0, "right_wing_deg": 0},
+  "parts": [
+    {"id": "torso", "file": "parts/parts_1.stl", "fixed": true, "origin_mm": [0, 0, 0]},
+    {"id": "left_wing", "file": "parts/parts_2.stl", "fixed": false, "origin_mm": [0, -8, 0]},
+    {"id": "right_wing", "file": "parts/parts_3.stl", "fixed": false, "origin_mm": [0, 8, 0]}
+  ],
+  "joints": [
+    {
+      "id": "left_revolute", "type": "revolute", "parent": "torso", "child": "left_wing",
+      "axis_origin_mm": [0, -8, 0], "axis_direction": [0, 0, 1],
+      "range_deg": [-30, 30], "neutral_deg": 0,
+      "shaft_radius_mm": 1.2, "bearing_bore_radius_mm": 1.7,
+      "radial_clearance_mm": 0.5,
+      "axial_retention": "integral 2.8 mm-radius head; 0.45 mm nominal axial gap above bearing top"
+    },
+    {
+      "id": "right_revolute", "type": "revolute", "parent": "torso", "child": "right_wing",
+      "axis_origin_mm": [0, 8, 0], "axis_direction": [0, 0, 1],
+      "range_deg": [-30, 30], "neutral_deg": 0,
+      "shaft_radius_mm": 1.2, "bearing_bore_radius_mm": 1.7,
+      "radial_clearance_mm": 0.5,
+      "axial_retention": "integral 2.8 mm-radius head; 0.45 mm nominal axial gap above bearing top"
+    }
+  ],
+  "independence": "Each wing has its own pin/bearing pair and may rotate while the other remains stationary.",
+  "design_notes": {
+    "bearing_outer_radius_mm": 4.15,
+    "bearing_z_mm": [2.9, 5.1],
+    "wing_plate_z_mm": [0, 2.4],
+    "wing_to_bearing_axial_clearance_mm": 0.5,
+    "maximum_nominal_bbox_mm": [58.55, 94.0, 6.75]
+  }
+}

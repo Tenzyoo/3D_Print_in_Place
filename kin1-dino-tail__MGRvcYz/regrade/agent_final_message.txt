@@ -1,0 +1,1 @@
+I will test the updated joint with the $60^\circ$ bottom retention collar ($R_{\text{base}} = 3.2\text{ mm} > R_{\text{hole}} = 2.6\text{ mm}$), closed $360^\circ$ upper ring, and $60^\circ$ top retention cap ($R_{\text{cap}} = 3.8\text{ mm} > R_{\text{hole}} = 2.6\text{ mm}$), verifying axial lock across all $\pm Z$ displacements and zero slicer supports.

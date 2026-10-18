@@ -1,0 +1,67 @@
+{
+  "units": "mm",
+  "assembly_state_in_model_stl": "fully_collapsed",
+  "axis": {"origin": [0, 0, 0], "direction": [0, 0, 1]},
+  "stage_count": 4,
+  "collapsed_length": 110,
+  "maximum_outer_diameter": 25,
+  "expanded_length": 302,
+  "per_joint_stroke": 64,
+  "joints": [
+    {
+      "outer_part": "parts_1.stl",
+      "inner_part": "parts_2.stl",
+      "motion_axis": {"origin": [0, 0, 0], "direction": [0, 0, 1]},
+      "stroke": 64,
+      "expanded_relative_translation": [0, 0, 64],
+      "sliding_radial_clearance": 0.5,
+      "retention": {
+        "type": "integral_annular_inner_lip_and_outer_collar",
+        "lip_axial_range_at_outer_tube_top": [106.8, 110],
+        "collar_outer_radius": 10.75,
+        "lip_aperture_radius": 10.6,
+        "radial_capture_overlap": 0.15,
+        "axial_stop_face_gap_at_stroke_limit": 0.4
+      }
+    },
+    {
+      "outer_part": "parts_2.stl",
+      "inner_part": "parts_3.stl",
+      "motion_axis": {"origin": [0, 0, 0], "direction": [0, 0, 1]},
+      "stroke": 64,
+      "expanded_relative_translation": [0, 0, 64],
+      "sliding_radial_clearance": 0.5,
+      "retention": {
+        "type": "integral_annular_inner_lip_and_outer_collar",
+        "lip_axial_range_at_outer_tube_top": [106.8, 110],
+        "collar_outer_radius": 8.65,
+        "lip_aperture_radius": 8.5,
+        "radial_capture_overlap": 0.15,
+        "axial_stop_face_gap_at_stroke_limit": 0.4
+      }
+    },
+    {
+      "outer_part": "parts_3.stl",
+      "inner_part": "parts_4.stl",
+      "motion_axis": {"origin": [0, 0, 0], "direction": [0, 0, 1]},
+      "stroke": 64,
+      "expanded_relative_translation": [0, 0, 64],
+      "sliding_radial_clearance": 0.5,
+      "retention": {
+        "type": "integral_annular_inner_lip_and_outer_collar",
+        "lip_axial_range_at_outer_tube_top": [106.8, 110],
+        "collar_outer_radius": 6.55,
+        "lip_aperture_radius": 6.4,
+        "radial_capture_overlap": 0.15,
+        "axial_stop_face_gap_at_stroke_limit": 0.4
+      }
+    }
+  ],
+  "expanded_part_z_offsets": {
+    "parts_1.stl": 0,
+    "parts_2.stl": 64,
+    "parts_3.stl": 128,
+    "parts_4.stl": 192
+  },
+  "notes": "All parts use the same collapsed-state coordinate system and z-axis. Positive Z translation is the extension direction. Captive collars and retaining lips are modeled integrally; no separate hardware."
+}

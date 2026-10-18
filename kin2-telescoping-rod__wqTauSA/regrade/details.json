@@ -1,0 +1,51 @@
+{
+ "task": "kin2-telescoping-rod",
+ "evaluator": "kin-eval 1.0",
+ "notes": [
+  "no usable model.stl or parts STL"
+ ],
+ "config_sha256": "9ac8c9244e53c4eb947445ee6d49f6d4fba75bbd417480e356db2c6fa81abd99",
+ "geometry_source": null,
+ "core": {
+  "C1_separation": {
+   "pass": false,
+   "why": "not evaluated"
+  },
+  "C2_clearance": {
+   "pass": false,
+   "why": "not evaluated"
+  },
+  "C3_motion": {
+   "pass": false,
+   "why": "not evaluated"
+  },
+  "C4_retention": {
+   "pass": false,
+   "why": "not evaluated"
+  }
+ },
+ "aux": {
+  "deliverables": {
+   "model_scad": false,
+   "model_stl": false,
+   "n_part_files": 0,
+   "part_files_ok": false,
+   "joints_json": false,
+   "doc_mentions_orientation": false,
+   "doc_mentions_slicing": false
+  }
+ },
+ "summary": {
+  "C1_separation": false,
+  "C2_clearance": false,
+  "C3_motion": false,
+  "C4_retention": false,
+  "n_pass": 0,
+  "joint_fracs": {
+   "C2_clearance": null,
+   "C3_motion": null,
+   "C4_retention": null
+  }
+ },
+ "secs": 0.0
+}

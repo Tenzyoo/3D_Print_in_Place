@@ -1,0 +1,9 @@
+交付文件已生成到 `/app/output/`：
+
+- [model.scad](/app/output/model.scad)、[model.stl](/app/output/model.stl)、[joints.json](/app/output/joints.json)
+- [parts_1.stl](/app/output/parts/parts_1.stl)、[parts_2.stl](/app/output/parts/parts_2.stl)、[parts_3.stl](/app/output/parts/parts_3.stl)
+- [打印与检查说明](/app/output/print_notes.md) 及无支撑切片生成的 [model.gcode](/app/output/model.gcode)
+
+展开总装通过了网格检查：STL 为 watertight，包含 3 个独立部件；单件体积之和与总装一致。以 5° 步进检查了 1,369 组关节角度，共做 4,107 次两两实体交集检查，采样点未发现交叠。PrusaSlicer 使用 PLA、0.4 mm 喷嘴、0.2 mm 层高、关闭支撑并加 3 mm brim，切片成功。
+
+**有一项关键要求尚未满足：**轴孔环底面与打印平台齐平，销头只能阻止轴孔环沿 `+Z` 脱出；模型脱离平台后，轴孔环仍可能从销轴底端沿 `-Z` 滑出。因此当前结构不能保证双向轴向防脱，不能视为完全满足要求。这个限制也已记录在说明文件中。

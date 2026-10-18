@@ -1,0 +1,106 @@
+{
+ "tmp_dir": "/tmp/bfly_slice_7_457zkd",
+ "model_nosupport": {
+  "return_code": 0,
+  "messages": [
+   "65 => Searching support spots",
+   "69 => Alert if supports needed",
+   "print warning: Detected print stability issues:",
+   "Low bed adhesion",
+   "Consider enabling supports.",
+   "90 => Exporting G-code to /tmp/bfly_slice_7_457zkd/model_nosupport.gcode",
+   "Slicing result exported to /tmp/bfly_slice_7_457zkd/model_nosupport.gcode"
+  ],
+  "layers": 74,
+  "support_extrusion_length_mm": 0.0,
+  "support_extrusion_length_in_joint_zones_mm": 0.0,
+  "estimated_time": "2h 1m 28s",
+  "filament_cm3": 13.14,
+  "filament_g_PLA_1.24": 16.3
+ },
+ "model_autosupport": {
+  "return_code": 0,
+  "messages": [
+   "65 => Searching support spots",
+   "69 => Alert if supports needed",
+   "70 => Generating support material",
+   "90 => Exporting G-code to /tmp/bfly_slice_7_457zkd/model_autosupport.gcode",
+   "Slicing result exported to /tmp/bfly_slice_7_457zkd/model_autosupport.gcode"
+  ],
+  "layers": 74,
+  "support_extrusion_length_mm": 0.0,
+  "support_extrusion_length_in_joint_zones_mm": 0.0,
+  "estimated_time": "2h 1m 28s",
+  "filament_cm3": 13.14,
+  "filament_g_PLA_1.24": 16.3
+ },
+ "brim_test_5mm": {
+  "return_code": 0,
+  "adhesion_warning": false,
+  "min_brim_distance_to_joint_axis_mm": 7.17,
+  "ring_outer_radius_mm": 7.0,
+  "body_clearance_radius_mm": 7.5,
+  "conclusion": "brim line enters the 7.0-7.5 mm ring/body gap -> DO NOT use a brim"
+ },
+ "per_part_slice": {
+  "return_codes": {
+   "parts_1": 0,
+   "parts_2": 0,
+   "parts_3": 0
+  },
+  "objects": [
+   "parts_1",
+   "parts_2",
+   "parts_3"
+  ],
+  "gcode_xy_extents_model_coords": {
+   "parts_1": [
+    [
+     -48.1,
+     -18.3
+    ],
+    [
+     51.7,
+     18.3
+    ]
+   ],
+   "parts_2": [
+    [
+     -53.9,
+     4.2
+    ],
+    [
+     43.6,
+     49.1
+    ]
+   ],
+   "parts_3": [
+    [
+     -53.9,
+     -49.1
+    ],
+    [
+     43.6,
+     -4.2
+    ]
+   ]
+  }
+ },
+ "joint_gap_in_gcode": {
+  "left_wing_joint": {
+   "layers_with_both_parts": 25,
+   "min_horizontal_bead_gap_mm": 0.47,
+   "at_layer_z": 3.4,
+   "min_vertical_distance_between_overlapping_beads_of_different_parts_mm": 0.8,
+   "note": "vertical distance = difference of layer top heights; 0.2 would mean deposited directly on top (fusion)"
+  },
+  "right_wing_joint": {
+   "layers_with_both_parts": 25,
+   "min_horizontal_bead_gap_mm": 0.469,
+   "at_layer_z": 2.2,
+   "min_vertical_distance_between_overlapping_beads_of_different_parts_mm": 0.8,
+   "note": "vertical distance = difference of layer top heights; 0.2 would mean deposited directly on top (fusion)"
+  }
+ },
+ "joint_gap_in_gcode_ok": true
+}

@@ -1,0 +1,20 @@
+{
+ "task": "kin3-snake",
+ "files": [
+  "README.md",
+  "joints.json",
+  "model.scad",
+  "model.stl",
+  "model_P1S_PLA_0.2mm_autosupport.gcode",
+  "parts/parts_1.stl",
+  "parts/parts_2.stl",
+  "parts/parts_3.stl",
+  "parts/parts_4.stl",
+  "parts/parts_5.stl",
+  "parts/parts_6.stl",
+  "slice_check.py",
+  "slice_report.json",
+  "verify.py",
+  "verify_report.json"
+ ]
+}

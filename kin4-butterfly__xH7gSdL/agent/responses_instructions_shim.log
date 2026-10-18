@@ -1,0 +1,152 @@
+shim listening on 127.0.0.1:18080 -> https://api.supergpt.dev
+10:09:31 POST /responses lifted=True status=200 bytes=95270 secs=4.2
+10:09:31 POST /responses lifted=True status=200 bytes=16795 secs=4.2
+10:09:34 POST /responses lifted=True status=200 bytes=98996 secs=2.7
+10:09:38 POST /responses lifted=True status=200 bytes=78049 secs=4.2
+10:09:40 POST /responses lifted=True status=200 bytes=80947 secs=2.5
+10:10:09 POST /responses lifted=True status=200 bytes=475828 secs=28.9
+10:10:18 POST /responses lifted=True status=200 bytes=400793 secs=8.8
+10:10:39 POST /responses lifted=True status=200 bytes=138235 secs=20.3
+10:10:54 POST /responses lifted=True status=200 bytes=111442 secs=11.8
+10:10:59 POST /responses lifted=True status=200 bytes=84079 secs=4.9
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 51084)
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/http/client.py", line 584, in _get_chunk_left
+    chunk_left = self._read_next_chunk_size()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 551, in _read_next_chunk_size
+    return int(line, 16)
+           ^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 16: b''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/logs/agent/responses_instructions_shim.py", line 64, in do_POST
+    self._forward()
+  File "/logs/agent/responses_instructions_shim.py", line 96, in _forward
+    while chunk := resp.read1(65536):
+                   ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 680, in read1
+    return self._read1_chunked(n)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 721, in _read1_chunked
+    chunk_left = self._get_chunk_left()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 586, in _get_chunk_left
+    raise IncompleteRead(b'')
+http.client.IncompleteRead: IncompleteRead(0 bytes read)
+----------------------------------------
+10:11:35 POST /responses lifted=True status=200 bytes=140299 secs=13.9
+10:11:40 POST /responses lifted=True status=200 bytes=91922 secs=4.8
+10:11:47 POST /responses lifted=True status=200 bytes=104071 secs=7.5
+10:11:52 POST /responses lifted=True status=200 bytes=126274 secs=4.3
+10:12:00 POST /responses lifted=True status=200 bytes=109375 secs=7.9
+10:12:04 POST /responses lifted=True status=200 bytes=110053 secs=4.5
+10:12:08 POST /responses lifted=True status=200 bytes=111573 secs=3.8
+10:12:20 POST /responses lifted=True status=200 bytes=163179 secs=12.2
+10:12:30 POST /responses lifted=True status=200 bytes=129357 secs=5.5
+10:12:42 POST /responses lifted=True status=200 bytes=147513 secs=11.1
+10:12:46 POST /responses lifted=True status=200 bytes=110950 secs=4.0
+10:12:50 POST /responses lifted=True status=200 bytes=143577 secs=4.3
+10:13:04 POST /responses lifted=True status=200 bytes=132302 secs=10.2
+10:14:44 POST /responses lifted=True status=200 bytes=437740 secs=98.6
+10:15:02 POST /responses lifted=True status=200 bytes=398201 secs=18.0
+10:15:56 POST /responses lifted=True status=520 bytes=961 secs=53.7
+10:16:12 POST /responses lifted=True status=200 bytes=249894 secs=15.4
+10:16:28 POST /responses lifted=True status=200 bytes=228561 secs=15.4
+10:16:51 POST /responses lifted=True status=200 bytes=229765 secs=22.9
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 51716)
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/http/client.py", line 584, in _get_chunk_left
+    chunk_left = self._read_next_chunk_size()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 551, in _read_next_chunk_size
+    return int(line, 16)
+           ^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 16: b''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/logs/agent/responses_instructions_shim.py", line 64, in do_POST
+    self._forward()
+  File "/logs/agent/responses_instructions_shim.py", line 96, in _forward
+    while chunk := resp.read1(65536):
+                   ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 680, in read1
+    return self._read1_chunked(n)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 721, in _read1_chunked
+    chunk_left = self._get_chunk_left()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 586, in _get_chunk_left
+    raise IncompleteRead(b'')
+http.client.IncompleteRead: IncompleteRead(0 bytes read)
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 40028)
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/http/client.py", line 584, in _get_chunk_left
+    chunk_left = self._read_next_chunk_size()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 551, in _read_next_chunk_size
+    return int(line, 16)
+           ^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 16: b''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/logs/agent/responses_instructions_shim.py", line 64, in do_POST
+    self._forward()
+  File "/logs/agent/responses_instructions_shim.py", line 96, in _forward
+    while chunk := resp.read1(65536):
+                   ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 680, in read1
+    return self._read1_chunked(n)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 721, in _read1_chunked
+    chunk_left = self._get_chunk_left()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 586, in _get_chunk_left
+    raise IncompleteRead(b'')
+http.client.IncompleteRead: IncompleteRead(0 bytes read)
+----------------------------------------
+10:17:27 POST /responses lifted=True status=200 bytes=106153 secs=12.1
+10:17:36 POST /responses lifted=True status=200 bytes=122293 secs=7.7
+10:17:41 POST /responses lifted=True status=200 bytes=115133 secs=5.4
+10:17:52 POST /responses lifted=True status=200 bytes=110603 secs=10.8
+10:17:58 POST /responses lifted=True status=200 bytes=191488 secs=5.7
