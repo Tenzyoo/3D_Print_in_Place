@@ -93,6 +93,12 @@ class PipelineTests(unittest.TestCase):
             runner.write(bad / "config.json", {"agent": agents["gemini_cli"]})
             runner.write(bad / "result.json", {"task_name": "kin1-dino-tail", "finished_at": "2026-10-18T12:00:00Z",
                                                 "exception_info": {"exception_type": "NetworkError"}})
+            for suffix, marked in [("newer_marked", True), ("newer__deprecated", False)]:
+                obsolete = job / f"kin1-dino-tail__{suffix}"
+                runner.write(obsolete / "config.json", {"agent": agents["gemini_cli"]})
+                runner.write(obsolete / "result.json", {"task_name": "kin1-dino-tail", "finished_at": "2026-10-19T12:00:00Z"})
+                if marked:
+                    (obsolete / "SUPERSEDED.md").write_text("Replaced by another run")
             selected, alternatives = runner.select_trials(job, reruns, "all")
             self.assertEqual(len(selected), 35)
             self.assertIn(new, [row[0] for row in selected])

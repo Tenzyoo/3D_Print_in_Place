@@ -1,0 +1,124 @@
+{
+  "created_at": "2026-10-19T13:43:03.240861+00:00",
+  "moves": [
+    {
+      "from": "jobs/kin_reruns/kin-rerun-gemini-t12-20261019/kin1-dino-tail__R5UU3tN",
+      "to": "jobs/kin/kin1-dino-tail__R5UU3tN",
+      "original_file_sha256": {
+        "result.json": "4b48d8b4bb2f5afe60fd0447d6ef897c31c234ed2b95c1927b775a286c22688b",
+        "trial.log": "8e35e157f4053589b7c54c5dcbb8e2ca4d0589bc71a1068031b292617f1ee29f",
+        "lock.json": "f40a91a9d52e0376118e6aacd9de0775982bb3b0a1c402364fecc7380a88a965",
+        "config.json": "e95ed5ebd047adf1871bc6124269d3ca15bfafe588cd40f9c20b1d274ceebefc",
+        "verifier/test-stdout.txt": "74b99ab8f70b79cb85f0669265e217629f7bb3b5b25ada062e1bcea6ca9f222a",
+        "verifier/details.json": "daaeb27a31ec8f834a9498a968e9148016004432231d965cde42f2d57786047c",
+        "verifier/verify.log": "74b99ab8f70b79cb85f0669265e217629f7bb3b5b25ada062e1bcea6ca9f222a",
+        "verifier/reward.json": "47125d6f2331d59f7bae291c93a26d3f143a1b6702d84cc6ec281276f0085f3c",
+        "artifacts/manifest.json": "b6c938ca3751c357da0575776729b104f1b98aeaafa15ff65a823ee1089dc4de",
+        "agent/trajectory.json": "7f7eeee405def580285b3c8c8b8f288480e73ae3b202b5b24bb57e4bb6cdcd71",
+        "agent/gemini_thinking_shim.py": "365e450d1676c336cf8ce0de886ec60bfbef2c49acc18c560530dbbe359c89c8",
+        "agent/gemini-cli.txt": "4480144677853392750616f0cda839cd029bc7242eb3fba1bd8561793cf7f10e",
+        "agent/gemini-cli.trajectory.jsonl": "b4f3442a0ec6235cefc6cb53f4b28fa47151e3dae5b5c15e915b17cadd1ba3ae",
+        "agent/gemini_retry_shim.log": "cd819825eccced60f055dcd60a29b4e08bbe7117d0d607fcbd584b1e6b930929",
+        "artifacts/workspace/output/model.scad": "0080605b3ca9aeaffdcc7ed5e92dcc0a4f2368eaae673bfd34993613b46032b6",
+        "artifacts/workspace/output/model.stl": "b6ad3cd4a9e30ce93b3a5a137f857d1a0611e67ae37132e6ad17e6ecb8595834",
+        "artifacts/workspace/output/parts/parts_2.stl": "90a8ccf1835476a26d39daafba95d26e7e99e780c538ac8a2fe07817ff1b0411",
+        "artifacts/workspace/output/parts/parts_1.stl": "63c2e5a79789bc68f5a2076036020f2a283ee5d909d01af7169e13fed7b5bf0f",
+        "artifacts/workspace/output/parts/parts_3.stl": "9562fc949aab6358118fcf9fc9b02f2aba221e2e34e3aed804a662d4e2a51be0",
+        "artifacts/workspace/output/parts/parts_4.stl": "401e13ceb8b3d8a1878dfdcb0c9663ded262cb3fa0e48a932b24264a8d04eedd"
+      },
+      "changed_metadata_files": [
+        "config.json",
+        "result.json"
+      ]
+    },
+    {
+      "from": "jobs/kin_reruns/kin-rerun-gemini-t12-20261019/kin2-telescoping-rod__UG26tuq",
+      "to": "jobs/kin/kin2-telescoping-rod__UG26tuq",
+      "original_file_sha256": {
+        "result.json": "4dca3bb89715d13734cb6699fc602c4968c02ffe09ac51da52f08061c402a925",
+        "trial.log": "7683fcd9b5582bf897ab29f54eb634fa806a4875187ec1c69fa509cd6c3fd412",
+        "lock.json": "5433c1350df5f7ed4f5f89cddf03e17155cdbacca87d9b9e1274d20726f9fa86",
+        "config.json": "9ddc02b5397aa2e956f907df39ab67c3c8f35b4bd61fd2932460016e80234e74",
+        "verifier/test-stdout.txt": "fab2978c8614e0e64048254a6d8ae29c8909c7932a853609812b60372adf1482",
+        "verifier/details.json": "095690d2564d6469583d3dc7154df34bc890fa4ed511155c1663a139f50430e8",
+        "verifier/verify.log": "fab2978c8614e0e64048254a6d8ae29c8909c7932a853609812b60372adf1482",
+        "verifier/reward.json": "47125d6f2331d59f7bae291c93a26d3f143a1b6702d84cc6ec281276f0085f3c",
+        "artifacts/manifest.json": "b6c938ca3751c357da0575776729b104f1b98aeaafa15ff65a823ee1089dc4de",
+        "agent/trajectory.json": "7a2770a1cf38da3c1d5f7c63110788e5b0169af77e05c3ded438597fa837c67d",
+        "agent/gemini_thinking_shim.py": "365e450d1676c336cf8ce0de886ec60bfbef2c49acc18c560530dbbe359c89c8",
+        "agent/gemini-cli.txt": "4efe56b7cee0ca76d295050044c7c8a1a11925c6759587eaaf711a234b2f1248",
+        "agent/gemini-cli.trajectory.jsonl": "74f7e833f738f35634c64bcb5b2286792b16d4f1579e243ea3f0e532e2f5410d",
+        "agent/gemini_retry_shim.log": "bd71659f8a69db5fa39be11366bdb714f53b209470abf4b3a7a6de8cd52990b3",
+        "artifacts/workspace/output/README.md": "8d3754d774b5e54e0baddb476f212a523b1ae406c416c85fd49aef9456ecf0b6",
+        "artifacts/workspace/output/joints.json": "b2cd92b349870aec995185f18c6443e2af6b34f025b658dc1195e728b06280b9",
+        "artifacts/workspace/output/model.scad": "08ebe0c6efc61cc087ac2d6560d23dc4b87eabd532a54dab7d7e75693ac5f62e",
+        "artifacts/workspace/output/model.stl": "d8b6f3a750516b17a3b9b8cc25cbe2e0056d2267c39694ecf277a4962e19a7fe",
+        "artifacts/workspace/output/parts/parts_2.stl": "73366316a3d0b3b9e55cc8feb17601a7b6762752bc5534456142a59ea079d810",
+        "artifacts/workspace/output/parts/parts_1.stl": "a1c3124a21c31dca7d4dd029ffaf25a1c23b065198e498134c0ebcfb79cd2807",
+        "artifacts/workspace/output/parts/parts_3.stl": "566ae9d334bf5cd774577fea1171063a6d720814b7dbc96a548bbb4e46713599",
+        "artifacts/workspace/output/parts/parts_4.stl": "8fff83b10e75b1cb99e099dd577f9352d0426bbaf7758957bc07d88aff1636f4"
+      },
+      "changed_metadata_files": [
+        "config.json",
+        "result.json"
+      ]
+    },
+    {
+      "from": "jobs/kin/kin1-dino-tail__MGRvcYz",
+      "to": "jobs/kin/kin1-dino-tail__MGRvcYz__deprecated",
+      "original_file_sha256": {
+        "result.json": "ff42407e17b88716f7dcc8114ada5e136c51f01e5b989daa9f90730de4b4ed71",
+        "trial.log": "df423d05738acd8e15bc14b6878419302769adec65faf3a9d3c0ffc1fcdabf89",
+        "lock.json": "c53898f0f024754f4819aeddd87975b886815d27b83aa501b14c14335e9e1bf3",
+        "SUPERSEDED.md": "fd68ca4daff2e4d361dbdc95be313c395fe2f0ddaf480271e21b6ed371619c2a",
+        "config.json": "a95487a36f825e8f39358bc6719523399ce8eb113f20d9b8c2b65d32b6828f7e",
+        "verifier/test-stdout.txt": "6137b8cc3a1c5af7721d4b07f94d2276560e76afe939ded651b6eafa04d53722",
+        "verifier/details.json": "2099d017b45c1ffc7234a0bea0510cd15e4ca9957d12f453b81eabaed42726c6",
+        "verifier/verify.log": "6137b8cc3a1c5af7721d4b07f94d2276560e76afe939ded651b6eafa04d53722",
+        "verifier/reward.json": "47125d6f2331d59f7bae291c93a26d3f143a1b6702d84cc6ec281276f0085f3c",
+        "artifacts/manifest.json": "b6c938ca3751c357da0575776729b104f1b98aeaafa15ff65a823ee1089dc4de",
+        "regrade/agent_final_message.txt": "977d18ab8ab683903ec7065fcffd93a27fa4280f810a7cc561b9a17abca33724",
+        "regrade/details.json": "959cb628bea078638a80607bd2904abbf3b7ec9dd22e137c8c032cdd5f3d33b6",
+        "regrade/verify.log": "4d303bbe82f1c6b0ae164027642d57104a7236ff9d727e9cfb892153476c803c",
+        "regrade/reward.json": "ff697474add97819255723d31710248bfb286d9c1c64332e8e7358bc205becdb",
+        "agent/trajectory.json": "0fee9931f264de9a2dbb6e3c36a8d5f2ba0a8b4e66090843737e6de6fa807beb",
+        "agent/gemini-cli.txt": "bc947757003e107b624c06a8934192dae0f5d2397831da99530e2fa6050d5567",
+        "agent/gemini-cli.trajectory.jsonl": "56da95ea21581c17bb0a1e1f8eb3f9621ed70376b0867e2b4e53ae0db796bb97",
+        "artifacts/workspace/output/model.scad": "03f0e9d88b8ebdf872a98d572f06d5424042a3ac6cbab2c41c79249dc39c3e96"
+      },
+      "changed_metadata_files": [
+        "config.json",
+        "result.json"
+      ]
+    },
+    {
+      "from": "jobs/kin/kin2-telescoping-rod__wqTauSA",
+      "to": "jobs/kin/kin2-telescoping-rod__wqTauSA__deprecated",
+      "original_file_sha256": {
+        "result.json": "99eacca065db75fe781cac9d63fcc7240e3192be709493c8ece61cdcbd30e981",
+        "trial.log": "ae7c802bf490fec1fe43bb22df793bbaa7df885dd9ef626b97e3094c165fdb91",
+        "lock.json": "3bbc733c12251a26008d9102d362eb6a79262771cf047c2a7ac338ae5489291b",
+        "exception.txt": "b46edd70b8f3d5d75c96604640bfb0918a4f1c9b278a3116267cf410a5e59753",
+        "SUPERSEDED.md": "dc7b45391cd409d51df89da2d64e7ec3f7765af5fb0c52f79d504df74c06444e",
+        "config.json": "7e096660dfc33ea3bad00db1e5ad2d47c0c79db4d67230114bb5d9a789211e12",
+        "verifier/test-stdout.txt": "4e7e18afe2e230d60b4e3b8309950462ffc9c923cc08012b6b59a12e865512f7",
+        "verifier/details.json": "277b01ed9eea1af6335a0be28c5a71f05ef52f43fde394fde00fd2100d8c1169",
+        "verifier/verify.log": "4e7e18afe2e230d60b4e3b8309950462ffc9c923cc08012b6b59a12e865512f7",
+        "verifier/reward.json": "47125d6f2331d59f7bae291c93a26d3f143a1b6702d84cc6ec281276f0085f3c",
+        "artifacts/manifest.json": "b6c938ca3751c357da0575776729b104f1b98aeaafa15ff65a823ee1089dc4de",
+        "regrade/agent_final_message.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "regrade/details.json": "6ab05465febc99f4a67519a16f973f55415d73eb0b192a755f1c9df406a3734c",
+        "regrade/verify.log": "4d303bbe82f1c6b0ae164027642d57104a7236ff9d727e9cfb892153476c803c",
+        "regrade/reward.json": "ff697474add97819255723d31710248bfb286d9c1c64332e8e7358bc205becdb",
+        "agent/trajectory.json": "86df0554ef059bd7d63eab8febb8c995c2414461461d4971170957d004abf27f",
+        "agent/gemini-cli.txt": "7894917c6a424686a5905fa4fb8bddb8a4da3482e9b7b98b8cbe767b34a651c6",
+        "agent/gemini-cli.trajectory.jsonl": "099272e4badf2d1d18c01ba00f305123e8b4bf68814a19b3d9b75b8aee44a9a2"
+      },
+      "changed_metadata_files": [
+        "config.json",
+        "result.json"
+      ]
+    }
+  ],
+  "note": "Only paths and trial directory names changed. Original config/result metadata backed up here. Raw trajectories and model/verifier outputs preserved byte-for-byte."
+}

@@ -1,0 +1,30 @@
+shim listening on 127.0.0.1:18082 -> https://api.supergpt.dev (thinkingLevel KEEP)
+12:48:15 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=keep attempts=1 status=200 bytes=3288 secs=10.7
+12:48:25 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=keep attempts=1 status=200 bytes=2319 secs=9.7
+12:48:34 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=keep attempts=1 status=200 bytes=2116 secs=9.1
+12:56:04 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=keep attempts=1 status=200 bytes=224756 secs=449.9
+12:57:41 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=keep attempts=1 status=200 bytes=43201 secs=96.8
+12:57:52 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=keep attempts=1 status=200 bytes=3152 secs=11.3
+12:58:05 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=keep attempts=1 status=200 bytes=2351 secs=12.1
+12:58:27 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=keep attempts=1 status=200 bytes=4169 secs=22.1
+12:58:43 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=keep attempts=1 status=200 bytes=2715 secs=16.6
+12:58:57 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=keep attempts=1 status=200 bytes=3063 secs=13.7
+13:00:15 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=keep attempts=1 status=200 bytes=26363 secs=77.8
+13:00:41 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=keep attempts=1 status=200 bytes=2355 secs=25.8
+13:00:49 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=keep attempts=1 status=200 bytes=648 secs=8.7 stream-broken=IncompleteRead(0 bytes read)
+13:01:19 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=keep attempts=1 status=200 bytes=8606 secs=28.7
+13:01:30 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=keep attempts=1 status=200 bytes=1967 secs=11.2
+13:01:49 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=keep attempts=1 status=200 bytes=6510 secs=18.8
+13:02:08 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=keep attempts=1 status=200 bytes=6693 secs=19.2
+13:02:27 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=keep attempts=1 status=200 bytes=5551 secs=18.8
+13:03:09 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=keep attempts=1 status=200 bytes=13899 secs=42.3
+13:03:38 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=keep attempts=1 status=200 bytes=2096 secs=28.2
+13:04:25 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=keep attempts=1 status=200 bytes=9720 secs=42.0
+13:04:36 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=keep attempts=1 status=200 bytes=2120 secs=11.8
+13:04:52 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=keep attempts=1 status=200 bytes=4926 secs=15.3
+13:05:24 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=keep attempts=1 status=200 bytes=11257 secs=32.6
+13:05:40 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=keep attempts=1 status=200 bytes=2201 secs=15.7
+13:07:46 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=keep attempts=1 status=200 bytes=15281 secs=60.5
+13:08:08 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=keep attempts=1 status=200 bytes=2886 secs=21.6
+13:09:11 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=keep attempts=1 status=200 bytes=0 secs=63.4 stream-broken=BrokenPipeError(32, 'Broken pipe')
+13:09:36 POST /v1beta/models/gemini-4-argon-high:streamGenerateContent thinking=keep attempts=1 status=200 bytes=18716 secs=23.5

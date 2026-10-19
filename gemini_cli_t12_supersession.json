@@ -1,0 +1,38 @@
+{
+  "updated_at": "2026-10-19T13:40:25.164544+00:00",
+  "status": "partial_source_supersession",
+  "entries": [
+    {
+      "group": "gemini_cli",
+      "task": "kin1-dino-tail",
+      "superseded_case_id": "case_001",
+      "superseded_trials": [
+        "jobs/kin/kin1-dino-tail__MGRvcYz__deprecated",
+        "jobs/kin_reruns/kin-rerun-gemini/kin1-dino-tail__Dpvn5EE"
+      ],
+      "current_trial": "jobs/kin/kin1-dino-tail__R5UU3tN",
+      "current_trajectory": "jobs/kin/kin1-dino-tail__R5UU3tN/agent/gemini-cli.trajectory.jsonl",
+      "replacement_trajectory_judge_status": "prepared_not_evaluated",
+      "reason": "New user rerun replaces prior runs for this group and task; preserve all historical files.",
+      "replacement_case_id": "case_001"
+    },
+    {
+      "group": "gemini_cli",
+      "task": "kin2-telescoping-rod",
+      "superseded_case_id": "case_031",
+      "superseded_trials": [
+        "jobs/kin/kin2-telescoping-rod__wqTauSA__deprecated",
+        "jobs/kin_reruns/kin-rerun-gemini/kin2-telescoping-rod__6E2BzWz"
+      ],
+      "current_trial": "jobs/kin/kin2-telescoping-rod__UG26tuq",
+      "current_trajectory": "jobs/kin/kin2-telescoping-rod__UG26tuq/agent/gemini-cli.trajectory.jsonl",
+      "replacement_trajectory_judge_status": "prepared_not_evaluated",
+      "reason": "New user rerun replaces prior runs for this group and task; preserve all historical files.",
+      "replacement_case_id": "case_031"
+    }
+  ],
+  "historical_annotations_preserved": true,
+  "replacement_judge_calls": 0,
+  "directory_migration": "jobs/kin/_directory_migrations/gemini-cli-t12-20261019/migration.json",
+  "prepared_trajectory_batch": "jobs/kin/trajectory_eval/runs/kin_all_groups_v3"
+}

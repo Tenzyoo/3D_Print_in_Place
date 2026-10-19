@@ -1,19 +1,18 @@
 # 当前交付状态
 
-- 提示词：通用协议与 C1～C4 四份规则已完成。
-- 输入输出：JSON Schema 已生成，输出必须包含四维标签与逐字证据。
-- 执行器：prepare / restore / judge / validate / summarize 已实现，另有 audit.py；支持 HTTP 兼容端点和外部命令。
-- 最新完整材料：`runs/kin_all_groups_v2/` 已准备 35 条轨迹、35 份完整 Judge 请求，七组各 5 条，对应 140 个待标注维度。入口为该目录的 MATERIALS.md；CURRENT_RUN.txt 指向本批次。
-- 原四组材料：`runs/kin_four_groups_v1/` 的 20 条输入继续保留，是此前冻结的独立批次，不与新批次混用 case_id。
-- 选取策略：每个条件/任务选择最近一次正常结束的运行，不根据评分选择。其他尝试在 private/manifest.json 中留记录。
-- Claude + DSH kin1：采用含完整原始前缀的人工 continue 续跑；原始前缀已校验，外部 continue 消息已保留并明确标记，不视为一次完全自主完成。
-- v2 修复：改用 Gemini 原始日志，补回通用 ATIF 转换遗漏的 19 个工具返回；目前所有主会话工具调用与返回均配对。
-- 独立复原：private/raw 保存 212 份原始材料快照；private/restoration 保存 35 份复原配方，private/implementation 冻结脚本。35 份输入与请求全部实际复原成功，SHA256 逐字节一致，不依赖外部原始日志。
-- 本地验证：12 项自动测试通过；35 个 case、3,548 个证据事件均通过 Schema、来源定位、哈希、评分隔离及续跑前缀检查。详细结果在 runs/kin_all_groups_v2/audit/report.md 与 restoration_smoke.json。
-- 历史批次：v1 及原四组保留原始输入并标记 SUPERSEDED.md，不作为新打标入口。
-- 正式 Judge 调用：0。尚未指定 Judge 模型/版本和接口，当前没有真实标注结果或轨迹得分。
-- 模拟测试只在临时目录执行，没有混入真实运行目录。
+当前批次为 `runs/kin_all_groups_v3/`，CURRENT_RUN.txt 已切换。旧 v2 保留，不能把其 case_001/case_031 的标签用于新轨迹。
 
-下一步：按 README 配置 Judge，先试标 2 条并人工校准，再冻结协议标注全部。人工复核后才可报告审定的轨迹指标。
+- 最新 35 条来源：七组各五题。Gemini CLI kin1/kin2 采用 `jobs/kin/kin1-dino-tail__R5UU3tN`、`jobs/kin/kin2-telescoping-rod__UG26tuq`；废弃目录已标记并被选取脚本跳过。
+- 新两项 C1–C4 均为 [1,1,1,1]，正式评分在各自 regrade/。判分器和冻结配置未变；Docker 不可用，本次本地运行 --skip-slow，核心四项完成，切片、重建与预览未执行。环境记录在 execution_environment.json。
+- 最新几何评分：`jobs/kin/analysis/final_35_scores.md`，四项全过 29/35。trials.csv/json、report.md、可读轨迹与过程指标已刷新。
+- 模型汇集：`jobs/kin/stl_models/` 共 35 个完整模型，manifest.csv 与最新 35 条来源逐条一致，SHA256 全部通过。
+- 新轨迹输入：35 条、140 个维度、3,699 个证据事件；212 份原始材料快照全部通过哈希和逐字节复原审计，详见 v3/audit/report.md。
+- 新增两条现均已取得标注：case_001 由用户第二次调用直接通过；case_031 第二次返回的 12 处 JSON 换行引用转义已离线恢复并通过校验，原始响应与判断不变。当前 v3 共 35/35 条标注通过程序校验，仍待人工语义复核。
+- 已复用：其余 33 条输入/请求/来源/协议/几何评分哈希与 v2 相同，对应 132 个维度保留原合法标注及原始 attempt、引用修订来源记录。全部仍待人工语义复核。
+- 用户已实际调用新增两条 Judge；本次 case_031 修复未发起 API 请求。v3 当前无需为这次格式错误再重跑；完整 Docker 几何重评和后续 v4 流程为独立步骤。
+- 新旧来源/案例映射：v3/private/version_mapping.json；人用清单：v3/MATERIALS.md、v3/private/inventory.csv。几何评分位于 private，不进入 Judge 请求。
+- 冻结协议、规范化与复原脚本快照位于 v3/protocol/ 和 v3/private/implementation/。不静默修改旧输入、不把旧标签改名用于新轨迹。
 
-范围说明：本轮“复原”指由留存的会话日志还原打标输入和请求，不代表恢复全部 HTTP 请求、中间 CAD 版本或不可见子 Agent/图像；这些限制已在协议和各输入 warnings 中说明。
+历史 v2：35/35 旧案例已通过引用校验，其中 15 条自动格式恢复、3 条经用户授权由助手审校引用；全部待人工语义复核。新批次仅复用来源完全一致的 33 条。人工 continue、子 Agent 未展开、原输出可能截断、图像不可见等限制继续保留在各输入 warnings。
+
+流程一致性复核：其他 33 条均有切片、SCAD 重建和预览，新增两条目前仅局部核心评分。统一重评入口为 bash kin_tasks/regrade_gemini_t12_full.sh，需在有 Docker 权限的服务器终端执行；成功后生成 v4 并切换 CURRENT_RUN。当前 v3 两条 Judge 请求均因引用校验失败，原始响应保留。本工具尚未执行完整 Docker 重评。

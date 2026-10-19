@@ -1,0 +1,1 @@
+Update `/app/output/model.scad` with the `55.1°` retention cones (`0.50 mm` shaft gap, `0.55 mm` rim gap, strong `±1.0 mm` axial retention) and smooth elliptical disk lofts starting from `Z = 0` so that every horizontal slice is a smooth ellipse with `>= 63°

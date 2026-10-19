@@ -1,0 +1,187 @@
+[
+ {
+  "id": "kin1-01",
+  "trial": "kin1-dino-tail__CWUviex",
+  "combo": "dsh-gemini"
+ },
+ {
+  "id": "kin1-02",
+  "trial": "kin1-dino-tail__D5NP7Bo",
+  "combo": "cc-claude"
+ },
+ {
+  "id": "kin1-03",
+  "trial": "kin1-dino-tail__Dpvn5EE",
+  "combo": "gemini-gemini"
+ },
+ {
+  "id": "kin1-04",
+  "trial": "kin1-dino-tail__Fmgw63H",
+  "combo": "dsh-claude"
+ },
+ {
+  "id": "kin1-05",
+  "trial": "kin1-dino-tail__Hu4Dx4R",
+  "combo": "dsh-claude"
+ },
+ {
+  "id": "kin1-06",
+  "trial": "kin1-dino-tail__MGRvcYz",
+  "combo": "gemini-gemini"
+ },
+ {
+  "id": "kin1-07",
+  "trial": "kin1-dino-tail__b4SPQRt",
+  "combo": "dsh-gpt"
+ },
+ {
+  "id": "kin1-08",
+  "trial": "kin1-dino-tail__k9qPpno",
+  "combo": "codex-gpt"
+ },
+ {
+  "id": "kin1-09",
+  "trial": "kin1-dino-tail__xfCUxLG",
+  "combo": "dsh-deepseek"
+ },
+ {
+  "id": "kin2-10",
+  "trial": "kin2-telescoping-rod__6E2BzWz",
+  "combo": "gemini-gemini"
+ },
+ {
+  "id": "kin2-11",
+  "trial": "kin2-telescoping-rod__RpQG8Uh",
+  "combo": "codex-gpt"
+ },
+ {
+  "id": "kin2-12",
+  "trial": "kin2-telescoping-rod__X3Gp4cN",
+  "combo": "dsh-deepseek"
+ },
+ {
+  "id": "kin2-13",
+  "trial": "kin2-telescoping-rod__ZdkdKz9",
+  "combo": "cc-claude"
+ },
+ {
+  "id": "kin2-14",
+  "trial": "kin2-telescoping-rod__dSDARSE",
+  "combo": "dsh-gpt"
+ },
+ {
+  "id": "kin2-15",
+  "trial": "kin2-telescoping-rod__ib6VAX8",
+  "combo": "dsh-claude"
+ },
+ {
+  "id": "kin2-16",
+  "trial": "kin2-telescoping-rod__mtxSGet",
+  "combo": "dsh-gemini"
+ },
+ {
+  "id": "kin3-17",
+  "trial": "kin3-snake__MefefAZ",
+  "combo": "dsh-deepseek"
+ },
+ {
+  "id": "kin3-18",
+  "trial": "kin3-snake__NSqNmYD",
+  "combo": "dsh-gemini"
+ },
+ {
+  "id": "kin3-19",
+  "trial": "kin3-snake__Wo8EULy",
+  "combo": "codex-gpt"
+ },
+ {
+  "id": "kin3-20",
+  "trial": "kin3-snake__b2Lh2UU",
+  "combo": "gemini-gemini"
+ },
+ {
+  "id": "kin3-21",
+  "trial": "kin3-snake__fGjp8uK",
+  "combo": "dsh-claude"
+ },
+ {
+  "id": "kin3-22",
+  "trial": "kin3-snake__vCWFkG3",
+  "combo": "cc-claude"
+ },
+ {
+  "id": "kin3-23",
+  "trial": "kin3-snake__zNrUpEf",
+  "combo": "dsh-gpt"
+ },
+ {
+  "id": "kin4-24",
+  "trial": "kin4-butterfly__5Bs7Qdd",
+  "combo": "codex-gpt"
+ },
+ {
+  "id": "kin4-25",
+  "trial": "kin4-butterfly__LoT6i9W",
+  "combo": "dsh-gemini"
+ },
+ {
+  "id": "kin4-26",
+  "trial": "kin4-butterfly__Utgg9AD",
+  "combo": "dsh-claude"
+ },
+ {
+  "id": "kin4-27",
+  "trial": "kin4-butterfly__Xm8Q3Qu",
+  "combo": "cc-claude"
+ },
+ {
+  "id": "kin4-28",
+  "trial": "kin4-butterfly__oWV2LbT",
+  "combo": "dsh-deepseek"
+ },
+ {
+  "id": "kin4-29",
+  "trial": "kin4-butterfly__t37eaXg",
+  "combo": "gemini-gemini"
+ },
+ {
+  "id": "kin4-30",
+  "trial": "kin4-butterfly__xH7gSdL",
+  "combo": "dsh-gpt"
+ },
+ {
+  "id": "kin5-31",
+  "trial": "kin5-folding-ruler__79his4v",
+  "combo": "gemini-gemini"
+ },
+ {
+  "id": "kin5-32",
+  "trial": "kin5-folding-ruler__CyoDRRC",
+  "combo": "codex-gpt"
+ },
+ {
+  "id": "kin5-33",
+  "trial": "kin5-folding-ruler__PuYxogg",
+  "combo": "dsh-gemini"
+ },
+ {
+  "id": "kin5-34",
+  "trial": "kin5-folding-ruler__V8cGzeV",
+  "combo": "dsh-deepseek"
+ },
+ {
+  "id": "kin5-35",
+  "trial": "kin5-folding-ruler__gcvLA9V",
+  "combo": "dsh-gpt"
+ },
+ {
+  "id": "kin5-36",
+  "trial": "kin5-folding-ruler__yPgNqnw",
+  "combo": "dsh-claude"
+ },
+ {
+  "id": "kin5-37",
+  "trial": "kin5-folding-ruler__zPq5bwT",
+  "combo": "cc-claude"
+ }
+]

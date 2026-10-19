@@ -351,6 +351,8 @@ def select_trials(job, reruns_root=None, scope="four"):
     groups = ALL_GROUPS if scope == "all" else FOUR_GROUPS
     candidates = {}
     for config in sorted(set(configs)):
+        if (config.parent / "SUPERSEDED.md").exists() or config.parent.name.endswith("__deprecated"):
+            continue
         cfg = read(config)
         group = group_of(cfg.get("agent", {}))
         result_path = config.with_name("result.json")

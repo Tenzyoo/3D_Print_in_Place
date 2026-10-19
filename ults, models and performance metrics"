@@ -1,0 +1,385 @@
+ DIRECTORY_LAYOUT.md                                   |      9 [32m+[m
+ README.md                                             |      6 [32m+[m[31m-[m
+ .../data_update_backup/analysis/SOURCE_UPDATE.md      |      3 [32m+[m
+ .../data_update_backup/analysis/final_35_scores.md    |     71 [32m+[m
+ .../data_update_backup/analysis/gallery/index.html    |      1 [32m+[m
+ .../data_update_backup/analysis/gallery/key.json      |    187 [32m+[m
+ .../analysis/gallery/kin1-01_preview.png              |    Bin [31m0[m -> [32m151101[m bytes
+ .../analysis/gallery/kin1-01_preview_posed.png        |    Bin [31m0[m -> [32m181691[m bytes
+ .../analysis/gallery/kin1-02_preview.png              |    Bin [31m0[m -> [32m122622[m bytes
+ .../analysis/gallery/kin1-02_preview_posed.png        |    Bin [31m0[m -> [32m147936[m bytes
+ .../analysis}/gallery/kin1-05_preview.png             |    Bin
+ .../analysis}/gallery/kin1-05_preview_posed.png       |    Bin
+ .../analysis/gallery/kin1-07_preview.png              |    Bin [31m0[m -> [32m86751[m bytes
+ .../analysis/gallery/kin1-07_preview_posed.png        |    Bin [31m0[m -> [32m100661[m bytes
+ .../analysis/gallery/kin1-08_preview.png              |    Bin [31m0[m -> [32m41244[m bytes
+ .../analysis/gallery/kin1-08_preview_posed.png        |    Bin [31m0[m -> [32m47221[m bytes
+ .../analysis}/gallery/kin1-09_preview.png             |    Bin
+ .../analysis}/gallery/kin1-09_preview_posed.png       |    Bin
+ .../analysis/gallery/kin2-11_preview.png              |    Bin [31m0[m -> [32m37455[m bytes
+ .../analysis/gallery/kin2-12_preview.png              |    Bin [31m0[m -> [32m27820[m bytes
+ .../analysis/gallery/kin2-13_preview.png              |    Bin [31m0[m -> [32m36617[m bytes
+ .../analysis/gallery/kin2-14_preview.png              |    Bin [31m0[m -> [32m32821[m bytes
+ .../analysis/gallery/kin2-15_preview.png              |    Bin [31m0[m -> [32m36087[m bytes
+ .../analysis}/gallery/kin2-16_preview.png             |    Bin
+ .../analysis/gallery/kin3-17_preview.png              |    Bin [31m0[m -> [32m40365[m bytes
+ .../analysis/gallery/kin3-17_preview_posed.png        |    Bin [31m0[m -> [32m58427[m bytes
+ .../analysis/gallery/kin3-18_preview.png              |    Bin [31m0[m -> [32m78886[m bytes
+ .../analysis/gallery/kin3-18_preview_posed.png        |    Bin [31m0[m -> [32m119317[m bytes
+ .../analysis/gallery/kin3-19_preview.png              |    Bin [31m0[m -> [32m37761[m bytes
+ .../analysis/gallery/kin3-19_preview_posed.png        |    Bin [31m0[m -> [32m54944[m bytes
+ .../analysis/gallery/kin3-20_preview.png              |    Bin [31m0[m -> [32m79563[m bytes
+ .../analysis/gallery/kin3-20_preview_posed.png        |    Bin [31m0[m -> [32m113797[m bytes
+ .../analysis/gallery/kin3-21_preview.png              |    Bin [31m0[m -> [32m47810[m bytes
+ .../analysis/gallery/kin3-21_preview_posed.png        |    Bin [31m0[m -> [32m63992[m bytes
+ .../analysis/gallery/kin3-22_preview.png              |    Bin [31m0[m -> [32m61250[m bytes
+ .../analysis/gallery/kin3-22_preview_posed.png        |    Bin [31m0[m -> [32m99992[m bytes
+ .../analysis}/gallery/kin3-23_preview.png             |    Bin
+ .../analysis}/gallery/kin3-23_preview_posed.png       |    Bin
+ .../analysis/gallery/kin4-24_preview.png              |    Bin [31m0[m -> [32m50878[m bytes
+ .../analysis/gallery/kin4-24_preview_posed.png        |    Bin [31m0[m -> [32m46890[m bytes
+ .../analysis/gallery/kin4-25_preview.png              |    Bin [31m0[m -> [32m124734[m bytes
+ .../analysis/gallery/kin4-25_preview_posed.png        |    Bin [31m0[m -> [32m106652[m bytes
+ .../analysis/gallery/kin4-26_preview.png              |    Bin [31m0[m -> [32m144444[m bytes
+ .../analysis/gallery/kin4-26_preview_posed.png        |    Bin [31m0[m -> [32m113071[m bytes
+ .../analysis/gallery/kin4-27_preview.png              |    Bin [31m0[m -> [32m118346[m bytes
+ .../analysis/gallery/kin4-27_preview_posed.png        |    Bin [31m0[m -> [32m114028[m bytes
+ .../analysis/gallery/kin4-28_preview.png              |    Bin [31m0[m -> [32m64708[m bytes
+ .../analysis/gallery/kin4-28_preview_posed.png        |    Bin [31m0[m -> [32m63643[m bytes
+ .../analysis/gallery/kin4-29_preview.png              |    Bin [31m0[m -> [32m116379[m bytes
+ .../analysis/gallery/kin4-29_preview_posed.png        |    Bin [31m0[m -> [32m107014[m bytes
+ .../analysis}/gallery/kin4-30_preview.png             |    Bin
+ .../analysis}/gallery/kin4-30_preview_posed.png       |    Bin
+ .../analysis/gallery/kin5-31_preview.png              |    Bin [31m0[m -> [32m22869[m bytes
+ .../analysis/gallery/kin5-31_preview_posed.png        |    Bin [31m0[m -> [32m36941[m bytes
+ .../analysis/gallery/kin5-32_preview.png              |    Bin [31m0[m -> [32m25795[m bytes
+ .../analysis/gallery/kin5-32_preview_posed.png        |    Bin [31m0[m -> [32m37668[m bytes
+ .../analysis/gallery/kin5-33_preview.png              |    Bin [31m0[m -> [32m22140[m bytes
+ .../analysis/gallery/kin5-33_preview_posed.png        |    Bin [31m0[m -> [32m36523[m bytes
+ .../analysis/gallery/kin5-34_preview.png              |    Bin [31m0[m -> [32m20881[m bytes
+ .../analysis/gallery/kin5-34_preview_posed.png        |    Bin [31m0[m -> [32m33276[m bytes
+ .../analysis/gallery/kin5-35_preview.png              |    Bin [31m0[m -> [32m23179[m bytes
+ .../analysis/gallery/kin5-35_preview_posed.png        |    Bin [31m0[m -> [32m39571[m bytes
+ .../analysis/gallery/kin5-36_preview.png              |    Bin [31m0[m -> [32m23910[m bytes
+ .../analysis/gallery/kin5-36_preview_posed.png        |    Bin [31m0[m -> [32m35331[m bytes
+ .../analysis}/gallery/kin5-37_preview.png             |    Bin
+ .../analysis}/gallery/kin5-37_preview_posed.png       |    Bin
+ .../data_update_backup/analysis/report.md             |    188 [32m+[m
+ .../analysis/trajectory/calls.jsonl                   |   1751 [32m+[m
+ .../trajectory/timelines/kin1-dino-tail__CWUviex.txt  |    257 [32m+[m
+ .../trajectory/timelines/kin1-dino-tail__D5NP7Bo.txt  |     95 [32m+[m
+ .../trajectory/timelines/kin1-dino-tail__Dpvn5EE.txt  |     26 [32m+[m
+ .../trajectory/timelines/kin1-dino-tail__Fmgw63H.txt  |     12 [32m+[m
+ .../trajectory/timelines/kin1-dino-tail__Hu4Dx4R.txt  |    191 [32m+[m
+ .../trajectory/timelines/kin1-dino-tail__MGRvcYz.txt  |     74 [32m+[m
+ .../trajectory/timelines/kin1-dino-tail__b4SPQRt.txt  |    198 [32m+[m
+ .../trajectory/timelines/kin1-dino-tail__k9qPpno.txt  |    208 [32m+[m
+ .../trajectory/timelines/kin1-dino-tail__xfCUxLG.txt  |    293 [32m+[m
+ .../timelines/kin2-telescoping-rod__6E2BzWz.txt       |     22 [32m+[m
+ .../timelines/kin2-telescoping-rod__RpQG8Uh.txt       |     83 [32m+[m
+ .../timelines/kin2-telescoping-rod__X3Gp4cN.txt       |    267 [32m+[m
+ .../timelines/kin2-telescoping-rod__ZdkdKz9.txt       |     53 [32m+[m
+ .../timelines/kin2-telescoping-rod__dSDARSE.txt       |    125 [32m+[m
+ .../timelines/kin2-telescoping-rod__ib6VAX8.txt       |     63 [32m+[m
+ .../timelines/kin2-telescoping-rod__mtxSGet.txt       |     90 [32m+[m
+ .../timelines/kin2-telescoping-rod__wqTauSA.txt       |     20 [32m+[m
+ .../trajectory/timelines/kin3-snake__JXfH3VV.txt      |    111 [32m+[m
+ .../trajectory/timelines/kin3-snake__MefefAZ.txt      |    291 [32m+[m
+ .../trajectory/timelines/kin3-snake__NSqNmYD.txt      |    240 [32m+[m
+ .../trajectory/timelines/kin3-snake__Wo8EULy.txt      |     95 [32m+[m
+ .../trajectory/timelines/kin3-snake__b2Lh2UU.txt      |     63 [32m+[m
+ .../trajectory/timelines/kin3-snake__fGjp8uK.txt      |     77 [32m+[m
+ .../trajectory/timelines/kin3-snake__qWPvutE.txt      |     73 [32m+[m
+ .../trajectory/timelines/kin3-snake__vCWFkG3.txt      |     78 [32m+[m
+ .../trajectory/timelines/kin3-snake__zNrUpEf.txt      |    162 [32m+[m
+ .../trajectory/timelines/kin4-butterfly__5Bs7Qdd.txt  |    118 [32m+[m
+ .../trajectory/timelines/kin4-butterfly__FUF4nmq.txt  |     32 [32m+[m
+ .../trajectory/timelines/kin4-butterfly__LoT6i9W.txt  |    256 [32m+[m
+ .../trajectory/timelines/kin4-butterfly__LsZjdJv.txt  |    243 [32m+[m
+ .../trajectory/timelines/kin4-butterfly__Utgg9AD.txt  |    178 [32m+[m
+ .../trajectory/timelines/kin4-butterfly__Xm8Q3Qu.txt  |    104 [32m+[m
+ .../trajectory/timelines/kin4-butterfly__oWV2LbT.txt  |    301 [32m+[m
+ .../trajectory/timelines/kin4-butterfly__t37eaXg.txt  |    134 [32m+[m
+ .../trajectory/timelines/kin4-butterfly__xH7gSdL.txt  |    109 [32m+[m
+ .../timelines/kin5-folding-ruler__79his4v.txt         |    103 [32m+[m
+ .../timelines/kin5-folding-ruler__CyoDRRC.txt         |    116 [32m+[m
+ .../timelines/kin5-folding-ruler__GniNXux.txt         |     34 [32m+[m
+ .../timelines/kin5-folding-ruler__PuYxogg.txt         |    163 [32m+[m
+ .../timelines/kin5-folding-ruler__V8cGzeV.txt         |    366 [32m+[m
+ .../timelines/kin5-folding-ruler__gcvLA9V.txt         |    175 [32m+[m
+ .../timelines/kin5-folding-ruler__iKjwTa6.txt         |     18 [32m+[m
+ .../timelines/kin5-folding-ruler__yPgNqnw.txt         |     87 [32m+[m
+ .../timelines/kin5-folding-ruler__zPq5bwT.txt         |    141 [32m+[m
+ .../analysis/trajectory/trajectory_metrics.json       |   3408 [32m+[m
+ .../analysis/transcripts/kin1-dino-tail__CWUviex.md   |   5330 [32m+[m
+ .../analysis/transcripts/kin1-dino-tail__D5NP7Bo.md   |   1344 [32m+[m
+ .../analysis/transcripts/kin1-dino-tail__Dpvn5EE.md   |    240 [32m+[m
+ .../analysis/transcripts/kin1-dino-tail__Fmgw63H.md   |    145 [32m+[m
+ .../analysis/transcripts/kin1-dino-tail__Hu4Dx4R.md   |   2801 [32m+[m
+ .../analysis/transcripts/kin1-dino-tail__MGRvcYz.md   |   1061 [32m+[m
+ .../analysis/transcripts/kin1-dino-tail__b4SPQRt.md   |   2074 [32m+[m
+ .../analysis/transcripts/kin1-dino-tail__k9qPpno.md   |   1902 [32m+[m
+ .../analysis/transcripts/kin1-dino-tail__xfCUxLG.md   |   4388 [32m+[m
+ .../transcripts/kin2-telescoping-rod__6E2BzWz.md      |    206 [32m+[m
+ .../transcripts/kin2-telescoping-rod__RpQG8Uh.md      |    992 [32m+[m
+ .../transcripts/kin2-telescoping-rod__X3Gp4cN.md      |   4175 [32m+[m
+ .../transcripts/kin2-telescoping-rod__ZdkdKz9.md      |    865 [32m+[m
+ .../transcripts/kin2-telescoping-rod__dSDARSE.md      |   1538 [32m+[m
+ .../transcripts/kin2-telescoping-rod__ib6VAX8.md      |    839 [32m+[m
+ .../transcripts/kin2-telescoping-rod__mtxSGet.md      |   1582 [32m+[m
+ .../transcripts/kin2-telescoping-rod__wqTauSA.md      |    215 [32m+[m
+ .../analysis/transcripts/kin3-snake__JXfH3VV.md       |   1930 [32m+[m
+ .../analysis/transcripts/kin3-snake__MefefAZ.md       |   5502 [32m+[m
+ .../analysis/transcripts/kin3-snake__NSqNmYD.md       |   4196 [32m+[m
+ .../analysis/transcripts/kin3-snake__Wo8EULy.md       |   1075 [32m+[m
+ .../analysis/transcripts/kin3-snake__b2Lh2UU.md       |    785 [32m+[m
+ .../analysis/transcripts/kin3-snake__fGjp8uK.md       |   1088 [32m+[m
+ .../analysis/transcripts/kin3-snake__qWPvutE.md       |    661 [32m+[m
+ .../analysis/transcripts/kin3-snake__vCWFkG3.md       |   1205 [32m+[m
+ .../analysis/transcripts/kin3-snake__zNrUpEf.md       |   1916 [32m+[m
+ .../analysis/transcripts/kin4-butterfly__5Bs7Qdd.md   |   1406 [32m+[m
+ .../analysis/transcripts/kin4-butterfly__FUF4nmq.md   |    455 [32m+[m
+ .../analysis/transcripts/kin4-butterfly__LoT6i9W.md   |   4923 [32m+[m
+ .../analysis/transcripts/kin4-butterfly__LsZjdJv.md   |   3718 [32m+[m
+ .../analysis/transcripts/kin4-butterfly__Utgg9AD.md   |   2128 [32m+[m
+ .../analysis/transcripts/kin4-butterfly__Xm8Q3Qu.md   |   1537 [32m+[m
+ .../analysis/transcripts/kin4-butterfly__oWV2LbT.md   |   5060 [32m+[m
+ .../analysis/transcripts/kin4-butterfly__t37eaXg.md   |   1512 [32m+[m
+ .../analysis/transcripts/kin4-butterfly__xH7gSdL.md   |   1412 [32m+[m
+ .../transcripts/kin5-folding-ruler__79his4v.md        |   1807 [32m+[m
+ .../transcripts/kin5-folding-ruler__CyoDRRC.md        |    912 [32m+[m
+ .../transcripts/kin5-folding-ruler__GniNXux.md        |    713 [32m+[m
+ .../transcripts/kin5-folding-ruler__PuYxogg.md        |   3230 [32m+[m
+ .../transcripts/kin5-folding-ruler__V8cGzeV.md        |   5294 [32m+[m
+ .../transcripts/kin5-folding-ruler__gcvLA9V.md        |   2119 [32m+[m
+ .../transcripts/kin5-folding-ruler__iKjwTa6.md        |    179 [32m+[m
+ .../transcripts/kin5-folding-ruler__yPgNqnw.md        |   1035 [32m+[m
+ .../transcripts/kin5-folding-ruler__zPq5bwT.md        |   2244 [32m+[m
+ .../data_update_backup/analysis/trials.csv            |     45 [32m+[m
+ .../data_update_backup/analysis/trials.json           |   2974 [32m+[m
+ .../data_update_backup/findings.md                    |     20 [32m+[m
+ .../data_update_backup/source_hashes.json             |     26 [32m+[m
+ .../data_update_backup/stl_README.md                  |     13 [32m+[m
+ .../data_update_backup/stl_manifest.csv               |     36 [32m+[m
+ .../kin1-dino-tail__MGRvcYz}/config.json              |      0
+ .../kin1-dino-tail__MGRvcYz}/result.json              |      0
+ .../kin1-dino-tail__R5UU3tN/config.json               |     40 [32m+[m
+ .../kin1-dino-tail__R5UU3tN/result.json               |    151 [32m+[m
+ .../kin2-telescoping-rod__UG26tuq/config.json         |     40 [32m+[m
+ .../kin2-telescoping-rod__UG26tuq/result.json         |    151 [32m+[m
+ .../kin2-telescoping-rod__wqTauSA}/config.json        |      0
+ .../kin2-telescoping-rod__wqTauSA}/result.json        |      0
+ .../gemini-cli-t12-20261019/migration.json            |    124 [32m+[m
+ analysis/SOURCE_UPDATE.md                             |      3 [32m+[m
+ analysis/final_35_scores.csv                          |     36 [32m+[m
+ analysis/final_35_scores.json                         |    740 [32m+[m
+ analysis/final_35_scores.md                           |     52 [32m+[m[31m-[m
+ analysis/full_check_audit.md                          |     46 [32m+[m
+ analysis/gallery/index.html                           |      2 [32m+[m[31m-[m
+ analysis/gallery/key.json                             |     79 [32m+[m[31m-[m
+ analysis/gallery/kin1-04_preview.png                  |    Bin [31m0[m -> [32m128806[m bytes
+ analysis/gallery/kin1-04_preview_posed.png            |    Bin [31m0[m -> [32m150928[m bytes
+ analysis/gallery/kin1-06_preview.png                  |    Bin [31m0[m -> [32m86751[m bytes
+ analysis/gallery/kin1-06_preview_posed.png            |    Bin [31m0[m -> [32m100661[m bytes
+ analysis/gallery/kin1-07_preview.png                  |    Bin [31m86751[m -> [32m41244[m bytes
+ analysis/gallery/kin1-07_preview_posed.png            |    Bin [31m100661[m -> [32m47221[m bytes
+ analysis/gallery/kin1-08_preview.png                  |    Bin [31m41244[m -> [32m124550[m bytes
+ analysis/gallery/kin1-08_preview_posed.png            |    Bin [31m47221[m -> [32m141002[m bytes
+ analysis/gallery/kin2-09_preview.png                  |    Bin [31m0[m -> [32m37455[m bytes
+ analysis/gallery/kin2-11_preview.png                  |    Bin [31m37455[m -> [32m27820[m bytes
+ analysis/gallery/kin2-12_preview.png                  |    Bin [31m27820[m -> [32m36617[m bytes
+ analysis/gallery/kin2-13_preview.png                  |    Bin [31m36617[m -> [32m32821[m bytes
+ analysis/gallery/kin2-14_preview.png                  |    Bin [31m32821[m -> [32m36087[m bytes
+ analysis/gallery/kin2-15_preview.png                  |    Bin [31m36087[m -> [32m27942[m bytes
+ analysis/gallery/kin3-16_preview.png                  |    Bin [31m0[m -> [32m40365[m bytes
+ analysis/gallery/kin3-16_preview_posed.png            |    Bin [31m0[m -> [32m58427[m bytes
+ analysis/gallery/kin3-17_preview.png                  |    Bin [31m40365[m -> [32m78886[m bytes
+ analysis/gallery/kin3-17_preview_posed.png            |    Bin [31m58427[m -> [32m119317[m bytes
+ analysis/gallery/kin3-18_preview.png                  |    Bin [31m78886[m -> [32m37761[m bytes
+ analysis/gallery/kin3-18_preview_posed.png            |    Bin [31m119317[m -> [32m54944[m bytes
+ analysis/gallery/kin3-19_preview.png                  |    Bin [31m37761[m -> [32m79563[m bytes
+ analysis/gallery/kin3-19_preview_posed.png            |    Bin [31m54944[m -> [32m113797[m bytes
+ analysis/gallery/kin3-20_preview.png                  |    Bin [31m79563[m -> [32m47810[m bytes
+ analysis/gallery/kin3-20_preview_posed.png            |    Bin [31m113797[m -> [32m63992[m bytes
+ analysis/gallery/kin3-21_preview.png                  |    Bin [31m47810[m -> [32m61250[m bytes
+ analysis/gallery/kin3-21_preview_posed.png            |    Bin [31m63992[m -> [32m99992[m bytes
+ analysis/gallery/kin3-22_preview.png                  |    Bin [31m61250[m -> [32m62653[m bytes
+ analysis/gallery/kin3-22_preview_posed.png            |    Bin [31m99992[m -> [32m99877[m bytes
+ analysis/gallery/kin4-23_preview.png                  |    Bin [31m0[m -> [32m50878[m bytes
+ analysis/gallery/kin4-23_preview_posed.png            |    Bin [31m0[m -> [32m46890[m bytes
+ analysis/gallery/kin4-24_preview.png                  |    Bin [31m50878[m -> [32m124734[m bytes
+ analysis/gallery/kin4-24_preview_posed.png            |    Bin [31m46890[m -> [32m106652[m bytes
+ analysis/gallery/kin4-25_preview.png                  |    Bin [31m124734[m -> [32m144444[m bytes
+ analysis/gallery/kin4-25_preview_posed.png            |    Bin [31m106652[m -> [32m113071[m bytes
+ analysis/gallery/kin4-26_preview.png                  |    Bin [31m144444[m -> [32m118346[m bytes
+ analysis/gallery/kin4-26_preview_posed.png            |    Bin [31m113071[m -> [32m114028[m bytes
+ analysis/gallery/kin4-27_preview.png                  |    Bin [31m118346[m -> [32m64708[m bytes
+ analysis/gallery/kin4-27_preview_posed.png            |    Bin [31m114028[m -> [32m63643[m bytes
+ analysis/gallery/kin4-28_preview.png                  |    Bin [31m64708[m -> [32m116379[m bytes
+ analysis/gallery/kin4-28_preview_posed.png            |    Bin [31m63643[m -> [32m107014[m bytes
+ analysis/gallery/kin4-29_preview.png                  |    Bin [31m116379[m -> [32m48511[m bytes
+ analysis/gallery/kin4-29_preview_posed.png            |    Bin [31m107014[m -> [32m52125[m bytes
+ analysis/gallery/kin5-30_preview.png                  |    Bin [31m0[m -> [32m22869[m bytes
+ analysis/gallery/kin5-30_preview_posed.png            |    Bin [31m0[m -> [32m36941[m bytes
+ analysis/gallery/kin5-31_preview.png                  |    Bin [31m22869[m -> [32m25795[m bytes
+ analysis/gallery/kin5-31_preview_posed.png            |    Bin [31m36941[m -> [32m37668[m bytes
+ analysis/gallery/kin5-32_preview.png                  |    Bin [31m25795[m -> [32m22140[m bytes
+ analysis/gallery/kin5-32_preview_posed.png            |    Bin [31m37668[m -> [32m36523[m bytes
+ analysis/gallery/kin5-33_preview.png                  |    Bin [31m22140[m -> [32m20881[m bytes
+ analysis/gallery/kin5-33_preview_posed.png            |    Bin [31m36523[m -> [32m33276[m bytes
+ analysis/gallery/kin5-34_preview.png                  |    Bin [31m20881[m -> [32m23179[m bytes
+ analysis/gallery/kin5-34_preview_posed.png            |    Bin [31m33276[m -> [32m39571[m bytes
+ analysis/gallery/kin5-35_preview.png                  |    Bin [31m23179[m -> [32m23910[m bytes
+ analysis/gallery/kin5-35_preview_posed.png            |    Bin [31m39571[m -> [32m35331[m bytes
+ analysis/gallery/kin5-36_preview.png                  |    Bin [31m23910[m -> [32m25256[m bytes
+ analysis/gallery/kin5-36_preview_posed.png            |    Bin [31m35331[m -> [32m40783[m bytes
+ analysis/performance_by_group.csv                     |      8 [32m+[m
+ analysis/performance_metrics.json                     |   1374 [32m+[m
+ analysis/performance_metrics.md                       |     69 [32m+[m
+ analysis/performance_trials.csv                       |     36 [32m+[m
+ analysis/report.md                                    |    104 [32m+[m[31m-[m
+ analysis/trajectory/calls.jsonl                       |     87 [32m+[m[31m-[m
+ .../trajectory/timelines/kin1-dino-tail__R5UU3tN.txt  |    120 [32m+[m
+ .../timelines/kin2-telescoping-rod__UG26tuq.txt       |    126 [32m+[m
+ analysis/trajectory/trajectory_metrics.json           |    374 [32m+[m[31m-[m
+ analysis/transcripts/kin1-dino-tail__R5UU3tN.md       |   1283 [32m+[m
+ analysis/transcripts/kin2-telescoping-rod__UG26tuq.md |   1188 [32m+[m
+ analysis/trials.csv                                   |      6 [32m+[m[31m-[m
+ analysis/trials.json                                  |    323 [32m+[m[31m-[m
+ gemini_cli_t12_supersession.json                      |     38 [32m+[m
+ kin1-dino-tail__MGRvcYz__deprecated/SUPERSEDED.md     |      9 [32m+[m
+ .../agent/gemini-cli.trajectory.jsonl                 |      0
+ .../agent/gemini-cli.txt                              |      0
+ .../agent/trajectory.json                             |      0
+ .../artifacts/manifest.json                           |      0
+ .../artifacts/workspace/output/model.scad             |      0
+ kin1-dino-tail__MGRvcYz__deprecated/config.json       |     39 [32m+[m
+ .../lock.json                                         |      0
+ .../regrade/agent_final_message.txt                   |      0
+ .../regrade/details.json                              |      0
+ .../regrade/reward.json                               |      0
+ .../regrade/verify.log                                |      0
+ kin1-dino-tail__MGRvcYz__deprecated/result.json       |    150 [32m+[m
+ .../trial.log                                         |      0
+ .../verifier/details.json                             |      0
+ .../verifier/reward.json                              |      0
+ .../verifier/test-stdout.txt                          |      0
+ .../verifier/verify.log                               |      0
+ .../agent/gemini-cli.trajectory.jsonl                 |    147 [32m+[m
+ kin1-dino-tail__R5UU3tN/agent/gemini-cli.txt          |     37 [32m+[m
+ kin1-dino-tail__R5UU3tN/agent/gemini_retry_shim.log   |     31 [32m+[m
+ kin1-dino-tail__R5UU3tN/agent/gemini_thinking_shim.py |    158 [32m+[m
+ kin1-dino-tail__R5UU3tN/agent/trajectory.json         |   1249 [32m+[m
+ .../artifacts/manifest.json                           |      0
+ .../artifacts/workspace/output/model.scad             |    500 [32m+[m
+ .../artifacts/workspace/output/model.stl              |  75910 [32m++[m
+ .../artifacts/workspace/output/parts/parts_1.stl      |  41330 [32m++[m
+ .../artifacts/workspace/output/parts/parts_2.stl      |  13442 [32m+[m
+ .../artifacts/workspace/output/parts/parts_3.stl      |  13442 [32m+[m
+ .../artifacts/workspace/output/parts/parts_4.stl      |   7702 [32m+[m
+ kin1-dino-tail__R5UU3tN/config.json                   |     40 [32m+[m
+ kin1-dino-tail__R5UU3tN/lock.json                     |     50 [32m+[m
+ .../regrade/agent_final_message.txt                   |      1 [32m+[m
+ kin1-dino-tail__R5UU3tN/regrade/details.json          |    694 [32m+[m
+ .../regrade/execution_environment.json                |     21 [32m+[m
+ kin1-dino-tail__R5UU3tN/regrade/reward.json           |      1 [32m+[m
+ kin1-dino-tail__R5UU3tN/regrade/verify.log            |      1 [32m+[m
+ kin1-dino-tail__R5UU3tN/result.json                   |    151 [32m+[m
+ kin1-dino-tail__R5UU3tN/trial.log                     |     63 [32m+[m
+ kin1-dino-tail__R5UU3tN/verifier/details.json         |     11 [32m+[m
+ .../verifier/reward.json                              |      0
+ kin1-dino-tail__R5UU3tN/verifier/test-stdout.txt      |      1 [32m+[m
+ kin1-dino-tail__R5UU3tN/verifier/verify.log           |      1 [32m+[m
+ .../agent/gemini-cli.trajectory.jsonl                 |    137 [32m+[m
+ kin2-telescoping-rod__UG26tuq/agent/gemini-cli.txt    |     81 [32m+[m
+ .../agent/gemini_retry_shim.log                       |     30 [32m+[m
+ .../agent/gemini_thinking_shim.py                     |    158 [32m+[m
+ kin2-telescoping-rod__UG26tuq/agent/trajectory.json   |   1235 [32m+[m
+ kin2-telescoping-rod__UG26tuq/artifacts/manifest.json |     24 [32m+[m
+ .../artifacts/workspace/output/README.md              |     92 [32m+[m
+ .../artifacts/workspace/output/joints.json            |    267 [32m+[m
+ .../artifacts/workspace/output/model.scad             |    155 [32m+[m
+ .../artifacts/workspace/output/model.stl              |  71682 [32m++[m
+ .../artifacts/workspace/output/parts/parts_1.stl      |  14338 [32m+[m
+ .../artifacts/workspace/output/parts/parts_2.stl      |  21506 [32m+[m
+ .../artifacts/workspace/output/parts/parts_3.stl      |  21506 [32m+[m
+ .../artifacts/workspace/output/parts/parts_4.stl      |  14338 [32m+[m
+ kin2-telescoping-rod__UG26tuq/config.json             |     40 [32m+[m
+ kin2-telescoping-rod__UG26tuq/lock.json               |     50 [32m+[m
+ .../regrade/agent_final_message.txt                   |     29 [32m+[m
+ kin2-telescoping-rod__UG26tuq/regrade/details.json    |   2732 [32m+[m
+ .../regrade/execution_environment.json                |     21 [32m+[m
+ kin2-telescoping-rod__UG26tuq/regrade/reward.json     |      1 [32m+[m
+ kin2-telescoping-rod__UG26tuq/regrade/verify.log      |      1 [32m+[m
+ kin2-telescoping-rod__UG26tuq/result.json             |    151 [32m+[m
+ kin2-telescoping-rod__UG26tuq/trial.log               |     69 [32m+[m
+ kin2-telescoping-rod__UG26tuq/verifier/details.json   |     13 [32m+[m
+ kin2-telescoping-rod__UG26tuq/verifier/reward.json    |      1 [32m+[m
+ .../verifier/test-stdout.txt                          |      1 [32m+[m
+ kin2-telescoping-rod__UG26tuq/verifier/verify.log     |      1 [32m+[m
+ .../SUPERSEDED.md                                     |      9 [32m+[m
+ .../agent/gemini-cli.trajectory.jsonl                 |      0
+ .../agent/gemini-cli.txt                              |      0
+ .../agent/trajectory.json                             |      0
+ .../artifacts/manifest.json                           |     24 [32m+[m
+ kin2-telescoping-rod__wqTauSA__deprecated/config.json |     39 [32m+[m
+ .../exception.txt                                     |      0
+ .../lock.json                                         |      0
+ .../regrade/agent_final_message.txt                   |      0
+ .../regrade/details.json                              |      0
+ .../regrade/reward.json                               |      0
+ .../regrade/verify.log                                |      0
+ kin2-telescoping-rod__wqTauSA__deprecated/result.json |    155 [32m+[m
+ .../trial.log                                         |      0
+ .../verifier/details.json                             |      0
+ .../verifier/reward.json                              |      1 [32m+[m
+ .../verifier/test-stdout.txt                          |      0
+ .../verifier/verify.log                               |      0
+ stl_models/README.md                                  |      9 [32m+[m
+ ...6\201\220\351\276\231\345\260\276\345\267\264.stl" | 254354 [32m+++++++[m
+ ...ode+kin2-\344\274\270\347\274\251\346\235\206.stl" |  94082 [32m+++[m
+ ...5-5+Claude-Code+kin3-\345\260\217\350\233\207.stl" | 134612 [32m++++[m
+ ...5-5+Claude-Code+kin4-\350\235\264\350\235\266.stl" | 170256 [32m+++++[m
+ ...ode+kin5-\346\212\230\345\217\240\345\260\272.stl" |  39762 [32m++[m
+ ...6\201\220\351\276\231\345\260\276\345\267\264.stl" | 284874 [32m++++++++[m
+ ...ess+kin2-\344\274\270\347\274\251\346\235\206.stl" | 100354 [32m+++[m
+ ...eepSeek-Harness+kin3-\345\260\217\350\233\207.stl" | 271938 [32m+++++++[m
+ ...eepSeek-Harness+kin4-\350\235\264\350\235\266.stl" | 270118 [32m+++++++[m
+ ...ess+kin5-\346\212\230\345\217\240\345\260\272.stl" |  26966 [32m+[m
+ ...6\201\220\351\276\231\345\260\276\345\267\264.stl" | 710124 [32m+++++++++++++++++++[m
+ ...ess+kin2-\344\274\270\347\274\251\346\235\206.stl" |  42674 [32m++[m
+ ...eepSeek-Harness+kin3-\345\260\217\350\233\207.stl" |  79004 [32m+++[m
+ ...eepSeek-Harness+kin4-\350\235\264\350\235\266.stl" | 111610 [32m+++[m
+ ...ess+kin5-\346\212\230\345\217\240\345\260\272.stl" |  29962 [32m+[m
+ ...6\201\220\351\276\231\345\260\276\345\267\264.stl" | 138994 [32m++++[m
+ ...ess+kin2-\344\274\270\347\274\251\346\235\206.stl" |  71682 [32m++[m
+ ...eepSeek-Harness+kin3-\345\260\217\350\233\207.stl" | 152532 [32m++++[m
+ ...eepSeek-Harness+kin4-\350\235\264\350\235\266.stl" | 101852 [32m+++[m
+ ...ess+kin5-\346\212\230\345\217\240\345\260\272.stl" |  30634 [32m+[m
+ ...6\201\220\351\276\231\345\260\276\345\267\264.stl" |  75910 [32m++[m
+ ...CLI+kin2-\344\274\270\347\274\251\346\235\206.stl" |  71682 [32m++[m
+ ...high+Gemini-CLI+kin3-\345\260\217\350\233\207.stl" | 114690 [32m+++[m
+ ...high+Gemini-CLI+kin4-\350\235\264\350\235\266.stl" | 180210 [32m+++++[m
+ ...CLI+kin5-\346\212\230\345\217\240\345\260\272.stl" |  65102 [32m++[m
+ ...6\201\220\351\276\231\345\260\276\345\267\264.stl" |  46762 [32m++[m
+ ...CLI+kin2-\344\274\270\347\274\251\346\235\206.stl" |  37886 [32m+[m
+ ...1-sol+Codex-CLI+kin3-\345\260\217\350\233\207.stl" |  37158 [32m+[m
+ ...1-sol+Codex-CLI+kin4-\350\235\264\350\235\266.stl" |  39314 [32m+[m
+ ...CLI+kin5-\346\212\230\345\217\240\345\260\272.stl" |  14786 [32m+[m
+ ...6\201\220\351\276\231\345\260\276\345\267\264.stl" | 100270 [32m+++[m
+ ...ess+kin2-\344\274\270\347\274\251\346\235\206.stl" |  78850 [32m++[m
+ ...eepSeek-Harness+kin3-\345\260\217\350\233\207.stl" | 522874 [32m++++++++++++++[m
+ ...eepSeek-Harness+kin4-\350\235\264\350\235\266.stl" |  24390 [32m+[m
+ ...ess+kin5-\346\212\230\345\217\240\345\260\272.stl" |  20442 [32m+[m
+ stl_models/manifest.csv                               |     36 [32m+[m
+ trajectory_eval/CURRENT_RUN.txt                       |      2 [32m+[m[31m-[m
+ trajectory_eval/README.md                             |     60 [32m+[m[31m-[m
+ trajectory_eval/STATUS.md                             |     29 [32m+[m[31m-[m
+ trajectory_eval/launch.py                             |    144 [32m+[m
+ trajectory_eval/repair_citations.py                   |    291 [32m+[m
+ trajectory_eval/review_remaining_citations.py         |    110 [32m+[m
+ trajectory_eval/run.py                                |      2 [32m+[m
+ trajectory_eval/tests/test_launch.py                  |     60 [32m+[m
+ trajectory_eval/tests/test_pipeline.py                |      6 [32m+[m
+ trajectory_eval/tests/test_repair_citations.py        |    101 [32m+[m
+ 384 files changed, 4960006 insertions(+), 644 deletions(-)

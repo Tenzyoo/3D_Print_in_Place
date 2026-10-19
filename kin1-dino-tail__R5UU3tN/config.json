@@ -1,0 +1,40 @@
+{
+    "task": {
+        "path": "kin_tasks/tasks/kin1-dino-tail",
+        "source": "tasks"
+    },
+    "trial_name": "kin1-dino-tail__R5UU3tN",
+    "trials_dir": "jobs/kin",
+    "agent": {
+        "import_path": "gemini_agent:PinnedGeminiCli",
+        "model_name": "google/gemini-4-argon-high",
+        "override_timeout_sec": 86400.0,
+        "extra_allowed_hosts": [
+            "api.supergpt.dev"
+        ],
+        "kwargs": {
+            "version": "0.64.0",
+            "reasoning_effort": "high",
+            "disable_web_search": true,
+            "retry_shim": true
+        },
+        "env": {
+            "GEMINI_API_KEY": "${GEMINI_API_KEY}",
+            "GOOGLE_GEMINI_BASE_URL": "${GEMINI_BASE_URL}"
+        }
+    },
+    "artifacts": [
+        {
+            "source": "/app",
+            "destination": "workspace",
+            "exclude": [
+                "__pycache__",
+                "*.pyc",
+                ".cache",
+                "node_modules",
+                ".venv"
+            ]
+        }
+    ],
+    "job_id": "ff1dead7-ba46-4dab-a329-8c64d9898dd1"
+}

@@ -1,0 +1,162 @@
+# kin3-snake__zNrUpEf combo=dsh-gpt task=kin3-snake exception=None
+
+[000] t=   41.7s ctx=   4.4k out=   143 think=   238ch
+     -> send_message {"agent_id": "session-ec8d4849-12b9-4999-b0ca-a535b2aee7a1", "message": "\u72ec\u7acb\u65b9\u6848\uff08\u76f4\u7ebf\u6001\u5916\u5ed3 160\u00d750\u00d740 mm\uff09\uff1a6\u8282\u7ad6\u76f4\u5706\u89d2\u76d2/\u80f6\u56ca\u4f53\uff0c\u8282\u8ddd\u7ea626.7 mm\u30…
+        <= message delivered to agent session-ec8d4849-12b9-4999-b0ca-a535b2aee7a1
+[001] t=   44.5s ctx=   4.7k out=   114 think=     0ch
+     say: 已将独立设计方案发送给父代理。
+[002] t=   10.3s ctx=   4.8k out=   112 think=    53ch
+     -> create_goal {"max_goal_rounds": 4, "objective": "\u5728 /app/output \u751f\u6210\u5e76\u9a8c\u8bc1\u53c2\u6570\u5316 OpenSCAD \u4e00\u4f53\u5316\u53ef\u6d3b\u52a8\u5c0f\u86c7\u4ea4\u4ed8\u7269\uff1amodel.scad\u3001model.stl\u3001parts/parts_1..6.stl\u3001joints.json\uff0…
+        <= {"goal":{"id":"goal-18dba26e-181a-4b11-b85b-b5311fb615c7","revision":1,"objective":"在 /app/output 生成并验证参数化 OpenSCAD 一体化可活动小蛇交付物：model.scad、model.stl、parts/parts_1..6.stl、joints.json，以及打印方向和几何/切片检查说明，…
+[003] t=   14.4s ctx=   5.0k out=   143 think=     0ch
+     -> todo_write {"todos": [{"content": "\u68c0\u67e5 OpenSCAD\u3001\u5207\u7247\u5668\u4e0e\u5de5\u4f5c\u76ee\u5f55\u73af\u5883", "status": "in_progress"}, {"content": "\u8bbe\u8ba1\u5e76\u7f16\u5199\u53c2\u6570\u5316\u4e00\u4f53\u5316\u86c7\u6a21\u578b\u53ca\u5bfc\u51fa\u81…
+        <= Updated todo list: 4 pending, 1 in progress, 0 completed.
+[004] t=   18.7s ctx=   5.4k out=  1947 think=     0ch
+     -> subagent {"description": "\u5ba1\u67e5\u86c7\u5173\u8282\u8bbe\u8ba1", "prompt": "\u8bf7\u72ec\u7acb\u63d0\u51fa\u4e00\u4e2a\u9002\u5408 OpenSCAD/FDM \u4e00\u4f53\u6253\u5370\u7684 6 \u6bb5\u5c0f\u86c7\u9500\u8f74\u5173\u8282\u8bbe\u8ba1\u65b9\u6848\uff0c\u91cd\u70b9\…
+        <= started subagent 42894fb0-0a4e-4d76-ae7d-ef999c5edd7d
+[005] t=   24.0s ctx=   9.1k out=  2894 think=     0ch
+     -> bash pwd && ls -la && command -v openscad && command -v prusa-slicer && python3 --version
+        <= /app ⏎ total 12 ⏎ drwxr-xr-x 3 agent agent 4096 Oct 18 06:49 . ⏎ drwxr-xr-x 1 root  root  4096 Oct 18 09:47 .. ⏎ drwxr-xr-x 2 agent agent 4096 Oct 18 06:49 output ⏎ /usr/bin/openscad ⏎ /usr/bin/prusa…
+     -> read /opt/slicer/README.md
+        <= <path>/opt/slicer/README.md</path> ⏎ <type>file</type> ⏎ <content> ⏎ 1: # Slicer profiles ⏎ 2:  ⏎ 3: PrusaSlicer 2.7 command line (`prusa-slicer`). The two profiles approximate a Bambu Lab P1S ⏎ 4: (…
+     -> glob /app
+        <= No files found
+[006] t=   75.4s ctx=  12.0k out=  1370 think=   334ch
+     -> bash ls -la /app/output && openscad --version && prusa-slicer --version
+        <= ERR total 8 ⏎ drwxr-xr-x 2 agent agent 4096 Oct 18 06:49 . ⏎ drwxr-xr-x 3 agent agent 4096 Oct 18 06:49 .. ⏎ PrusaSlicer-2.7.2+UNKNOWN based on Slic3r (with GUI support) ⏎ https://github.com/prusa3d/Prus…
+[007] t=  101.5s ctx=  13.4k out=   701 think=   227ch
+     -> write /app/output/model.scad
+        <= ERR Error: invalid justification: expected a non-empty sentence
+[008] t=  111.9s ctx=  14.2k out=   114 think=    27ch
+     -> write /app/output/model.scad
+        <= <path>/app/output/model.scad</path> ⏎ <type>file</type> ⏎ <content> ⏎ Created file ⏎ </content>
+[009] t=  123.0s ctx=  14.3k out=   123 think=    90ch
+     -> edit /app/output/model.scad
+        <= The file /app/output/model.scad has been updated. All occurrences were successfully replaced.
+[010] t=  127.4s ctx=  14.5k out=    42 think=     0ch
+     -> todo_write {"todos": [{"content": "\u68c0\u67e5 OpenSCAD\u3001\u5207\u7247\u5668\u4e0e\u5de5\u4f5c\u76ee\u5f55\u73af\u5883", "status": "completed"}, {"content": "\u8bbe\u8ba1\u5e76\u7f16\u5199\u53c2\u6570\u5316\u4e00\u4f53\u5316\u86c7\u6a21\u578b\u53ca\u5bfc\u51fa\u811a…
+        <= Updated todo list: 3 pending, 1 in progress, 1 completed.
+[011] t=  133.5s ctx=  15.1k out=   204 think=    33ch
+     -> bash mkdir -p /app/output/parts && openscad -o /app/output/model.stl /app/output/model.scad
+        <= ERR [stderr] ⏎ ERROR: Parser error: syntax error in file output/model.scad, line 77 ⏎ Can't parse file '/app/output/model.scad'! ⏎  ⏎ [exit code: 1]
+[012] t=  138.3s ctx=  15.3k out=    83 think=    27ch
+     -> read /app/output/model.scad
+        <= <path>/app/output/model.scad</path> ⏎ <type>file</type> ⏎ <content> ⏎ 62: module female_socket() { ⏎ 63:     difference() { ⏎ 64:         union() { ⏎ 65:             translate([0,0,socket_bottom_z]) …
+[013] t=  146.6s ctx=  15.5k out=   503 think=    26ch
+     -> edit /app/output/model.scad
+        <= The file /app/output/model.scad has been updated successfully.
+[014] t=  150.5s ctx=  16.8k out=   701 think=     0ch
+     -> bash openscad -o /app/output/model.stl /app/output/model.scad
+        <= [stderr] ⏎ Geometries in cache: 48 ⏎ Geometry cache size in bytes: 6980192 ⏎ CGAL Polyhedrons in cache: 8 ⏎ CGAL cache size in bytes: 102273672 ⏎ Total rendering time: 0:00:36.786 ⏎    Top level obje…
+[015] t=  196.7s ctx=  18.1k out=   280 think=    72ch
+     -> bash for i in 1 2 3 4 5 6; do openscad -D part=$i -o /app/output/parts/parts_${i}.stl /app/output/model.scad || exit; done
+        <= [stderr] ⏎ Geometries in cache: 24 ⏎ Geometry cache size in bytes: 4582320 ⏎ CGAL Polyhedrons in cache: 5 ⏎ CGAL cache size in bytes: 60220248 ⏎ Total rendering time: 0:00:08.931 ⏎    Top level objec…
+[016] t=  247.8s ctx=  18.4k out=   190 think=   122ch
+     -> bash python3 - <<'PY' ⏎ import trimesh,glob ⏎ for f in glob.glob('/app/output/parts/*.stl'): ⏎  m=trimesh.load(f,force='mesh'); parts=m.split(only_watertight=False) ⏎  print(f, m.bounds.tolist(),len(parts),[(round(p.volume,2),p.bounds.round(2).tolist()) for p in p…
+        <= /app/output/parts/parts_2.stl [[17.4948, -6.99157, 0.00481796], [47.0, 6.99157, 7.99518]] 1 [(np.float64(1504.25), [[17.49, -6.99, 0.0], [47.0, 6.99, 8.0]])] ⏎ /app/output/parts/parts_1.stl [[2.30325…
+[017] t=  256.0s ctx=  19.5k out=   159 think=    49ch
+     -> edit /app/output/model.scad
+        <= The file /app/output/model.scad has been updated successfully.
+[018] t=  261.7s ctx=  19.7k out=   238 think=    27ch
+     -> bash openscad -o /app/output/model.stl /app/output/model.scad && for i in 1 2 3 4 5 6; do openscad -D part=$i -o /app/output/parts/parts_${i}.stl /app/output/model.scad || exit; done
+        <= [stderr] ⏎ Geometries in cache: 48 ⏎ Geometry cache size in bytes: 6980192 ⏎ CGAL Polyhedrons in cache: 9 ⏎ CGAL cache size in bytes: 98370264 ⏎ Total rendering time: 0:00:37.056 ⏎    Top level objec…
+[019] t=  346.0s ctx=  20.7k out=  2680 think=    30ch
+     -> todo_write {"todos": [{"content": "\u68c0\u67e5 OpenSCAD\u3001\u5207\u7247\u5668\u4e0e\u5de5\u4f5c\u76ee\u5f55\u73af\u5883", "status": "completed"}, {"content": "\u8bbe\u8ba1\u5e76\u7f16\u5199\u53c2\u6570\u5316\u4e00\u4f53\u5316\u86c7\u6a21\u578b\u53ca\u5bfc\u51fa\u811a…
+        <= Updated todo list: 2 pending, 1 in progress, 2 completed.
+[020] t=  350.1s ctx=  23.4k out=   274 think=     0ch
+     -> bash python3 - <<'PY' ⏎ import trimesh,glob,os ⏎ for f in ['/app/output/model.stl']+sorted(glob.glob('/app/output/parts/*.stl')): ⏎  m=trimesh.load(f,force='mesh') ⏎  parts=m.split(only_watertight=False) ⏎  print(os.path.basename(f),'bounds=',m.bounds.round(3).tol…
+        <= model.stl bounds= [[2.303, -6.992, 0.005], [130.496, 6.992, 7.995]] extent= [128.193, 13.983, 7.99] watertight= True components= 1 component vols= [np.float64(8857.385)] ⏎ parts_1.stl bounds= [[2.303…
+[021] t=  378.1s ctx=  23.7k out=   187 think=   382ch
+     -> edit /app/output/model.scad
+        <= The file /app/output/model.scad has been updated successfully.
+[022] t=  382.7s ctx=  23.9k out=   287 think=     0ch
+     -> edit /app/output/model.scad
+        <= The file /app/output/model.scad has been updated successfully.
+[023] t=  387.4s ctx=  24.3k out=   445 think=     0ch
+     -> edit /app/output/model.scad
+        <= The file /app/output/model.scad has been updated successfully.
+[024] t=  394.8s ctx=  25.9k out=   353 think=    24ch
+     -> edit /app/output/model.scad
+        <= The file /app/output/model.scad has been updated successfully.
+[025] t=  404.3s ctx=  26.3k out=   193 think=    66ch
+     -> bash openscad -o /app/output/model.stl /app/output/model.scad && for i in 1 2 3 4 5 6; do openscad -D part=$i -o /app/output/parts/parts_${i}.stl /app/output/model.scad || exit; done && python3 - <<'PY' ⏎ import trimesh,glob,os ⏎ for f in ['/app/output/model.stl']…
+        <= model.stl [128.193, 13.983, 7.995] watertight True components 1 volumes [np.float64(8865.39)] ⏎ parts_1.stl [22.697, 13.983, 7.995] watertight True components 1 volumes [np.float64(1459.86)] ⏎ parts_…
+[026] t=  503.3s ctx=  27.0k out=  1307 think=    31ch
+     -> bash python3 - <<'PY' ⏎ import trimesh, itertools ⏎ ms=[trimesh.load(f'/app/output/parts/parts_{i}.stl',force='mesh') for i in range(1,7)] ⏎ for i,j in itertools.combinations(range(6),2): ⏎  if all(ms[i].bounds[1][k]>=ms[j].bounds[0][k] and ms[j].bounds[1][k]>=ms[…
+        <= 1 2 bounds overlap volume 15.269670573053247 faces 610 ⏎ 2 3 bounds overlap volume 16.295703550847218 faces 674 ⏎ 3 4 bounds overlap volume 16.29568248133516 faces 674 ⏎ 4 5 bounds overlap volume 16.…
+[027] t=  510.2s ctx=  28.3k out=   269 think=     0ch
+     -> bash python3 - <<'PY' ⏎ import trimesh ⏎ for i in range(1,6): ⏎  a=trimesh.load(f'/app/output/parts/parts_{i}.stl',force='mesh'); b=trimesh.load(f'/app/output/parts/parts_{i+1}.stl',force='mesh') ⏎  m=trimesh.boolean.intersection([a,b],engine='manifold'); print(i,…
+        <= 1 [[17.49480057 -4.15388107  0.549999  ] ⏎  [25.          4.15388107  3.20000005]] [ 1.90407059e+01 -1.25151506e-09  2.29339167e+00] [7.50519943 8.30776215 2.65000105] ⏎ 2 [[39.49480057 -4.20967627  …
+[028] t=  527.5s ctx=  28.6k out=   417 think=   153ch
+     -> edit /app/output/model.scad
+        <= The file /app/output/model.scad has been updated successfully.
+[029] t=  532.8s ctx=  30.1k out=   385 think=     0ch
+     -> edit /app/output/model.scad
+        <= The file /app/output/model.scad has been updated successfully.
+[030] t=  539.1s ctx=  30.8k out=  1261 think=    24ch
+     -> bash openscad -o /app/output/model.stl /app/output/model.scad && for i in 1 2 3 4 5 6; do openscad -D part=$i -o /app/output/parts/parts_${i}.stl /app/output/model.scad || exit; done && python3 - <<'PY' ⏎ import trimesh,glob,os,itertools ⏎ ms=[trimesh.load(f'/app/…
+        <= model.stl [120.193, 13.983, 7.995] components 7 water True ⏎ parts_1.stl [18.697, 13.983, 7.995] components 2 water True ⏎ parts_2.stl [29.505, 13.983, 7.995] components 1 water True ⏎ parts_3.stl [2…
+[031] t=  661.4s ctx=  32.1k out=   257 think=    57ch
+     -> bash python3 - <<'PY' ⏎ import trimesh ⏎ m=trimesh.load('/app/output/parts/parts_1.stl',force='mesh') ⏎ for p in m.split(only_watertight=False): print(p.bounds,p.volume) ⏎ PY ⏎ prusa-slicer --info /app/output/model.stl
+        <= [[ 6.30325e+00 -6.99157e+00  4.81796e-03] ⏎  [ 1.75389e+01  6.99157e+00  7.99518e+00]] 702.9765949225698 ⏎ [[ 1.42036e+01 -3.00000e+00  3.00407e-04] ⏎  [ 2.50000e+01  3.00000e+00  2.10000e+00]] 34.76…
+[032] t=  678.5s ctx=  33.4k out=   171 think=   179ch
+     -> edit /app/output/model.scad
+        <= The file /app/output/model.scad has been updated successfully.
+[033] t=  685.2s ctx=  33.6k out=   754 think=    25ch
+     -> bash openscad -o /app/output/model.stl /app/output/model.scad && for i in 1 2 3 4 5 6; do openscad -D part=$i -o /app/output/parts/parts_${i}.stl /app/output/model.scad >/dev/null || exit; done && python3 - <<'PY' ⏎ import trimesh,glob,os ⏎ for f in ['/app/output/…
+        <= model.stl 7 True [120.19, 13.98, 7.99] ⏎ parts_1.stl 2 True [18.7, 13.98, 7.99] ⏎ parts_2.stl 1 True [29.51, 13.98, 7.99] ⏎ parts_3.stl 1 True [29.51, 13.98, 7.99] ⏎ parts_4.stl 1 True [29.51, 13.98,…
+[034] t=  799.5s ctx=  34.4k out=   756 think=    38ch
+     -> bash python3 - <<'PY' ⏎ import trimesh ⏎ m=trimesh.load('/app/output/parts/parts_1.stl',force='mesh') ⏎ for p in m.split(only_watertight=False):print(p.bounds.round(2).tolist(),p.volume) ⏎ PY
+        <= [[6.3, -6.99, 0.0], [17.54, 6.99, 8.0]] 702.9765949225698 ⏎ [[14.2, -3.0, 0.0], [25.0, 3.0, 2.1]] 29.555411434625366 ⏎ 
+[035] t=  813.4s ctx=  35.2k out=   584 think=    77ch
+     -> edit /app/output/model.scad
+        <= The file /app/output/model.scad has been updated successfully.
+[036] t=  822.1s ctx=  35.8k out=   281 think=    25ch
+     -> write /app/output/joints.json
+        <= <path>/app/output/joints.json</path> ⏎ <type>file</type> ⏎ <content> ⏎ Created file ⏎ </content>
+[037] t=  831.3s ctx=  37.4k out=   462 think=     0ch
+     -> write /app/output/PRINT_NOTES.md
+        <= <path>/app/output/PRINT_NOTES.md</path> ⏎ <type>file</type> ⏎ <content> ⏎ Created file ⏎ </content>
+[038] t=  836.9s ctx=  37.9k out=    76 think=    29ch
+     -> bash openscad -o /app/output/model.stl /app/output/model.scad && for i in 1 2 3 4 5 6; do openscad -D part=$i -o /app/output/parts/parts_${i}.stl /app/output/model.scad >/dev/null || exit; done && prusa-slicer --info /app/output/model.stl && python3 - <<'PY' ⏎ imp…
+        <= [model.stl] ⏎ size_x = 123.491181 ⏎ size_y = 13.983140 ⏎ size_z = 7.994759 ⏎ min_x = 3.004821 ⏎ min_y = -6.991570 ⏎ min_z = 0.000422 ⏎ max_x = 126.496002 ⏎ max_y = 6.991570 ⏎ max_z = 7.995180 ⏎ numbe…
+[039] t=  955.1s ctx=  38.0k out=   294 think=    62ch
+     -> edit /app/output/model.scad
+        <= The file /app/output/model.scad has been updated successfully.
+[040] t=  960.3s ctx=  39.5k out=   473 think=     0ch
+     -> edit /app/output/joints.json
+        <= The file /app/output/joints.json has been updated successfully.
+[041] t=  967.3s ctx=  40.1k out=  1068 think=    29ch
+     -> bash openscad -o /app/output/model.stl /app/output/model.scad && for i in 1 2 3 4 5 6; do openscad -D part=$i -o /app/output/parts/parts_${i}.stl /app/output/model.scad >/dev/null || exit; done && prusa-slicer --info /app/output/model.stl && python3 - <<'PY' ⏎ imp…
+        <= [model.stl] ⏎ size_x = 123.491181 ⏎ size_y = 13.983140 ⏎ size_z = 7.994759 ⏎ min_x = 3.004821 ⏎ min_y = -6.991570 ⏎ min_z = 0.000422 ⏎ max_x = 126.496002 ⏎ max_y = 6.991570 ⏎ max_z = 7.995180 ⏎ numbe…
+[042] t= 1085.6s ctx=  41.2k out=   114 think=    61ch
+     -> bash python3 - <<'PY' ⏎ import trimesh ⏎ m=trimesh.load('/app/output/parts/parts_2.stl',force='mesh') ⏎ for p in m.split(only_watertight=False): print(p.bounds.round(2).tolist(),p.volume) ⏎ PY
+        <= [[18.22, -6.99, 0.0], [47.0, 6.99, 8.0]] 850.1377989961488 ⏎ [[17.2, -1.46, 0.55], [17.43, 1.46, 3.2]] 1.1663318968251037 ⏎ 
+[043] t= 1102.5s ctx=  41.3k out=   250 think=   157ch
+     -> edit /app/output/model.scad
+        <= The file /app/output/model.scad has been updated successfully.
+[044] t= 1110.0s ctx=  42.7k out=   100 think=    29ch
+     -> edit /app/output/joints.json
+        <= The file /app/output/joints.json has been updated successfully.
+[045] t= 1116.0s ctx=   4.0k out=   674 think=     0ch
+     -> bash openscad -o /app/output/model.stl /app/output/model.scad && for i in 1 2 3 4 5 6; do openscad -D part=$i -o /app/output/parts/parts_${i}.stl /app/output/model.scad >/dev/null || exit; done && prusa-slicer --info /app/output/model.stl && python3 - <<'PY' ⏎ imp…
+        <= [model.stl] ⏎ size_x = 123.491181 ⏎ size_y = 13.983140 ⏎ size_z = 7.994759 ⏎ min_x = 3.004821 ⏎ min_y = -6.991570 ⏎ min_z = 0.000422 ⏎ max_x = 126.496002 ⏎ max_y = 6.991570 ⏎ max_z = 7.995180 ⏎ numbe…
+[046] t= 1227.6s ctx=  44.1k out=   157 think=    23ch
+     -> read /app/output/PRINT_NOTES.md
+        <= <path>/app/output/PRINT_NOTES.md</path> ⏎ <type>file</type> ⏎ <content> ⏎ 1: # 打印与检查说明 ⏎ 2:  ⏎ 3: - 材料/工艺目标：PLA、0.4 mm 喷嘴、0.2 mm 层高；模型按毫米建模。 ⏎ 4: - 打印朝向：XY 平面朝向打印床，Z 轴竖直；蛇在 XY 平面内沿 +X 伸直。各关节旋转轴与打印方向平…
+[047] t= 1254.1s ctx=  44.4k out=   309 think=    24ch
+     -> edit /app/output/PRINT_NOTES.md
+        <= The file /app/output/PRINT_NOTES.md has been updated successfully.
+[048] t= 1260.1s ctx=  44.7k out=   190 think=    31ch
+     -> bash prusa-slicer --export-gcode --load /opt/slicer/p1s_pla_0.20mm_nosupport.ini --output /tmp/snake.gcode /app/output/model.stl
+        <= 10 => Processing triangulated mesh ⏎ 20 => Generating perimeters ⏎ 30 => Preparing infill ⏎ 45 => Making infill ⏎ 65 => Searching support spots ⏎ 69 => Alert if supports needed ⏎ print warning: Detec…
+[049] t= 1270.1s ctx=  45.0k out=   370 think=    30ch
+     -> edit /app/output/PRINT_NOTES.md
+        <= The file /app/output/PRINT_NOTES.md has been updated successfully.
+[050] t= 1278.9s ctx=   0.0k out=     0 think=    26ch
+     -> todo_write {"todos": [{"content": "\u68c0\u67e5 OpenSCAD\u3001\u5207\u7247\u5668\u4e0e\u5de5\u4f5c\u76ee\u5f55\u73af\u5883", "status": "completed"}, {"content": "\u8bbe\u8ba1\u5e76\u7f16\u5199\u53c2\u6570\u5316\u4e00\u4f53\u5316\u86c7\u6a21\u578b\u53ca\u5bfc\u51fa\u811a…
+        <= Updated todo list: 0 pending, 0 in progress, 5 completed.
+[051] t= 1285.6s ctx=   0.0k out=     0 think=     0ch
+     say: 交付文件已生成于 `/app/output/`： ⏎  ⏎ - `model.scad`、`model.stl`、`joints.json`、`PRINT_NOTES.md` ⏎ - `parts/parts_1.stl` 至 `parts/parts_6.stl` ⏎  ⏎ **几何检查结果：**总装网格水密，包含 6 个独立连通组件；六个单件 STL 各为一个水密组件。直线姿态外廓约为 **123.49 × 13.98 × 7.995 mm**，在尺寸限制内。销头与套环…
+
+FINAL: 交付文件已生成于 `/app/output/`： ⏎  ⏎ - `model.scad`、`model.stl`、`joints.json`、`PRINT_NOTES.md` ⏎ - `parts/parts_1.stl` 至 `parts/parts_6.stl` ⏎  ⏎ **几何检查结果：**总装网格水密，包含 6 个独立连通组件；六个单件 STL 各为一个水密组件。直线姿态外廓约为 **123.49 × 13.98 × 7.995 mm**，在尺寸限制内。销头与套环的名义径向间隙为 0.50 mm，轴向间隙为 0.50 mm。 ⏎  ⏎ **重要限制：目前交付未能证明满足全部要求，不建议直接打印。**`joints.json` 中的 ±25° 是目标范围，尚未通过关节扫掠或实物验证；当前 40° 喉口也不能保证该行程无干涉。PrusaSlicer 无支撑切片虽成功导出 G-code，但报告了 **Floating bridge anchors、Low bed adhesion、Loose extrusions**，所以无支撑打印稳定性未通过。`PRINT_NOTES.md` 已记录这些限制和检查结果。

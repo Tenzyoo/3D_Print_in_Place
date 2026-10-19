@@ -1,0 +1,267 @@
+{
+  "name": "4-Stage Print-in-Place Telescopic Rod",
+  "unit": "mm",
+  "print_orientation": {
+    "up_axis": "+Z",
+    "up_vector": [0, 0, 1],
+    "bed_plane": "z = 0",
+    "description": "Vertical print-in-place orientation along +Z. All 4 coaxial nested tubes rest directly on the z = 0 build plate and require zero support material."
+  },
+  "overall_dimensions": {
+    "num_stages": 4,
+    "collapsed_length": 115.0,
+    "max_collapsed_length_limit": 120.0,
+    "extended_length": 325.0,
+    "hard_stop_extended_length": 325.75,
+    "min_extended_length_limit": 300.0,
+    "max_outer_diameter": 24.0,
+    "max_outer_diameter_limit": 25.0,
+    "wall_thickness": 1.2,
+    "radial_sliding_clearance": 0.5,
+    "radial_clearance_range_limit": [0.4, 0.6]
+  },
+  "parts": [
+    {
+      "id": "parts_1",
+      "index": 1,
+      "file": "parts/parts_1.stl",
+      "role": "stage_1_outermost_base_tube",
+      "z_range_collapsed": [0.0, 115.0],
+      "length": 115.0,
+      "outer_shaft_radius": 12.0,
+      "outer_piston_radius": 12.0,
+      "inner_bore_radius": 10.8,
+      "inner_neck_radius": 9.8
+    },
+    {
+      "id": "parts_2",
+      "index": 2,
+      "file": "parts/parts_2.stl",
+      "role": "stage_2_intermediate_tube",
+      "z_range_collapsed": [0.0, 115.0],
+      "length": 115.0,
+      "outer_shaft_radius": 9.3,
+      "outer_piston_radius": 10.3,
+      "inner_bore_radius": 8.1,
+      "inner_neck_radius": 7.1
+    },
+    {
+      "id": "parts_3",
+      "index": 3,
+      "file": "parts/parts_3.stl",
+      "role": "stage_3_intermediate_tube",
+      "z_range_collapsed": [0.0, 115.0],
+      "length": 115.0,
+      "outer_shaft_radius": 6.6,
+      "outer_piston_radius": 7.6,
+      "inner_bore_radius": 5.4,
+      "inner_neck_radius": 4.4
+    },
+    {
+      "id": "parts_4",
+      "index": 4,
+      "file": "parts/parts_4.stl",
+      "role": "stage_4_innermost_tip_tube",
+      "z_range_collapsed": [0.0, 115.0],
+      "length": 115.0,
+      "outer_shaft_radius": 3.9,
+      "outer_piston_radius": 4.9,
+      "inner_bore_radius": 2.7,
+      "inner_neck_radius": 2.7
+    }
+  ],
+  "joints": [
+    {
+      "id": "joint_1_2",
+      "name": "stage_1_to_stage_2",
+      "type": "prismatic",
+      "kinematic_pair": "cylindrical_telescopic",
+      "parent": "parts_1",
+      "parent_file": "parts/parts_1.stl",
+      "child": "parts_2",
+      "child_file": "parts/parts_2.stl",
+      "outer_part": "parts_1",
+      "inner_part": "parts_2",
+      "axis": [0, 0, 1],
+      "origin": [0, 0, 0],
+      "stroke": 70.0,
+      "range": [0.0, 70.0],
+      "min_position": 0.0,
+      "max_position": 70.0,
+      "limits": {
+        "lower": 0.0,
+        "upper": 70.0,
+        "min": 0.0,
+        "max": 70.0,
+        "stroke": 70.0,
+        "hard_stop_extension_contact_mm": 70.25,
+        "hard_stop_retraction_contact_mm": -1.25
+      },
+      "sliding_fit": {
+        "single_side_radial_clearance_mm": 0.5,
+        "lower_bearing_pair": {
+          "outer_bore_radius_mm": 10.8,
+          "inner_piston_radius_mm": 10.3,
+          "radial_gap_mm": 0.5,
+          "child_z_range_mm": [4.5, 22.5]
+        },
+        "upper_bearing_pair": {
+          "outer_neck_radius_mm": 9.8,
+          "inner_shaft_radius_mm": 9.3,
+          "radial_gap_mm": 0.5,
+          "parent_z_range_mm": [93.5, 115.0]
+        }
+      },
+      "limit_structure": {
+        "type": "bidirectional_conical_stepped_collar",
+        "extension_stop": {
+          "description": "Bottom outward piston collar of parts_2 engages top inward neck collar of parts_1 via matching 33.69-deg conical shoulders.",
+          "parent_neck_ramp_z_mm": [92.0, 93.5],
+          "child_piston_ramp_z_mm": [22.5, 24.0],
+          "parent_neck_radius_mm": 9.8,
+          "child_piston_radius_mm": 10.3,
+          "radial_overlap_mm": 0.5,
+          "diametral_overlap_mm": 1.0,
+          "overhang_angle_from_vertical_deg": 33.69,
+          "axial_overlap_at_full_extension_mm": 45.0
+        },
+        "retraction_stop": {
+          "description": "Bottom outward piston ramp of parts_2 is retained above bottom inward lip of parts_1 with 0.50 mm axial (0.693 mm normal) clearance in collapsed state.",
+          "parent_bottom_ramp_z_mm": [2.5, 4.0],
+          "child_bottom_ramp_z_mm": [3.0, 4.5],
+          "radial_overlap_mm": 0.5,
+          "collapsed_axial_gap_mm": 0.5,
+          "collapsed_normal_gap_mm": 0.693
+        }
+      }
+    },
+    {
+      "id": "joint_2_3",
+      "name": "stage_2_to_stage_3",
+      "type": "prismatic",
+      "kinematic_pair": "cylindrical_telescopic",
+      "parent": "parts_2",
+      "parent_file": "parts/parts_2.stl",
+      "child": "parts_3",
+      "child_file": "parts/parts_3.stl",
+      "outer_part": "parts_2",
+      "inner_part": "parts_3",
+      "axis": [0, 0, 1],
+      "origin": [0, 0, 0],
+      "stroke": 70.0,
+      "range": [0.0, 70.0],
+      "min_position": 0.0,
+      "max_position": 70.0,
+      "limits": {
+        "lower": 0.0,
+        "upper": 70.0,
+        "min": 0.0,
+        "max": 70.0,
+        "stroke": 70.0,
+        "hard_stop_extension_contact_mm": 70.25,
+        "hard_stop_retraction_contact_mm": -1.25
+      },
+      "sliding_fit": {
+        "single_side_radial_clearance_mm": 0.5,
+        "lower_bearing_pair": {
+          "outer_bore_radius_mm": 8.1,
+          "inner_piston_radius_mm": 7.6,
+          "radial_gap_mm": 0.5,
+          "child_z_range_mm": [4.5, 22.5]
+        },
+        "upper_bearing_pair": {
+          "outer_neck_radius_mm": 7.1,
+          "inner_shaft_radius_mm": 6.6,
+          "radial_gap_mm": 0.5,
+          "parent_z_range_mm": [93.5, 115.0]
+        }
+      },
+      "limit_structure": {
+        "type": "bidirectional_conical_stepped_collar",
+        "extension_stop": {
+          "description": "Bottom outward piston collar of parts_3 engages top inward neck collar of parts_2 via matching 33.69-deg conical shoulders.",
+          "parent_neck_ramp_z_mm": [92.0, 93.5],
+          "child_piston_ramp_z_mm": [22.5, 24.0],
+          "parent_neck_radius_mm": 7.1,
+          "child_piston_radius_mm": 7.6,
+          "radial_overlap_mm": 0.5,
+          "diametral_overlap_mm": 1.0,
+          "overhang_angle_from_vertical_deg": 33.69,
+          "axial_overlap_at_full_extension_mm": 45.0
+        },
+        "retraction_stop": {
+          "description": "Bottom outward piston ramp of parts_3 is retained above bottom inward lip of parts_2 with 0.50 mm axial (0.693 mm normal) clearance in collapsed state.",
+          "parent_bottom_ramp_z_mm": [2.5, 4.0],
+          "child_bottom_ramp_z_mm": [3.0, 4.5],
+          "radial_overlap_mm": 0.5,
+          "collapsed_axial_gap_mm": 0.5,
+          "collapsed_normal_gap_mm": 0.693
+        }
+      }
+    },
+    {
+      "id": "joint_3_4",
+      "name": "stage_3_to_stage_4",
+      "type": "prismatic",
+      "kinematic_pair": "cylindrical_telescopic",
+      "parent": "parts_3",
+      "parent_file": "parts/parts_3.stl",
+      "child": "parts_4",
+      "child_file": "parts/parts_4.stl",
+      "outer_part": "parts_3",
+      "inner_part": "parts_4",
+      "axis": [0, 0, 1],
+      "origin": [0, 0, 0],
+      "stroke": 70.0,
+      "range": [0.0, 70.0],
+      "min_position": 0.0,
+      "max_position": 70.0,
+      "limits": {
+        "lower": 0.0,
+        "upper": 70.0,
+        "min": 0.0,
+        "max": 70.0,
+        "stroke": 70.0,
+        "hard_stop_extension_contact_mm": 70.25,
+        "hard_stop_retraction_contact_mm": -1.25
+      },
+      "sliding_fit": {
+        "single_side_radial_clearance_mm": 0.5,
+        "lower_bearing_pair": {
+          "outer_bore_radius_mm": 5.4,
+          "inner_piston_radius_mm": 4.9,
+          "radial_gap_mm": 0.5,
+          "child_z_range_mm": [4.5, 22.5]
+        },
+        "upper_bearing_pair": {
+          "outer_neck_radius_mm": 4.4,
+          "inner_shaft_radius_mm": 3.9,
+          "radial_gap_mm": 0.5,
+          "parent_z_range_mm": [93.5, 115.0]
+        }
+      },
+      "limit_structure": {
+        "type": "bidirectional_conical_stepped_collar",
+        "extension_stop": {
+          "description": "Bottom outward piston collar of parts_4 engages top inward neck collar of parts_3 via matching 33.69-deg conical shoulders.",
+          "parent_neck_ramp_z_mm": [92.0, 93.5],
+          "child_piston_ramp_z_mm": [22.5, 24.0],
+          "parent_neck_radius_mm": 4.4,
+          "child_piston_radius_mm": 4.9,
+          "radial_overlap_mm": 0.5,
+          "diametral_overlap_mm": 1.0,
+          "overhang_angle_from_vertical_deg": 33.69,
+          "axial_overlap_at_full_extension_mm": 45.0
+        },
+        "retraction_stop": {
+          "description": "Bottom outward piston ramp of parts_4 is retained above bottom inward lip of parts_3 with 0.50 mm axial (0.693 mm normal) clearance in collapsed state.",
+          "parent_bottom_ramp_z_mm": [2.5, 4.0],
+          "child_bottom_ramp_z_mm": [3.0, 4.5],
+          "radial_overlap_mm": 0.5,
+          "collapsed_axial_gap_mm": 0.5,
+          "collapsed_normal_gap_mm": 0.693
+        }
+      }
+    }
+  ]
+}

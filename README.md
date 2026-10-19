@@ -1,4 +1,6 @@
-# kin：一体打印活动机构 5 题 × 7 个 harness/模型组合（首轮）
+# kin：一体打印活动机构 5 题 × 7 个 harness/模型组合
+
+当前最新 35 个产出的评分见 [analysis/final_35_scores.md](analysis/final_35_scores.md)。Gemini CLI kin1/kin2 已采用本目录中的新替代重跑；新轨迹批次为 trajectory_eval/runs/kin_all_groups_v3，33 条标注复用、2 条待评测。stl_models/ 已收齐 35 个完整模型。
 
 题目、判分器、运行设置和失败记录的完整说明见 `kin_tasks/README.md`，指标目录见 `kin_tasks/eval/METRICS.md`。结果汇总在本目录的 `analysis/`：
 
@@ -10,7 +12,7 @@
 | `analysis/transcripts/` | 每个 trial 的可读过程（四种 harness 同一格式） |
 | `analysis/gallery/` | 匿名预览图（中立姿态 + 关节全部转到上限），对应关系在 `key.json` |
 
-重跑和续跑不在本目录，在 `jobs/kin_reruns/`：
+除已统一迁入本目录的 Gemini CLI kin1/kin2 最新替代重跑外，其他历史重跑和续跑在 `jobs/kin_reruns/`：
 
 - `kin-rerun-gemini/`：Gemini CLI，T2–T5 为基础设施失败后的重跑（替换首轮），T1 为补充重跑（不替换）。
 - `kin-rerun-dshgem/`：dsh + Gemini，T3–T5 基础设施失败后的重跑（替换首轮）。

@@ -4,19 +4,25 @@
 
 ## 当前全部七组材料
 
-完整材料在 `runs/kin_all_groups_v2/`：35 份 inputs、35 份已组合提示词的 requests、冻结协议，以及人用清单 MATERIALS.md。旧的四组材料继续保留。
+当前 v3 已替换 Gemini CLI kin1/kin2，默认入口 CURRENT_RUN.txt 已更新。case_001（87 个事件）和 case_031（95 个事件）等待新 Judge 调用；其余 33 条在输入、请求、来源、协议和几何评分哈希一致后复用原标注。完整新旧映射在 private/version_mapping.json，下一步执行命令见 [RUN_NEXT.md](runs/kin_all_groups_v3/RUN_NEXT.md)。本轮未调用模型 API。
+
+```bash
+python3 jobs/kin/trajectory_eval/launch.py --provider deepseek --case case_001 --case case_031
+```
+
+完整材料在 `runs/kin_all_groups_v3/`：35 份 inputs、35 份已组合提示词的 requests、冻结协议，以及人用清单 MATERIALS.md。旧的四组材料继续保留。
 
 重新准备全部七组：
 
 ```bash
 python3 jobs/kin/trajectory_eval/run.py prepare \
   --job jobs/kin --reruns-root jobs/kin_reruns --scope all \
-  --run-dir jobs/kin/trajectory_eval/runs/kin_all_groups_v2
+  --run-dir jobs/kin/trajectory_eval/runs/kin_all_groups_v4
 ```
 
 同一任务和条件有多个运行时，按结束时间选择最近一次正常结束的尝试，不根据分数挑选。Gemini 独立重跑不和此前失败轨迹拼接；此前尝试保留在 private/manifest.json。Claude + DSH 的 kin1 采用人工 continue 续跑，校验续跑持久化记录完整包含原始前缀，直接读取该完整日志而不重复拼接。输入保留 intervention 消息和人工介入警示；复核表单列 manual_continue，不能当作一次完全自主完成。
 
-以下命令均以最新 v2 七组材料为准。旧四组和 v1 批次保留历史记录，新打标使用 v2。重新 prepare 时需换用尚不存在的 run-dir。
+以下命令均以最新 v3 七组材料为准。旧四组、v1 和 v2 批次保留历史记录，新打标使用 v3。重新 prepare 时需换用尚不存在的 run-dir。
 
 此目录评估 **Agent 做了什么验证**。最终产物是否合格仍由现有 `regrade/` 几何评分确定，不修改原任务、原轨迹或原评分，不把轨迹标签合成为一个总分。
 
@@ -84,7 +90,7 @@ python3 jobs/kin/trajectory_eval/run.py prepare \
 ```bash
 python3 jobs/kin/trajectory_eval/run.py prepare \
   --job jobs/kin --reruns-root jobs/kin_reruns --scope all \
-  --run-dir jobs/kin/trajectory_eval/runs/kin_all_groups_v2
+  --run-dir jobs/kin/trajectory_eval/runs/kin_all_groups_v4
 ```
 
 选择全部七组，每组五题，共 35 条最近正常结束的运行。缺少任何条件/任务组合时停止；不根据评分挑选尝试。若需另建原四组批次，可显式使用 --scope four 和新的目录。
@@ -98,7 +104,7 @@ DSH 优先读取与主 session_id 匹配的持久化 `session.v4.jsonl`，避免
 生成目录：
 
 ```text
-runs/kin_all_groups_v2/
+runs/kin_all_groups_v3/
   inputs/case_001.json                # 可送 Judge 的输入
   requests/case_001.json              # 已组装冻结提示词的 Judge 请求
   protocol/prompts/                   # 本轮冻结的提示词副本
@@ -117,6 +123,36 @@ runs/kin_all_groups_v2/
 
 ### 2. 调用 Judge（两种接口任选一种）
 
+便捷入口：`launch.py` 自动读取仓库 `.env`。默认 GPT 模式优先采用 JUDGE_MODEL/JUDGE_ENDPOINT/JUDGE_API_KEY，缺省使用已有 GPT_MODEL/GPT_BASE_URL/GPT_API_KEY；批次为 gpt61_high_v1。`--provider deepseek` 则明确使用 DEEPSEEK_MODEL/DEEPSEEK_BASE_URL/DEEPSEEK_API_KEY，独立批次为 deepseek_flash_high_v1，不回退到 GPT 或 JUDGE 的密钥和接口。不会打印密钥。
+
+GPT 默认参数为 high、max_completion_tokens=16000；DeepSeek 默认参数为 thinking enabled、reasoning_effort high、max_tokens=65536。参数按供应商分别配置，均可用 --extra-body 覆盖，变更配置时需使用新的 judge-id。
+
+```bash
+python3 jobs/kin/trajectory_eval/launch.py --limit 2
+# 两条试标确认后，处理剩余全部；失败请求会留下新的 attempt：
+python3 jobs/kin/trajectory_eval/launch.py
+# DeepSeek 官方接口，自动读取对应密钥与模型：
+python3 jobs/kin/trajectory_eval/launch.py --provider deepseek --limit 2
+python3 jobs/kin/trajectory_eval/launch.py --provider deepseek
+```
+
+本工具沙箱此前对 GPT 与 DeepSeek 各两条试运行均因 DNS 无法解析域名失败；用户在服务器终端已成功调用 DeepSeek 并启动全量打标。`execution_status.md` 在 launch 批次结束时更新，运行中应结合日志和 attempts/annotations 查看进度。网络失败与证据校验失败均不解释为被测 Agent 的任务失败。
+
+2026-10-19 发现部分正常返回的 Judge JSON 因引用格式差异被逐字校验拒绝：JSON 转义、Markdown 反引号、工具行号，或引用指向同一调用的返回事件。离线工具 `repair_citations.py` 可诊断并恢复能严格对应原文的引用，不调用 API，不改变标签、方法、结论或理由，不放宽原校验；无法确定或仍未通过校验的结果不保存。原始 response 与失败 metadata 保留，变更在 `citation_review/` 留档，恢复的标注另有 `annotations_meta/` 来源记录，全部仍待人工复核。
+
+```bash
+# 默认只输出诊断；加 --apply 保存通过原严格校验的恢复标注。
+python3 jobs/kin/trajectory_eval/repair_citations.py \
+  --run-dir jobs/kin/trajectory_eval/runs/kin_all_groups_v3 \
+  --judge-id deepseek_flash_high_v1 --apply
+```
+
+该工具跳过已有标注和正在运行的 attempt，可在批次结束后执行。恢复后的 case 在下一次 launch 时会跳过；未恢复的失败 case 重跑会新建 attempt。
+
+历史 v2 批次（2026-10-19）全量运行结束后的离线恢复：现为 32/35 条通过严格校验，累计恢复原失败案例 15 条。本次补充支持空格、成对 Markdown 标记、mm³/mm^3 的表示、JSON 最后属性的逗号，以及可以证明完全重复的字段前缀和缺失的对象分隔符。JSON 恢复必须得到唯一符合原 Schema 的结构；每次修复均记录在 record.json，原始 response 不变。case_015、027、034 仍有引用改写、漏引操作或不存在的公式，未保存为有效标注。case_027 的原始轨迹存在，缺少的是 Judge 的 C1 证据列表中的 action 引用。详情见 `runs/kin_all_groups_v2/judges/deepseek_flash_high_v1/citation_review/format_repair_summary.md`。
+
+随后用户授权对上述 3 条逐条对照轨迹修订，现为 35/35 条通过原校验。case_015 恢复原文字词；case_027 补引实际检查命令并改正 STL 输出路径；case_034 实际公式存在，赋值变量为 gap 而非 Judge 引用的 radial_gap，同时修正事件定位与转义。此过程属于助手引用审校，独立记录在各案例 `assistant_review_record.json` 和 `annotations_meta/`，不归为纯格式自动恢复。`review_remaining_citations.py` 保存具体修订逻辑，全部标签、方法、结果与理由保持原样，原始 response/metadata 不变，无新增 API 请求。140 个维度仍全部待人工语义复核。
+
 先用 `--limit 2` 试标，人工校准；固定协议后再标全部。不要为达到某个结果调整提示词。建议至少复核全部 35 条；如由多人独立标注，可另设各自的 Judge/人工记录并记录分歧。
 
 HTTP 模式使用完整 Chat Completions 兼容 URL。密钥仅从指定环境变量读取，不自动读取仓库 `.env`、不自动选择被测模型作 Judge。
@@ -124,7 +160,7 @@ HTTP 模式使用完整 Chat Completions 兼容 URL。密钥仅从指定环境�
 ```bash
 export JUDGE_API_KEY='你的密钥'
 python3 jobs/kin/trajectory_eval/run.py judge \
-  --run-dir jobs/kin/trajectory_eval/runs/kin_all_groups_v2 \
+  --run-dir jobs/kin/trajectory_eval/runs/kin_all_groups_v3 \
   --judge-id judge_v1 \
   --model '明确的Judge模型版本' \
   --endpoint 'https://你的接口/v1/chat/completions' \
@@ -138,7 +174,7 @@ python3 jobs/kin/trajectory_eval/run.py judge \
 
 ```bash
 python3 jobs/kin/trajectory_eval/run.py judge \
-  --run-dir jobs/kin/trajectory_eval/runs/kin_all_groups_v2 \
+  --run-dir jobs/kin/trajectory_eval/runs/kin_all_groups_v3 \
   --judge-id judge_v1 \
   --model '明确的Judge模型版本' \
   --command 'python3 /路径/你的judge客户端.py' \
@@ -151,9 +187,9 @@ python3 jobs/kin/trajectory_eval/run.py judge \
 
 ```bash
 python3 jobs/kin/trajectory_eval/run.py validate \
-  --run-dir jobs/kin/trajectory_eval/runs/kin_all_groups_v2 --judge-id judge_v1
+  --run-dir jobs/kin/trajectory_eval/runs/kin_all_groups_v3 --judge-id judge_v1
 python3 jobs/kin/trajectory_eval/run.py summarize \
-  --run-dir jobs/kin/trajectory_eval/runs/kin_all_groups_v2 --judge-id judge_v1
+  --run-dir jobs/kin/trajectory_eval/runs/kin_all_groups_v3 --judge-id judge_v1
 ```
 
 结果保存在 `judges/judge_v1/`：config.json、annotations/、attempts/（原始请求/返回、时间、usage、哈希、失败记录）、reports/review.csv 和 reports/summary.md。
@@ -170,14 +206,14 @@ python3 jobs/kin/trajectory_eval/run.py summarize \
 
 ```bash
 python3 jobs/kin/trajectory_eval/audit.py \
-  --run-dir jobs/kin/trajectory_eval/runs/kin_all_groups_v2
+  --run-dir jobs/kin/trajectory_eval/runs/kin_all_groups_v3
 ```
 
 复原到新目录，不改现有材料；输出目录必须尚不存在：
 
 ```bash
 python3 jobs/kin/trajectory_eval/run.py restore \
-  --run-dir jobs/kin/trajectory_eval/runs/kin_all_groups_v2 \
+  --run-dir jobs/kin/trajectory_eval/runs/kin_all_groups_v3 \
   --out-dir /tmp/kin_trajectory_restored
 ```
 
@@ -205,3 +241,5 @@ python3 -m unittest discover -s jobs/kin/trajectory_eval/tests -v
 测试只使用模拟返回和临时目录，不产生真实 Judge 成绩，也不调用远程模型。
 
 HTTP 请求格式参考 [OpenAI Docs：Chat Completions](https://developers.openai.com/api/reference/resources/chat/subresources/completions/methods/create)。这里选择兼容接口便于更换供应商，不绑定默认 Judge。
+
+DeepSeek 参数参考 [官方 Chat Completions 文档](https://api-docs.deepseek.com/api/create-chat-completion/)与[思考模式文档](https://api-docs.deepseek.com/guides/thinking_mode/)。

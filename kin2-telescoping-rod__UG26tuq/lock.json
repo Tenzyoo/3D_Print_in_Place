@@ -1,0 +1,50 @@
+{
+    "schema_version": 2,
+    "task": {
+        "name": "kin2-telescoping-rod",
+        "type": "local",
+        "digest": "sha256:83e27e24b1e534e1025235dab075c91d16df35cab1d4083b580df4ee34bb7912",
+        "source": "tasks",
+        "path": "kin_tasks/tasks/kin2-telescoping-rod"
+    },
+    "install_only": false,
+    "timeout_multiplier": 1.0,
+    "agent": {
+        "import_path": "gemini_agent:PinnedGeminiCli",
+        "model_name": "google/gemini-4-argon-high",
+        "skills": [],
+        "override_timeout_sec": 86400.0,
+        "resume_trajectory": false,
+        "extra_allowed_hosts": [
+            "api.supergpt.dev"
+        ],
+        "kwargs": {
+            "version": "0.64.0",
+            "reasoning_effort": "high",
+            "disable_web_search": true,
+            "retry_shim": true
+        },
+        "env": {
+            "GEMINI_API_KEY": "${GEMINI_API_KEY}",
+            "GOOGLE_GEMINI_BASE_URL": "${GEMINI_BASE_URL}"
+        },
+        "mcp_servers": []
+    },
+    "bridge_inputs": {},
+    "skills": [],
+    "environment": {
+        "type": "docker",
+        "force_build": false,
+        "delete": true,
+        "stream": false,
+        "cpu_enforcement_policy": "auto",
+        "memory_enforcement_policy": "auto",
+        "extra_docker_compose": [],
+        "kwargs": {},
+        "extra_allowed_hosts": []
+    },
+    "verifier": {
+        "disable": false,
+        "environment_mode": "shared"
+    }
+}
